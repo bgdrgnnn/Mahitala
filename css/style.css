@@ -1,27 +1,27 @@
 /* ==========================================================================
-   PT Manghalla Inatama Lentera — Design Tokens & Base Styles
+   PT Mangghala Inatama Lentera — Design Tokens & Base Styles
    ========================================================================== */
 
 :root {
-  /* Color system — earthy industrial (agri-mining) */
-  --color-primary: #1B4332;        /* deep forest green */
-  --color-primary-light: #2D6A4F;
-  --color-primary-dark: #12301F;
-  --color-secondary: #6B4F3B;      /* soil brown */
-  --color-accent: #C89B3C;         /* mineral gold */
-  --color-accent-light: #E0B65C;
+  /* Color system — matched to the Mangghala Inatama Lentera logo */
+  --color-primary: #12A260;        /* logo green */
+  --color-primary-light: #17D37D;
+  --color-primary-dark: #08492C;
+  --color-secondary: #6B4F3B;      /* soil brown — supporting neutral */
+  --color-accent: #FCC00C;         /* logo gold */
+  --color-accent-light: #FDCD40;
   --color-stone: #78716C;          /* dolomite stone gray */
 
-  --color-background: #FAF8F3;     /* warm limestone white */
+  --color-background: #F7FAF8;     /* soft green-tinted white */
   --color-surface: #FFFFFF;
-  --color-surface-alt: #F2EEE4;
-  --color-foreground: #1C1917;
-  --color-muted-foreground: #57534E;
-  --color-border: #E7E2D6;
+  --color-surface-alt: #EEF6F1;
+  --color-foreground: #14201A;
+  --color-muted-foreground: #53645C;
+  --color-border: #DFEAE3;
   --color-destructive: #B91C1C;
 
   --color-on-primary: #FFFFFF;
-  --color-on-accent: #1C1917;
+  --color-on-accent: #08492C;
 
   /* Typography */
   --font-heading: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
@@ -44,8 +44,8 @@
   --radius-full: 999px;
 
   --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.06);
-  --shadow-md: 0 8px 24px rgba(27, 67, 50, 0.10);
-  --shadow-lg: 0 20px 50px rgba(27, 67, 50, 0.16);
+  --shadow-md: 0 8px 24px rgba(18, 162, 96, 0.10);
+  --shadow-lg: 0 20px 50px rgba(18, 162, 96, 0.16);
 
   --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -131,7 +131,7 @@ textarea:focus-visible,
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-primary);
-  background: rgba(27, 67, 50, 0.08);
+  background: rgba(18, 162, 96, 0.08);
   padding: 6px 14px;
   border-radius: var(--radius-full);
 }
@@ -231,7 +231,7 @@ textarea:focus-visible,
 
 .site-header.scrolled {
   padding-block: var(--space-2);
-  background: rgba(250, 248, 243, 0.85);
+  background: rgba(247, 250, 248, 0.85);
   backdrop-filter: blur(14px) saturate(140%);
   box-shadow: 0 1px 0 var(--color-border), var(--shadow-sm);
 }
@@ -247,18 +247,12 @@ textarea:focus-visible,
 }
 
 .brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent-light);
   flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
 }
-.brand-mark svg { width: 22px; height: 22px; }
+.brand-mark img { height: 42px; width: auto; display: block; }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-text small {
@@ -366,9 +360,9 @@ textarea:focus-visible,
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(1100px 520px at 88% -10%, rgba(200, 155, 60, 0.28), transparent 60%),
-    radial-gradient(900px 500px at -10% 110%, rgba(45, 106, 79, 0.55), transparent 60%),
-    linear-gradient(160deg, var(--color-primary-dark) 0%, #0E2517 100%);
+    radial-gradient(1100px 520px at 88% -10%, rgba(252, 192, 12, 0.28), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(23, 211, 125, 0.55), transparent 60%),
+    linear-gradient(160deg, var(--color-primary-dark) 0%, #052B1A 100%);
   z-index: -2;
 }
 
@@ -466,7 +460,7 @@ textarea:focus-visible,
   position: absolute;
   inset: 6%;
   border-radius: 50%;
-  background: conic-gradient(from 200deg, #2D6A4F, #C89B3C, #78716C, #1B4332, #2D6A4F);
+  background: conic-gradient(from 200deg, #17D37D, #FCC00C, #78716C, #08492C, #17D37D);
   filter: blur(0.3px);
   opacity: 0.9;
   animation: spin 26s linear infinite;
@@ -498,7 +492,7 @@ textarea:focus-visible,
 .hero-card .icon {
   width: 40px; height: 40px;
   border-radius: 10px;
-  background: rgba(200,155,60,0.22);
+  background: rgba(252, 192, 12,0.22);
   color: var(--color-accent-light);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
@@ -615,7 +609,7 @@ textarea:focus-visible,
 }
 
 .product-visual.dolomite { background: linear-gradient(150deg, #57534E, #292524); }
-.product-visual.phosphate { background: linear-gradient(150deg, #2D6A4F, #12301F); }
+.product-visual.phosphate { background: linear-gradient(150deg, #17D37D, #08492C); }
 .product-visual.palmash { background: linear-gradient(150deg, #6B4F3B, #2E2116); }
 
 .product-visual .texture {
@@ -702,7 +696,7 @@ textarea:focus-visible,
 .benefit-list .tick {
   width: 26px; height: 26px;
   border-radius: 50%;
-  background: rgba(27,67,50,0.1);
+  background: rgba(18, 162, 96,0.1);
   color: var(--color-primary);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
@@ -880,7 +874,7 @@ textarea:focus-visible,
 .stats-band::before {
   content: "";
   position: absolute; inset: 0;
-  background: radial-gradient(700px 300px at 90% 0%, rgba(200,155,60,0.25), transparent 60%);
+  background: radial-gradient(700px 300px at 90% 0%, rgba(252, 192, 12,0.25), transparent 60%);
 }
 @media (max-width: 760px) { .stats-band { grid-template-columns: repeat(2, 1fr); } }
 
@@ -946,7 +940,7 @@ textarea:focus-visible,
 .cta-band::before {
   content: "";
   position: absolute; inset: 0;
-  background: radial-gradient(600px 260px at 15% 20%, rgba(200,155,60,0.28), transparent 60%);
+  background: radial-gradient(600px 260px at 15% 20%, rgba(252, 192, 12,0.28), transparent 60%);
 }
 .cta-band > * { position: relative; z-index: 1; }
 .cta-band h2 { color: #fff; font-size: clamp(26px, 4vw, 36px); max-width: 22ch; margin-inline: auto; }
@@ -1037,7 +1031,7 @@ textarea:focus-visible,
   display: none;
   align-items: center;
   gap: var(--space-3);
-  background: rgba(27,67,50,0.08);
+  background: rgba(18, 162, 96,0.08);
   color: var(--color-primary-dark);
   border-radius: var(--radius-sm);
   padding: var(--space-4);
@@ -1140,7 +1134,7 @@ textarea:focus-visible,
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #1B4332;
+  background: var(--color-primary-dark);
   color: #fff;
   padding: 13px 20px 13px 13px;
   border-radius: var(--radius-full);

@@ -1,6 +1,6 @@
-# Manghalla Inatama Lentera — Company Website
+# Mangghala Inatama Lentera — Company Website
 
-Website interaktif untuk **PT Manghalla Inatama Lentera**, pemasok mineral pertanian:
+Website interaktif untuk **PT Mangghala Inatama Lentera**, pemasok mineral pertanian:
 Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit (powder & granule).
 
 ## Struktur
