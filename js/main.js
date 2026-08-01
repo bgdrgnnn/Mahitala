@@ -41,54 +41,200 @@
     a.addEventListener("click", function () { setNavOpen(false); });
   });
 
-  /* ---------------- Product tabs ---------------- */
-  var tabs = $$(".product-tab");
-  var panels = $$(".product-panel");
-
-  function activateTab(name) {
-    tabs.forEach(function (t) {
-      var active = t.getAttribute("data-tab") === name;
-      t.classList.toggle("active", active);
-      t.setAttribute("aria-selected", String(active));
-    });
-    panels.forEach(function (p) {
-      var active = p.getAttribute("data-panel") === name;
-      p.classList.toggle("active", active);
-      if (active) replayStagger($(".stagger-group", p));
-    });
-  }
-
+  /* ---------------- Product showcase: swap-side switcher ---------------- */
   function replayStagger(el) {
     if (!el) return;
     el.classList.remove("in-view");
-    // eslint-disable-next-line no-unused-expressions
     el.offsetWidth; /* force reflow so the transition replays */
     el.classList.add("in-view");
   }
 
+  var TICK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+
+  var PRODUCTS = {
+    dolomite: {
+      side: "left",
+      visualClass: "dolomite",
+      formula: "CaMg(CO₃)₂",
+      title: "Dolomite",
+      tagline: "Kapur pertanian untuk menetralkan keasaman tanah dan memasok Kalsium &amp; Magnesium.",
+      forms: {
+        powder: "Butiran halus, reaksi menetralkan pH lebih cepat. Cocok diaplikasikan langsung ke tanah sebelum tanam atau dicampur pupuk dasar.",
+        granule: "Butiran padat, mudah ditebar dengan alat mekanis (spreader), minim debu, pelepasan hara bertahap (slow release) untuk lahan luas."
+      },
+      benefits: [
+        ["Menetralkan Keasaman Tanah", "Menaikkan pH tanah asam agar unsur hara lebih mudah diserap akar tanaman."],
+        ["Sumber Kalsium &amp; Magnesium", "Mendukung pembentukan dinding sel tanaman dan proses fotosintesis (klorofil)."],
+        ["Memperbaiki Struktur Tanah", "Membuat tanah lebih gembur, meningkatkan aerasi dan drainase akar."],
+        ["Meningkatkan Efektivitas Pupuk Lain", "pH tanah yang seimbang membuat pupuk NPK &amp; organik bekerja lebih optimal."]
+      ],
+      tags: ["Sawit", "Karet", "Tebu", "Padi &amp; Palawija"],
+      ctaLabel: "Tanya Harga Dolomite"
+    },
+    phosphate: {
+      side: "right",
+      visualClass: "phosphate",
+      formula: "Ca₃(PO₄)₂",
+      title: "Fosfat Alam",
+      tagline: "Sumber fosfor alami untuk pertumbuhan akar, pembungaan, dan pembuahan.",
+      forms: {
+        powder: "Luas permukaan besar sehingga fosfor lebih cepat tersedia bagi tanaman. Ideal untuk pupuk dasar dan pembibitan.",
+        granule: "Pelepasan fosfor bertahap (slow release) hingga beberapa bulan, efisien untuk pemupukan tanaman tahunan dan mengurangi frekuensi aplikasi."
+      },
+      benefits: [
+        ["Merangsang Pertumbuhan Akar", "Fosfor (P) mendorong perkembangan akar yang kuat sejak fase awal tanam."],
+        ["Mempercepat Pembungaan &amp; Pembuahan", "Mendukung pembentukan bunga, buah, dan biji secara optimal."],
+        ["Pelepasan Hara Bertahap", "Fosfat alam melepas unsur hara secara perlahan, cocok untuk tanah asam dan lahan gambut."],
+        ["Meningkatkan Hasil Panen", "Pupuk dasar yang efektif untuk perkebunan sawit, karet, dan tanaman pangan."]
+      ],
+      tags: ["Sawit", "Pembibitan", "Tanaman Pangan", "Hortikultura"],
+      ctaLabel: "Tanya Harga Fosfat"
+    },
+    palmash: {
+      side: "left",
+      visualClass: "palmash",
+      formula: "K₂O Tinggi",
+      title: "Abu Tandan Kosong Sawit",
+      tagline: "Pupuk kalium alami hasil olahan limbah tandan kosong kelapa sawit (janjang).",
+      forms: {
+        powder: "Kalium langsung larut dan tersedia cepat bagi tanaman, cocok untuk aplikasi tabur di piringan pokok sawit.",
+        granule: "Lebih tahan terhadap pencucian hujan (leaching), tidak beterbangan saat aplikasi, dan mudah disimpan dalam jumlah besar."
+      },
+      benefits: [
+        ["Sumber Kalium (K) Tinggi", "Alternatif alami pengganti KCl untuk meningkatkan bobot dan kualitas buah sawit."],
+        ["Produk Ramah Lingkungan", "Hasil daur ulang limbah tandan kosong sawit — mendukung ekonomi sirkular perkebunan."],
+        ["Menaikkan pH &amp; Menyuburkan Tanah", "Bersifat basa sehingga membantu menetralkan tanah asam sekaligus menambah unsur hara mikro."],
+        ["Meningkatkan Kualitas Tandan Buah", "Kalium berperan penting dalam pembentukan minyak dan bobot tandan buah segar (TBS)."]
+      ],
+      tags: ["Sawit", "Pupuk Organik", "Ramah Lingkungan"],
+      ctaLabel: "Tanya Harga Abu Sawit"
+    }
+  };
+
+  function renderVisualHTML(product, form) {
+    return (
+      '<div class="visual-glow" aria-hidden="true"></div>' +
+      '<div class="texture"></div>' +
+      '<span class="formula-badge">' + product.formula + "</span>" +
+      '<div class="pv-title">' +
+        "<h3>" + product.title + "</h3>" +
+        "<p>" + product.tagline + "</p>" +
+        '<div class="form-toggle">' +
+          '<button class="' + (form === "powder" ? "active" : "") + '" data-form="powder">Powder</button>' +
+          '<button class="' + (form === "granule" ? "active" : "") + '" data-form="granule">Granule</button>' +
+        "</div>" +
+      "</div>"
+    );
+  }
+
+  function renderBodyHTML(product, form) {
+    var benefitsHTML = product.benefits.map(function (b) {
+      return '<li><span class="tick">' + TICK_SVG + "</span><div><strong>" + b[0] + "</strong><p>" + b[1] + "</p></div></li>";
+    }).join("");
+    var tagsHTML = product.tags.map(function (t) {
+      return '<span class="spec-pill">' + t + "</span>";
+    }).join("");
+
+    return (
+      '<div class="form-note' + (form === "powder" ? " active" : "") + '">' +
+        "<strong>Bentuk Powder:</strong> " + product.forms.powder +
+      "</div>" +
+      '<div class="form-note' + (form === "granule" ? " active" : "") + '">' +
+        "<strong>Bentuk Granule:</strong> " + product.forms.granule +
+      "</div>" +
+      '<ul class="benefit-list stagger-group">' + benefitsHTML + "</ul>" +
+      '<div class="product-foot">' +
+        '<div class="spec-pills">' + tagsHTML + "</div>" +
+        '<a href="#kontak" class="btn btn-dark btn-sm">' + product.ctaLabel + "</a>" +
+      "</div>"
+    );
+  }
+
+  var tabs = $$(".product-tab");
+  var productCard = $("#productCard");
+  var visualSlot = $("#productVisualSlot");
+  var bodySlot = $("#productBodySlot");
+  var currentProductId = "dolomite";
+  var currentForm = "powder";
+
+  /* FLIP: measure -> apply change -> measure again -> animate the delta
+     away, so the slot appears to slide (and soft-focus in) from its old
+     position to its new one instead of snapping. */
+  function flipSlot(slotEl, applyChange) {
+    var oldRect = slotEl.getBoundingClientRect();
+    applyChange();
+    requestAnimationFrame(function () {
+      var newRect = slotEl.getBoundingClientRect();
+      var dx = oldRect.left - newRect.left;
+      var dy = oldRect.top - newRect.top;
+      slotEl.style.transition = "none";
+      slotEl.style.opacity = "0";
+      slotEl.style.filter = "blur(10px)";
+      slotEl.style.transform = "translate(" + dx + "px," + dy + "px)";
+      slotEl.getBoundingClientRect(); /* force reflow */
+      requestAnimationFrame(function () {
+        slotEl.style.transition = "transform 550ms " + "cubic-bezier(0.16,1,0.3,1)" + ", opacity 420ms ease, filter 420ms ease";
+        slotEl.style.opacity = "1";
+        slotEl.style.filter = "blur(0px)";
+        slotEl.style.transform = "translate(0px,0px)";
+      });
+    });
+  }
+
+  function switchProduct(id) {
+    if (!PRODUCTS[id] || id === currentProductId) return;
+    var product = PRODUCTS[id];
+    currentProductId = id;
+    currentForm = "powder";
+
+    tabs.forEach(function (t) {
+      var active = t.getAttribute("data-tab") === id;
+      t.classList.toggle("active", active);
+      t.setAttribute("aria-selected", String(active));
+    });
+
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      productCard.setAttribute("data-side", product.side);
+      visualSlot.className = "product-visual " + product.visualClass;
+      visualSlot.innerHTML = renderVisualHTML(product, currentForm);
+      bodySlot.innerHTML = renderBodyHTML(product, currentForm);
+      replayStagger($(".stagger-group", bodySlot));
+      return;
+    }
+
+    productCard.setAttribute("data-side", product.side);
+    flipSlot(visualSlot, function () {
+      visualSlot.className = "product-visual " + product.visualClass;
+      visualSlot.innerHTML = renderVisualHTML(product, currentForm);
+    });
+    flipSlot(bodySlot, function () {
+      bodySlot.innerHTML = renderBodyHTML(product, currentForm);
+      replayStagger($(".stagger-group", bodySlot));
+    });
+  }
+
   tabs.forEach(function (t) {
-    t.addEventListener("click", function () { activateTab(t.getAttribute("data-tab")); });
+    t.addEventListener("click", function () { switchProduct(t.getAttribute("data-tab")); });
   });
 
   $$("[data-tablink]").forEach(function (link) {
     link.addEventListener("click", function () {
-      activateTab(link.getAttribute("data-tablink"));
+      switchProduct(link.getAttribute("data-tablink"));
     });
   });
 
-  /* ---------------- Powder / Granule toggle per product ---------------- */
-  $$(".form-toggle").forEach(function (toggle) {
-    var product = toggle.getAttribute("data-formtoggle");
-    var buttons = $$("button", toggle);
-    buttons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var form = btn.getAttribute("data-form");
-        buttons.forEach(function (b) { b.classList.toggle("active", b === btn); });
-        $$('[data-formnote^="' + product + '-"]').forEach(function (note) {
-          note.classList.toggle("active", note.getAttribute("data-formnote") === product + "-" + form);
-        });
-      });
+  /* Nested powder/granule toggle — simple content swap, no FLIP */
+  visualSlot.addEventListener("click", function (e) {
+    var btn = e.target.closest(".form-toggle button");
+    if (!btn) return;
+    var form = btn.getAttribute("data-form");
+    if (form === currentForm) return;
+    currentForm = form;
+    $$(".form-toggle button", visualSlot).forEach(function (b) {
+      b.classList.toggle("active", b.getAttribute("data-form") === form);
     });
+    bodySlot.innerHTML = renderBodyHTML(PRODUCTS[currentProductId], form);
+    replayStagger($(".stagger-group", bodySlot));
   });
 
   /* ---------------- FAQ accordion ---------------- */
