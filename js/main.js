@@ -7,13 +7,21 @@
   /* ---------------- Header scroll state ---------------- */
   var header = $("#siteHeader");
   var backToTop = $("#backToTop");
+  var scrollProgress = $("#scrollProgress");
   function toggleBackToTop() {
     backToTop.classList.toggle("show", window.scrollY > 600);
+  }
+  function updateScrollProgress() {
+    if (!scrollProgress) return;
+    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    scrollProgress.style.width = pct + "%";
   }
   var onScroll = function () {
     if (window.scrollY > 12) header.classList.add("scrolled");
     else header.classList.remove("scrolled");
     toggleBackToTop();
+    updateScrollProgress();
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -44,8 +52,18 @@
       t.setAttribute("aria-selected", String(active));
     });
     panels.forEach(function (p) {
-      p.classList.toggle("active", p.getAttribute("data-panel") === name);
+      var active = p.getAttribute("data-panel") === name;
+      p.classList.toggle("active", active);
+      if (active) replayStagger($(".stagger-group", p));
     });
+  }
+
+  function replayStagger(el) {
+    if (!el) return;
+    el.classList.remove("in-view");
+    // eslint-disable-next-line no-unused-expressions
+    el.offsetWidth; /* force reflow so the transition replays */
+    el.classList.add("in-view");
   }
 
   tabs.forEach(function (t) {
@@ -91,7 +109,7 @@
   });
 
   /* ---------------- Scroll reveal ---------------- */
-  var revealEls = $$(".reveal");
+  var revealEls = $$(".reveal, .stagger-group");
   if ("IntersectionObserver" in window && revealEls.length) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -104,6 +122,25 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("in-view"); });
+  }
+
+  /* ---------------- Scrollspy: highlight nav link for section in view ---------------- */
+  var navAnchors = $$('.nav-links a[href^="#"]');
+  var spySections = navAnchors
+    .map(function (a) { return document.querySelector(a.getAttribute("href")); })
+    .filter(Boolean);
+
+  if ("IntersectionObserver" in window && spySections.length) {
+    var spyIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = "#" + entry.target.id;
+        navAnchors.forEach(function (a) {
+          a.classList.toggle("active", a.getAttribute("href") === id);
+        });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    spySections.forEach(function (s) { spyIO.observe(s); });
   }
 
   /* ---------------- Animated counters ---------------- */
