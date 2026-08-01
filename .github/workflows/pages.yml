@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/agri-manghalla-website-r9l0up
   workflow_dispatch:
 
 permissions:
