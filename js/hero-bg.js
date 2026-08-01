@@ -73,12 +73,12 @@
     "  col = mix(col, u_colors[0], smoothstep(-0.2, 0.5, n1) * 0.85);",
     "  col = mix(col, u_colors[1], smoothstep(-0.1, 0.6, n2) * 0.7);",
     "  col = mix(col, u_colors[2], smoothstep(-0.3, 0.4, n3) * 0.6);",
-    "  col = mix(col, u_colors[3], smoothstep(0.0, 0.7, n1 * n2) * 0.5);",
+    "  col = mix(col, u_colors[3], smoothstep(0.0, 0.7, n1 * n2) * 0.65);",
     "",
-    "  float glow = smoothstep(0.8, 0.0, dist) * 0.3;",
-    "  col += u_colors[1] * glow;",
+    "  float glow = smoothstep(0.8, 0.0, dist) * 0.35;",
+    "  col += u_colors[3] * glow;",
     "",
-    "  col = mix(col * 0.2, col, vignette);",
+    "  col = mix(col * 0.58, col, vignette);",
     "",
     "  float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453 + u_time);",
     "  col += (grain - 0.5) * u_grain * 0.1;",
@@ -134,13 +134,13 @@
     ];
   }
 
-  // Brand palette: Mangghala green + gold, tuned so gold reads as a sparse
-  // highlight (it only appears where two noise fields overlap) rather than
-  // washing out the greens.
-  var BG = hexToRgb("#052B1A");
-  var COLORS = ["#17D37D", "#12A260", "#0B653C", "#FCC00C"].map(hexToRgb);
+  // Brand palette: Mangghala green + gold, kept warm and mid-toned on
+  // purpose (never near-black) so the hero reads as approachable rather
+  // than moody. Gold is weighted up a little for extra warmth.
+  var BG = hexToRgb("#0B4A2E");
+  var COLORS = ["#22C77F", "#12A260", "#0E7A49", "#FCC00C"].map(hexToRgb);
   var SPEED = 1.1;
-  var GRAIN = 0.22;
+  var GRAIN = 0.18;
 
   var flatColors = new Float32Array(12);
   COLORS.forEach(function (c, i) {

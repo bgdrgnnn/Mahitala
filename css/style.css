@@ -236,6 +236,10 @@ textarea:focus-visible,
   box-shadow: 0 1px 0 var(--color-border), var(--shadow-sm);
 }
 
+/* Header sits directly over the dark hero until scrolled, so its text
+   defaults to light and switches to dark once the white .scrolled
+   background appears — otherwise the un-scrolled state has near-zero
+   contrast (dark-on-dark). */
 .brand {
   display: flex;
   align-items: center;
@@ -243,8 +247,11 @@ textarea:focus-visible,
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 17px;
-  color: var(--color-primary-dark);
+  color: #fff;
+  transition: color 250ms var(--ease-standard);
 }
+
+.site-header.scrolled .brand { color: var(--color-primary-dark); }
 
 .brand-mark {
   display: flex;
@@ -259,9 +266,12 @@ textarea:focus-visible,
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 11px;
-  color: var(--color-muted-foreground);
+  color: rgba(255,255,255,0.7);
   letter-spacing: 0.02em;
+  transition: color 250ms var(--ease-standard);
 }
+
+.site-header.scrolled .brand-text small { color: var(--color-muted-foreground); }
 
 .nav-desktop {
   display: flex;
@@ -279,10 +289,15 @@ textarea:focus-visible,
 .nav-links a {
   font-size: 15px;
   font-weight: 500;
-  color: var(--color-foreground);
+  color: rgba(255,255,255,0.85);
   position: relative;
   padding-block: 4px;
+  transition: color 250ms var(--ease-standard);
 }
+
+.site-header.scrolled .nav-links a { color: var(--color-foreground); }
+
+.nav-links a.active { color: var(--color-accent); }
 
 .nav-links a::after {
   content: "";
@@ -295,7 +310,9 @@ textarea:focus-visible,
   transition: transform 200ms var(--ease-standard);
 }
 .nav-links a:hover::after { transform: scaleX(1); }
-.nav-links a:hover { color: var(--color-primary); }
+.nav-links a:hover { color: var(--color-accent); }
+.site-header.scrolled .nav-links a:hover { color: var(--color-primary); }
+.nav-links a.active::after { transform: scaleX(1); }
 
 .header-actions { display: flex; align-items: center; gap: var(--space-3); }
 
@@ -357,11 +374,12 @@ textarea:focus-visible,
 
 .hero::before {
   /* Static fallback background — shown until/unless the canvas takes over,
-     and permanently for reduced-motion or no-WebGL visitors. */
+     and permanently for reduced-motion or no-WebGL visitors. Warm green-gold,
+     never near-black. */
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, var(--color-primary-dark) 0%, #052B1A 100%);
+  background: linear-gradient(155deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   z-index: -2;
 }
 
@@ -384,20 +402,13 @@ textarea:focus-visible,
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(100deg, rgba(3, 20, 13, 0.82) 0%, rgba(3, 20, 13, 0.55) 42%, rgba(3, 20, 13, 0.12) 68%, transparent 85%);
+  background: linear-gradient(100deg, rgba(8, 73, 44, 0.78) 0%, rgba(8, 73, 44, 0.48) 42%, rgba(8, 73, 44, 0.1) 68%, transparent 85%);
 }
 
 .hero-grid {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-16);
-  align-items: center;
-}
-
-@media (max-width: 960px) {
-  .hero-grid { grid-template-columns: 1fr; gap: var(--space-12); }
+  max-width: 680px;
 }
 
 .hero-eyebrow {
@@ -460,55 +471,6 @@ textarea:focus-visible,
 }
 .hero-stat .num span.suffix { color: var(--color-accent-light); font-size: 22px; }
 .hero-stat .label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
-
-/* Hero visual */
-.hero-visual {
-  position: relative;
-  aspect-ratio: 1 / 1;
-  max-width: 480px;
-  margin-inline: auto;
-}
-
-
-.hero-card {
-  position: absolute;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.16);
-  border-radius: var(--radius-md);
-  padding: var(--space-4) var(--space-5);
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  min-width: 190px;
-}
-
-.hero-card .icon {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  background: rgba(252, 192, 12,0.22);
-  color: var(--color-accent-light);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.hero-card .icon svg { width: 20px; height: 20px; }
-.hero-card strong { display: block; font-size: 14px; color: #fff; }
-.hero-card span { font-size: 12px; color: rgba(255,255,255,0.6); }
-
-.hero-card--1 { top: 6%; left: -6%; }
-.hero-card--2 { bottom: 10%; right: -8%; }
-.hero-card--3 { bottom: -4%; left: 12%; }
-
-@media (max-width: 960px) {
-  .hero-card--1 { left: -2%; }
-  .hero-card--2 { right: -2%; }
-  .hero-card--3 { display: none; }
-}
-
-@media (max-width: 640px) {
-  .hero-card { min-width: 150px; padding: var(--space-3) var(--space-4); }
-}
 
 /* ==========================================================================
    Trust strip
@@ -1117,9 +1079,48 @@ textarea:focus-visible,
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-standard), transform 700ms var(--ease-standard); }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 
+/* Stagger utility — direct children cascade in one after another instead
+   of the whole group fading as a single block (JS toggles .in-view on
+   the parent; same IntersectionObserver as .reveal). */
+.stagger-group > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 550ms var(--ease-standard), transform 550ms var(--ease-standard);
+}
+.stagger-group.in-view > * { opacity: 1; transform: translateY(0); }
+.stagger-group.in-view > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-group.in-view > *:nth-child(2) { transition-delay: 70ms; }
+.stagger-group.in-view > *:nth-child(3) { transition-delay: 140ms; }
+.stagger-group.in-view > *:nth-child(4) { transition-delay: 210ms; }
+.stagger-group.in-view > *:nth-child(5) { transition-delay: 280ms; }
+.stagger-group.in-view > *:nth-child(6) { transition-delay: 350ms; }
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
+  .stagger-group > * { opacity: 1; transform: none; transition: none; }
 }
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  z-index: 110;
+  transition: width 120ms linear;
+}
+
+/* Tactile press feedback */
+.btn:active { transform: scale(0.96); }
+
+/* Gentle attention pulse on the WhatsApp launcher */
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(252, 192, 12, 0.45); }
+  70% { box-shadow: 0 0 0 12px rgba(252, 192, 12, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(252, 192, 12, 0); }
+}
+.wa-float .icon-circle { animation: wa-pulse 2.4s ease-out infinite; }
 
 /* WhatsApp float button */
 .wa-float {
