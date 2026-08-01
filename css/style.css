@@ -533,11 +533,15 @@ textarea:focus-visible,
 }
 
 .product-panel { display: none; }
-.product-panel.active { display: block; animation: fadeUp 420ms var(--ease-standard); }
+.product-panel.active { display: block; animation: fadeUp 480ms var(--ease-standard); }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(14px); filter: blur(8px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-panel.active { animation: none; }
 }
 
 .product-card {
@@ -575,6 +579,19 @@ textarea:focus-visible,
   background-image: radial-gradient(rgba(255,255,255,0.16) 1.4px, transparent 1.4px);
   background-size: 14px 14px;
   mix-blend-mode: overlay;
+}
+
+.product-visual .visual-glow {
+  position: absolute;
+  inset: -25%;
+  background: radial-gradient(circle at 28% 22%, rgba(255,255,255,0.4), transparent 60%);
+  pointer-events: none;
+  animation: glow-pulse 5s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.06); }
 }
 
 .product-visual .formula-badge {
@@ -633,7 +650,7 @@ textarea:focus-visible,
   margin-bottom: var(--space-6);
   border-left: 3px solid var(--color-accent);
 }
-.product-body .form-note.active { display: block; }
+.product-body .form-note.active { display: block; animation: fadeUp 320ms var(--ease-standard); }
 .product-body .form-note strong { color: var(--color-primary-dark); }
 
 .benefit-list {
@@ -1085,9 +1102,10 @@ textarea:focus-visible,
 .stagger-group > * {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 550ms var(--ease-standard), transform 550ms var(--ease-standard);
+  filter: blur(6px);
+  transition: opacity 550ms var(--ease-standard), transform 550ms var(--ease-standard), filter 550ms var(--ease-standard);
 }
-.stagger-group.in-view > * { opacity: 1; transform: translateY(0); }
+.stagger-group.in-view > * { opacity: 1; transform: translateY(0); filter: blur(0px); }
 .stagger-group.in-view > *:nth-child(1) { transition-delay: 0ms; }
 .stagger-group.in-view > *:nth-child(2) { transition-delay: 70ms; }
 .stagger-group.in-view > *:nth-child(3) { transition-delay: 140ms; }
@@ -1097,7 +1115,7 @@ textarea:focus-visible,
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .stagger-group > * { opacity: 1; transform: none; transition: none; }
+  .stagger-group > * { opacity: 1; transform: none; filter: none; transition: none; }
 }
 
 /* Scroll progress bar */
