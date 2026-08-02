@@ -537,17 +537,17 @@ textarea:focus-visible,
   to { opacity: 1; transform: translateY(0); filter: blur(0px); }
 }
 
-/* Product showcase — the visual and body panes are two persistent slots
-   whose left/right order swaps per product (data-side), with the swap
-   itself animated in JS via FLIP (transform/opacity/filter set inline). */
+/* Product showcase — full-bleed like the hero (breaks out of .container to
+   span the viewport edge-to-edge). Visual and body are two persistent
+   slots; switching products fades/blurs their content in place, while the
+   powder/granule toggle nested inside slides its note left/right. */
 .product-card {
   display: flex;
   align-items: stretch;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
 }
 
 @media (max-width: 860px) {
@@ -558,29 +558,22 @@ textarea:focus-visible,
   position: relative;
   order: 1;
   flex: 0 0 42%;
-  padding: var(--space-8);
+  padding-block: var(--space-16);
+  padding-right: var(--space-8);
+  padding-left: max(var(--space-8), calc((100vw - 1280px) / 2 + var(--space-8)));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: #fff;
-  min-height: 340px;
-  will-change: transform;
+  min-height: 420px;
 }
 
 .product-body {
   order: 2;
   flex: 1 1 auto;
-  will-change: transform;
-}
-
-.product-card[data-side="right"] .product-visual { order: 2; }
-.product-card[data-side="right"] .product-body { order: 1; }
-
-@media (max-width: 860px) {
-  .product-visual,
-  .product-card[data-side="right"] .product-visual { order: 1; flex-basis: auto; }
-  .product-body,
-  .product-card[data-side="right"] .product-body { order: 2; }
+  padding-block: var(--space-8);
+  padding-left: var(--space-8);
+  padding-right: max(var(--space-8), calc((100vw - 1280px) / 2 + var(--space-8)));
 }
 
 .product-visual.dolomite { background: linear-gradient(150deg, #57534E, #292524); }
@@ -648,10 +641,6 @@ textarea:focus-visible,
 .form-toggle button.active {
   background: #fff;
   color: var(--color-primary-dark);
-}
-
-.product-body {
-  padding: var(--space-8);
 }
 
 .product-body .form-note {

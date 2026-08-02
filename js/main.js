@@ -53,7 +53,6 @@
 
   var PRODUCTS = {
     dolomite: {
-      side: "left",
       visualClass: "dolomite",
       formula: "CaMg(CO₃)₂",
       title: "Dolomite",
@@ -72,7 +71,6 @@
       ctaLabel: "Tanya Harga Dolomite"
     },
     phosphate: {
-      side: "right",
       visualClass: "phosphate",
       formula: "Ca₃(PO₄)₂",
       title: "Fosfat Alam",
@@ -91,7 +89,6 @@
       ctaLabel: "Tanya Harga Fosfat"
     },
     palmash: {
-      side: "left",
       visualClass: "palmash",
       formula: "K₂O Tinggi",
       title: "Abu Tandan Kosong Sawit",
@@ -127,6 +124,17 @@
     );
   }
 
+  function renderFormNoteHTML(product, form) {
+    return (
+      '<div class="form-note' + (form === "powder" ? " active" : "") + '">' +
+        "<strong>Bentuk Powder:</strong> " + product.forms.powder +
+      "</div>" +
+      '<div class="form-note' + (form === "granule" ? " active" : "") + '">' +
+        "<strong>Bentuk Granule:</strong> " + product.forms.granule +
+      "</div>"
+    );
+  }
+
   function renderBodyHTML(product, form) {
     var benefitsHTML = product.benefits.map(function (b) {
       return '<li><span class="tick">' + TICK_SVG + "</span><div><strong>" + b[0] + "</strong><p>" + b[1] + "</p></div></li>";
@@ -136,12 +144,7 @@
     }).join("");
 
     return (
-      '<div class="form-note' + (form === "powder" ? " active" : "") + '">' +
-        "<strong>Bentuk Powder:</strong> " + product.forms.powder +
-      "</div>" +
-      '<div class="form-note' + (form === "granule" ? " active" : "") + '">' +
-        "<strong>Bentuk Granule:</strong> " + product.forms.granule +
-      "</div>" +
+      '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form) + "</div>" +
       '<ul class="benefit-list stagger-group">' + benefitsHTML + "</ul>" +
       '<div class="product-foot">' +
         '<div class="spec-pills">' + tagsHTML + "</div>" +
@@ -151,33 +154,43 @@
   }
 
   var tabs = $$(".product-tab");
-  var productCard = $("#productCard");
   var visualSlot = $("#productVisualSlot");
   var bodySlot = $("#productBodySlot");
   var currentProductId = "dolomite";
   var currentForm = "powder";
+  var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* FLIP: measure -> apply change -> measure again -> animate the delta
-     away, so the slot appears to slide (and soft-focus in) from its old
-     position to its new one instead of snapping. */
-  function flipSlot(slotEl, applyChange) {
-    var oldRect = slotEl.getBoundingClientRect();
+  /* Product switch: a plain soft-focus fade in place — no position change. */
+  function fadeSlot(slotEl, applyChange) {
+    if (prefersReducedMotion) { applyChange(); return; }
     applyChange();
+    slotEl.style.transition = "none";
+    slotEl.style.opacity = "0";
+    slotEl.style.filter = "blur(10px)";
+    slotEl.getBoundingClientRect(); /* force reflow */
     requestAnimationFrame(function () {
-      var newRect = slotEl.getBoundingClientRect();
-      var dx = oldRect.left - newRect.left;
-      var dy = oldRect.top - newRect.top;
-      slotEl.style.transition = "none";
-      slotEl.style.opacity = "0";
-      slotEl.style.filter = "blur(10px)";
-      slotEl.style.transform = "translate(" + dx + "px," + dy + "px)";
-      slotEl.getBoundingClientRect(); /* force reflow */
-      requestAnimationFrame(function () {
-        slotEl.style.transition = "transform 550ms " + "cubic-bezier(0.16,1,0.3,1)" + ", opacity 420ms ease, filter 420ms ease";
-        slotEl.style.opacity = "1";
-        slotEl.style.filter = "blur(0px)";
-        slotEl.style.transform = "translate(0px,0px)";
-      });
+      slotEl.style.transition = "opacity 420ms ease, filter 420ms ease";
+      slotEl.style.opacity = "1";
+      slotEl.style.filter = "blur(0px)";
+    });
+  }
+
+  /* Powder/granule toggle: directional slide — from the right when picking
+     Granule (the right-hand button), from the left when picking Powder. */
+  function slideNote(wrapEl, dir, applyChange) {
+    if (prefersReducedMotion) { applyChange(); return; }
+    applyChange();
+    var offset = dir === "right" ? 28 : -28;
+    wrapEl.style.transition = "none";
+    wrapEl.style.opacity = "0";
+    wrapEl.style.filter = "blur(6px)";
+    wrapEl.style.transform = "translateX(" + offset + "px)";
+    wrapEl.getBoundingClientRect(); /* force reflow */
+    requestAnimationFrame(function () {
+      wrapEl.style.transition = "transform 420ms cubic-bezier(0.16,1,0.3,1), opacity 350ms ease, filter 350ms ease";
+      wrapEl.style.opacity = "1";
+      wrapEl.style.filter = "blur(0px)";
+      wrapEl.style.transform = "translateX(0px)";
     });
   }
 
@@ -193,21 +206,11 @@
       t.setAttribute("aria-selected", String(active));
     });
 
-    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      productCard.setAttribute("data-side", product.side);
-      visualSlot.className = "product-visual " + product.visualClass;
-      visualSlot.innerHTML = renderVisualHTML(product, currentForm);
-      bodySlot.innerHTML = renderBodyHTML(product, currentForm);
-      replayStagger($(".stagger-group", bodySlot));
-      return;
-    }
-
-    productCard.setAttribute("data-side", product.side);
-    flipSlot(visualSlot, function () {
+    fadeSlot(visualSlot, function () {
       visualSlot.className = "product-visual " + product.visualClass;
       visualSlot.innerHTML = renderVisualHTML(product, currentForm);
     });
-    flipSlot(bodySlot, function () {
+    fadeSlot(bodySlot, function () {
       bodySlot.innerHTML = renderBodyHTML(product, currentForm);
       replayStagger($(".stagger-group", bodySlot));
     });
@@ -223,7 +226,8 @@
     });
   });
 
-  /* Nested powder/granule toggle — simple content swap, no FLIP */
+  /* Nested powder/granule toggle — only the note slides; benefits/tags/CTA
+     stay put since their content doesn't change. */
   visualSlot.addEventListener("click", function (e) {
     var btn = e.target.closest(".form-toggle button");
     if (!btn) return;
@@ -233,8 +237,11 @@
     $$(".form-toggle button", visualSlot).forEach(function (b) {
       b.classList.toggle("active", b.getAttribute("data-form") === form);
     });
-    bodySlot.innerHTML = renderBodyHTML(PRODUCTS[currentProductId], form);
-    replayStagger($(".stagger-group", bodySlot));
+    var wrap = $("#formNoteWrap", bodySlot);
+    var dir = form === "granule" ? "right" : "left";
+    slideNote(wrap, dir, function () {
+      wrap.innerHTML = renderFormNoteHTML(PRODUCTS[currentProductId], form);
+    });
   });
 
   /* ---------------- FAQ accordion ---------------- */
