@@ -54,7 +54,6 @@
   var PRODUCTS = {
     dolomite: {
       visualClass: "dolomite",
-      side: "left",
       formula: "CaMg(CO₃)₂",
       title: "Dolomite",
       tagline: "Kapur pertanian untuk menetralkan keasaman tanah dan memasok Kalsium &amp; Magnesium.",
@@ -73,7 +72,6 @@
     },
     phosphate: {
       visualClass: "phosphate",
-      side: "right",
       formula: "Ca₃(PO₄)₂",
       title: "Fosfat Alam",
       tagline: "Sumber fosfor alami untuk pertumbuhan akar, pembungaan, dan pembuahan.",
@@ -92,7 +90,6 @@
     },
     palmash: {
       visualClass: "palmash",
-      side: "left",
       formula: "K₂O Tinggi",
       title: "Abu Tandan Kosong Sawit",
       tagline: "Pupuk kalium alami hasil olahan limbah tandan kosong kelapa sawit (janjang).",
@@ -168,11 +165,13 @@
 
   function openProductModal() {
     productModal.classList.add("is-open");
+    document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
   }
 
   function closeProductModal() {
     productModal.classList.remove("is-open");
+    document.documentElement.style.overflow = "";
     document.body.style.overflow = "";
     currentProductId = null;
     tabs.forEach(function (t) {
@@ -189,9 +188,8 @@
     if (e.key === "Escape" && productModal.classList.contains("is-open")) closeProductModal();
   });
 
-  /* Product switch: visual and body slide in from opposite edges (kanan-kiri),
-     matching the side the product's content is anchored to — so the swap in
-     product.side (left/right) reads as the image/text trading places. */
+  /* Visual and body slide in from opposite edges (kanan-kiri) so they read
+     as trading places whenever the layout's side changes. */
   function slideProductSlot(slotEl, dir, applyChange) {
     if (prefersReducedMotion) { applyChange(); return; }
     applyChange();
@@ -209,22 +207,22 @@
     });
   }
 
-  /* Powder/granule toggle: directional slide — from the right when picking
-     Granule (the right-hand button), from the left when picking Powder. */
-  function slideNote(wrapEl, dir, applyChange) {
-    if (prefersReducedMotion) { applyChange(); return; }
-    applyChange();
-    var offset = dir === "right" ? 28 : -28;
-    wrapEl.style.transition = "none";
-    wrapEl.style.opacity = "0";
-    wrapEl.style.filter = "blur(6px)";
-    wrapEl.style.transform = "translateX(" + offset + "px)";
-    wrapEl.getBoundingClientRect(); /* force reflow */
-    requestAnimationFrame(function () {
-      wrapEl.style.transition = "transform 420ms cubic-bezier(0.16,1,0.3,1), opacity 350ms ease, filter 350ms ease";
-      wrapEl.style.opacity = "1";
-      wrapEl.style.filter = "blur(0px)";
-      wrapEl.style.transform = "translateX(0px)";
+  /* Powder always anchors the image to the left, Granule to the right —
+     the same rule for every product — so toggling powder/granule swaps
+     the whole visual/body layout, not just the note text. */
+  function applyProductView(product, form) {
+    var side = form === "granule" ? "right" : "left";
+    productCard.setAttribute("data-side", side);
+    var visualDir = side === "right" ? "right" : "left";
+    var bodyDir = side === "right" ? "left" : "right";
+
+    slideProductSlot(visualSlot, visualDir, function () {
+      visualSlot.className = "product-visual " + product.visualClass;
+      visualSlot.innerHTML = renderVisualHTML(product, form);
+    });
+    slideProductSlot(bodySlot, bodyDir, function () {
+      bodySlot.innerHTML = renderBodyHTML(product, form);
+      replayStagger($(".stagger-group", bodySlot));
     });
   }
 
@@ -235,7 +233,6 @@
 
     var wasOpen = productModal.classList.contains("is-open");
     var product = PRODUCTS[id];
-    var side = product.side === "right" ? "right" : "left";
     currentProductId = id;
     currentForm = "powder";
 
@@ -245,22 +242,8 @@
       t.setAttribute("aria-selected", String(active));
     });
 
-    productCard.setAttribute("data-side", side);
-    /* visual and body enter from the outer edge of the side they land on,
-       so the two slots read as trading places between products. */
-    var visualDir = side === "right" ? "right" : "left";
-    var bodyDir = side === "right" ? "left" : "right";
-
     if (!wasOpen) openProductModal();
-
-    slideProductSlot(visualSlot, visualDir, function () {
-      visualSlot.className = "product-visual " + product.visualClass;
-      visualSlot.innerHTML = renderVisualHTML(product, currentForm);
-    });
-    slideProductSlot(bodySlot, bodyDir, function () {
-      bodySlot.innerHTML = renderBodyHTML(product, currentForm);
-      replayStagger($(".stagger-group", bodySlot));
-    });
+    applyProductView(product, currentForm);
   }
 
   tabs.forEach(function (t) {
@@ -290,22 +273,15 @@
     });
   });
 
-  /* Nested powder/granule toggle — only the note slides; benefits/tags/CTA
-     stay put since their content doesn't change. */
+  /* Nested powder/granule toggle: powder keeps the image on the left,
+     granule moves it to the right — the whole visual/body layout swaps. */
   visualSlot.addEventListener("click", function (e) {
     var btn = e.target.closest(".form-toggle button");
     if (!btn) return;
     var form = btn.getAttribute("data-form");
     if (form === currentForm) return;
     currentForm = form;
-    $$(".form-toggle button", visualSlot).forEach(function (b) {
-      b.classList.toggle("active", b.getAttribute("data-form") === form);
-    });
-    var wrap = $("#formNoteWrap", bodySlot);
-    var dir = form === "granule" ? "right" : "left";
-    slideNote(wrap, dir, function () {
-      wrap.innerHTML = renderFormNoteHTML(PRODUCTS[currentProductId], form);
-    });
+    applyProductView(PRODUCTS[currentProductId], form);
   });
 
   /* ---------------- FAQ accordion ---------------- */

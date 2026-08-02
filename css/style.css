@@ -606,8 +606,10 @@ textarea:focus-visible,
 
 /* Product showcase — opens as a modal: dark, blurred backdrop with the
    card centered and scaled in. Visual and body are two persistent slots;
-   switching products fades/blurs their content in place, while the
-   powder/granule toggle nested inside slides its note left/right. */
+   powder always anchors the image left, granule anchors it right, so
+   switching products or toggling powder/granule both slide the slots
+   in from opposite edges to trade places (data-side on .product-card
+   drives the flex order). */
 .product-modal {
   position: fixed;
   inset: 0;
@@ -633,6 +635,8 @@ textarea:focus-visible,
   max-height: 88vh;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: var(--shadow-lg);
@@ -825,7 +829,7 @@ textarea:focus-visible,
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: var(--space-12);
-  align-items: center;
+  align-items: start;
 }
 @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: var(--space-8); } }
 
@@ -887,37 +891,6 @@ textarea:focus-visible,
   border-radius: 50%;
   background: var(--color-accent);
 }
-
-/* ==========================================================================
-   Stats band
-   ========================================================================== */
-
-.stats-band {
-  background: var(--color-primary-dark);
-  color: #fff;
-  border-radius: var(--radius-lg);
-  padding: var(--space-12) var(--space-8);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-8);
-  position: relative;
-  overflow: hidden;
-}
-.stats-band::before {
-  content: "";
-  position: absolute; inset: 0;
-  background: radial-gradient(700px 300px at 90% 0%, rgba(252, 192, 12,0.25), transparent 60%);
-}
-@media (max-width: 760px) { .stats-band { grid-template-columns: repeat(2, 1fr); } }
-
-.stat-item { position: relative; text-align: center; }
-.stat-item .num {
-  font-family: var(--font-heading);
-  font-size: clamp(30px, 4vw, 42px);
-  font-weight: 700;
-  color: var(--color-accent-light);
-}
-.stat-item .label { font-size: 13.5px; color: rgba(255,255,255,0.68); margin-top: 6px; }
 
 /* ==========================================================================
    FAQ
