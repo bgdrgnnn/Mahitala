@@ -318,6 +318,7 @@ textarea:focus-visible,
   background: rgba(8, 24, 16, 0.68);
   backdrop-filter: blur(16px) saturate(140%);
   box-shadow: var(--shadow-lg);
+  transition: opacity 220ms var(--ease-standard), transform 220ms var(--ease-standard);
 }
 
 .dock-item {
@@ -371,6 +372,23 @@ textarea:focus-visible,
   transform: translateX(-50%) translateY(0);
 }
 
+.dock-sep {
+  width: 1px;
+  align-self: stretch;
+  margin-block: 6px;
+  background: rgba(255,255,255,0.14);
+  flex-shrink: 0;
+}
+
+/* Hidden while the product modal is open, so it can't be clicked "through"
+   the modal (it also sits at a lower z-index, but hiding it outright is
+   simpler and avoids any doubt). */
+.dock-nav.is-hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+  pointer-events: none;
+}
+
 @media (max-width: 560px) {
   .dock-item { width: 40px; height: 40px; }
   .dock-item svg { width: 18px; height: 18px; }
@@ -378,7 +396,7 @@ textarea:focus-visible,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dock-item, .dock-label { transition: none; }
+  .dock-item, .dock-label, .dock-nav { transition: none; }
   .dock-item:hover, .dock-item:focus-visible,
   .dock-item:hover + .dock-item, .dock-item:has(+ .dock-item:hover) { transform: none; }
 }
@@ -660,6 +678,8 @@ textarea:focus-visible,
   backdrop-filter: blur(10px);
   opacity: 0;
   pointer-events: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transition: opacity 320ms var(--ease-standard);
 }
 .product-modal.is-open { opacity: 1; pointer-events: auto; }
@@ -670,11 +690,7 @@ textarea:focus-visible,
   align-items: stretch;
   width: 100%;
   max-width: 1080px;
-  max-height: 88vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
+  margin-block: auto;
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: var(--shadow-lg);
@@ -689,7 +705,7 @@ textarea:focus-visible,
 }
 
 @media (max-width: 860px) {
-  .product-card { flex-direction: column; max-height: 92vh; }
+  .product-card { flex-direction: column; }
 }
 
 .product-modal-close {
@@ -1147,27 +1163,6 @@ textarea:focus-visible,
   flex-wrap: wrap;
 }
 
-/* Back to top */
-.back-to-top {
-  position: fixed;
-  right: var(--space-6);
-  bottom: var(--space-6);
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-lg);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: all 260ms var(--ease-standard);
-  z-index: 60;
-}
-.back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
-.back-to-top:hover { background: var(--color-primary-light); }
-.back-to-top svg { width: 20px; height: 20px; }
-
 /* Reveal utility (JS toggles .in-view) */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-standard), transform 700ms var(--ease-standard); }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
@@ -1208,43 +1203,3 @@ textarea:focus-visible,
 /* Tactile press feedback */
 .btn:active { transform: scale(0.96); }
 
-/* Gentle attention pulse on the WhatsApp launcher */
-@keyframes wa-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(252, 192, 12, 0.45); }
-  70% { box-shadow: 0 0 0 12px rgba(252, 192, 12, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(252, 192, 12, 0); }
-}
-.wa-float .icon-circle { animation: wa-pulse 2.4s ease-out infinite; }
-
-/* WhatsApp float button */
-.wa-float {
-  position: fixed;
-  left: var(--space-6);
-  bottom: var(--space-6);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--color-primary-dark);
-  color: #fff;
-  padding: 13px 20px 13px 13px;
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-lg);
-  z-index: 60;
-  font-weight: 600;
-  font-size: 14px;
-}
-.wa-float .icon-circle {
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  color: var(--color-primary-dark);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.wa-float .icon-circle svg { width: 16px; height: 16px; }
-.wa-float:hover { background: var(--color-primary-light); }
-
-@media (max-width: 640px) {
-  .wa-float span.wa-label { display: none; }
-  .wa-float { padding: 13px; }
-}
