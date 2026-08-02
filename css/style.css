@@ -1010,21 +1010,26 @@ textarea:focus-visible,
    CTA band
    ========================================================================== */
 
-.cta-band {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  border-radius: var(--radius-lg);
-  padding: var(--space-16) var(--space-8);
-  text-align: center;
-  color: #fff;
+/* Full-bleed, same as FAQ — the gradient lives on the section itself so it
+   runs edge to edge instead of reading as a contained rounded card. */
+.cta-section {
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
 }
-.cta-band::before {
+.cta-section::before {
   content: "";
-  position: absolute; inset: 0;
-  background: radial-gradient(600px 260px at 15% 20%, rgba(252, 192, 12,0.28), transparent 60%);
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(700px 340px at 12% 8%, rgba(252, 192, 12, 0.3), transparent 60%);
+  pointer-events: none;
 }
-.cta-band > * { position: relative; z-index: 1; }
+.cta-section .container { position: relative; z-index: 1; }
+
+.cta-band {
+  text-align: center;
+  color: #fff;
+}
 .cta-band h2 { color: #fff; font-size: clamp(26px, 4vw, 36px); max-width: 22ch; margin-inline: auto; }
 .cta-band p { color: rgba(255,255,255,0.75); margin-top: var(--space-4); font-size: 16px; }
 .cta-band .hero-cta { justify-content: center; margin-top: var(--space-8); }
