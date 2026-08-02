@@ -26,21 +26,6 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---------------- Mobile nav ---------------- */
-  var navToggle = $("#navToggle");
-  var mobileNav = $("#mobileNav");
-  var setNavOpen = function (open) {
-    mobileNav.classList.toggle("open", open);
-    navToggle.setAttribute("aria-expanded", String(open));
-    document.body.style.overflow = open ? "hidden" : "";
-  };
-  navToggle.addEventListener("click", function () {
-    setNavOpen(!mobileNav.classList.contains("open"));
-  });
-  $$("#mobileNav a").forEach(function (a) {
-    a.addEventListener("click", function () { setNavOpen(false); });
-  });
-
   /* ---------------- Product showcase: swap-side switcher ---------------- */
   function replayStagger(el) {
     if (!el) return;
@@ -317,8 +302,8 @@
     revealEls.forEach(function (el) { el.classList.add("in-view"); });
   }
 
-  /* ---------------- Scrollspy: highlight nav link for section in view ---------------- */
-  var navAnchors = $$('.nav-links a[href^="#"]');
+  /* ---------------- Scrollspy: highlight dock item for section in view ---------------- */
+  var navAnchors = $$('.dock-item[href^="#"]');
   var spySections = navAnchors
     .map(function (a) { return document.querySelector(a.getAttribute("href")); })
     .filter(Boolean);
@@ -409,6 +394,36 @@
       $$(".field", form).forEach(function (f) { f.classList.remove("invalid"); });
       successBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
+  }
+
+  /* ---------------- Contact headline word rotator ---------------- */
+  var rotatorEl = $("#rotatorWord");
+  if (rotatorEl) {
+    var ROTATOR_WORDS = ["Pertanian", "Perkebunan", "Industri"];
+    var rotatorIndex = 0;
+    if (prefersReducedMotion) {
+      /* leave the initial word as-is, no cycling */
+    } else {
+      setInterval(function () {
+        rotatorIndex = (rotatorIndex + 1) % ROTATOR_WORDS.length;
+        rotatorEl.style.transition = "transform 360ms cubic-bezier(0.16,1,0.3,1), opacity 300ms ease, filter 300ms ease";
+        rotatorEl.style.transform = "translateY(-100%)";
+        rotatorEl.style.opacity = "0";
+        rotatorEl.style.filter = "blur(6px)";
+        setTimeout(function () {
+          rotatorEl.textContent = ROTATOR_WORDS[rotatorIndex];
+          rotatorEl.style.transition = "none";
+          rotatorEl.style.transform = "translateY(100%)";
+          rotatorEl.getBoundingClientRect(); /* force reflow */
+          requestAnimationFrame(function () {
+            rotatorEl.style.transition = "transform 420ms cubic-bezier(0.16,1,0.3,1), opacity 380ms ease, filter 380ms ease";
+            rotatorEl.style.transform = "translateY(0)";
+            rotatorEl.style.opacity = "1";
+            rotatorEl.style.filter = "blur(0px)";
+          });
+        }, 360);
+      }, 2600);
+    }
   }
 
   /* ---------------- Footer year ---------------- */

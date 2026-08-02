@@ -166,6 +166,19 @@ textarea:focus-visible,
   font-size: 17px;
 }
 
+/* Rotating-word headline (Kontak) — the last line cycles through words,
+   sliding/blurring out upward and the next sliding in from below. */
+.rotator-line {
+  display: block;
+  overflow: hidden;
+  line-height: 1.15;
+}
+.rotator-word {
+  display: inline-block;
+  color: var(--color-primary);
+  will-change: transform, opacity, filter;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -274,89 +287,94 @@ textarea:focus-visible,
 
 .site-header.scrolled .brand-text small { color: var(--color-muted-foreground); }
 
-.nav-desktop {
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-}
-
-.nav-links {
-  display: flex;
-  gap: var(--space-6);
-  list-style: none;
-  margin: 0; padding: 0;
-}
-
-.nav-links a {
-  font-size: 15px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-  position: relative;
-  padding-block: 4px;
-  transition: color 250ms var(--ease-standard);
-}
-
-.site-header.scrolled .nav-links a { color: var(--color-foreground); }
-
-.nav-links a.active { color: var(--color-accent); }
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: -2px;
-  height: 2px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 200ms var(--ease-standard);
-}
-.nav-links a:hover::after { transform: scaleX(1); }
-.nav-links a:hover { color: var(--color-accent); }
-.site-header.scrolled .nav-links a:hover { color: var(--color-primary); }
-.nav-links a.active::after { transform: scaleX(1); }
-
 .header-actions { display: flex; align-items: center; gap: var(--space-3); }
-
-.nav-toggle {
-  display: none;
-  width: 44px; height: 44px;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-sm);
-  background: var(--color-surface-alt);
-}
-.nav-toggle svg { width: 22px; height: 22px; }
-
-.mobile-nav {
-  position: fixed;
-  inset: 0;
-  z-index: 99;
-  background: var(--color-background);
-  padding: 100px var(--space-6) var(--space-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  transform: translateX(100%);
-  transition: transform 320ms var(--ease-standard);
-}
-.mobile-nav.open { transform: translateX(0); }
-.mobile-nav a {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 600;
-  padding-block: var(--space-3);
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-primary-dark);
-}
-.mobile-nav .btn { margin-top: var(--space-6); }
-
-@media (max-width: 960px) {
-  .nav-desktop { display: none; }
-  .nav-toggle { display: inline-flex; }
-}
 
 @media (max-width: 480px) {
   .header-cta { display: none; }
+}
+
+/* ==========================================================================
+   Floating dock nav
+   ========================================================================== */
+
+.dock-nav {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-5);
+  transform: translateX(-50%);
+  z-index: 115;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 10px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  border-radius: var(--radius-full);
+  background: rgba(8, 24, 16, 0.68);
+  backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: var(--shadow-lg);
+}
+
+.dock-item {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.07);
+  flex-shrink: 0;
+  transform: scale(1) translateY(0);
+  transition: transform 220ms var(--ease-standard), background 220ms var(--ease-standard), color 220ms var(--ease-standard);
+}
+.dock-item svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+.dock-item:hover,
+.dock-item:focus-visible {
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  transform: scale(1.35) translateY(-10px);
+}
+.dock-item:hover + .dock-item,
+.dock-item:has(+ .dock-item:hover) {
+  transform: scale(1.14) translateY(-5px);
+}
+
+.dock-item.active { background: var(--color-primary); color: #fff; }
+
+.dock-label {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  white-space: nowrap;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(8, 24, 16, 0.9);
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms var(--ease-standard), transform 180ms var(--ease-standard);
+}
+.dock-item:hover .dock-label,
+.dock-item:focus-visible .dock-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 560px) {
+  .dock-item { width: 40px; height: 40px; }
+  .dock-item svg { width: 18px; height: 18px; }
+  .dock-label { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dock-item, .dock-label { transition: none; }
+  .dock-item:hover, .dock-item:focus-visible,
+  .dock-item:hover + .dock-item, .dock-item:has(+ .dock-item:hover) { transform: none; }
 }
 
 /* ==========================================================================
