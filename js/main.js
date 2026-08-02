@@ -143,6 +143,17 @@
   var visualSlot = $("#productVisualSlot");
   var bodySlot = $("#productBodySlot");
   var dockNav = $("#dockNav");
+  if (dockNav) {
+    /* On touch devices a tapped link can stay visually focused since
+       there's no mouse to un-hover it — blur right after the tap so only
+       the scrollspy-driven .active class (not a stuck focus style)
+       indicates the current section. */
+    $$(".dock-item", dockNav).forEach(function (item) {
+      item.addEventListener("click", function () {
+        item.blur();
+      });
+    });
+  }
   var currentProductId = null;
   var currentForm = "powder";
   var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
