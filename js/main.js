@@ -54,6 +54,7 @@
   var PRODUCTS = {
     dolomite: {
       visualClass: "dolomite",
+      side: "left",
       formula: "CaMg(CO₃)₂",
       title: "Dolomite",
       tagline: "Kapur pertanian untuk menetralkan keasaman tanah dan memasok Kalsium &amp; Magnesium.",
@@ -72,6 +73,7 @@
     },
     phosphate: {
       visualClass: "phosphate",
+      side: "right",
       formula: "Ca₃(PO₄)₂",
       title: "Fosfat Alam",
       tagline: "Sumber fosfor alami untuk pertumbuhan akar, pembungaan, dan pembuahan.",
@@ -90,6 +92,7 @@
     },
     palmash: {
       visualClass: "palmash",
+      side: "left",
       formula: "K₂O Tinggi",
       title: "Abu Tandan Kosong Sawit",
       tagline: "Pupuk kalium alami hasil olahan limbah tandan kosong kelapa sawit (janjang).",
@@ -155,6 +158,7 @@
 
   var tabs = $$(".product-pick-card");
   var productModal = $("#productModal");
+  var productCard = $("#productCard");
   var productModalClose = $("#productModalClose");
   var visualSlot = $("#productVisualSlot");
   var bodySlot = $("#productBodySlot");
@@ -185,18 +189,23 @@
     if (e.key === "Escape" && productModal.classList.contains("is-open")) closeProductModal();
   });
 
-  /* Product switch: a plain soft-focus fade in place — no position change. */
-  function fadeSlot(slotEl, applyChange) {
+  /* Product switch: visual and body slide in from opposite edges (kanan-kiri),
+     matching the side the product's content is anchored to — so the swap in
+     product.side (left/right) reads as the image/text trading places. */
+  function slideProductSlot(slotEl, dir, applyChange) {
     if (prefersReducedMotion) { applyChange(); return; }
     applyChange();
+    var offset = dir === "right" ? 64 : -64;
     slotEl.style.transition = "none";
     slotEl.style.opacity = "0";
-    slotEl.style.filter = "blur(10px)";
+    slotEl.style.filter = "blur(8px)";
+    slotEl.style.transform = "translateX(" + offset + "px)";
     slotEl.getBoundingClientRect(); /* force reflow */
     requestAnimationFrame(function () {
-      slotEl.style.transition = "opacity 420ms ease, filter 420ms ease";
+      slotEl.style.transition = "transform 480ms cubic-bezier(0.16,1,0.3,1), opacity 400ms ease, filter 400ms ease";
       slotEl.style.opacity = "1";
       slotEl.style.filter = "blur(0px)";
+      slotEl.style.transform = "translateX(0px)";
     });
   }
 
@@ -226,6 +235,7 @@
 
     var wasOpen = productModal.classList.contains("is-open");
     var product = PRODUCTS[id];
+    var side = product.side === "right" ? "right" : "left";
     currentProductId = id;
     currentForm = "powder";
 
@@ -235,22 +245,19 @@
       t.setAttribute("aria-selected", String(active));
     });
 
-    if (!wasOpen) {
-      openProductModal();
-      /* the modal's own entrance animation carries the reveal — just
-         populate content, no need to also fade the slots. */
-      visualSlot.className = "product-visual " + product.visualClass;
-      visualSlot.innerHTML = renderVisualHTML(product, currentForm);
-      bodySlot.innerHTML = renderBodyHTML(product, currentForm);
-      replayStagger($(".stagger-group", bodySlot));
-      return;
-    }
+    productCard.setAttribute("data-side", side);
+    /* visual and body enter from the outer edge of the side they land on,
+       so the two slots read as trading places between products. */
+    var visualDir = side === "right" ? "right" : "left";
+    var bodyDir = side === "right" ? "left" : "right";
 
-    fadeSlot(visualSlot, function () {
+    if (!wasOpen) openProductModal();
+
+    slideProductSlot(visualSlot, visualDir, function () {
       visualSlot.className = "product-visual " + product.visualClass;
       visualSlot.innerHTML = renderVisualHTML(product, currentForm);
     });
-    fadeSlot(bodySlot, function () {
+    slideProductSlot(bodySlot, bodyDir, function () {
       bodySlot.innerHTML = renderBodyHTML(product, currentForm);
       replayStagger($(".stagger-group", bodySlot));
     });
