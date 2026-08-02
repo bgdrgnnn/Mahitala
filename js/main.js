@@ -122,13 +122,16 @@
     var tagsHTML = product.tags.map(function (t) {
       return '<span class="spec-pill">' + t + "</span>";
     }).join("");
+    var formLabel = form === "granule" ? "Granule" : "Powder";
+    var waText = encodeURIComponent("Halo, saya ingin bertanya harga " + product.title + " (" + formLabel + ").");
+    var waHref = "https://wa.me/6281234567890?text=" + waText;
 
     return (
       '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form) + "</div>" +
       '<ul class="benefit-list stagger-group">' + benefitsHTML + "</ul>" +
       '<div class="product-foot">' +
         '<div class="spec-pills">' + tagsHTML + "</div>" +
-        '<a href="#kontak" class="btn btn-dark btn-sm">' + product.ctaLabel + "</a>" +
+        '<a href="' + waHref + '" class="btn btn-dark btn-sm" target="_blank" rel="noopener">' + product.ctaLabel + "</a>" +
       "</div>"
     );
   }
