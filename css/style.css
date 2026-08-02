@@ -1,9 +1,9 @@
 /* ==========================================================================
-   PT Mahitala Lentera — Design Tokens & Base Styles
+   PT Mangghala Inatama Lentera — Design Tokens & Base Styles
    ========================================================================== */
 
 :root {
-  /* Color system — matched to the Mahitala Lentera logo */
+  /* Color system — matched to the Mangghala Inatama Lentera logo */
   --color-primary: #12A260;        /* logo green */
   --color-primary-light: #17D37D;
   --color-primary-dark: #08492C;
@@ -953,25 +953,6 @@ textarea:focus-visible,
 /* ==========================================================================
    FAQ
    ========================================================================== */
-
-/* Full-bleed circular green/gold gradient rising from the bottom — the top
-   of the section stays plain white/background, curving into color rather
-   than a diagonal wash across the whole section. */
-#faq {
-  position: relative;
-  overflow: hidden;
-  background: var(--color-background);
-}
-#faq::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(520px 400px at 18% 92%, rgba(252, 192, 12, 0.4), transparent 55%),
-    radial-gradient(150% 92% at 50% 108%, var(--color-primary) 0%, var(--color-primary-dark) 36%, var(--color-primary-dark) 55%, transparent 64%);
-  pointer-events: none;
-}
-#faq .container { position: relative; z-index: 1; }
 
 .faq-list { max-width: 760px; margin-inline: auto; display: flex; flex-direction: column; gap: var(--space-3); }
 
