@@ -58,7 +58,7 @@ html { scroll-behavior: smooth; }
    header's compact/scrolled height) instead of a JS-measured one, since
    the header's height itself changes mid-scroll (tall -> compact) and a
    height read at click time would go stale before the scroll settles. */
-#home, #produk, #tentang, #faq, #kontak { scroll-margin-top: 74px; }
+#home, #produk, #tentang, #faq, #kontak { scroll-margin-top: 58px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -769,12 +769,7 @@ textarea:focus-visible,
   inset: -25%;
   background: radial-gradient(circle at 28% 22%, rgba(255,255,255,0.4), transparent 60%);
   pointer-events: none;
-  animation: glow-pulse 5s ease-in-out infinite;
-}
-
-@keyframes glow-pulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(1.06); }
+  opacity: 0.4;
 }
 
 .product-visual .formula-badge {
