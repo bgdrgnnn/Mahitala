@@ -606,14 +606,29 @@ textarea:focus-visible,
 /* Product showcase — full-bleed like the hero (breaks out of .container to
    span the viewport edge-to-edge). Visual and body are two persistent
    slots; switching products fades/blurs their content in place, while the
-   powder/granule toggle nested inside slides its note left/right. */
+   powder/granule toggle nested inside slides its note left/right.
+   Hidden until a picker card is clicked (.is-open reveals it). */
 .product-card {
-  display: flex;
+  display: none;
   align-items: stretch;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   background: var(--color-surface);
+}
+
+.product-card.is-open {
+  display: flex;
+  animation: productCardOpen 480ms var(--ease-standard);
+}
+
+@keyframes productCardOpen {
+  from { opacity: 0; transform: translateY(18px); filter: blur(10px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card.is-open { animation: none; }
 }
 
 @media (max-width: 860px) {
