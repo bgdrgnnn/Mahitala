@@ -134,7 +134,7 @@
     ];
   }
 
-  // Brand palette: Mangghala green + gold, kept warm and mid-toned on
+  // Brand palette: Mahitala green + gold, kept warm and mid-toned on
   // purpose (never near-black) so the hero reads as approachable rather
   // than moody. Gold is weighted up a little for extra warmth.
   var BG = hexToRgb("#0B4A2E");
