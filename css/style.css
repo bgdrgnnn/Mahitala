@@ -502,34 +502,100 @@ textarea:focus-visible,
    Products
    ========================================================================== */
 
-.product-tabs {
-  display: flex;
-  gap: var(--space-3);
-  flex-wrap: wrap;
+/* Product picker — 3D tilt-on-hover cards (vanilla JS sets --tilt-x/--tilt-y/
+   --mx/--my via mousemove; CSS just consumes the custom properties). */
+.product-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
   margin-bottom: var(--space-12);
 }
 
-.product-tab {
+@media (max-width: 860px) {
+  .product-picker { grid-template-columns: 1fr; }
+}
+
+.product-pick-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  color: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 300ms var(--ease-standard), box-shadow 300ms var(--ease-standard), outline-color 200ms;
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+}
+.product-pick-card:hover { box-shadow: var(--shadow-lg); }
+.product-pick-card.active { outline-color: var(--color-accent); }
+
+.product-pick-card.dolomite { background: linear-gradient(150deg, #57534E, #1C1917); }
+.product-pick-card.phosphate { background: linear-gradient(150deg, #1B6B47, #062A19); }
+.product-pick-card.palmash { background: linear-gradient(150deg, #6B4F3B, #241A10); }
+
+.ppc-texture {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 60%, transparent 100%);
+}
+
+.ppc-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(140px at var(--mx, 50%) var(--my, 50%), rgba(252, 192, 12, 0.35), transparent 60%);
+  transition: opacity 300ms var(--ease-standard);
+  pointer-events: none;
+}
+.product-pick-card:hover .ppc-glow { opacity: 1; }
+
+.ppc-top {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 20px;
-  border-radius: var(--radius-full);
-  background: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--color-muted-foreground);
-  transition: all 220ms var(--ease-standard);
-  min-height: 48px;
 }
-.product-tab svg { width: 18px; height: 18px; }
-.product-tab:hover { border-color: var(--color-primary); color: var(--color-primary); }
-.product-tab.active {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
-  box-shadow: var(--shadow-md);
+.ppc-icon {
+  width: 30px; height: 30px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ppc-icon svg { width: 16px; height: 16px; }
+.ppc-category { font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em; color: rgba(255,255,255,0.8); }
+
+.ppc-body { position: relative; z-index: 1; }
+.ppc-body h3 { font-size: 25px; color: #fff; margin-bottom: 6px; }
+.ppc-body p { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.65); max-width: 78%; }
+
+.ppc-glyph {
+  position: absolute;
+  right: -16px;
+  bottom: -16px;
+  width: 120px;
+  height: 120px;
+  color: rgba(255,255,255,0.85);
+  transition: transform 350ms var(--ease-standard);
+}
+.product-pick-card:hover .ppc-glyph { transform: translate(-6px, -6px) scale(1.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  .product-pick-card { transform: none !important; }
+  .product-pick-card:hover .ppc-glyph { transform: none; }
 }
 
 @keyframes fadeUp {

@@ -153,7 +153,7 @@
     );
   }
 
-  var tabs = $$(".product-tab");
+  var tabs = $$(".product-pick-card");
   var visualSlot = $("#productVisualSlot");
   var bodySlot = $("#productBodySlot");
   var currentProductId = "dolomite";
@@ -218,6 +218,23 @@
 
   tabs.forEach(function (t) {
     t.addEventListener("click", function () { switchProduct(t.getAttribute("data-tab")); });
+
+    if (!prefersReducedMotion) {
+      t.addEventListener("mousemove", function (e) {
+        var rect = t.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width;
+        var py = (e.clientY - rect.top) / rect.height;
+        var tiltMax = 10;
+        t.style.setProperty("--tilt-x", ((0.5 - py) * tiltMax).toFixed(2) + "deg");
+        t.style.setProperty("--tilt-y", ((px - 0.5) * tiltMax).toFixed(2) + "deg");
+        t.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+        t.style.setProperty("--my", (py * 100).toFixed(1) + "%");
+      });
+      t.addEventListener("mouseleave", function () {
+        t.style.setProperty("--tilt-x", "0deg");
+        t.style.setProperty("--tilt-y", "0deg");
+      });
+    }
   });
 
   $$("[data-tablink]").forEach(function (link) {
