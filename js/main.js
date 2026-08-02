@@ -430,17 +430,4 @@
   var yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------------- Smooth scroll offset for fixed header ---------------- */
-  $$('a[href^="#"]').forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      var id = link.getAttribute("href");
-      if (id.length < 2) return;
-      var target = document.querySelector(id);
-      if (!target) return;
-      e.preventDefault();
-      var headerHeight = header.offsetHeight + 16;
-      var top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-      window.scrollTo({ top: top, behavior: "smooth" });
-    });
-  });
 })();

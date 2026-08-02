@@ -54,6 +54,12 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+/* Anchor-scroll offset for the fixed header — a fixed value (matching the
+   header's compact/scrolled height) instead of a JS-measured one, since
+   the header's height itself changes mid-scroll (tall -> compact) and a
+   height read at click time would go stale before the scroll settles. */
+#home, #produk, #tentang, #faq, #kontak { scroll-margin-top: 74px; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -521,6 +527,19 @@ textarea:focus-visible,
    Products
    ========================================================================== */
 
+/* Soft brand-colored glow behind the section so it doesn't read as a flat,
+   plain block between the hero and Tentang Kami. */
+#produk { position: relative; overflow: hidden; isolation: isolate; }
+#produk::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(650px 420px at 12% -5%, rgba(18, 162, 96, 0.14), transparent 60%),
+    radial-gradient(600px 400px at 92% 105%, rgba(252, 192, 12, 0.16), transparent 60%);
+}
+
 /* Product picker — 3D tilt-on-hover cards (vanilla JS sets --tilt-x/--tilt-y/
    --mx/--my via mousemove; CSS just consumes the custom properties). */
 .product-picker {
@@ -690,6 +709,13 @@ textarea:focus-visible,
 
 .product-card[data-side="right"] .product-visual { order: 2; }
 .product-card[data-side="right"] .product-body { order: 1; }
+
+/* Left/right only makes sense in a row layout — stacked on mobile, the
+   image should always stay on top regardless of powder/granule. */
+@media (max-width: 860px) {
+  .product-card[data-side="right"] .product-visual { order: 1; }
+  .product-card[data-side="right"] .product-body { order: 2; }
+}
 
 .product-visual {
   position: relative;
