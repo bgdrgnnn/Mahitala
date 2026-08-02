@@ -1,9 +1,9 @@
 /* ==========================================================================
-   PT Mangghala Inatama Lentera — Design Tokens & Base Styles
+   PT Mahitala Lentera — Design Tokens & Base Styles
    ========================================================================== */
 
 :root {
-  /* Color system — matched to the Mangghala Inatama Lentera logo */
+  /* Color system — matched to the Mahitala Lentera logo */
   --color-primary: #12A260;        /* logo green */
   --color-primary-light: #17D37D;
   --color-primary-dark: #08492C;
@@ -954,24 +954,24 @@ textarea:focus-visible,
    FAQ
    ========================================================================== */
 
-/* Full-bleed green/gold gradient (same shape as the CTA band) — applied to
-   the section itself rather than an inner contained div, so it runs edge
-   to edge instead of reading as a rounded "card" within the page. */
+/* Full-bleed circular green/gold gradient rising from the bottom — the top
+   of the section stays plain white/background, curving into color rather
+   than a diagonal wash across the whole section. */
 #faq {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  background: var(--color-background);
 }
 #faq::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(700px 340px at 12% 8%, rgba(252, 192, 12, 0.3), transparent 60%);
+  background:
+    radial-gradient(520px 400px at 18% 92%, rgba(252, 192, 12, 0.4), transparent 55%),
+    radial-gradient(150% 92% at 50% 108%, var(--color-primary) 0%, var(--color-primary-dark) 36%, var(--color-primary-dark) 55%, transparent 64%);
   pointer-events: none;
 }
 #faq .container { position: relative; z-index: 1; }
-#faq .eyebrow { background: rgba(255,255,255,0.14); color: var(--color-accent-light); }
-#faq .section-head h2 { color: #fff; }
 
 .faq-list { max-width: 760px; margin-inline: auto; display: flex; flex-direction: column; gap: var(--space-3); }
 
