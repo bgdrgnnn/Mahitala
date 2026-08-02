@@ -154,12 +154,36 @@
   }
 
   var tabs = $$(".product-pick-card");
-  var productCard = $("#productCard");
+  var productModal = $("#productModal");
+  var productModalClose = $("#productModalClose");
   var visualSlot = $("#productVisualSlot");
   var bodySlot = $("#productBodySlot");
   var currentProductId = null;
   var currentForm = "powder";
   var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function openProductModal() {
+    productModal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeProductModal() {
+    productModal.classList.remove("is-open");
+    document.body.style.overflow = "";
+    currentProductId = null;
+    tabs.forEach(function (t) {
+      t.classList.remove("active");
+      t.setAttribute("aria-selected", "false");
+    });
+  }
+
+  productModalClose.addEventListener("click", closeProductModal);
+  productModal.addEventListener("click", function (e) {
+    if (e.target === productModal) closeProductModal();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && productModal.classList.contains("is-open")) closeProductModal();
+  });
 
   /* Product switch: a plain soft-focus fade in place — no position change. */
   function fadeSlot(slotEl, applyChange) {
@@ -196,7 +220,11 @@
   }
 
   function switchProduct(id) {
-    if (!PRODUCTS[id] || id === currentProductId) return;
+    if (!PRODUCTS[id]) return;
+    var alreadyOpenOnThis = id === currentProductId && productModal.classList.contains("is-open");
+    if (alreadyOpenOnThis) return;
+
+    var wasOpen = productModal.classList.contains("is-open");
     var product = PRODUCTS[id];
     currentProductId = id;
     currentForm = "powder";
@@ -207,12 +235,10 @@
       t.setAttribute("aria-selected", String(active));
     });
 
-    var firstOpen = !productCard.classList.contains("is-open");
-    productCard.classList.add("is-open");
-
-    if (firstOpen) {
-      /* .product-card's own entrance animation carries the reveal —
-         just populate content, no need to also fade the slots. */
+    if (!wasOpen) {
+      openProductModal();
+      /* the modal's own entrance animation carries the reveal — just
+         populate content, no need to also fade the slots. */
       visualSlot.className = "product-visual " + product.visualClass;
       visualSlot.innerHTML = renderVisualHTML(product, currentForm);
       bodySlot.innerHTML = renderBodyHTML(product, currentForm);
