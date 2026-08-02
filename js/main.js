@@ -6,11 +6,7 @@
 
   /* ---------------- Header scroll state ---------------- */
   var header = $("#siteHeader");
-  var backToTop = $("#backToTop");
   var scrollProgress = $("#scrollProgress");
-  function toggleBackToTop() {
-    backToTop.classList.toggle("show", window.scrollY > 600);
-  }
   function updateScrollProgress() {
     if (!scrollProgress) return;
     var scrollable = document.documentElement.scrollHeight - window.innerHeight;
@@ -20,7 +16,6 @@
   var onScroll = function () {
     if (window.scrollY > 12) header.classList.add("scrolled");
     else header.classList.remove("scrolled");
-    toggleBackToTop();
     updateScrollProgress();
   };
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -144,6 +139,7 @@
   var productModalClose = $("#productModalClose");
   var visualSlot = $("#productVisualSlot");
   var bodySlot = $("#productBodySlot");
+  var dockNav = $("#dockNav");
   var currentProductId = null;
   var currentForm = "powder";
   var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -152,12 +148,14 @@
     productModal.classList.add("is-open");
     document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
+    if (dockNav) dockNav.classList.add("is-hidden");
   }
 
   function closeProductModal() {
     productModal.classList.remove("is-open");
     document.documentElement.style.overflow = "";
     document.body.style.overflow = "";
+    if (dockNav) dockNav.classList.remove("is-hidden");
     currentProductId = null;
     tabs.forEach(function (t) {
       t.classList.remove("active");
@@ -303,7 +301,7 @@
   }
 
   /* ---------------- Scrollspy: highlight dock item for section in view ---------------- */
-  var navAnchors = $$('.dock-item[href^="#"]');
+  var navAnchors = $$('.dock-item[href^="#"]:not([target])');
   var spySections = navAnchors
     .map(function (a) { return document.querySelector(a.getAttribute("href")); })
     .filter(Boolean);
@@ -352,11 +350,6 @@
     }, { threshold: 0.4 });
     counters.forEach(function (el) { counterIO.observe(el); });
   }
-
-  /* ---------------- Back to top ---------------- */
-  backToTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
 
   /* ---------------- Contact form validation ---------------- */
   var form = $("#contactForm");
