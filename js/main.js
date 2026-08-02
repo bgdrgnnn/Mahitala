@@ -154,9 +154,10 @@
   }
 
   var tabs = $$(".product-pick-card");
+  var productCard = $("#productCard");
   var visualSlot = $("#productVisualSlot");
   var bodySlot = $("#productBodySlot");
-  var currentProductId = "dolomite";
+  var currentProductId = null;
   var currentForm = "powder";
   var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -205,6 +206,19 @@
       t.classList.toggle("active", active);
       t.setAttribute("aria-selected", String(active));
     });
+
+    var firstOpen = !productCard.classList.contains("is-open");
+    productCard.classList.add("is-open");
+
+    if (firstOpen) {
+      /* .product-card's own entrance animation carries the reveal —
+         just populate content, no need to also fade the slots. */
+      visualSlot.className = "product-visual " + product.visualClass;
+      visualSlot.innerHTML = renderVisualHTML(product, currentForm);
+      bodySlot.innerHTML = renderBodyHTML(product, currentForm);
+      replayStagger($(".stagger-group", bodySlot));
+      return;
+    }
 
     fadeSlot(visualSlot, function () {
       visualSlot.className = "product-visual " + product.visualClass;
