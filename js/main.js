@@ -299,7 +299,7 @@
   });
 
   /* ---------------- Scroll reveal ---------------- */
-  var revealEls = $$(".reveal, .stagger-group");
+  var revealEls = $$(".reveal, .tilt-reveal, .stagger-group");
   if ("IntersectionObserver" in window && revealEls.length) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

@@ -1184,6 +1184,20 @@ textarea:focus-visible,
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-standard), transform 700ms var(--ease-standard); }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 
+/* Tilt-reveal — for card/visual blocks rather than plain text: settles
+   into place with a 3D rotate + scale rather than a straight fade-up, for
+   a bit more presence at each section's entrance while scrolling. */
+.tilt-reveal {
+  opacity: 0;
+  transform: perspective(1200px) rotateX(10deg) scale(0.94) translateY(36px);
+  transition: opacity 800ms var(--ease-standard), transform 800ms var(--ease-standard);
+  will-change: transform, opacity;
+}
+.tilt-reveal.in-view {
+  opacity: 1;
+  transform: perspective(1200px) rotateX(0deg) scale(1) translateY(0);
+}
+
 /* Stagger utility — direct children cascade in one after another instead
    of the whole group fading as a single block (JS toggles .in-view on
    the parent; same IntersectionObserver as .reveal). */
@@ -1202,7 +1216,7 @@ textarea:focus-visible,
 .stagger-group.in-view > *:nth-child(6) { transition-delay: 350ms; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal, .tilt-reveal { opacity: 1; transform: none; transition: none; }
   .stagger-group > * { opacity: 1; transform: none; filter: none; transition: none; }
 }
 
