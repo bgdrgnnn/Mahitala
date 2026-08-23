@@ -36,54 +36,54 @@
       visualClass: "dolomite",
       formula: "CaMg(CO₃)₂",
       title: "Dolomite",
-      tagline: "Kapur pertanian untuk menetralkan keasaman tanah dan memasok Kalsium &amp; Magnesium.",
+      tagline: "Mineral kapur alami untuk konstruksi, industri, hingga pertanian — sumber Kalsium &amp; Magnesium serba guna.",
       forms: {
-        powder: "Butiran halus, reaksi menetralkan pH lebih cepat. Cocok diaplikasikan langsung ke tanah sebelum tanam atau dicampur pupuk dasar.",
-        granule: "Butiran padat, mudah ditebar dengan alat mekanis (spreader), minim debu, pelepasan hara bertahap (slow release) untuk lahan luas."
+        powder: "Reaktivitas tinggi karena luas permukaan besar — ideal untuk campuran semen/beton, flux tanur baja, kaca, maupun pupuk dasar pertanian.",
+        granule: "Butiran padat, minim debu, mudah ditebar atau dicampur dalam skala besar — cocok untuk aplikasi lahan luas maupun kebutuhan industri curah (bulk)."
       },
       benefits: [
+        ["Multi-Industri: Konstruksi hingga Baja", "Bahan baku semen/beton serta flux pada peleburan baja dan metalurgi non-besi."],
+        ["Bahan Baku Kaca, Keramik &amp; Pengolahan Air", "Digunakan pada manufaktur kaca-keramik dan proses netralisasi pengolahan air."],
         ["Menetralkan Keasaman Tanah", "Menaikkan pH tanah asam agar unsur hara lebih mudah diserap akar tanaman."],
-        ["Sumber Kalsium &amp; Magnesium", "Mendukung pembentukan dinding sel tanaman dan proses fotosintesis (klorofil)."],
-        ["Memperbaiki Struktur Tanah", "Membuat tanah lebih gembur, meningkatkan aerasi dan drainase akar."],
-        ["Meningkatkan Efektivitas Pupuk Lain", "pH tanah yang seimbang membuat pupuk NPK &amp; organik bekerja lebih optimal."]
+        ["Sumber Kalsium &amp; Magnesium", "Mendukung pertumbuhan tanaman sekaligus menjadi bahan baku berbagai proses industri."]
       ],
-      tags: ["Sawit", "Karet", "Tebu", "Padi &amp; Palawija"],
+      tags: ["Konstruksi", "Baja &amp; Metalurgi", "Kaca &amp; Pengolahan Air", "Pertanian"],
       ctaLabel: "Tanya Harga Dolomite"
     },
     phosphate: {
       visualClass: "phosphate",
       formula: "Ca₃(PO₄)₂",
       title: "Fosfat Alam",
-      tagline: "Sumber fosfor alami untuk pertumbuhan akar, pembungaan, dan pembuahan.",
+      tagline: "Sumber fosfor alami untuk pupuk, pakan ternak, hingga kebutuhan industri kimia.",
       forms: {
-        powder: "Luas permukaan besar sehingga fosfor lebih cepat tersedia bagi tanaman. Ideal untuk pupuk dasar dan pembibitan.",
-        granule: "Pelepasan fosfor bertahap (slow release) hingga beberapa bulan, efisien untuk pemupukan tanaman tahunan dan mengurangi frekuensi aplikasi."
+        powder: "Luas permukaan besar sehingga fosfor lebih cepat tersedia — ideal untuk pupuk dasar, pembibitan, dan campuran pakan ternak.",
+        granule: "Pelepasan fosfor bertahap (slow release), efisien untuk pemupukan tanaman tahunan maupun kebutuhan industri yang butuh pasokan stabil."
       },
       benefits: [
-        ["Merangsang Pertumbuhan Akar", "Fosfor (P) mendorong perkembangan akar yang kuat sejak fase awal tanam."],
-        ["Mempercepat Pembungaan &amp; Pembuahan", "Mendukung pembentukan bunga, buah, dan biji secara optimal."],
-        ["Pelepasan Hara Bertahap", "Fosfat alam melepas unsur hara secara perlahan, cocok untuk tanah asam dan lahan gambut."],
-        ["Meningkatkan Hasil Panen", "Pupuk dasar yang efektif untuk perkebunan sawit, karet, dan tanaman pangan."]
+        ["Merangsang Pertumbuhan Akar &amp; Pembuahan", "Fosfor (P) mendukung perkembangan akar kuat serta pembentukan bunga dan buah pada tanaman."],
+        ["Bahan Baku Pakan Ternak", "Sumber fosfor dan kalsium untuk suplemen mineral pada industri pakan ternak (feed grade)."],
+        ["Bahan Baku Industri Kimia", "Diolah menjadi asam fosfat dan senyawa fosfat untuk kebutuhan industri kimia dan pengolahan air."],
+        ["Pelepasan Hara Bertahap", "Fosfat alam melepas unsur hara secara perlahan, cocok untuk tanah asam dan lahan gambut."]
       ],
-      tags: ["Sawit", "Pembibitan", "Tanaman Pangan", "Hortikultura"],
+      tags: ["Pertanian", "Pakan Ternak", "Industri Kimia", "Pengolahan Air"],
       ctaLabel: "Tanya Harga Fosfat"
     },
     palmash: {
       visualClass: "palmash",
       formula: "K₂O Tinggi",
       title: "Abu Tandan Kosong Sawit",
-      tagline: "Pupuk kalium alami hasil olahan limbah tandan kosong kelapa sawit (janjang).",
+      tagline: "Kalium alami hasil olahan limbah sawit — untuk pertanian dan potensi material konstruksi ramah lingkungan.",
       forms: {
-        powder: "Kalium langsung larut dan tersedia cepat bagi tanaman, cocok untuk aplikasi tabur di piringan pokok sawit.",
-        granule: "Lebih tahan terhadap pencucian hujan (leaching), tidak beterbangan saat aplikasi, dan mudah disimpan dalam jumlah besar."
+        powder: "Kalium langsung larut dan tersedia cepat bagi tanaman; partikel halus juga cocok untuk riset campuran material bangunan ramah lingkungan.",
+        granule: "Lebih tahan terhadap pencucian hujan (leaching), tidak beterbangan saat aplikasi, dan mudah disimpan dalam jumlah besar untuk kebutuhan skala industri."
       },
       benefits: [
-        ["Sumber Kalium (K) Tinggi", "Alternatif alami pengganti KCl untuk meningkatkan bobot dan kualitas buah sawit."],
-        ["Produk Ramah Lingkungan", "Hasil daur ulang limbah tandan kosong sawit — mendukung ekonomi sirkular perkebunan."],
-        ["Menaikkan pH &amp; Menyuburkan Tanah", "Bersifat basa sehingga membantu menetralkan tanah asam sekaligus menambah unsur hara mikro."],
-        ["Meningkatkan Kualitas Tandan Buah", "Kalium berperan penting dalam pembentukan minyak dan bobot tandan buah segar (TBS)."]
+        ["Sumber Kalium (K) Tinggi", "Alternatif alami pengganti KCl untuk meningkatkan bobot dan kualitas hasil panen."],
+        ["Produk Ramah Lingkungan", "Hasil daur ulang limbah tandan kosong sawit — mendukung ekonomi sirkular perkebunan dan industri."],
+        ["Potensi Bahan Campuran Material Bangunan", "Kandungan silika dan sifat pozzolanik abu sawit mulai diteliti dan digunakan sebagai campuran alternatif semen/beton ramah lingkungan."],
+        ["Menaikkan pH &amp; Menyuburkan Tanah", "Bersifat basa sehingga membantu menetralkan tanah asam sekaligus menambah unsur hara mikro."]
       ],
-      tags: ["Sawit", "Pupuk Organik", "Ramah Lingkungan"],
+      tags: ["Pertanian", "Ramah Lingkungan", "Konstruksi Hijau", "Ekonomi Sirkular"],
       ctaLabel: "Tanya Harga Abu Sawit"
     }
   };
@@ -406,7 +406,7 @@
   /* ---------------- Contact headline word rotator ---------------- */
   var rotatorEl = $("#rotatorWord");
   if (rotatorEl) {
-    var ROTATOR_WORDS = ["Pertanian", "Perkebunan", "Industri"];
+    var ROTATOR_WORDS = ["Industri", "Konstruksi", "Pertanian"];
     var rotatorIndex = 0;
     if (prefersReducedMotion) {
       /* leave the initial word as-is, no cycling */

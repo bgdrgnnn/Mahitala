@@ -58,7 +58,7 @@ html { scroll-behavior: smooth; }
    header's compact/scrolled height) instead of a JS-measured one, since
    the header's height itself changes mid-scroll (tall -> compact) and a
    height read at click time would go stale before the scroll settles. */
-#home, #produk, #tentang, #faq, #kontak { scroll-margin-top: 58px; }
+#home, #produk, #industri, #tentang, #faq, #kontak { scroll-margin-top: 58px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -963,6 +963,45 @@ textarea:focus-visible,
   width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--color-accent);
+}
+
+/* ==========================================================================
+   INDUSTRIES SERVED
+   ========================================================================== */
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+@media (max-width: 900px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .industry-grid { grid-template-columns: 1fr; } }
+
+.industry-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: transform 240ms var(--ease-standard), box-shadow 240ms var(--ease-standard);
+}
+.industry-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.industry-icon {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  background: rgba(18, 162, 96, 0.1);
+  color: var(--color-primary);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--space-4);
+}
+.industry-icon svg { width: 22px; height: 22px; }
+
+.industry-card h3 { font-size: 16.5px; margin-bottom: var(--space-2); }
+.industry-card p { font-size: 13.5px; color: var(--color-muted-foreground); line-height: 1.5; }
+
+@media (prefers-reduced-motion: reduce) {
+  .industry-card { transition: none; }
+  .industry-card:hover { transform: none; }
 }
 
 /* ==========================================================================
