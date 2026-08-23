@@ -18,8 +18,8 @@
       en: 'Natural Minerals for <em>Industry and Agriculture</em> in Indonesia'
     },
     "hero.lede": {
-      id: "PT Mangghala Inatama Lentera memproduksi dan mendistribusikan Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit — bentuk powder maupun granule — untuk kebutuhan konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian di seluruh Indonesia.",
-      en: "PT Mangghala Inatama Lentera produces and distributes Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch (EFB) Ash — in powder and granule form — for construction, steel, water treatment, glass-ceramics, and agriculture across Indonesia."
+      id: "PT Mangghala Inatama Lentera memproduksi dan mendistribusikan Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit — bentuk powder maupun granule — untuk kebutuhan konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian di seluruh Indonesia, dengan kesiapan melayani pasar ekspor internasional.",
+      en: "PT Mangghala Inatama Lentera produces and distributes Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch (EFB) Ash — in powder and granule form — for construction, steel, water treatment, glass-ceramics, and agriculture across Indonesia, with export-ready capability for international markets."
     },
     "hero.cta1": { id: "Lihat Produk Kami", en: "View Our Products" },
     "hero.cta2": { id: "Konsultasi Gratis", en: "Free Consultation" },
@@ -29,7 +29,7 @@
 
     "trust.1": { id: "Diuji Laboratorium", en: "Lab-Tested Quality" },
     "trust.2": { id: "Bahan Baku Alami 100%", en: "100% Natural Raw Material" },
-    "trust.3": { id: "Distribusi ke Seluruh Indonesia", en: "Nationwide Distribution" },
+    "trust.3": { id: "Distribusi Nasional &amp; Siap Ekspor", en: "Nationwide &amp; Export-Ready Distribution" },
     "trust.4": { id: "Tim Teknis &amp; Agronomis Berpengalaman", en: "Experienced Technical &amp; Agronomy Team" },
 
     "produk.eyebrow": { id: "Produk Kami", en: "Our Products" },
@@ -76,8 +76,8 @@
     "tentang.eyebrow": { id: "Tentang Kami", en: "About Us" },
     "tentang.h2": { id: "Mitra Mineral Industri Terpercaya di Indonesia", en: "Indonesia's Trusted Industrial Minerals Partner" },
     "tentang.p1": {
-      id: "PT Mangghala Inatama Lentera adalah perusahaan mineral industri yang memproduksi dan mendistribusikan Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit dalam bentuk powder maupun granule — untuk sektor konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian. Selama lebih dari 15 tahun, kami telah menjadi mitra lebih dari 500 klien industri, perkebunan, dan petani di 34 provinsi di Indonesia.",
-      en: "PT Mangghala Inatama Lentera is an industrial minerals company that produces and distributes Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch Ash in powder and granule form — for the construction, steel, water treatment, glass-ceramics, and agriculture sectors. For more than 15 years, we have partnered with over 500 industrial, plantation, and farming clients across 34 provinces in Indonesia."
+      id: "PT Mangghala Inatama Lentera adalah perusahaan mineral industri yang memproduksi dan mendistribusikan Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit dalam bentuk powder maupun granule — untuk sektor konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian. Selama lebih dari 15 tahun, kami telah menjadi mitra lebih dari 500 klien industri, perkebunan, dan petani di 34 provinsi di Indonesia. Kami juga siap melayani permintaan ekspor bagi buyer internasional yang membutuhkan pasokan mineral industri berkualitas dari Indonesia.",
+      en: "PT Mangghala Inatama Lentera is an industrial minerals company that produces and distributes Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch Ash in powder and granule form — for the construction, steel, water treatment, glass-ceramics, and agriculture sectors. For more than 15 years, we have partnered with over 500 industrial, plantation, and farming clients across 34 provinces in Indonesia. We are also ready to serve export demand from international buyers seeking quality industrial minerals sourced from Indonesia."
     },
     "tentang.p2": {
       id: "Setiap produk yang kami kirim melewati pengujian laboratorium internal — mulai dari penambangan bahan baku, pengolahan, uji kualitas, pengemasan, hingga distribusi ke seluruh Indonesia.",
@@ -115,6 +115,11 @@
     "faq.a4": {
       id: "Ya, kami memiliki jaringan distribusi ke sentra perkebunan di Sumatra, Kalimantan, dan Sulawesi, selain Jawa. Ongkos kirim disesuaikan dengan lokasi tujuan.",
       en: "Yes, we have a distribution network reaching plantation centers in Sumatra, Kalimantan, and Sulawesi, in addition to Java. Shipping costs are adjusted to the destination."
+    },
+    "faq.q7": { id: "Apakah Mahitala bisa mengirim untuk kebutuhan ekspor?", en: "Can Mahitala ship for export orders?" },
+    "faq.a7": {
+      id: "Ya, kami siap melayani permintaan ekspor. Produk kami dapat disertai Certificate of Analysis (COA) sesuai spesifikasi yang dibutuhkan buyer internasional — hubungi tim kami untuk mendiskusikan kebutuhan pengiriman, kemasan, dan dokumen ekspor Anda.",
+      en: "Yes, we are ready to serve export demand. Our products can be accompanied by a Certificate of Analysis (COA) matching international buyer specifications — contact our team to discuss your shipping, packaging, and export documentation needs."
     },
     "faq.q5": { id: "Apakah produk Mahitala hanya untuk pertanian?", en: "Are Mahitala's products only for agriculture?" },
     "faq.a5": {
@@ -161,8 +166,8 @@
     },
 
     "footer.tagline": {
-      id: "PT Mangghala Inatama Lentera menyediakan mineral industri berkualitas — Dolomite, Fosfat Alam, dan Abu Tandan Sawit — untuk mendukung industri konstruksi, manufaktur, dan pertanian Indonesia.",
-      en: "PT Mangghala Inatama Lentera supplies quality industrial minerals — Dolomite, Natural Rock Phosphate, and Palm EFB Ash — supporting Indonesia's construction, manufacturing, and agriculture industries."
+      id: "PT Mangghala Inatama Lentera menyediakan mineral industri berkualitas — Dolomite, Fosfat Alam, dan Abu Tandan Sawit — untuk mendukung industri konstruksi, manufaktur, dan pertanian, baik pasar domestik maupun ekspor internasional.",
+      en: "PT Mangghala Inatama Lentera supplies quality industrial minerals — Dolomite, Natural Rock Phosphate, and Palm EFB Ash — supporting construction, manufacturing, and agriculture industries, for both the domestic market and international export."
     },
     "footer.col.produk": { id: "Produk", en: "Products" },
     "footer.col.perusahaan": { id: "Perusahaan", en: "Company" },

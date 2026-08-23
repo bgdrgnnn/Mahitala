@@ -341,7 +341,13 @@ textarea:focus-visible,
   backdrop-filter: blur(16px) saturate(140%);
   box-shadow: var(--shadow-lg);
   transition: opacity 220ms var(--ease-standard), transform 220ms var(--ease-standard);
+  /* Safety net if the icon set ever outgrows the viewport width: scroll
+     instead of spilling icons outside the pill's rounded background. */
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+.dock-nav::-webkit-scrollbar { display: none; }
 
 .dock-item {
   position: relative;
@@ -425,8 +431,9 @@ textarea:focus-visible,
 }
 
 @media (max-width: 560px) {
-  .dock-item { width: 40px; height: 40px; }
-  .dock-item svg { width: 18px; height: 18px; }
+  .dock-nav { gap: 4px; padding: 8px; padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px)); }
+  .dock-item { width: 36px; height: 36px; }
+  .dock-item svg { width: 16px; height: 16px; }
   .dock-label { display: none; }
 }
 
