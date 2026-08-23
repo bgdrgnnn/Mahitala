@@ -29,7 +29,11 @@
     </a>
 
     <div class="header-actions">
-      <a href="index.html#kontak" class="btn btn-ghost btn-sm header-cta">Minta Penawaran</a>
+      <div class="lang-switch" role="group" aria-label="Language / Bahasa">
+        <button type="button" class="lang-btn active" data-lang="id">ID</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="index.html#kontak" class="btn btn-ghost btn-sm header-cta" data-i18n="header.cta">Minta Penawaran</a>
     </div>
   </div>
 </header>
@@ -38,23 +42,23 @@
 <nav class="dock-nav" id="dockNav" aria-label="Navigasi utama">
   <a href="index.html#home" class="dock-item" data-tooltip="Home">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9"/></svg>
-    <span class="dock-label">Home</span>
+    <span class="dock-label" data-i18n="nav.home">Home</span>
   </a>
   <a href="index.html#produk" class="dock-item" data-tooltip="Produk">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5 12 3 3 7.5l9 4.5 9-4.5Z"/><path d="M3 7.5v9L12 21l9-4.5v-9"/><path d="M12 12v9"/></svg>
-    <span class="dock-label">Produk</span>
+    <span class="dock-label" data-i18n="nav.produk">Produk</span>
   </a>
   <a href="index.html#tentang" class="dock-item" data-tooltip="Tentang Kami">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="11.5"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-    <span class="dock-label">Tentang Kami</span>
+    <span class="dock-label" data-i18n="nav.tentang">Tentang Kami</span>
   </a>
   <a href="index.html#faq" class="dock-item" data-tooltip="FAQ">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.6 2.24c-.77.37-1.35 1.1-1.35 1.96V13.5"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-    <span class="dock-label">FAQ</span>
+    <span class="dock-label" data-i18n="nav.faq">FAQ</span>
   </a>
   <a href="index.html#kontak" class="dock-item" data-tooltip="Kontak">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
-    <span class="dock-label">Kontak</span>
+    <span class="dock-label" data-i18n="nav.kontak">Kontak</span>
   </a>
   <span class="dock-sep" aria-hidden="true"></span>
   <a href="https://wa.me/6281234567890" class="dock-item" target="_blank" rel="noopener" data-tooltip="WhatsApp">
@@ -72,9 +76,9 @@
   <section class="gallery-hero">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow">Galeri</span>
-        <h2>Produk, Proses, dan Penerapan di Lapangan</h2>
-        <p>Ilustrasi visual dari lini produk, alur produksi, hingga sektor industri dan pertanian yang kami layani. Foto dokumentasi asli menyusul.</p>
+        <span class="eyebrow" data-i18n="gallery.hero.eyebrow">Galeri</span>
+        <h2 data-i18n="gallery.hero.h2">Produk, Proses, dan Penerapan di Lapangan</h2>
+        <p data-i18n="gallery.hero.p">Ilustrasi visual dari lini produk, alur produksi, hingga sektor industri dan pertanian yang kami layani. Foto dokumentasi asli menyusul.</p>
       </div>
     </div>
   </section>
@@ -83,206 +87,206 @@
   <section class="section" style="padding-top:0">
     <div class="container">
       <div class="gallery-filters reveal" role="tablist" aria-label="Filter galeri">
-        <button class="gallery-filter-btn active" data-filter="all">Semua</button>
-        <button class="gallery-filter-btn" data-filter="produk">Produk</button>
-        <button class="gallery-filter-btn" data-filter="proses">Proses Produksi</button>
-        <button class="gallery-filter-btn" data-filter="aplikasi">Aplikasi &amp; Penggunaan</button>
+        <button class="gallery-filter-btn active" data-filter="all" data-i18n="gallery.filter.all">Semua</button>
+        <button class="gallery-filter-btn" data-filter="produk" data-i18n="gallery.filter.produk">Produk</button>
+        <button class="gallery-filter-btn" data-filter="proses" data-i18n="gallery.filter.proses">Proses Produksi</button>
+        <button class="gallery-filter-btn" data-filter="aplikasi" data-i18n="gallery.filter.aplikasi">Aplikasi &amp; Penggunaan</button>
       </div>
 
       <div class="gallery-grid stagger-group" id="galleryGrid">
         <!-- Produk -->
         <div class="gallery-card dolomite" data-category="produk">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Produk</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.produk">Produk</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Dolomite</h3>
-            <p>Menetralkan keasaman tanah &amp; memasok Kalsium-Magnesium.</p>
+            <h3 data-i18n="product.dolomite.name">Dolomite</h3>
+            <p data-i18n="produk.dolomite.desc">Konstruksi, baja, kaca &amp; pengolahan air, hingga pertanian.</p>
           </div>
         </div>
 
         <div class="gallery-card phosphate" data-category="produk">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Produk</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.produk">Produk</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Fosfat Alam</h3>
-            <p>Merangsang akar, pembungaan, dan pembuahan tanaman.</p>
+            <h3 data-i18n="product.phosphate.name">Fosfat Alam</h3>
+            <p data-i18n="produk.phosphate.desc">Pupuk, pakan ternak, dan bahan baku industri kimia.</p>
           </div>
         </div>
 
         <div class="gallery-card palmash" data-category="produk">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Produk</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.produk">Produk</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Abu Tandan Sawit</h3>
-            <p>Kalium alami dari daur ulang limbah tandan kosong sawit.</p>
+            <h3 data-i18n="product.palmash.name">Abu Tandan Sawit</h3>
+            <p data-i18n="produk.palmash.desc">Pupuk kalium ramah lingkungan dengan potensi material konstruksi.</p>
           </div>
         </div>
 
         <!-- Proses Produksi -->
         <div class="gallery-card dolomite" data-category="proses">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Proses · 01</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.proses1">Proses · 01</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Penambangan &amp; Pengumpulan</h3>
-            <p>Bahan baku dolomite &amp; fosfat dari tambang mitra, serta tandan kosong dari pabrik kelapa sawit.</p>
+            <h3 data-i18n="gallery.proses1.title">Penambangan &amp; Pengumpulan</h3>
+            <p data-i18n="gallery.proses1.desc">Bahan baku dolomite &amp; fosfat dari tambang mitra, serta tandan kosong dari pabrik kelapa sawit.</p>
           </div>
         </div>
 
         <div class="gallery-card phosphate" data-category="proses">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Proses · 02</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.proses2">Proses · 02</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Pengolahan</h3>
-            <p>Proses pembakaran, penggilingan, dan pengayakan untuk menghasilkan powder atau granule.</p>
+            <h3 data-i18n="gallery.proses2.title">Pengolahan</h3>
+            <p data-i18n="gallery.proses2.desc">Proses pembakaran, penggilingan, dan pengayakan untuk menghasilkan powder atau granule.</p>
           </div>
         </div>
 
         <div class="gallery-card palmash" data-category="proses">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Proses · 03</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.proses3">Proses · 03</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6L4 20a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3L15 8V2"/><path d="M9 2h6"/><path d="M8.5 14h7"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Uji Kualitas</h3>
-            <p>Pengujian kadar CaO, MgO, P₂O₅, dan K₂O di laboratorium sebelum produk diluluskan.</p>
+            <h3 data-i18n="gallery.proses3.title">Uji Kualitas</h3>
+            <p data-i18n="gallery.proses3.desc">Pengujian kadar CaO, MgO, P₂O₅, dan K₂O di laboratorium sebelum produk diluluskan.</p>
           </div>
         </div>
 
         <div class="gallery-card dolomite" data-category="proses">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Proses · 04</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.proses4">Proses · 04</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5 12 3 3 7.5l9 4.5 9-4.5Z"/><path d="M3 7.5v9L12 21l9-4.5v-9"/><path d="M12 12v9"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Pengemasan</h3>
-            <p>Dikemas dalam karung 25kg / 50kg / jumbo bag sesuai kebutuhan pelanggan.</p>
+            <h3 data-i18n="gallery.proses4.title">Pengemasan</h3>
+            <p data-i18n="gallery.proses4.desc">Dikemas dalam karung 25kg / 50kg / jumbo bag sesuai kebutuhan pelanggan.</p>
           </div>
         </div>
 
         <div class="gallery-card phosphate" data-category="proses">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Proses · 05</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.proses5">Proses · 05</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="18.5" cy="18.5" r="1.5"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Distribusi</h3>
-            <p>Pengiriman ke gudang, kebun, atau titik distribusi di seluruh Indonesia.</p>
+            <h3 data-i18n="gallery.proses5.title">Distribusi</h3>
+            <p data-i18n="gallery.proses5.desc">Pengiriman ke gudang, kebun, atau titik distribusi di seluruh Indonesia.</p>
           </div>
         </div>
 
         <!-- Aplikasi Lahan -->
         <div class="gallery-card palmash" data-category="aplikasi">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Aplikasi Lahan</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.lahan">Aplikasi Lahan</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Perkebunan Sawit</h3>
-            <p>Dolomite untuk pH tanah, fosfat untuk pembibitan, abu tandan untuk bobot TBS.</p>
+            <h3 data-i18n="gallery.lahan1.title">Perkebunan Sawit</h3>
+            <p data-i18n="gallery.lahan1.desc">Dolomite untuk pH tanah, fosfat untuk pembibitan, abu tandan untuk bobot TBS.</p>
           </div>
         </div>
 
         <div class="gallery-card dolomite" data-category="aplikasi">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Aplikasi Lahan</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.lahan">Aplikasi Lahan</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Karet &amp; Tebu</h3>
-            <p>Menjaga struktur tanah dan menyuplai hara makro untuk pertumbuhan jangka panjang.</p>
+            <h3 data-i18n="gallery.lahan2.title">Karet &amp; Tebu</h3>
+            <p data-i18n="gallery.lahan2.desc">Menjaga struktur tanah dan menyuplai hara makro untuk pertumbuhan jangka panjang.</p>
           </div>
         </div>
 
         <div class="gallery-card phosphate" data-category="aplikasi">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Aplikasi Lahan</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.lahan">Aplikasi Lahan</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Padi &amp; Palawija</h3>
-            <p>Pupuk dasar fosfat dan dolomite untuk lahan sawah dan tegalan yang asam.</p>
+            <h3 data-i18n="gallery.lahan3.title">Padi &amp; Palawija</h3>
+            <p data-i18n="gallery.lahan3.desc">Pupuk dasar fosfat dan dolomite untuk lahan sawah dan tegalan yang asam.</p>
           </div>
         </div>
 
         <div class="gallery-card palmash" data-category="aplikasi">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Aplikasi Lahan</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.lahan">Aplikasi Lahan</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Hortikultura</h3>
-            <p>Menunjang kualitas buah dan sayur dengan suplai kalsium, magnesium, dan kalium.</p>
+            <h3 data-i18n="gallery.lahan4.title">Hortikultura</h3>
+            <p data-i18n="gallery.lahan4.desc">Menunjang kualitas buah dan sayur dengan suplai kalsium, magnesium, dan kalium.</p>
           </div>
         </div>
 
         <!-- Aplikasi Industri -->
         <div class="gallery-card dolomite" data-category="aplikasi">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Aplikasi Industri</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.industriapp">Aplikasi Industri</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6-4v4l6-4v4l6-4v15H3z"/><line x1="7" y1="21" x2="7" y2="16"/><line x1="12" y1="21" x2="12" y2="16"/><line x1="17" y1="21" x2="17" y2="16"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Konstruksi &amp; Infrastruktur</h3>
-            <p>Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.</p>
+            <h3 data-i18n="gallery.industri1.title">Konstruksi &amp; Infrastruktur</h3>
+            <p data-i18n="gallery.industri1.desc">Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.</p>
           </div>
         </div>
 
         <div class="gallery-card phosphate" data-category="aplikasi">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Aplikasi Industri</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.industriapp">Aplikasi Industri</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 17a2.5 2.5 0 0 0 2.5-2.5c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7.5 7.5 0 1 1-15 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Baja &amp; Metalurgi</h3>
-            <p>Flux dalam proses peleburan dan pemurnian logam pada industri baja.</p>
+            <h3 data-i18n="gallery.industri2.title">Baja &amp; Metalurgi</h3>
+            <p data-i18n="gallery.industri2.desc">Flux dalam proses peleburan dan pemurnian logam pada industri baja.</p>
           </div>
         </div>
 
         <div class="gallery-card palmash" data-category="aplikasi">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Aplikasi Industri</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.industriapp">Aplikasi Industri</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l1 6-3 12M15 3l-1 6 3 12"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Kaca &amp; Keramik</h3>
-            <p>Komponen mineral pada manufaktur kaca, keramik, dan produk berbasis silika.</p>
+            <h3 data-i18n="gallery.industri3.title">Kaca &amp; Keramik</h3>
+            <p data-i18n="gallery.industri3.desc">Komponen mineral pada manufaktur kaca, keramik, dan produk berbasis silika.</p>
           </div>
         </div>
 
         <div class="gallery-card dolomite" data-category="aplikasi">
           <div class="ppc-texture" aria-hidden="true"></div>
-          <span class="gallery-card-tag">Aplikasi Industri</span>
+          <span class="gallery-card-tag" data-i18n="gallery.tag.industriapp">Aplikasi Industri</span>
           <div class="gallery-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69s5 5.5 5 9.5a5 5 0 0 1-10 0c0-4 5-9.5 5-9.5z"/></svg>
           </div>
           <div class="gallery-card-body">
-            <h3>Pengolahan Air &amp; Lingkungan</h3>
-            <p>Netralisasi dan pengolahan air limbah pada berbagai proses industri.</p>
+            <h3 data-i18n="gallery.industri4.title">Pengolahan Air &amp; Lingkungan</h3>
+            <p data-i18n="gallery.industri4.desc">Netralisasi dan pengolahan air limbah pada berbagai proses industri.</p>
           </div>
         </div>
       </div>
@@ -293,12 +297,12 @@
   <section class="section cta-section">
     <div class="container tilt-reveal">
       <div class="cta-band">
-        <span class="hero-eyebrow">Tertarik dengan Produk Kami?</span>
-        <h2 style="margin-top: var(--space-4)">Dapatkan Penawaran Terbaik untuk Kebutuhan Industri dan Lahan Anda</h2>
-        <p>Tim kami siap membantu menentukan produk dan dosis yang tepat — respon cepat, harga bersaing.</p>
+        <span class="hero-eyebrow" data-i18n="gallery.cta.eyebrow">Tertarik dengan Produk Kami?</span>
+        <h2 style="margin-top: var(--space-4)" data-i18n="cta.h2">Dapatkan Penawaran Terbaik untuk Kebutuhan Industri dan Lahan Anda</h2>
+        <p data-i18n="cta.p">Tim kami siap membantu menentukan produk dan dosis yang tepat — respon cepat, harga bersaing.</p>
         <div class="hero-cta">
-          <a href="index.html#kontak" class="btn btn-primary">Hubungi Tim Sales</a>
-          <a href="https://wa.me/6281234567890" class="btn btn-outline" target="_blank" rel="noopener">Chat via WhatsApp</a>
+          <a href="index.html#kontak" class="btn btn-primary" data-i18n="cta.btn1">Hubungi Tim Sales</a>
+          <a href="https://wa.me/6281234567890" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="cta.btn2">Chat via WhatsApp</a>
         </div>
       </div>
     </div>
@@ -316,7 +320,7 @@
           </span>
           <span class="brand-text">Mahitala</span>
         </a>
-        <p>PT Mangghala Inatama Lentera menyediakan mineral industri berkualitas — Dolomite, Fosfat Alam, dan Abu Tandan Sawit — untuk mendukung industri konstruksi, manufaktur, dan pertanian Indonesia.</p>
+        <p data-i18n="footer.tagline">PT Mangghala Inatama Lentera menyediakan mineral industri berkualitas — Dolomite, Fosfat Alam, dan Abu Tandan Sawit — untuk mendukung industri konstruksi, manufaktur, dan pertanian Indonesia.</p>
         <div class="social-row">
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -325,27 +329,27 @@
       </div>
 
       <div class="footer-col">
-        <h5>Produk</h5>
+        <h5 data-i18n="footer.col.produk">Produk</h5>
         <ul>
-          <li><a href="index.html#produk">Dolomite</a></li>
-          <li><a href="index.html#produk">Fosfat Alam</a></li>
-          <li><a href="index.html#produk">Abu Tandan Sawit</a></li>
+          <li><a href="index.html#produk" data-i18n="product.dolomite.name">Dolomite</a></li>
+          <li><a href="index.html#produk" data-i18n="product.phosphate.name">Fosfat Alam</a></li>
+          <li><a href="index.html#produk" data-i18n="product.palmash.name">Abu Tandan Sawit</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>Perusahaan</h5>
+        <h5 data-i18n="footer.col.perusahaan">Perusahaan</h5>
         <ul>
-          <li><a href="index.html#tentang">Tentang Kami</a></li>
-          <li><a href="index.html#industri">Industri</a></li>
-          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="index.html#tentang" data-i18n="footer.tentang">Tentang Kami</a></li>
+          <li><a href="index.html#industri" data-i18n="footer.industri">Industri</a></li>
+          <li><a href="gallery.html" data-i18n="footer.galeri">Galeri</a></li>
           <li><a href="assets/company-profile.pdf" download>Company Profile</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#faq" data-i18n="footer.faq">FAQ</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>Hubungi Kami</h5>
+        <h5 data-i18n="footer.col.kontak">Hubungi Kami</h5>
         <ul>
           <li>Jl. Industri Raya No. 45, Medan, Sumatera Utara</li>
           <li><a href="tel:+6281234567890">+62 812-3456-7890</a></li>
@@ -355,12 +359,25 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© <span id="year"></span> PT Mangghala Inatama Lentera. Seluruh hak cipta dilindungi.</span>
-      <span>Dibuat dengan komitmen untuk industri dan pertanian Indonesia yang lebih maju.</span>
+      <span>© <span id="year"></span> PT Mangghala Inatama Lentera. <span data-i18n="footer.rights">Seluruh hak cipta dilindungi.</span></span>
+      <span data-i18n="footer.tagline2">Dibuat dengan komitmen untuk industri dan pertanian Indonesia yang lebih maju.</span>
     </div>
   </div>
 </footer>
 
+<script>
+  window.PAGE_I18N = {
+    id: {
+      title: "Galeri — PT Mangghala Inatama Lentera",
+      description: "Galeri produk, proses produksi, dan penerapan industri & pertanian PT Mangghala Inatama Lentera — Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit."
+    },
+    en: {
+      title: "Gallery — PT Mangghala Inatama Lentera",
+      description: "Product, production process, and industry & agriculture application gallery for PT Mangghala Inatama Lentera — Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch Ash."
+    }
+  };
+</script>
 <script src="js/gallery.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

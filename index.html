@@ -29,7 +29,11 @@
     </a>
 
     <div class="header-actions">
-      <a href="#kontak" class="btn btn-ghost btn-sm header-cta">Minta Penawaran</a>
+      <div class="lang-switch" role="group" aria-label="Language / Bahasa">
+        <button type="button" class="lang-btn active" data-lang="id">ID</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="#kontak" class="btn btn-ghost btn-sm header-cta" data-i18n="header.cta">Minta Penawaran</a>
     </div>
   </div>
 </header>
@@ -38,23 +42,23 @@
 <nav class="dock-nav" id="dockNav" aria-label="Navigasi utama">
   <a href="#home" class="dock-item" data-tooltip="Home">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9"/></svg>
-    <span class="dock-label">Home</span>
+    <span class="dock-label" data-i18n="nav.home">Home</span>
   </a>
   <a href="#produk" class="dock-item" data-tooltip="Produk">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5 12 3 3 7.5l9 4.5 9-4.5Z"/><path d="M3 7.5v9L12 21l9-4.5v-9"/><path d="M12 12v9"/></svg>
-    <span class="dock-label">Produk</span>
+    <span class="dock-label" data-i18n="nav.produk">Produk</span>
   </a>
   <a href="#tentang" class="dock-item" data-tooltip="Tentang Kami">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="11.5"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-    <span class="dock-label">Tentang Kami</span>
+    <span class="dock-label" data-i18n="nav.tentang">Tentang Kami</span>
   </a>
   <a href="#faq" class="dock-item" data-tooltip="FAQ">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.6 2.24c-.77.37-1.35 1.1-1.35 1.96V13.5"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-    <span class="dock-label">FAQ</span>
+    <span class="dock-label" data-i18n="nav.faq">FAQ</span>
   </a>
   <a href="#kontak" class="dock-item" data-tooltip="Kontak">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
-    <span class="dock-label">Kontak</span>
+    <span class="dock-label" data-i18n="nav.kontak">Kontak</span>
   </a>
   <span class="dock-sep" aria-hidden="true"></span>
   <a href="https://wa.me/6281234567890" class="dock-item" target="_blank" rel="noopener" data-tooltip="WhatsApp">
@@ -75,8 +79,8 @@
     <div class="container hero-grid">
       <div>
         <span class="hero-eyebrow">Industrial Minerals Producer Indonesia</span>
-        <h1>Mineral Alami untuk <em>Industri dan Pertanian</em> Indonesia</h1>
-        <p class="hero-lede">
+        <h1 data-i18n="hero.h1">Mineral Alami untuk <em>Industri dan Pertanian</em> Indonesia</h1>
+        <p class="hero-lede" data-i18n="hero.lede">
           PT Mangghala Inatama Lentera memproduksi dan mendistribusikan Dolomite,
           Fosfat Alam, dan Abu Tandan Kosong Sawit — bentuk powder maupun granule —
           untuk kebutuhan konstruksi, baja, pengolahan air, kaca-keramik, hingga
@@ -84,24 +88,24 @@
         </p>
         <div class="hero-cta">
           <a href="#produk" class="btn btn-primary">
-            Lihat Produk Kami
+            <span data-i18n="hero.cta1">Lihat Produk Kami</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="#kontak" class="btn btn-outline">Konsultasi Gratis</a>
+          <a href="#kontak" class="btn btn-outline" data-i18n="hero.cta2">Konsultasi Gratis</a>
         </div>
 
         <div class="hero-stats">
           <div class="hero-stat">
             <div class="num" data-counter data-target="15" data-suffix="+"><span class="value">0</span><span class="suffix">+</span></div>
-            <div class="label">Tahun Pengalaman</div>
+            <div class="label" data-i18n="hero.stat1">Tahun Pengalaman</div>
           </div>
           <div class="hero-stat">
             <div class="num" data-counter data-target="500" data-suffix="+"><span class="value">0</span><span class="suffix">+</span></div>
-            <div class="label">Klien Industri &amp; Perkebunan</div>
+            <div class="label" data-i18n="hero.stat2">Klien Industri &amp; Perkebunan</div>
           </div>
           <div class="hero-stat">
             <div class="num" data-counter data-target="34" data-suffix=""><span class="value">0</span><span class="suffix"></span></div>
-            <div class="label">Provinsi Terjangkau</div>
+            <div class="label" data-i18n="hero.stat3">Provinsi Terjangkau</div>
           </div>
         </div>
       </div>
@@ -113,19 +117,19 @@
     <div class="container">
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
-        Diuji Laboratorium
+        <span data-i18n="trust.1">Diuji Laboratorium</span>
       </div>
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>
-        Bahan Baku Alami 100%
+        <span data-i18n="trust.2">Bahan Baku Alami 100%</span>
       </div>
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="18.5" cy="18.5" r="1.5"/></svg>
-        Distribusi ke Seluruh Indonesia
+        <span data-i18n="trust.3">Distribusi ke Seluruh Indonesia</span>
       </div>
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Tim Teknis &amp; Agronomis Berpengalaman
+        <span data-i18n="trust.4">Tim Teknis &amp; Agronomis Berpengalaman</span>
       </div>
     </div>
   </div>
@@ -134,9 +138,9 @@
   <section class="section" id="produk">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow">Produk Kami</span>
-        <h2>Tiga Mineral Alami untuk Industri dan Pertanian</h2>
-        <p>Setiap produk tersedia dalam bentuk <strong>powder</strong> dan <strong>granule</strong>, disesuaikan dengan metode aplikasi dan skala kebutuhan industri maupun lahan Anda.</p>
+        <span class="eyebrow" data-i18n="produk.eyebrow">Produk Kami</span>
+        <h2 data-i18n="produk.h2">Tiga Mineral Alami untuk Industri dan Pertanian</h2>
+        <p data-i18n="produk.p">Setiap produk tersedia dalam bentuk <strong>powder</strong> dan <strong>granule</strong>, disesuaikan dengan metode aplikasi dan skala kebutuhan industri maupun lahan Anda.</p>
       </div>
 
       <div class="product-picker tilt-reveal" role="tablist" aria-label="Pilih produk">
@@ -145,11 +149,11 @@
           <div class="ppc-glow" aria-hidden="true"></div>
           <div class="ppc-top">
             <span class="ppc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg></span>
-            <span class="ppc-category">Mineral Multi-Industri</span>
+            <span class="ppc-category" data-i18n="produk.dolomite.cat">Mineral Multi-Industri</span>
           </div>
           <div class="ppc-body">
-            <h3>Dolomite</h3>
-            <p>Konstruksi, baja, kaca &amp; pengolahan air, hingga pertanian.</p>
+            <h3 data-i18n="product.dolomite.name">Dolomite</h3>
+            <p data-i18n="produk.dolomite.desc">Konstruksi, baja, kaca &amp; pengolahan air, hingga pertanian.</p>
           </div>
           <span class="ppc-glyph" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l1 6-3 12M15 3l-1 6 3 12"/></svg>
@@ -161,11 +165,11 @@
           <div class="ppc-glow" aria-hidden="true"></div>
           <div class="ppc-top">
             <span class="ppc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
-            <span class="ppc-category">Fosfat Alam Multi-Guna</span>
+            <span class="ppc-category" data-i18n="produk.phosphate.cat">Fosfat Alam Multi-Guna</span>
           </div>
           <div class="ppc-body">
-            <h3>Fosfat Alam</h3>
-            <p>Pupuk, pakan ternak, dan bahan baku industri kimia.</p>
+            <h3 data-i18n="product.phosphate.name">Fosfat Alam</h3>
+            <p data-i18n="produk.phosphate.desc">Pupuk, pakan ternak, dan bahan baku industri kimia.</p>
           </div>
           <span class="ppc-glyph" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.4"/><path d="M12 3.5a3.2 3.2 0 0 1 0 6.4 3.2 3.2 0 0 1 0-6.4zM12 14.1a3.2 3.2 0 0 1 0 6.4 3.2 3.2 0 0 1 0-6.4zM3.5 12a3.2 3.2 0 0 1 6.4 0 3.2 3.2 0 0 1-6.4 0zM14.1 12a3.2 3.2 0 0 1 6.4 0 3.2 3.2 0 0 1-6.4 0z"/></svg>
@@ -177,11 +181,11 @@
           <div class="ppc-glow" aria-hidden="true"></div>
           <div class="ppc-top">
             <span class="ppc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg></span>
-            <span class="ppc-category">Kalium dari Biomassa Sawit</span>
+            <span class="ppc-category" data-i18n="produk.palmash.cat">Kalium dari Biomassa Sawit</span>
           </div>
           <div class="ppc-body">
-            <h3>Abu Tandan Sawit</h3>
-            <p>Pupuk kalium ramah lingkungan dengan potensi material konstruksi.</p>
+            <h3 data-i18n="product.palmash.name">Abu Tandan Sawit</h3>
+            <p data-i18n="produk.palmash.desc">Pupuk kalium ramah lingkungan dengan potensi material konstruksi.</p>
           </div>
           <span class="ppc-glyph" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/><path d="M12 8v8M9 11l3-3 3 3"/></svg>
@@ -195,51 +199,51 @@
   <section class="section" id="industri">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow">Industri yang Kami Layani</span>
-        <h2>Satu Mineral, Beragam Manfaat Lintas Sektor</h2>
-        <p>Dolomite, Fosfat Alam, dan Abu Tandan Sawit kami digunakan jauh melampaui pertanian — dari konstruksi hingga pengolahan air, sesuai spesifikasi dan grade yang dibutuhkan.</p>
+        <span class="eyebrow" data-i18n="industri.eyebrow">Industri yang Kami Layani</span>
+        <h2 data-i18n="industri.h2">Satu Mineral, Beragam Manfaat Lintas Sektor</h2>
+        <p data-i18n="industri.p">Dolomite, Fosfat Alam, dan Abu Tandan Sawit kami digunakan jauh melampaui pertanian — dari konstruksi hingga pengolahan air, sesuai spesifikasi dan grade yang dibutuhkan.</p>
       </div>
 
       <div class="industry-grid stagger-group">
         <div class="industry-card">
           <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6-4v4l6-4v4l6-4v15H3z"/><line x1="7" y1="21" x2="7" y2="16"/><line x1="12" y1="21" x2="12" y2="16"/><line x1="17" y1="21" x2="17" y2="16"/></svg></div>
-          <h3>Konstruksi &amp; Infrastruktur</h3>
-          <p>Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.</p>
+          <h3 data-i18n="industri.card1.title">Konstruksi &amp; Infrastruktur</h3>
+          <p data-i18n="industri.card1.desc">Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.</p>
         </div>
         <div class="industry-card">
           <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 17a2.5 2.5 0 0 0 2.5-2.5c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7.5 7.5 0 1 1-15 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
-          <h3>Baja &amp; Metalurgi</h3>
-          <p>Flux dalam proses peleburan dan pemurnian logam.</p>
+          <h3 data-i18n="industri.card2.title">Baja &amp; Metalurgi</h3>
+          <p data-i18n="industri.card2.desc">Flux dalam proses peleburan dan pemurnian logam.</p>
         </div>
         <div class="industry-card">
           <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69s5 5.5 5 9.5a5 5 0 0 1-10 0c0-4 5-9.5 5-9.5z"/></svg></div>
-          <h3>Pengolahan Air</h3>
-          <p>Netralisasi dan pengolahan air limbah industri.</p>
+          <h3 data-i18n="industri.card3.title">Pengolahan Air</h3>
+          <p data-i18n="industri.card3.desc">Netralisasi dan pengolahan air limbah industri.</p>
         </div>
         <div class="industry-card">
           <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l1 6-3 12M15 3l-1 6 3 12"/></svg></div>
-          <h3>Kaca &amp; Keramik</h3>
-          <p>Komponen mineral pada manufaktur kaca dan keramik.</p>
+          <h3 data-i18n="industri.card4.title">Kaca &amp; Keramik</h3>
+          <p data-i18n="industri.card4.desc">Komponen mineral pada manufaktur kaca dan keramik.</p>
         </div>
         <div class="industry-card">
           <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></div>
-          <h3>Kertas &amp; Pulp</h3>
-          <p>Bahan pengisi dan aditif dalam proses produksi kertas.</p>
+          <h3 data-i18n="industri.card5.title">Kertas &amp; Pulp</h3>
+          <p data-i18n="industri.card5.desc">Bahan pengisi dan aditif dalam proses produksi kertas.</p>
         </div>
         <div class="industry-card">
           <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 5 6.5v4L9 14l4-3.5v-4z"/><path d="M9 14v7"/><path d="M5 21h8"/><circle cx="17.5" cy="17.5" r="3.5"/><path d="M17.5 15.5v2l1.3.8"/></svg></div>
-          <h3>Pakan Ternak &amp; Kimia</h3>
-          <p>Suplemen mineral pakan ternak dan bahan baku industri kimia.</p>
+          <h3 data-i18n="industri.card6.title">Pakan Ternak &amp; Kimia</h3>
+          <p data-i18n="industri.card6.desc">Suplemen mineral pakan ternak dan bahan baku industri kimia.</p>
         </div>
         <div class="industry-card">
           <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11h2v3a2 2 0 0 1-2 2h-1v3a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3H5a2 2 0 0 1-2-2v-3h2"/><path d="M7 11V9a5 5 0 0 1 10 0v2"/><path d="M7 11h10"/></svg></div>
-          <h3>Cat, Plastik &amp; Karet</h3>
-          <p>Filler mineral untuk cat, pelapis, plastik, dan produk karet.</p>
+          <h3 data-i18n="industri.card7.title">Cat, Plastik &amp; Karet</h3>
+          <p data-i18n="industri.card7.desc">Filler mineral untuk cat, pelapis, plastik, dan produk karet.</p>
         </div>
         <div class="industry-card">
           <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/><path d="M12 8v8M9 11l3-3 3 3"/></svg></div>
-          <h3>Pertanian &amp; Perkebunan</h3>
-          <p>Penetral pH tanah dan sumber hara makro bagi tanaman.</p>
+          <h3 data-i18n="industri.card8.title">Pertanian &amp; Perkebunan</h3>
+          <p data-i18n="industri.card8.desc">Penetral pH tanah dan sumber hara makro bagi tanaman.</p>
         </div>
       </div>
     </div>
@@ -250,12 +254,12 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-copy reveal">
-          <span class="eyebrow">Tentang Kami</span>
-          <h2>Mitra Mineral Industri Terpercaya di Indonesia</h2>
-          <p>PT Mangghala Inatama Lentera adalah perusahaan mineral industri yang memproduksi dan mendistribusikan Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit dalam bentuk powder maupun granule — untuk sektor konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian. Selama lebih dari 15 tahun, kami telah menjadi mitra lebih dari 500 klien industri, perkebunan, dan petani di 34 provinsi di Indonesia.</p>
-          <p>Setiap produk yang kami kirim melewati pengujian laboratorium internal — mulai dari penambangan bahan baku, pengolahan, uji kualitas, pengemasan, hingga distribusi ke seluruh Indonesia.</p>
+          <span class="eyebrow" data-i18n="tentang.eyebrow">Tentang Kami</span>
+          <h2 data-i18n="tentang.h2">Mitra Mineral Industri Terpercaya di Indonesia</h2>
+          <p data-i18n="tentang.p1">PT Mangghala Inatama Lentera adalah perusahaan mineral industri yang memproduksi dan mendistribusikan Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit dalam bentuk powder maupun granule — untuk sektor konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian. Selama lebih dari 15 tahun, kami telah menjadi mitra lebih dari 500 klien industri, perkebunan, dan petani di 34 provinsi di Indonesia.</p>
+          <p data-i18n="tentang.p2">Setiap produk yang kami kirim melewati pengujian laboratorium internal — mulai dari penambangan bahan baku, pengolahan, uji kualitas, pengemasan, hingga distribusi ke seluruh Indonesia.</p>
           <a href="assets/company-profile.pdf" class="btn btn-dark" download>
-            Download Company Profile
+            <span data-i18n="tentang.cta">Download Company Profile</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
           </a>
         </div>
@@ -265,19 +269,19 @@
             <div class="vm-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
             </div>
-            <h3>Visi</h3>
-            <p>Menjadi mitra mineral industri terpercaya nomor satu di Indonesia yang mendukung produktivitas dan keberlanjutan sektor industri, konstruksi, dan pertanian nasional.</p>
+            <h3 data-i18n="tentang.visi.title">Visi</h3>
+            <p data-i18n="tentang.visi.p">Menjadi mitra mineral industri terpercaya nomor satu di Indonesia yang mendukung produktivitas dan keberlanjutan sektor industri, konstruksi, dan pertanian nasional.</p>
           </div>
           <div class="vm-card accent">
             <div class="vm-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m14.5 9.5-5 2 2-5 5-2-2 5z"/></svg>
             </div>
-            <h3>Misi</h3>
+            <h3 data-i18n="tentang.misi.title">Misi</h3>
             <ul>
-              <li>Menyediakan produk mineral industri berkualitas tinggi dan teruji laboratorium untuk berbagai sektor.</li>
-              <li>Membangun jaringan distribusi yang menjangkau sentra industri dan perkebunan di seluruh Indonesia.</li>
-              <li>Mendukung pelanggan industri maupun petani dengan dukungan teknis dan agronomis berkelanjutan.</li>
-              <li>Mengembangkan produk ramah lingkungan dari daur ulang limbah sawit.</li>
+              <li data-i18n="tentang.misi.li1">Menyediakan produk mineral industri berkualitas tinggi dan teruji laboratorium untuk berbagai sektor.</li>
+              <li data-i18n="tentang.misi.li2">Membangun jaringan distribusi yang menjangkau sentra industri dan perkebunan di seluruh Indonesia.</li>
+              <li data-i18n="tentang.misi.li3">Mendukung pelanggan industri maupun petani dengan dukungan teknis dan agronomis berkelanjutan.</li>
+              <li data-i18n="tentang.misi.li4">Mengembangkan produk ramah lingkungan dari daur ulang limbah sawit.</li>
             </ul>
           </div>
         </div>
@@ -289,52 +293,52 @@
   <section class="section" id="faq">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow">FAQ</span>
+        <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
         <h2>Frequently Asked Question</h2>
       </div>
 
       <div class="faq-list stagger-group">
         <div class="faq-item">
           <button class="faq-q">
-            Apa perbedaan bentuk powder dan granule?
+            <span data-i18n="faq.q1">Apa perbedaan bentuk powder dan granule?</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-a"><div class="faq-a-inner">Powder memiliki reaksi lebih cepat karena luas permukaan lebih besar, cocok untuk pupuk dasar. Granule lebih tahan lama (slow release), minim debu, dan lebih mudah ditebar dengan alat mekanis untuk lahan luas.</div></div>
+          <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a1">Powder memiliki reaksi lebih cepat karena luas permukaan lebih besar, cocok untuk pupuk dasar. Granule lebih tahan lama (slow release), minim debu, dan lebih mudah ditebar dengan alat mekanis untuk lahan luas.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">
-            Berapa minimum order untuk pembelian?
+            <span data-i18n="faq.q2">Berapa minimum order untuk pembelian?</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-a"><div class="faq-a-inner">Minimum order bervariasi tergantung produk dan lokasi pengiriman. Silakan hubungi tim kami melalui form kontak untuk mendapatkan penawaran sesuai kebutuhan skala kebun Anda.</div></div>
+          <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a2">Minimum order bervariasi tergantung produk dan lokasi pengiriman. Silakan hubungi tim kami melalui form kontak untuk mendapatkan penawaran sesuai kebutuhan skala kebun Anda.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">
-            Apakah tersedia dokumen hasil uji laboratorium (COA)?
+            <span data-i18n="faq.q3">Apakah tersedia dokumen hasil uji laboratorium (COA)?</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-a"><div class="faq-a-inner">Ya, setiap pengiriman dapat disertai Certificate of Analysis (COA) yang mencantumkan kadar CaO, MgO, P₂O₅, atau K₂O sesuai produk yang dipesan.</div></div>
+          <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a3">Ya, setiap pengiriman dapat disertai Certificate of Analysis (COA) yang mencantumkan kadar CaO, MgO, P₂O₅, atau K₂O sesuai produk yang dipesan.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">
-            Apakah Mahitala melayani pengiriman ke luar Jawa?
+            <span data-i18n="faq.q4">Apakah Mahitala melayani pengiriman ke luar Jawa?</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-a"><div class="faq-a-inner">Ya, kami memiliki jaringan distribusi ke sentra perkebunan di Sumatra, Kalimantan, dan Sulawesi, selain Jawa. Ongkos kirim disesuaikan dengan lokasi tujuan.</div></div>
+          <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a4">Ya, kami memiliki jaringan distribusi ke sentra perkebunan di Sumatra, Kalimantan, dan Sulawesi, selain Jawa. Ongkos kirim disesuaikan dengan lokasi tujuan.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">
-            Apakah produk Mahitala hanya untuk pertanian?
+            <span data-i18n="faq.q5">Apakah produk Mahitala hanya untuk pertanian?</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-a"><div class="faq-a-inner">Tidak. Dolomite, Fosfat Alam, dan Abu Tandan Sawit kami juga digunakan industri konstruksi, baja, pengolahan air, kaca-keramik, pakan ternak, dan sektor lain sesuai spesifikasi dan grade yang dibutuhkan — bukan hanya pertanian.</div></div>
+          <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a5">Tidak. Dolomite, Fosfat Alam, dan Abu Tandan Sawit kami juga digunakan industri konstruksi, baja, pengolahan air, kaca-keramik, pakan ternak, dan sektor lain sesuai spesifikasi dan grade yang dibutuhkan — bukan hanya pertanian.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">
-            Bisakah saya berkonsultasi kebutuhan spesifikasi atau dosis sebelum membeli?
+            <span data-i18n="faq.q6">Bisakah saya berkonsultasi kebutuhan spesifikasi atau dosis sebelum membeli?</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-a"><div class="faq-a-inner">Tentu. Tim teknis dan agronomis kami siap membantu — baik untuk spesifikasi industri (ukuran partikel, kadar CaO/MgO/P₂O₅/K₂O) maupun dosis dan jadwal aplikasi pertanian sesuai kebutuhan Anda — gratis tanpa biaya konsultasi.</div></div>
+          <div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a6">Tentu. Tim teknis dan agronomis kami siap membantu — baik untuk spesifikasi industri (ukuran partikel, kadar CaO/MgO/P₂O₅/K₂O) maupun dosis dan jadwal aplikasi pertanian sesuai kebutuhan Anda — gratis tanpa biaya konsultasi.</div></div>
         </div>
       </div>
     </div>
@@ -344,12 +348,12 @@
   <section class="section cta-section">
     <div class="container tilt-reveal">
       <div class="cta-band">
-        <span class="hero-eyebrow">Siap Meningkatkan Produktivitas Anda?</span>
-        <h2 style="margin-top: var(--space-4)">Dapatkan Penawaran Terbaik untuk Kebutuhan Industri dan Lahan Anda</h2>
-        <p>Tim kami siap membantu menentukan produk dan dosis yang tepat — respon cepat, harga bersaing.</p>
+        <span class="hero-eyebrow" data-i18n="cta.eyebrow">Siap Meningkatkan Produktivitas Anda?</span>
+        <h2 style="margin-top: var(--space-4)" data-i18n="cta.h2">Dapatkan Penawaran Terbaik untuk Kebutuhan Industri dan Lahan Anda</h2>
+        <p data-i18n="cta.p">Tim kami siap membantu menentukan produk dan dosis yang tepat — respon cepat, harga bersaing.</p>
         <div class="hero-cta">
-          <a href="#kontak" class="btn btn-primary">Hubungi Tim Sales</a>
-          <a href="https://wa.me/6281234567890" class="btn btn-outline" target="_blank" rel="noopener">Chat via WhatsApp</a>
+          <a href="#kontak" class="btn btn-primary" data-i18n="cta.btn1">Hubungi Tim Sales</a>
+          <a href="https://wa.me/6281234567890" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="cta.btn2">Chat via WhatsApp</a>
         </div>
       </div>
     </div>
@@ -359,12 +363,12 @@
   <section class="section" id="kontak" style="background:var(--color-surface-alt)">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow">Kontak Kami</span>
+        <span class="eyebrow" data-i18n="kontak.eyebrow">Kontak Kami</span>
         <h2 class="rotator-heading">
-          Tanyakan Kebutuhan Anda untuk
+          <span data-i18n="kontak.h2static">Tanyakan Kebutuhan Anda untuk</span>
           <span class="rotator-line"><span class="rotator-word" id="rotatorWord">Industri</span></span>
         </h2>
-        <p>Isi form berikut atau hubungi kami langsung — tim kami akan merespon dalam 1x24 jam kerja.</p>
+        <p data-i18n="kontak.p">Isi form berikut atau hubungi kami langsung — tim kami akan merespon dalam 1x24 jam kerja.</p>
       </div>
 
       <div class="contact-grid tilt-reveal">
@@ -372,29 +376,29 @@
           <div class="contact-row">
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <div>
-              <strong>Kantor Pusat</strong>
+              <strong data-i18n="kontak.office.label">Kantor Pusat</strong>
               <span>Jl. Industri Raya No. 45, Kawasan Industri Mineral, Medan, Sumatera Utara, Indonesia</span>
             </div>
           </div>
           <div class="contact-row">
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
             <div>
-              <strong>Telepon</strong>
+              <strong data-i18n="kontak.phone.label">Telepon</strong>
               <a href="tel:+6281234567890">+62 812-3456-7890</a>
             </div>
           </div>
           <div class="contact-row">
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6l-10 7L2 6"/></svg></span>
             <div>
-              <strong>Email</strong>
+              <strong data-i18n="kontak.email.label">Email</strong>
               <a href="mailto:sales@mahitala.co.id">sales@mahitala.co.id</a>
             </div>
           </div>
           <div class="contact-row">
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
             <div>
-              <strong>Jam Operasional</strong>
-              <span>Senin – Sabtu, 08.00 – 17.00 WIB</span>
+              <strong data-i18n="kontak.hours.label">Jam Operasional</strong>
+              <span data-i18n="kontak.hours.value">Senin – Sabtu, 08.00 – 17.00 WIB</span>
             </div>
           </div>
         </div>
@@ -402,46 +406,46 @@
         <form class="contact-form" id="contactForm" novalidate>
           <div class="form-success" id="formSuccess">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Terima kasih! Pesan Anda telah terkirim, tim kami akan segera menghubungi Anda.
+            <span data-i18n="form.success">Terima kasih! Pesan Anda telah terkirim, tim kami akan segera menghubungi Anda.</span>
           </div>
 
           <div class="form-row">
             <div class="field" data-field="name">
-              <label for="fName">Nama Lengkap</label>
-              <input type="text" id="fName" name="name" placeholder="Nama Anda" required>
-              <span class="field-error">Nama wajib diisi.</span>
+              <label for="fName" data-i18n="form.name.label">Nama Lengkap</label>
+              <input type="text" id="fName" name="name" placeholder="Nama Anda" data-i18n-ph="form.name.ph" required>
+              <span class="field-error" data-i18n="form.name.err">Nama wajib diisi.</span>
             </div>
             <div class="field" data-field="phone">
-              <label for="fPhone">No. Telepon / WhatsApp</label>
-              <input type="tel" id="fPhone" name="phone" placeholder="08xx-xxxx-xxxx" required>
-              <span class="field-error">Nomor telepon wajib diisi.</span>
+              <label for="fPhone" data-i18n="form.phone.label">No. Telepon / WhatsApp</label>
+              <input type="tel" id="fPhone" name="phone" placeholder="08xx-xxxx-xxxx" data-i18n-ph="form.phone.ph" required>
+              <span class="field-error" data-i18n="form.phone.err">Nomor telepon wajib diisi.</span>
             </div>
           </div>
 
           <div class="field" data-field="email">
-            <label for="fEmail">Email</label>
-            <input type="email" id="fEmail" name="email" placeholder="nama@perusahaan.com" required>
-            <span class="field-error">Masukkan alamat email yang valid.</span>
+            <label for="fEmail" data-i18n="form.email.label">Email</label>
+            <input type="email" id="fEmail" name="email" placeholder="nama@perusahaan.com" data-i18n-ph="form.email.ph" required>
+            <span class="field-error" data-i18n="form.email.err">Masukkan alamat email yang valid.</span>
           </div>
 
           <div class="field" data-field="product">
-            <label for="fProduct">Produk yang Diminati</label>
+            <label for="fProduct" data-i18n="form.product.label">Produk yang Diminati</label>
             <select id="fProduct" name="product">
-              <option value="dolomite">Dolomite</option>
-              <option value="phosphate">Fosfat Alam</option>
-              <option value="palmash">Abu Tandan Sawit</option>
-              <option value="lainnya">Belum Yakin / Konsultasi</option>
+              <option value="dolomite" data-i18n="product.dolomite.name">Dolomite</option>
+              <option value="phosphate" data-i18n="product.phosphate.name">Fosfat Alam</option>
+              <option value="palmash" data-i18n="product.palmash.name">Abu Tandan Sawit</option>
+              <option value="lainnya" data-i18n="form.opt.other">Belum Yakin / Konsultasi</option>
             </select>
           </div>
 
           <div class="field" data-field="message">
-            <label for="fMessage">Pesan</label>
-            <textarea id="fMessage" name="message" placeholder="Ceritakan kebutuhan Anda: industri/aplikasi, spesifikasi produk, estimasi kebutuhan tonase, dll." required></textarea>
-            <span class="field-error">Pesan wajib diisi.</span>
+            <label for="fMessage" data-i18n="form.message.label">Pesan</label>
+            <textarea id="fMessage" name="message" placeholder="Ceritakan kebutuhan Anda: industri/aplikasi, spesifikasi produk, estimasi kebutuhan tonase, dll." data-i18n-ph="form.message.ph" required></textarea>
+            <span class="field-error" data-i18n="form.message.err">Pesan wajib diisi.</span>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width:100%">
-            Kirim Pesan
+            <span data-i18n="form.submit">Kirim Pesan</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
         </form>
@@ -461,7 +465,7 @@
           </span>
           <span class="brand-text">Mahitala</span>
         </a>
-        <p>PT Mangghala Inatama Lentera menyediakan mineral industri berkualitas — Dolomite, Fosfat Alam, dan Abu Tandan Sawit — untuk mendukung industri konstruksi, manufaktur, dan pertanian Indonesia.</p>
+        <p data-i18n="footer.tagline">PT Mangghala Inatama Lentera menyediakan mineral industri berkualitas — Dolomite, Fosfat Alam, dan Abu Tandan Sawit — untuk mendukung industri konstruksi, manufaktur, dan pertanian Indonesia.</p>
         <div class="social-row">
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -470,27 +474,27 @@
       </div>
 
       <div class="footer-col">
-        <h5>Produk</h5>
+        <h5 data-i18n="footer.col.produk">Produk</h5>
         <ul>
-          <li><a href="#produk" data-tablink="dolomite">Dolomite</a></li>
-          <li><a href="#produk" data-tablink="phosphate">Fosfat Alam</a></li>
-          <li><a href="#produk" data-tablink="palmash">Abu Tandan Sawit</a></li>
+          <li><a href="#produk" data-tablink="dolomite" data-i18n="product.dolomite.name">Dolomite</a></li>
+          <li><a href="#produk" data-tablink="phosphate" data-i18n="product.phosphate.name">Fosfat Alam</a></li>
+          <li><a href="#produk" data-tablink="palmash" data-i18n="product.palmash.name">Abu Tandan Sawit</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>Perusahaan</h5>
+        <h5 data-i18n="footer.col.perusahaan">Perusahaan</h5>
         <ul>
-          <li><a href="#tentang">Tentang Kami</a></li>
-          <li><a href="#industri">Industri</a></li>
-          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="#tentang" data-i18n="footer.tentang">Tentang Kami</a></li>
+          <li><a href="#industri" data-i18n="footer.industri">Industri</a></li>
+          <li><a href="gallery.html" data-i18n="footer.galeri">Galeri</a></li>
           <li><a href="assets/company-profile.pdf" download>Company Profile</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#faq" data-i18n="footer.faq">FAQ</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>Hubungi Kami</h5>
+        <h5 data-i18n="footer.col.kontak">Hubungi Kami</h5>
         <ul>
           <li>Jl. Industri Raya No. 45, Medan, Sumatera Utara</li>
           <li><a href="tel:+6281234567890">+62 812-3456-7890</a></li>
@@ -500,8 +504,8 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© <span id="year"></span> PT Mangghala Inatama Lentera. Seluruh hak cipta dilindungi.</span>
-      <span>Dibuat dengan komitmen untuk industri dan pertanian Indonesia yang lebih maju.</span>
+      <span>© <span id="year"></span> PT Mangghala Inatama Lentera. <span data-i18n="footer.rights">Seluruh hak cipta dilindungi.</span></span>
+      <span data-i18n="footer.tagline2">Dibuat dengan komitmen untuk industri dan pertanian Indonesia yang lebih maju.</span>
     </div>
   </div>
 </footer>
@@ -565,7 +569,20 @@
   </div>
 </div>
 
+<script>
+  window.PAGE_I18N = {
+    id: {
+      title: "PT Mangghala Inatama Lentera — Mineral Industri: Dolomite, Fosfat Alam & Abu Tandan Sawit",
+      description: "PT Mangghala Inatama Lentera memproduksi Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit (powder & granule) berkualitas tinggi untuk industri konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian di seluruh Indonesia."
+    },
+    en: {
+      title: "PT Mangghala Inatama Lentera — Industrial Minerals: Dolomite, Natural Rock Phosphate & Palm EFB Ash",
+      description: "PT Mangghala Inatama Lentera produces high-quality Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch Ash (powder & granule) for the construction, steel, water treatment, glass-ceramics, and agriculture industries across Indonesia."
+    }
+  };
+</script>
 <script src="js/hero-bg.js"></script>
 <script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

@@ -88,6 +88,71 @@
     }
   };
 
+  var PRODUCTS_EN = {
+    dolomite: {
+      visualClass: "dolomite",
+      formula: "CaMg(CO₃)₂",
+      title: "Dolomite",
+      tagline: "Natural lime mineral for construction, industry, and agriculture — a versatile source of Calcium &amp; Magnesium.",
+      forms: {
+        powder: "Highly reactive due to its large surface area — ideal for cement/concrete mixes, steel furnace flux, glass, and agricultural base fertilizer.",
+        granule: "Dense, low-dust granules that spread or blend easily at scale — suited for large land areas as well as bulk industrial needs."
+      },
+      benefits: [
+        ["Multi-Industry: Construction to Steel", "Raw material for cement/concrete and flux for steel smelting and non-ferrous metallurgy."],
+        ["Raw Material for Glass, Ceramics &amp; Water Treatment", "Used in glass-ceramics manufacturing and water treatment neutralization."],
+        ["Neutralizes Soil Acidity", "Raises the pH of acidic soil so nutrients are more easily absorbed by plant roots."],
+        ["Source of Calcium &amp; Magnesium", "Supports plant growth while also serving as feedstock for various industrial processes."]
+      ],
+      tags: ["Construction", "Steel &amp; Metallurgy", "Glass &amp; Water Treatment", "Agriculture"],
+      ctaLabel: "Ask Dolomite Price"
+    },
+    phosphate: {
+      visualClass: "phosphate",
+      formula: "Ca₃(PO₄)₂",
+      title: "Natural Rock Phosphate",
+      tagline: "A natural phosphorus source for fertilizer, animal feed, and the chemical industry.",
+      forms: {
+        powder: "Large surface area makes phosphorus available faster — ideal for base fertilizer, seedlings, and animal feed blends.",
+        granule: "Slow-release phosphorus, efficient for perennial crop fertilization and for industrial needs requiring a stable supply."
+      },
+      benefits: [
+        ["Stimulates Root Growth &amp; Fruiting", "Phosphorus (P) supports strong root development along with flower and fruit formation."],
+        ["Raw Material for Animal Feed", "A source of phosphorus and calcium for mineral supplements in the animal feed industry (feed grade)."],
+        ["Raw Material for the Chemical Industry", "Processed into phosphoric acid and phosphate compounds for the chemical industry and water treatment."],
+        ["Gradual Nutrient Release", "Rock phosphate releases nutrients slowly, suited for acidic soils and peatland."]
+      ],
+      tags: ["Agriculture", "Animal Feed", "Chemical Industry", "Water Treatment"],
+      ctaLabel: "Ask Rock Phosphate Price"
+    },
+    palmash: {
+      visualClass: "palmash",
+      formula: "High K₂O",
+      title: "Palm EFB Ash",
+      tagline: "Natural potassium from processed palm waste — for agriculture, with potential as an eco-friendly construction material.",
+      forms: {
+        powder: "Potassium dissolves and becomes available to plants quickly; the fine particles are also suited for research into eco-friendly building material blends.",
+        granule: "More resistant to rain leaching, doesn't blow away during application, and is easy to store in large quantities for industrial-scale needs."
+      },
+      benefits: [
+        ["High Potassium (K) Source", "A natural alternative to KCl for improving the weight and quality of your harvest."],
+        ["Environmentally Friendly Product", "Made from recycled palm empty fruit bunch waste — supporting a circular economy for plantations and industry."],
+        ["Potential Construction Material Blend", "Palm ash's silica content and pozzolanic properties are being researched and used as an eco-friendly alternative cement/concrete blend."],
+        ["Raises pH &amp; Enriches Soil", "Alkaline in nature, helping neutralize acidic soil while adding micronutrients."]
+      ],
+      tags: ["Agriculture", "Eco-Friendly", "Green Construction", "Circular Economy"],
+      ctaLabel: "Ask Palm EFB Ash Price"
+    }
+  };
+
+  function currentLang() {
+    return document.documentElement.getAttribute("lang") === "en" ? "en" : "id";
+  }
+
+  function productsForLang(lang) {
+    return lang === "en" ? PRODUCTS_EN : PRODUCTS;
+  }
+
   function renderVisualHTML(product, form) {
     return (
       '<div class="visual-glow" aria-hidden="true"></div>' +
@@ -104,18 +169,20 @@
     );
   }
 
-  function renderFormNoteHTML(product, form) {
+  function renderFormNoteHTML(product, form, lang) {
+    var powderLabel = lang === "en" ? "Powder Form:" : "Bentuk Powder:";
+    var granuleLabel = lang === "en" ? "Granule Form:" : "Bentuk Granule:";
     return (
       '<div class="form-note' + (form === "powder" ? " active" : "") + '">' +
-        "<strong>Bentuk Powder:</strong> " + product.forms.powder +
+        "<strong>" + powderLabel + "</strong> " + product.forms.powder +
       "</div>" +
       '<div class="form-note' + (form === "granule" ? " active" : "") + '">' +
-        "<strong>Bentuk Granule:</strong> " + product.forms.granule +
+        "<strong>" + granuleLabel + "</strong> " + product.forms.granule +
       "</div>"
     );
   }
 
-  function renderBodyHTML(product, form) {
+  function renderBodyHTML(product, form, lang) {
     var benefitsHTML = product.benefits.map(function (b) {
       return '<li><span class="tick">' + TICK_SVG + "</span><div><strong>" + b[0] + "</strong><p>" + b[1] + "</p></div></li>";
     }).join("");
@@ -123,11 +190,13 @@
       return '<span class="spec-pill">' + t + "</span>";
     }).join("");
     var formLabel = form === "granule" ? "Granule" : "Powder";
-    var waText = encodeURIComponent("Halo, saya ingin bertanya harga " + product.title + " (" + formLabel + ").");
-    var waHref = "https://wa.me/6281234567890?text=" + waText;
+    var waMessage = lang === "en"
+      ? "Hello, I'd like to ask about the price of " + product.title + " (" + formLabel + ")."
+      : "Halo, saya ingin bertanya harga " + product.title + " (" + formLabel + ").";
+    var waHref = "https://wa.me/6281234567890?text=" + encodeURIComponent(waMessage);
 
     return (
-      '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form) + "</div>" +
+      '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form, lang) + "</div>" +
       '<ul class="benefit-list stagger-group">' + benefitsHTML + "</ul>" +
       '<div class="product-foot">' +
         '<div class="spec-pills">' + tagsHTML + "</div>" +
@@ -207,20 +276,30 @@
   /* Powder always anchors the image to the left, Granule to the right —
      the same rule for every product — so toggling powder/granule swaps
      the whole visual/body layout, not just the note text. */
-  function applyProductView(product, form) {
+  function applyProductView(product, form, opts) {
+    var lang = (opts && opts.lang) || currentLang();
+    var instant = opts && opts.instant;
     var side = form === "granule" ? "right" : "left";
     productCard.setAttribute("data-side", side);
     var visualDir = side === "right" ? "right" : "left";
     var bodyDir = side === "right" ? "left" : "right";
 
-    slideProductSlot(visualSlot, visualDir, function () {
+    var applyVisual = function () {
       visualSlot.className = "product-visual " + product.visualClass;
       visualSlot.innerHTML = renderVisualHTML(product, form);
-    });
-    slideProductSlot(bodySlot, bodyDir, function () {
-      bodySlot.innerHTML = renderBodyHTML(product, form);
+    };
+    var applyBody = function () {
+      bodySlot.innerHTML = renderBodyHTML(product, form, lang);
       replayStagger($(".stagger-group", bodySlot));
-    });
+    };
+
+    if (instant) {
+      applyVisual();
+      applyBody();
+    } else {
+      slideProductSlot(visualSlot, visualDir, applyVisual);
+      slideProductSlot(bodySlot, bodyDir, applyBody);
+    }
   }
 
   function switchProduct(id) {
@@ -229,7 +308,8 @@
     if (alreadyOpenOnThis) return;
 
     var wasOpen = productModal.classList.contains("is-open");
-    var product = PRODUCTS[id];
+    var lang = currentLang();
+    var product = productsForLang(lang)[id];
     currentProductId = id;
     currentForm = "powder";
 
@@ -240,8 +320,17 @@
     });
 
     if (!wasOpen) openProductModal();
-    applyProductView(product, currentForm);
+    applyProductView(product, currentForm, { lang: lang });
   }
+
+  /* Re-render the open product modal in the new language without replaying
+     the slide transition (the language toggle isn't a "swap sides" action). */
+  document.addEventListener("languagechange", function (e) {
+    if (!currentProductId || !productModal.classList.contains("is-open")) return;
+    var lang = e.detail.lang;
+    var product = productsForLang(lang)[currentProductId];
+    applyProductView(product, currentForm, { lang: lang, instant: true });
+  });
 
   tabs.forEach(function (t) {
     t.addEventListener("click", function () { switchProduct(t.getAttribute("data-tab")); });
@@ -278,7 +367,8 @@
     var form = btn.getAttribute("data-form");
     if (form === currentForm) return;
     currentForm = form;
-    applyProductView(PRODUCTS[currentProductId], form);
+    var lang = currentLang();
+    applyProductView(productsForLang(lang)[currentProductId], form, { lang: lang });
   });
 
   /* ---------------- FAQ accordion ---------------- */
@@ -296,6 +386,16 @@
         a.style.maxHeight = a.scrollHeight + "px";
       }
     });
+  });
+
+  /* An open FAQ answer's max-height is a snapshot in px; if the language
+     switch changes the text's rendered height, resync it so content isn't
+     clipped or left with a gap. */
+  document.addEventListener("languagechange", function () {
+    var openItem = $(".faq-item.open");
+    if (!openItem) return;
+    var a = $(".faq-a", openItem);
+    a.style.maxHeight = a.scrollHeight + "px";
   });
 
   /* ---------------- Scroll reveal ---------------- */
@@ -406,19 +506,23 @@
   /* ---------------- Contact headline word rotator ---------------- */
   var rotatorEl = $("#rotatorWord");
   if (rotatorEl) {
-    var ROTATOR_WORDS = ["Industri", "Konstruksi", "Pertanian"];
+    var ROTATOR_WORDS = { id: ["Industri", "Konstruksi", "Pertanian"], en: ["Industry", "Construction", "Agriculture"] };
     var rotatorIndex = 0;
+    document.addEventListener("languagechange", function (e) {
+      rotatorEl.textContent = ROTATOR_WORDS[e.detail.lang][rotatorIndex];
+    });
     if (prefersReducedMotion) {
       /* leave the initial word as-is, no cycling */
     } else {
       setInterval(function () {
-        rotatorIndex = (rotatorIndex + 1) % ROTATOR_WORDS.length;
+        var lang = currentLang();
+        rotatorIndex = (rotatorIndex + 1) % ROTATOR_WORDS[lang].length;
         rotatorEl.style.transition = "transform 360ms cubic-bezier(0.16,1,0.3,1), opacity 300ms ease, filter 300ms ease";
         rotatorEl.style.transform = "translateY(-100%)";
         rotatorEl.style.opacity = "0";
         rotatorEl.style.filter = "blur(6px)";
         setTimeout(function () {
-          rotatorEl.textContent = ROTATOR_WORDS[rotatorIndex];
+          rotatorEl.textContent = ROTATOR_WORDS[currentLang()][rotatorIndex];
           rotatorEl.style.transition = "none";
           rotatorEl.style.transform = "translateY(100%)";
           rotatorEl.getBoundingClientRect(); /* force reflow */
