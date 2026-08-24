@@ -73,6 +73,14 @@
     "industri.card8.title": { id: "Pertanian &amp; Perkebunan", en: "Agriculture &amp; Plantations" },
     "industri.card8.desc": { id: "Penetral pH tanah dan sumber hara makro bagi tanaman.", en: "Soil pH neutralizer and source of macronutrients for plants." },
 
+    "galeri.eyebrow": { id: "Dokumentasi", en: "Documentation" },
+    "galeri.h2": { id: "Lihat Dokumentasi Kami", en: "See Our Documentation" },
+    "galeri.p": {
+      id: "Jelajahi galeri produk, proses produksi, dan penerapan di lapangan kami — dari tambang hingga siap kirim.",
+      en: "Explore our gallery of products, production process, and field applications — from the mine to ready-to-ship."
+    },
+    "galeri.cta": { id: "Lihat Galeri", en: "View Gallery" },
+
     "tentang.eyebrow": { id: "Tentang Kami", en: "About Us" },
     "tentang.h2": { id: "Mitra Mineral Industri Terpercaya di Indonesia", en: "Indonesia's Trusted Industrial Minerals Partner" },
     "tentang.p1": {
