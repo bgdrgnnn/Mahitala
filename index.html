@@ -294,33 +294,43 @@
   <section class="section" id="tentang" style="background:var(--color-surface-alt)">
     <svg class="tentang-deco" aria-hidden="true" viewBox="0 0 1280 640" preserveAspectRatio="xMidYMid slice">
       <defs>
-        <linearGradient id="tentangWave1" x1="0%" y1="10%" x2="100%" y2="70%">
-          <stop offset="0%" stop-color="#12A260" stop-opacity="0"/>
-          <stop offset="30%" stop-color="#12A260" stop-opacity="0.38"/>
-          <stop offset="60%" stop-color="#7FA895" stop-opacity="0.28"/>
-          <stop offset="100%" stop-color="#12A260" stop-opacity="0"/>
+        <linearGradient id="ribbonGrad1" x1="5%" y1="100%" x2="90%" y2="0%">
+          <stop offset="0%" stop-color="#A8E6C3" stop-opacity="0.55"/>
+          <stop offset="42%" stop-color="#8FAE9C" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
         </linearGradient>
-        <linearGradient id="tentangWave2" x1="0%" y1="25%" x2="100%" y2="85%">
-          <stop offset="0%" stop-color="#8FA89A" stop-opacity="0"/>
-          <stop offset="50%" stop-color="#8FA89A" stop-opacity="0.32"/>
-          <stop offset="100%" stop-color="#8FA89A" stop-opacity="0"/>
+        <linearGradient id="ribbonGrad2" x1="0%" y1="100%" x2="85%" y2="8%">
+          <stop offset="0%" stop-color="#B8E8CE" stop-opacity="0.42"/>
+          <stop offset="48%" stop-color="#9CB6A5" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
         </linearGradient>
-        <linearGradient id="tentangWave3" x1="0%" y1="0%" x2="100%" y2="55%">
-          <stop offset="0%" stop-color="#08492C" stop-opacity="0"/>
-          <stop offset="45%" stop-color="#08492C" stop-opacity="0.18"/>
-          <stop offset="100%" stop-color="#08492C" stop-opacity="0"/>
+        <linearGradient id="ribbonGrad3" x1="8%" y1="95%" x2="78%" y2="15%">
+          <stop offset="0%" stop-color="#7FA88F" stop-opacity="0.32"/>
+          <stop offset="55%" stop-color="#B4CBBE" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
         </linearGradient>
-        <filter id="tentangBlur" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur stdDeviation="9"/>
+        <filter id="ribbonBlur" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="11"/>
+        </filter>
+        <filter id="ribbonGrain" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/>
+          <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.6  0 0 0 0 0.52  0 0 0 0.55 0" result="tinted"/>
+          <feComposite in="tinted" in2="SourceGraphic" operator="in"/>
         </filter>
       </defs>
-      <g filter="url(#tentangBlur)">
-        <path d="M-100 460 C 150 300, 350 540, 620 380 C 840 250, 1020 440, 1250 300 C 1350 240, 1400 270, 1440 250"
-              fill="none" stroke="url(#tentangWave1)" stroke-width="100" stroke-linecap="round"/>
-        <path d="M-100 260 C 180 130, 400 360, 660 220 C 880 100, 1080 300, 1330 170"
-              fill="none" stroke="url(#tentangWave2)" stroke-width="64" stroke-linecap="round"/>
-        <path d="M-100 560 C 220 460, 480 620, 760 500 C 980 410, 1180 540, 1400 470"
-              fill="none" stroke="url(#tentangWave3)" stroke-width="70" stroke-linecap="round"/>
+      <!-- flowing translucent ribbons, cascading lower-left to upper-right -->
+      <g filter="url(#ribbonBlur)">
+        <path d="M-100 700 C 60 560, 180 640, 340 480 C 520 300, 600 380, 780 200 C 900 80, 1000 120, 1180 -40"
+              fill="none" stroke="url(#ribbonGrad1)" stroke-width="150" stroke-linecap="round"/>
+        <path d="M-120 620 C 40 520, 220 560, 380 400 C 560 220, 680 300, 860 140 C 980 30, 1080 60, 1240 -60"
+              fill="none" stroke="url(#ribbonGrad2)" stroke-width="94" stroke-linecap="round"/>
+        <path d="M-80 660 C 100 600, 260 500, 440 380 C 620 260, 720 260, 900 100 C 1020 -10, 1120 10, 1260 -80"
+              fill="none" stroke="url(#ribbonGrad3)" stroke-width="60" stroke-linecap="round"/>
+      </g>
+      <!-- fine stippled particle texture, clipped to the same ribbon shape -->
+      <g opacity="0.45">
+        <path d="M-100 700 C 60 560, 180 640, 340 480 C 520 300, 600 380, 780 200 C 900 80, 1000 120, 1180 -40"
+              fill="none" stroke="#12A260" stroke-width="150" stroke-linecap="round" filter="url(#ribbonGrain)"/>
       </g>
     </svg>
     <div class="container">
