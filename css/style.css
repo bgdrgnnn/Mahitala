@@ -60,6 +60,42 @@ html { scroll-behavior: smooth; }
    height read at click time would go stale before the scroll settles. */
 #home, #produk, #industri, #tentang, #faq, #kontak { scroll-margin-top: 58px; }
 
+#tentang, #faq { position: relative; overflow: hidden; }
+#tentang .container, #faq .container { position: relative; z-index: 1; }
+
+.tentang-deco {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.faq-deco {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.faq-deco-q {
+  position: absolute;
+  font-weight: 800;
+  color: var(--color-primary);
+  opacity: 0.07;
+  line-height: 1;
+}
+.faq-deco-doc { position: absolute; color: var(--color-primary); opacity: 0.1; }
+.faq-deco-dot {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  opacity: 0.1;
+}
+@media (max-width: 1100px) {
+  .faq-deco { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
