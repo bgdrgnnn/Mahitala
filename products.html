@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Detail Produk — PT Mangghala Inatama Lentera</title>
+<meta name="description" content="Technical Data Sheet, Certificate of Analysis, dan foto produk Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit dari PT Mangghala Inatama Lentera.">
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <a href="index.html#home" class="brand">
+      <span class="brand-mark">
+        <img src="assets/logo-icon.png" alt="Logo PT Mangghala Inatama Lentera" width="42" height="51">
+      </span>
+      <span class="brand-text">
+        Mahitala
+        <small>PT MANGGHALA INATAMA LENTERA</small>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language / Bahasa">
+        <button type="button" class="lang-btn active" data-lang="id">ID</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="index.html#kontak" class="btn btn-ghost btn-sm header-cta" data-i18n="header.cta">Minta Penawaran</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ FLOATING DOCK NAV ============ -->
+<nav class="dock-nav" id="dockNav" aria-label="Navigasi utama">
+  <a href="index.html#home" class="dock-item" data-tooltip="Home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9"/></svg>
+    <span class="dock-label" data-i18n="nav.home">Home</span>
+  </a>
+  <a href="products.html" class="dock-item active" data-tooltip="Produk">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5 12 3 3 7.5l9 4.5 9-4.5Z"/><path d="M3 7.5v9L12 21l9-4.5v-9"/><path d="M12 12v9"/></svg>
+    <span class="dock-label" data-i18n="nav.produk">Produk</span>
+  </a>
+  <a href="gallery.html" class="dock-item" data-tooltip="Galeri">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+    <span class="dock-label" data-i18n="footer.galeri">Galeri</span>
+  </a>
+  <a href="about.html" class="dock-item" data-tooltip="Tentang Kami">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="11.5"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span class="dock-label" data-i18n="nav.tentang">Tentang Kami</span>
+  </a>
+  <a href="index.html#faq" class="dock-item" data-tooltip="FAQ">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.6 2.24c-.77.37-1.35 1.1-1.35 1.96V13.5"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <span class="dock-label" data-i18n="nav.faq">FAQ</span>
+  </a>
+  <a href="index.html#kontak" class="dock-item" data-tooltip="Kontak">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+    <span class="dock-label" data-i18n="nav.kontak">Kontak</span>
+  </a>
+  <span class="dock-sep" aria-hidden="true"></span>
+  <a href="https://wa.me/6281234567890" class="dock-item" target="_blank" rel="noopener" data-tooltip="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+    <span class="dock-label">WhatsApp</span>
+  </a>
+  <a href="#" class="dock-item" target="_blank" rel="noopener" data-tooltip="Instagram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+    <span class="dock-label">Instagram</span>
+  </a>
+</nav>
+
+<main>
+  <!-- ============ PRODUCTS HERO ============ -->
+  <section class="gallery-hero">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" data-i18n="pdetail.hero.eyebrow">Detail Produk</span>
+        <h2 data-i18n="pdetail.hero.h2">Technical Data Sheet, COA, dan Dokumentasi Produk</h2>
+        <p data-i18n="pdetail.hero.p">Spesifikasi teknis, sertifikat analisis, dan foto produk untuk setiap lini mineral yang kami produksi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT DETAILS ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+
+      <!-- Dolomite -->
+      <div class="product-detail reveal">
+        <div class="product-visual dolomite">
+          <div class="product-visual-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
+          </div>
+          <span class="product-visual-note" data-i18n="pdetail.photonote">Foto Produk Menyusul</span>
+          <div class="product-photo-grid">
+            <div class="product-photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-5 4-3-2-5 4"/></svg></div>
+            <div class="product-photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-5 4-3-2-5 4"/></svg></div>
+            <div class="product-photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-5 4-3-2-5 4"/></svg></div>
+          </div>
+        </div>
+        <div class="product-content">
+          <h3 data-i18n="product.dolomite.name">Dolomite</h3>
+          <p data-i18n="pdetail.dolomite.intro">Tersedia dalam bentuk powder dan granule, untuk kebutuhan konstruksi, baja, kaca, pengolahan air, hingga pertanian.</p>
+
+          <div class="tds-table-wrap">
+            <table class="tds-table">
+              <caption data-i18n="pdetail.tds.caption">Technical Data Sheet (Ringkasan Parameter)</caption>
+              <thead>
+                <tr>
+                  <th data-i18n="pdetail.tds.col.param">Parameter</th>
+                  <th data-i18n="pdetail.tds.col.value">Nilai</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>CaO</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+                <tr><td>MgO</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+                <tr><td data-i18n="pdetail.tds.moisture">Kadar Air</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+                <tr><td data-i18n="pdetail.tds.mesh">Ukuran Mesh</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="tds-note" data-i18n="pdetail.tds.note">Nilai aktual bervariasi per batch dan tercantum lengkap dalam TDS resmi — hubungi tim sales untuk dokumen lengkap.</p>
+
+          <div class="coa-card">
+            <div class="coa-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <p><strong data-i18n="pdetail.coa.title">COA (Certificate of Analysis)</strong><br><span data-i18n="pdetail.coa.desc">Setiap batch/pengiriman disertai COA dari laboratorium internal kami. Hubungi tim sales untuk contoh format dan salinan sesuai pengiriman Anda.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fosfat Alam -->
+      <div class="product-detail reveal">
+        <div class="product-visual phosphate">
+          <div class="product-visual-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <span class="product-visual-note" data-i18n="pdetail.photonote">Foto Produk Menyusul</span>
+          <div class="product-photo-grid">
+            <div class="product-photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-5 4-3-2-5 4"/></svg></div>
+            <div class="product-photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-5 4-3-2-5 4"/></svg></div>
+            <div class="product-photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-5 4-3-2-5 4"/></svg></div>
+          </div>
+        </div>
+        <div class="product-content">
+          <h3 data-i18n="product.phosphate.name">Fosfat Alam</h3>
+          <p data-i18n="pdetail.phosphate.intro">Bahan baku pupuk, pakan ternak, dan industri kimia — tersedia dalam bentuk powder dan granule.</p>
+
+          <div class="tds-table-wrap">
+            <table class="tds-table">
+              <caption data-i18n="pdetail.tds.caption">Technical Data Sheet (Ringkasan Parameter)</caption>
+              <thead>
+                <tr>
+                  <th data-i18n="pdetail.tds.col.param">Parameter</th>
+                  <th data-i18n="pdetail.tds.col.value">Nilai</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>P₂O₅</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+                <tr><td>CaO</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+                <tr><td data-i18n="pdetail.tds.moisture">Kadar Air</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+                <tr><td data-i18n="pdetail.tds.mesh">Ukuran Mesh</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="tds-note" data-i18n="pdetail.tds.note">Nilai aktual bervariasi per batch dan tercantum lengkap dalam TDS resmi — hubungi tim sales untuk dokumen lengkap.</p>
+
+          <div class="coa-card">
+            <div class="coa-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <p><strong data-i18n="pdetail.coa.title">COA (Certificate of Analysis)</strong><br><span data-i18n="pdetail.coa.desc">Setiap batch/pengiriman disertai COA dari laboratorium internal kami. Hubungi tim sales untuk contoh format dan salinan sesuai pengiriman Anda.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Abu Tandan Sawit -->
+      <div class="product-detail reveal">
+        <div class="product-visual palmash">
+          <div class="product-visual-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg>
+          </div>
+          <span class="product-visual-note" data-i18n="pdetail.photonote">Foto Produk Menyusul</span>
+          <div class="product-photo-grid">
+            <div class="product-photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-5 4-3-2-5 4"/></svg></div>
+            <div class="product-photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-5 4-3-2-5 4"/></svg></div>
+            <div class="product-photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-5 4-3-2-5 4"/></svg></div>
+          </div>
+        </div>
+        <div class="product-content">
+          <h3 data-i18n="product.palmash.name">Abu Tandan Sawit</h3>
+          <p data-i18n="pdetail.palmash.intro">Pupuk kalium ramah lingkungan hasil pengolahan tandan kosong kelapa sawit, dengan potensi material konstruksi.</p>
+
+          <div class="tds-table-wrap">
+            <table class="tds-table">
+              <caption data-i18n="pdetail.tds.caption">Technical Data Sheet (Ringkasan Parameter)</caption>
+              <thead>
+                <tr>
+                  <th data-i18n="pdetail.tds.col.param">Parameter</th>
+                  <th data-i18n="pdetail.tds.col.value">Nilai</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>K₂O</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+                <tr><td>CaO</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+                <tr><td data-i18n="pdetail.tds.moisture">Kadar Air</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+                <tr><td data-i18n="pdetail.tds.mesh">Ukuran Mesh</td><td class="tds-placeholder" data-i18n="pdetail.tds.seeTds">Lihat TDS resmi</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="tds-note" data-i18n="pdetail.tds.note">Nilai aktual bervariasi per batch dan tercantum lengkap dalam TDS resmi — hubungi tim sales untuk dokumen lengkap.</p>
+
+          <div class="coa-card">
+            <div class="coa-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <p><strong data-i18n="pdetail.coa.title">COA (Certificate of Analysis)</strong><br><span data-i18n="pdetail.coa.desc">Setiap batch/pengiriman disertai COA dari laboratorium internal kami. Hubungi tim sales untuk contoh format dan salinan sesuai pengiriman Anda.</span></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section cta-section">
+    <div class="container tilt-reveal">
+      <div class="cta-band">
+        <span class="hero-eyebrow" data-i18n="gallery.cta.eyebrow">Tertarik dengan Produk Kami?</span>
+        <h2 style="margin-top: var(--space-4)" data-i18n="cta.h2">Dapatkan Penawaran Terbaik untuk Kebutuhan Industri dan Lahan Anda</h2>
+        <p data-i18n="cta.p">Tim kami siap membantu menentukan produk dan dosis yang tepat — respon cepat, harga bersaing.</p>
+        <div class="hero-cta">
+          <a href="index.html#kontak" class="btn btn-primary" data-i18n="cta.btn1">Hubungi Tim Sales</a>
+          <a href="https://wa.me/6281234567890" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="cta.btn2">Chat via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html#home" class="brand">
+          <span class="brand-mark">
+            <img src="assets/logo-icon.png" alt="Logo PT Mangghala Inatama Lentera" width="42" height="51">
+          </span>
+          <span class="brand-text">Mahitala</span>
+        </a>
+        <p data-i18n="footer.tagline">PT Mangghala Inatama Lentera menyediakan mineral industri berkualitas — Dolomite, Fosfat Alam, dan Abu Tandan Sawit — untuk mendukung industri konstruksi, manufaktur, dan pertanian, baik pasar domestik maupun ekspor internasional.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10 9 15 12 10 15 10 9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="footer.col.produk">Produk</h5>
+        <ul>
+          <li><a href="products.html" data-i18n="product.dolomite.name">Dolomite</a></li>
+          <li><a href="products.html" data-i18n="product.phosphate.name">Fosfat Alam</a></li>
+          <li><a href="products.html" data-i18n="product.palmash.name">Abu Tandan Sawit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="footer.col.perusahaan">Perusahaan</h5>
+        <ul>
+          <li><a href="about.html" data-i18n="footer.tentang">Tentang Kami</a></li>
+          <li><a href="index.html#industri" data-i18n="footer.industri">Industri</a></li>
+          <li><a href="gallery.html" data-i18n="footer.galeri">Galeri</a></li>
+          <li><a href="assets/company-profile.pdf" download>Company Profile</a></li>
+          <li><a href="index.html#faq" data-i18n="footer.faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="footer.col.kontak">Hubungi Kami</h5>
+        <ul>
+          <li>Jl. Industri Raya No. 45, Medan, Sumatera Utara</li>
+          <li><a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+          <li><a href="mailto:sales@mahitala.co.id">sales@mahitala.co.id</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> PT Mangghala Inatama Lentera. <span data-i18n="footer.rights">Seluruh hak cipta dilindungi.</span></span>
+      <span data-i18n="footer.tagline2">Dibuat dengan komitmen untuk industri dan pertanian Indonesia yang lebih maju.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.PAGE_I18N = {
+    id: {
+      title: "Detail Produk — PT Mangghala Inatama Lentera",
+      description: "Technical Data Sheet, Certificate of Analysis, dan foto produk Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit dari PT Mangghala Inatama Lentera."
+    },
+    en: {
+      title: "Product Details — PT Mangghala Inatama Lentera",
+      description: "Technical Data Sheets, Certificates of Analysis, and product photos for Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch Ash from PT Mangghala Inatama Lentera."
+    }
+  };
+</script>
+<script src="js/gallery.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>

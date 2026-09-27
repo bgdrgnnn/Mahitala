@@ -38,6 +38,7 @@
       id: "Setiap produk tersedia dalam bentuk <strong>powder</strong> dan <strong>granule</strong>, disesuaikan dengan metode aplikasi dan skala kebutuhan industri maupun lahan Anda.",
       en: "Every product is available in <strong>powder</strong> and <strong>granule</strong> form, matched to your application method and the scale of your industrial or land needs."
     },
+    "produk.detailCta": { id: "Lihat TDS, COA &amp; Detail Produk", en: "View TDS, COA &amp; Product Details" },
 
     "product.dolomite.name": { id: "Dolomite", en: "Dolomite" },
     "product.phosphate.name": { id: "Fosfat Alam", en: "Natural Rock Phosphate" },
@@ -92,6 +93,7 @@
       en: "Every product we ship goes through internal laboratory testing — from raw material mining and processing, to quality testing, packaging, and distribution across Indonesia."
     },
     "tentang.cta": { id: "Download Company Profile", en: "Download Company Profile" },
+    "tentang.detailCta": { id: "Tim &amp; Legalitas Perusahaan", en: "Team &amp; Company Legal Documents" },
     "tentang.visi.title": { id: "Visi", en: "Vision" },
     "tentang.visi.p": {
       id: "Menjadi mitra mineral industri terpercaya nomor satu di Indonesia yang mendukung produktivitas dan keberlanjutan sektor industri, konstruksi, dan pertanian nasional.",
@@ -225,7 +227,62 @@
     "gallery.pengiriman1.title": { id: "Pengiriman", en: "Shipping" },
     "gallery.pengiriman1.desc": { id: "Pengiriman ke gudang, kebun, dan pelabuhan di seluruh Indonesia hingga ke pelabuhan tujuan ekspor.", en: "Delivered to warehouses, plantations, and ports across Indonesia, through to destination ports for export." },
 
-    "gallery.cta.eyebrow": { id: "Tertarik dengan Produk Kami?", en: "Interested in Our Products?" }
+    "gallery.cta.eyebrow": { id: "Tertarik dengan Produk Kami?", en: "Interested in Our Products?" },
+
+    "about.hero.eyebrow": { id: "Tentang Kami", en: "About Us" },
+    "about.hero.h2": { id: "Mengenal Lebih Dekat PT Mangghala Inatama Lentera", en: "Get to Know PT Mangghala Inatama Lentera" },
+    "about.hero.p": { id: "Tim di balik produksi, serta legalitas dan kelengkapan dokumen perusahaan kami.", en: "The team behind our production, and our company's legal documentation." },
+
+    "about.team.eyebrow": { id: "Tim Kami", en: "Our Team" },
+    "about.team.h2": { id: "Orang-Orang di Balik Setiap Pengiriman", en: "The People Behind Every Shipment" },
+    "about.team.p": { id: "Profil dan foto tim akan segera dilengkapi. Berikut fungsi-fungsi utama yang menjalankan operasional kami sehari-hari.", en: "Team profiles and photos will be added soon. Below are the core functions that run our day-to-day operations." },
+    "about.team.role1": { id: "Direktur Utama", en: "Managing Director" },
+    "about.team.dept1": { id: "Manajemen &amp; Strategi", en: "Management &amp; Strategy" },
+    "about.team.role2": { id: "Manajer Operasional", en: "Operations Manager" },
+    "about.team.dept2": { id: "Produksi &amp; Pengemasan", en: "Production &amp; Packaging" },
+    "about.team.role3": { id: "Kepala Laboratorium", en: "Laboratory Head" },
+    "about.team.dept3": { id: "Uji Kualitas &amp; QC", en: "Quality Testing &amp; QC" },
+    "about.team.role4": { id: "Manajer Penjualan &amp; Ekspor", en: "Sales &amp; Export Manager" },
+    "about.team.dept4": { id: "Sales &amp; Hubungan Pelanggan", en: "Sales &amp; Customer Relations" },
+    "about.team.soon": { id: "Foto Menyusul", en: "Photo Coming Soon" },
+
+    "about.legal.eyebrow": { id: "Legalitas", en: "Legal" },
+    "about.legal.h2": { id: "Legalitas &amp; Perizinan Perusahaan", en: "Company Legal Documents &amp; Permits" },
+    "about.legal.p": { id: "Dokumen resmi berikut tersedia untuk verifikasi calon mitra dan buyer. Salinan lengkap dapat diminta melalui tim sales kami.", en: "The official documents below are available for verification by prospective partners and buyers. Full copies can be requested through our sales team." },
+    "about.legal.doc1": { id: "Akta Pendirian Perusahaan", en: "Deed of Establishment" },
+    "about.legal.doc1desc": { id: "Akta notaris pendirian PT Mangghala Inatama Lentera beserta pengesahan Kemenkumham.", en: "Notarial deed of establishment for PT Mangghala Inatama Lentera, along with Ministry of Law ratification." },
+    "about.legal.doc2": { id: "NIB (Nomor Induk Berusaha)", en: "NIB (Business Identification Number)" },
+    "about.legal.doc2desc": { id: "Terdaftar resmi melalui sistem Online Single Submission (OSS) pemerintah Indonesia.", en: "Officially registered through the Indonesian government's Online Single Submission (OSS) system." },
+    "about.legal.doc3": { id: "NPWP Perusahaan", en: "Company Tax ID (NPWP)" },
+    "about.legal.doc3desc": { id: "Nomor Pokok Wajib Pajak badan usaha, aktif dan dalam status taat pajak.", en: "Corporate taxpayer identification number, active and in good tax standing." },
+    "about.legal.doc4": { id: "Izin Usaha Industri", en: "Industrial Business License" },
+    "about.legal.doc4desc": { id: "Izin operasional untuk kegiatan produksi dan pengolahan mineral industri.", en: "Operating license for industrial mineral production and processing activities." },
+    "about.legal.doc5": { id: "Surat Keterangan Domisili", en: "Certificate of Domicile" },
+    "about.legal.doc5desc": { id: "Keterangan lokasi kantor dan fasilitas operasional perusahaan.", en: "Confirmation of the company's office and operational facility location." },
+    "about.legal.doc6": { id: "Sertifikasi Standar Produk", en: "Product Standard Certification" },
+    "about.legal.doc6desc": { id: "Sertifikat mutu dan standar produk yang berlaku untuk lini produk kami.", en: "Quality and product standard certificates applicable to our product line." },
+
+    "about.cta.eyebrow": { id: "Ingin Menjadi Mitra Kami?", en: "Want to Become Our Partner?" },
+
+    "pdetail.hero.eyebrow": { id: "Detail Produk", en: "Product Details" },
+    "pdetail.hero.h2": { id: "Technical Data Sheet, COA, dan Dokumentasi Produk", en: "Technical Data Sheet, COA, and Product Documentation" },
+    "pdetail.hero.p": { id: "Spesifikasi teknis, sertifikat analisis, dan foto produk untuk setiap lini mineral yang kami produksi.", en: "Technical specifications, certificates of analysis, and product photos for every mineral line we produce." },
+    "pdetail.photonote": { id: "Foto Produk Menyusul", en: "Product Photos Coming Soon" },
+
+    "pdetail.dolomite.intro": { id: "Tersedia dalam bentuk powder dan granule, untuk kebutuhan konstruksi, baja, kaca, pengolahan air, hingga pertanian.", en: "Available in powder and granule form, for construction, steel, glass, water treatment, and agriculture needs." },
+    "pdetail.phosphate.intro": { id: "Bahan baku pupuk, pakan ternak, dan industri kimia — tersedia dalam bentuk powder dan granule.", en: "Raw material for fertilizer, animal feed, and chemical industries — available in powder and granule form." },
+    "pdetail.palmash.intro": { id: "Pupuk kalium ramah lingkungan hasil pengolahan tandan kosong kelapa sawit, dengan potensi material konstruksi.", en: "Eco-friendly potassium fertilizer processed from palm empty fruit bunches, with potential as a construction material." },
+
+    "pdetail.tds.caption": { id: "Technical Data Sheet (Ringkasan Parameter)", en: "Technical Data Sheet (Parameter Summary)" },
+    "pdetail.tds.col.param": { id: "Parameter", en: "Parameter" },
+    "pdetail.tds.col.value": { id: "Nilai", en: "Value" },
+    "pdetail.tds.seeTds": { id: "Lihat TDS resmi", en: "See official TDS" },
+    "pdetail.tds.moisture": { id: "Kadar Air", en: "Moisture Content" },
+    "pdetail.tds.mesh": { id: "Ukuran Mesh", en: "Mesh Size" },
+    "pdetail.tds.note": { id: "Nilai aktual bervariasi per batch dan tercantum lengkap dalam TDS resmi — hubungi tim sales untuk dokumen lengkap.", en: "Actual values vary by batch and are listed in full in the official TDS — contact our sales team for the complete document." },
+
+    "pdetail.coa.title": { id: "COA (Certificate of Analysis)", en: "COA (Certificate of Analysis)" },
+    "pdetail.coa.desc": { id: "Setiap batch/pengiriman disertai COA dari laboratorium internal kami. Hubungi tim sales untuk contoh format dan salinan sesuai pengiriman Anda.", en: "Every batch/shipment is accompanied by a COA from our internal laboratory. Contact our sales team for a sample format and a copy matching your shipment." }
   };
 
   var PLACEHOLDERS = {
