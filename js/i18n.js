@@ -18,8 +18,8 @@
       en: 'Natural Minerals for <em>Industry and Agriculture</em> in Indonesia'
     },
     "hero.lede": {
-      id: "PT Mangghala Inatama Lentera memproduksi dan mendistribusikan Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit — bentuk powder maupun granule — untuk kebutuhan konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian di seluruh Indonesia, dengan kesiapan melayani pasar ekspor internasional.",
-      en: "PT Mangghala Inatama Lentera produces and distributes Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch (EFB) Ash — in powder and granule form — for construction, steel, water treatment, glass-ceramics, and agriculture across Indonesia, with export-ready capability for international markets."
+      id: "PT Mangghala Inatama Lentera memproduksi dan mendistribusikan Dolomite, Fosfat Alam, Abu Tandan Kosong Sawit, dan Lempung — bentuk powder maupun granule — untuk kebutuhan konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian di seluruh Indonesia, dengan kesiapan melayani pasar ekspor internasional.",
+      en: "PT Mangghala Inatama Lentera produces and distributes Dolomite, Natural Rock Phosphate, Palm Empty Fruit Bunch (EFB) Ash, and Clay — in powder and granule form — for construction, steel, water treatment, glass-ceramics, and agriculture across Indonesia, with export-ready capability for international markets."
     },
     "hero.cta1": { id: "Lihat Produk Kami", en: "View Our Products" },
     "hero.cta2": { id: "Konsultasi Gratis", en: "Free Consultation" },
@@ -33,7 +33,7 @@
     "trust.4": { id: "Tim Teknis &amp; Agronomis Berpengalaman", en: "Experienced Technical &amp; Agronomy Team" },
 
     "produk.eyebrow": { id: "Produk Kami", en: "Our Products" },
-    "produk.h2": { id: "Tiga Mineral Alami untuk Industri dan Pertanian", en: "Three Natural Minerals for Industry and Agriculture" },
+    "produk.h2": { id: "Mineral Alami untuk Industri dan Pertanian", en: "Natural Minerals for Industry and Agriculture" },
     "produk.p": {
       id: "Setiap produk tersedia dalam bentuk <strong>powder</strong> dan <strong>granule</strong>, disesuaikan dengan metode aplikasi dan skala kebutuhan industri maupun lahan Anda.",
       en: "Every product is available in <strong>powder</strong> and <strong>granule</strong> form, matched to your application method and the scale of your industrial or land needs."
@@ -43,6 +43,7 @@
     "product.dolomite.name": { id: "Dolomite", en: "Dolomite" },
     "product.phosphate.name": { id: "Fosfat Alam", en: "Natural Rock Phosphate" },
     "product.palmash.name": { id: "Abu Tandan Sawit", en: "Palm EFB Ash" },
+    "product.clay.name": { id: "Lempung", en: "Clay" },
 
     "produk.dolomite.cat": { id: "Mineral Multi-Industri", en: "Multi-Industry Mineral" },
     "produk.dolomite.desc": { id: "Konstruksi, baja, kaca &amp; pengolahan air, hingga pertanian.", en: "Construction, steel, glass &amp; water treatment, to agriculture." },
@@ -50,12 +51,14 @@
     "produk.phosphate.desc": { id: "Pupuk, pakan ternak, dan bahan baku industri kimia.", en: "Fertilizer, animal feed, and chemical industry feedstock." },
     "produk.palmash.cat": { id: "Kalium dari Biomassa Sawit", en: "Potassium from Palm Biomass" },
     "produk.palmash.desc": { id: "Pupuk kalium ramah lingkungan dengan potensi material konstruksi.", en: "Eco-friendly potassium fertilizer with construction-material potential." },
+    "produk.clay.cat": { id: "Mineral Aluminosilikat Serbaguna", en: "Versatile Aluminosilicate Mineral" },
+    "produk.clay.desc": { id: "Keramik, bata, pengecoran, hingga bahan pemboran.", en: "Ceramics, bricks, foundry, and drilling applications." },
 
     "industri.eyebrow": { id: "Industri yang Kami Layani", en: "Industries We Serve" },
     "industri.h2": { id: "Satu Mineral, Beragam Manfaat Lintas Sektor", en: "One Mineral, Many Benefits Across Sectors" },
     "industri.p": {
-      id: "Dolomite, Fosfat Alam, dan Abu Tandan Sawit kami digunakan jauh melampaui pertanian — dari konstruksi hingga pengolahan air, sesuai spesifikasi dan grade yang dibutuhkan.",
-      en: "Our Dolomite, Natural Rock Phosphate, and Palm EFB Ash serve far beyond agriculture — from construction to water treatment — matched to the specification and grade you need."
+      id: "Dolomite, Fosfat Alam, Abu Tandan Sawit, dan Lempung kami digunakan jauh melampaui pertanian — dari konstruksi hingga pengolahan air, sesuai spesifikasi dan grade yang dibutuhkan.",
+      en: "Our Dolomite, Natural Rock Phosphate, Palm EFB Ash, and Clay serve far beyond agriculture — from construction to water treatment — matched to the specification and grade you need."
     },
     "industri.card1.title": { id: "Konstruksi &amp; Infrastruktur", en: "Construction &amp; Infrastructure" },
     "industri.card1.desc": { id: "Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.", en: "Additive material for cement, concrete, and aggregate in construction projects." },
@@ -85,8 +88,8 @@
     "tentang.eyebrow": { id: "Tentang Kami", en: "About Us" },
     "tentang.h2": { id: "Mitra Mineral Industri Terpercaya di Indonesia", en: "Indonesia's Trusted Industrial Minerals Partner" },
     "tentang.p1": {
-      id: "PT Mangghala Inatama Lentera adalah perusahaan mineral industri yang memproduksi dan mendistribusikan Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit dalam bentuk powder maupun granule — untuk sektor konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian. Selama lebih dari 15 tahun, kami telah menjadi mitra lebih dari 500 klien industri, perkebunan, dan petani di 34 provinsi di Indonesia. Kami juga siap melayani permintaan ekspor bagi buyer internasional yang membutuhkan pasokan mineral industri berkualitas dari Indonesia.",
-      en: "PT Mangghala Inatama Lentera is an industrial minerals company that produces and distributes Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch Ash in powder and granule form — for the construction, steel, water treatment, glass-ceramics, and agriculture sectors. For more than 15 years, we have partnered with over 500 industrial, plantation, and farming clients across 34 provinces in Indonesia. We are also ready to serve export demand from international buyers seeking quality industrial minerals sourced from Indonesia."
+      id: "PT Mangghala Inatama Lentera adalah perusahaan mineral industri yang memproduksi dan mendistribusikan Dolomite, Fosfat Alam, Abu Tandan Kosong Sawit, dan Lempung dalam bentuk powder maupun granule — untuk sektor konstruksi, baja, pengolahan air, kaca-keramik, hingga pertanian. Selama lebih dari 15 tahun, kami telah menjadi mitra lebih dari 500 klien industri, perkebunan, dan petani di 34 provinsi di Indonesia. Kami juga siap melayani permintaan ekspor bagi buyer internasional yang membutuhkan pasokan mineral industri berkualitas dari Indonesia.",
+      en: "PT Mangghala Inatama Lentera is an industrial minerals company that produces and distributes Dolomite, Natural Rock Phosphate, Palm Empty Fruit Bunch Ash, and Clay in powder and granule form — for the construction, steel, water treatment, glass-ceramics, and agriculture sectors. For more than 15 years, we have partnered with over 500 industrial, plantation, and farming clients across 34 provinces in Indonesia. We are also ready to serve export demand from international buyers seeking quality industrial minerals sourced from Indonesia."
     },
     "tentang.p2": {
       id: "Setiap produk yang kami kirim melewati pengujian laboratorium internal — mulai dari penambangan bahan baku, pengolahan, uji kualitas, pengemasan, hingga distribusi ke seluruh Indonesia.",
@@ -133,8 +136,8 @@
     },
     "faq.q5": { id: "Apakah produk Mahitala hanya untuk pertanian?", en: "Are Mahitala's products only for agriculture?" },
     "faq.a5": {
-      id: "Tidak. Dolomite, Fosfat Alam, dan Abu Tandan Sawit kami juga digunakan industri konstruksi, baja, pengolahan air, kaca-keramik, pakan ternak, dan sektor lain sesuai spesifikasi dan grade yang dibutuhkan — bukan hanya pertanian.",
-      en: "No. Our Dolomite, Natural Rock Phosphate, and Palm EFB Ash are also used by the construction, steel, water treatment, glass-ceramics, animal feed, and other industries according to the specification and grade required — not agriculture alone."
+      id: "Tidak. Dolomite, Fosfat Alam, Abu Tandan Sawit, dan Lempung kami juga digunakan industri konstruksi, baja, pengolahan air, kaca-keramik, pakan ternak, dan sektor lain sesuai spesifikasi dan grade yang dibutuhkan — bukan hanya pertanian.",
+      en: "No. Our Dolomite, Natural Rock Phosphate, Palm EFB Ash, and Clay are also used by the construction, steel, water treatment, glass-ceramics, animal feed, and other industries according to the specification and grade required — not agriculture alone."
     },
     "faq.q6": { id: "Bisakah saya berkonsultasi kebutuhan spesifikasi atau dosis sebelum membeli?", en: "Can I consult on specification or dosage before purchasing?" },
     "faq.a6": {
@@ -176,8 +179,8 @@
     },
 
     "footer.tagline": {
-      id: "PT Mangghala Inatama Lentera menyediakan mineral industri berkualitas — Dolomite, Fosfat Alam, dan Abu Tandan Sawit — untuk mendukung industri konstruksi, manufaktur, dan pertanian, baik pasar domestik maupun ekspor internasional.",
-      en: "PT Mangghala Inatama Lentera supplies quality industrial minerals — Dolomite, Natural Rock Phosphate, and Palm EFB Ash — supporting construction, manufacturing, and agriculture industries, for both the domestic market and international export."
+      id: "PT Mangghala Inatama Lentera menyediakan mineral industri berkualitas — Dolomite, Fosfat Alam, Abu Tandan Sawit, dan Lempung — untuk mendukung industri konstruksi, manufaktur, dan pertanian, baik pasar domestik maupun ekspor internasional.",
+      en: "PT Mangghala Inatama Lentera supplies quality industrial minerals — Dolomite, Natural Rock Phosphate, Palm EFB Ash, and Clay — supporting construction, manufacturing, and agriculture industries, for both the domestic market and international export."
     },
     "footer.col.produk": { id: "Produk", en: "Products" },
     "footer.col.perusahaan": { id: "Perusahaan", en: "Company" },
@@ -272,6 +275,7 @@
     "pdetail.dolomite.intro": { id: "Tersedia dalam bentuk powder dan granule, untuk kebutuhan konstruksi, baja, kaca, pengolahan air, hingga pertanian.", en: "Available in powder and granule form, for construction, steel, glass, water treatment, and agriculture needs." },
     "pdetail.phosphate.intro": { id: "Bahan baku pupuk, pakan ternak, dan industri kimia — tersedia dalam bentuk powder dan granule.", en: "Raw material for fertilizer, animal feed, and chemical industries — available in powder and granule form." },
     "pdetail.palmash.intro": { id: "Pupuk kalium ramah lingkungan hasil pengolahan tandan kosong kelapa sawit, dengan potensi material konstruksi.", en: "Eco-friendly potassium fertilizer processed from palm empty fruit bunches, with potential as a construction material." },
+    "pdetail.clay.intro": { id: "Mineral aluminosilikat alami untuk keramik, bata &amp; genteng, pengecoran logam, hingga lumpur pemboran — tersedia dalam bentuk powder dan granule/pelet.", en: "A natural aluminosilicate mineral for ceramics, bricks &amp; roof tiles, metal foundry, and drilling mud — available in powder and granule/pellet form." },
 
     "pdetail.tds.caption": { id: "Technical Data Sheet (Ringkasan Parameter)", en: "Technical Data Sheet (Parameter Summary)" },
     "pdetail.tds.col.param": { id: "Parameter", en: "Parameter" },

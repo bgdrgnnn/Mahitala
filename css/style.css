@@ -648,12 +648,15 @@ textarea:focus-visible,
    --mx/--my via mousemove; CSS just consumes the custom properties). */
 .product-picker {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
   margin-bottom: var(--space-12);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1080px) {
+  .product-picker { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
   .product-picker { grid-template-columns: 1fr; }
 }
 
@@ -681,6 +684,7 @@ textarea:focus-visible,
 .product-pick-card.dolomite { background: linear-gradient(150deg, #57534E, #1C1917); }
 .product-pick-card.phosphate { background: linear-gradient(150deg, #1B6B47, #062A19); }
 .product-pick-card.palmash { background: linear-gradient(150deg, #6B4F3B, #241A10); }
+.product-pick-card.clay { background: linear-gradient(150deg, #C17A52, #4A2416); }
 
 .ppc-texture {
   position: absolute;
@@ -842,6 +846,7 @@ textarea:focus-visible,
 .product-visual.dolomite { background: linear-gradient(150deg, #57534E, #292524); }
 .product-visual.phosphate { background: linear-gradient(150deg, #17D37D, #08492C); }
 .product-visual.palmash { background: linear-gradient(150deg, #6B4F3B, #2E2116); }
+.product-visual.clay { background: linear-gradient(150deg, #E08B5B, #6B3220); }
 
 .product-visual .texture {
   position: absolute; inset: 0;
@@ -1606,7 +1611,7 @@ textarea:focus-visible,
   .product-detail { grid-template-columns: 1fr; gap: var(--space-8); }
 }
 
-.product-visual {
+.pdetail-visual {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -1620,11 +1625,12 @@ textarea:focus-visible,
   color: #fff;
   box-shadow: var(--shadow-md);
 }
-.product-visual.dolomite { background: linear-gradient(150deg, #57534E, #1C1917); }
-.product-visual.phosphate { background: linear-gradient(150deg, #1B6B47, #062A19); }
-.product-visual.palmash { background: linear-gradient(150deg, #6B4F3B, #241A10); }
+.pdetail-visual.dolomite { background: linear-gradient(150deg, #57534E, #1C1917); }
+.pdetail-visual.phosphate { background: linear-gradient(150deg, #1B6B47, #062A19); }
+.pdetail-visual.palmash { background: linear-gradient(150deg, #6B4F3B, #241A10); }
+.pdetail-visual.clay { background: linear-gradient(150deg, #C17A52, #4A2416); }
 
-.product-visual-icon {
+.pdetail-visual-icon {
   position: relative;
   z-index: 1;
   width: 76px;
@@ -1636,9 +1642,9 @@ textarea:focus-visible,
   justify-content: center;
   margin-bottom: var(--space-5);
 }
-.product-visual-icon svg { width: 38px; height: 38px; }
+.pdetail-visual-icon svg { width: 38px; height: 38px; }
 
-.product-visual-note {
+.pdetail-visual-note {
   position: relative;
   z-index: 1;
   font-size: 12px;
@@ -1650,14 +1656,14 @@ textarea:focus-visible,
   border-radius: var(--radius-full);
 }
 
-.product-photo-grid {
+.pdetail-photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
   margin-top: var(--space-6);
   width: 100%;
 }
-.product-photo-placeholder {
+.pdetail-photo-placeholder {
   aspect-ratio: 1;
   border-radius: var(--radius-md);
   background: rgba(255,255,255,0.08);
@@ -1667,10 +1673,10 @@ textarea:focus-visible,
   justify-content: center;
   color: rgba(255,255,255,0.5);
 }
-.product-photo-placeholder svg { width: 22px; height: 22px; }
+.pdetail-photo-placeholder svg { width: 22px; height: 22px; }
 
-.product-content h3 { font-size: 24px; margin-bottom: var(--space-3); }
-.product-content > p { color: var(--color-muted-foreground); margin-bottom: var(--space-6); line-height: 1.65; }
+.pdetail-content h3 { font-size: 24px; margin-bottom: var(--space-3); }
+.pdetail-content > p { color: var(--color-muted-foreground); margin-bottom: var(--space-6); line-height: 1.65; }
 
 .tds-table-wrap { overflow-x: auto; margin-bottom: var(--space-4); }
 .tds-table {
