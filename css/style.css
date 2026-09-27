@@ -814,16 +814,6 @@ textarea:focus-visible,
 .product-modal-close:hover { background: rgba(0,0,0,0.55); transform: scale(1.06); }
 .product-modal-close svg { width: 18px; height: 18px; }
 
-.product-card[data-side="right"] .product-visual { order: 2; }
-.product-card[data-side="right"] .product-body { order: 1; }
-
-/* Left/right only makes sense in a row layout — stacked on mobile, the
-   image should always stay on top regardless of powder/granule. */
-@media (max-width: 860px) {
-  .product-card[data-side="right"] .product-visual { order: 1; }
-  .product-card[data-side="right"] .product-body { order: 2; }
-}
-
 .product-visual {
   position: relative;
   overflow: hidden;
