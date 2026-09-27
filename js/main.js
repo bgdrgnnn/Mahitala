@@ -243,7 +243,6 @@
 
   var tabs = $$(".product-pick-card");
   var productModal = $("#productModal");
-  var productCard = $("#productCard");
   var productModalClose = $("#productModalClose");
   var visualSlot = $("#productVisualSlot");
   var bodySlot = $("#productBodySlot");
@@ -309,16 +308,14 @@
     });
   }
 
-  /* Powder always anchors the image to the left, Granule to the right —
-     the same rule for every product — so toggling powder/granule swaps
-     the whole visual/body layout, not just the note text. */
+  /* The visual panel always stays on the left and the body panel on the
+     right — toggling Powder/Granule only swaps the content inside each,
+     it never repositions the panels themselves. */
   function applyProductView(product, form, opts) {
     var lang = (opts && opts.lang) || currentLang();
     var instant = opts && opts.instant;
-    var side = form === "granule" ? "right" : "left";
-    productCard.setAttribute("data-side", side);
-    var visualDir = side === "right" ? "right" : "left";
-    var bodyDir = side === "right" ? "left" : "right";
+    var visualDir = "left";
+    var bodyDir = "right";
 
     var applyVisual = function () {
       visualSlot.className = "product-visual " + product.visualClass;
