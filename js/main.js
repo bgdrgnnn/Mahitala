@@ -85,6 +85,24 @@
       ],
       tags: ["Pertanian", "Ramah Lingkungan", "Konstruksi Hijau", "Ekonomi Sirkular"],
       ctaLabel: "Tanya Harga Abu Sawit"
+    },
+    clay: {
+      visualClass: "clay",
+      formula: "Al₂Si₂O₅(OH)₄",
+      title: "Lempung",
+      tagline: "Mineral aluminosilikat alami serbaguna — untuk industri keramik, bata &amp; genteng, pengecoran logam, hingga lumpur pemboran.",
+      forms: {
+        powder: "Digiling halus untuk campuran badan keramik, bahan pengisi cat &amp; pelapis, serta aditif lumpur pemboran (drilling mud).",
+        granule: "Bentuk butiran/pelet memudahkan penanganan dan dosis dalam proses pengecoran logam dan aplikasi industri skala besar."
+      },
+      benefits: [
+        ["Bahan Baku Keramik, Bata &amp; Genteng", "Plastisitas alami lempung memudahkan pembentukan produk keramik, bata, dan genteng sebelum dibakar."],
+        ["Pengecoran Logam (Foundry)", "Digunakan sebagai bahan pengikat pasir cetak (bonding clay) pada industri pengecoran logam."],
+        ["Aditif Lumpur Pemboran", "Bentonit dan lempung sejenis berperan sebagai aditif lumpur pemboran pada industri migas dan geoteknik."],
+        ["Bahan Pengisi Cat &amp; Kertas", "Dimanfaatkan sebagai filler pada industri cat, pelapis, dan kertas untuk memperbaiki tekstur dan opasitas."]
+      ],
+      tags: ["Keramik &amp; Bata", "Pengecoran Logam", "Lumpur Pemboran", "Cat &amp; Kertas"],
+      ctaLabel: "Tanya Harga Lempung"
     }
   };
 
@@ -142,6 +160,24 @@
       ],
       tags: ["Agriculture", "Eco-Friendly", "Green Construction", "Circular Economy"],
       ctaLabel: "Ask Palm EFB Ash Price"
+    },
+    clay: {
+      visualClass: "clay",
+      formula: "Al₂Si₂O₅(OH)₄",
+      title: "Clay",
+      tagline: "A versatile natural aluminosilicate mineral — for ceramics, bricks &amp; roof tiles, metal foundry, and drilling mud.",
+      forms: {
+        powder: "Finely milled for ceramic body blends, paint &amp; coating fillers, and drilling mud additives.",
+        granule: "Granulated/pelletized form for easier handling and dosing in metal foundry and large-scale industrial processes."
+      },
+      benefits: [
+        ["Raw Material for Ceramics, Bricks &amp; Roof Tiles", "Clay's natural plasticity makes it easy to shape into ceramic, brick, and roof tile products before firing."],
+        ["Metal Foundry (Bonding Clay)", "Used as a sand-mold binder (bonding clay) in the metal foundry industry."],
+        ["Drilling Mud Additive", "Bentonite and similar clays serve as drilling mud additives in the oil &amp; gas and geotechnical industries."],
+        ["Filler for Paint &amp; Paper", "Used as a filler in the paint, coatings, and paper industries to improve texture and opacity."]
+      ],
+      tags: ["Ceramics &amp; Bricks", "Metal Foundry", "Drilling Mud", "Paint &amp; Paper"],
+      ctaLabel: "Ask Clay Price"
     }
   };
 
