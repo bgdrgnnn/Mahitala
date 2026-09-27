@@ -76,8 +76,8 @@
     "galeri.eyebrow": { id: "Dokumentasi", en: "Documentation" },
     "galeri.h2": { id: "Lihat Dokumentasi Kami", en: "See Our Documentation" },
     "galeri.p": {
-      id: "Jelajahi galeri produk, proses produksi, dan penerapan di lapangan kami — dari tambang hingga siap kirim.",
-      en: "Explore our gallery of products, production process, and field applications — from the mine to ready-to-ship."
+      id: "Jelajahi galeri alur kerja kami — dari produksi, pengemasan, proses stuffing, hingga pengiriman ke pelanggan.",
+      en: "Explore our workflow gallery — from production, packaging, container stuffing, to delivery to customers."
     },
     "galeri.cta": { id: "Lihat Galeri", en: "View Gallery" },
 
@@ -191,53 +191,39 @@
     },
 
     "gallery.hero.eyebrow": { id: "Galeri", en: "Gallery" },
-    "gallery.hero.h2": { id: "Produk, Proses, dan Penerapan di Lapangan", en: "Products, Process, and Field Applications" },
+    "gallery.hero.h2": { id: "Alur Produksi hingga Pengiriman", en: "Flow From Production to Shipping" },
     "gallery.hero.p": {
-      id: "Ilustrasi visual dari lini produk, alur produksi, hingga sektor industri dan pertanian yang kami layani. Foto dokumentasi asli menyusul.",
-      en: "Visual illustrations of our product line, production process, and the industry and agriculture sectors we serve. Real documentation photos coming soon."
+      id: "Ilustrasi visual dari setiap tahap: produksi, pengemasan, proses stuffing, hingga pengiriman ke pelanggan domestik dan ekspor. Foto dokumentasi asli menyusul.",
+      en: "Visual illustrations of every stage: production, packaging, container stuffing, and delivery to domestic and export customers. Real documentation photos coming soon."
     },
     "gallery.filter.all": { id: "Semua", en: "All" },
-    "gallery.filter.produk": { id: "Produk", en: "Products" },
-    "gallery.filter.proses": { id: "Proses Produksi", en: "Production Process" },
-    "gallery.filter.aplikasi": { id: "Aplikasi &amp; Penggunaan", en: "Applications &amp; Uses" },
+    "gallery.filter.produksi": { id: "Produksi", en: "Production" },
+    "gallery.filter.pengemasan": { id: "Pengemasan", en: "Packaging" },
+    "gallery.filter.stuffing": { id: "Proses Stuffing", en: "Container Stuffing" },
+    "gallery.filter.pengiriman": { id: "Pengiriman", en: "Shipping" },
 
-    "gallery.tag.produk": { id: "Produk", en: "Product" },
-    "gallery.tag.proses1": { id: "Proses · 01", en: "Process · 01" },
-    "gallery.tag.proses2": { id: "Proses · 02", en: "Process · 02" },
-    "gallery.tag.proses3": { id: "Proses · 03", en: "Process · 03" },
-    "gallery.tag.proses4": { id: "Proses · 04", en: "Process · 04" },
-    "gallery.tag.proses5": { id: "Proses · 05", en: "Process · 05" },
-    "gallery.tag.lahan": { id: "Aplikasi Lahan", en: "Field Application" },
-    "gallery.tag.industriapp": { id: "Aplikasi Industri", en: "Industrial Application" },
+    "gallery.tag.produksi1": { id: "Produksi · 01", en: "Production · 01" },
+    "gallery.tag.produksi2": { id: "Produksi · 02", en: "Production · 02" },
+    "gallery.tag.produksi3": { id: "Produksi · 03", en: "Production · 03" },
+    "gallery.tag.pengemasan": { id: "Pengemasan", en: "Packaging" },
+    "gallery.tag.stuffing": { id: "Proses Stuffing", en: "Container Stuffing" },
+    "gallery.tag.pengiriman": { id: "Pengiriman", en: "Shipping" },
 
-    "gallery.proses1.title": { id: "Penambangan &amp; Pengumpulan", en: "Mining &amp; Collection" },
-    "gallery.proses1.desc": { id: "Bahan baku dolomite &amp; fosfat dari tambang mitra, serta tandan kosong dari pabrik kelapa sawit.", en: "Dolomite and phosphate raw material from partner mines, plus empty fruit bunches from palm oil mills." },
-    "gallery.proses2.title": { id: "Pengolahan", en: "Processing" },
-    "gallery.proses2.desc": { id: "Proses pembakaran, penggilingan, dan pengayakan untuk menghasilkan powder atau granule.", en: "Calcination, grinding, and sieving process to produce powder or granule form." },
-    "gallery.proses3.title": { id: "Uji Kualitas", en: "Quality Testing" },
-    "gallery.proses3.desc": { id: "Pengujian kadar CaO, MgO, P₂O₅, dan K₂O di laboratorium sebelum produk diluluskan.", en: "Laboratory testing of CaO, MgO, P₂O₅, and K₂O content before products are approved for release." },
-    "gallery.proses4.title": { id: "Pengemasan", en: "Packaging" },
-    "gallery.proses4.desc": { id: "Dikemas dalam karung 25kg / 50kg / jumbo bag sesuai kebutuhan pelanggan.", en: "Packed in 25kg / 50kg bags or jumbo bags according to customer needs." },
-    "gallery.proses5.title": { id: "Distribusi", en: "Distribution" },
-    "gallery.proses5.desc": { id: "Pengiriman ke gudang, kebun, atau titik distribusi di seluruh Indonesia.", en: "Delivered to warehouses, plantations, or distribution points across Indonesia." },
+    "gallery.produksi1.title": { id: "Penambangan &amp; Pengumpulan", en: "Mining &amp; Collection" },
+    "gallery.produksi1.desc": { id: "Bahan baku dolomite &amp; fosfat dari tambang mitra, serta tandan kosong dari pabrik kelapa sawit.", en: "Dolomite and phosphate raw material from partner mines, plus empty fruit bunches from palm oil mills." },
+    "gallery.produksi2.title": { id: "Pengolahan", en: "Processing" },
+    "gallery.produksi2.desc": { id: "Proses pembakaran, penggilingan, dan pengayakan untuk menghasilkan powder atau granule.", en: "Calcination, grinding, and sieving process to produce powder or granule form." },
+    "gallery.produksi3.title": { id: "Uji Kualitas", en: "Quality Testing" },
+    "gallery.produksi3.desc": { id: "Pengujian kadar CaO, MgO, P₂O₅, dan K₂O di laboratorium sebelum produk diluluskan.", en: "Laboratory testing of CaO, MgO, P₂O₅, and K₂O content before products are approved for release." },
 
-    "gallery.lahan1.title": { id: "Perkebunan Sawit", en: "Palm Oil Plantations" },
-    "gallery.lahan1.desc": { id: "Dolomite untuk pH tanah, fosfat untuk pembibitan, abu tandan untuk bobot TBS.", en: "Dolomite for soil pH, phosphate for seedlings, EFB ash for fresh fruit bunch weight." },
-    "gallery.lahan2.title": { id: "Karet &amp; Tebu", en: "Rubber &amp; Sugarcane" },
-    "gallery.lahan2.desc": { id: "Menjaga struktur tanah dan menyuplai hara makro untuk pertumbuhan jangka panjang.", en: "Maintains soil structure and supplies macronutrients for long-term growth." },
-    "gallery.lahan3.title": { id: "Padi &amp; Palawija", en: "Rice &amp; Secondary Crops" },
-    "gallery.lahan3.desc": { id: "Pupuk dasar fosfat dan dolomite untuk lahan sawah dan tegalan yang asam.", en: "Base phosphate and dolomite fertilizer for acidic paddy and dryland fields." },
-    "gallery.lahan4.title": { id: "Hortikultura", en: "Horticulture" },
-    "gallery.lahan4.desc": { id: "Menunjang kualitas buah dan sayur dengan suplai kalsium, magnesium, dan kalium.", en: "Supports fruit and vegetable quality with calcium, magnesium, and potassium supply." },
+    "gallery.pengemasan1.title": { id: "Pengemasan", en: "Packaging" },
+    "gallery.pengemasan1.desc": { id: "Dikemas dalam karung 25kg / 50kg / jumbo bag sesuai kebutuhan pelanggan.", en: "Packed in 25kg / 50kg bags or jumbo bags according to customer needs." },
 
-    "gallery.industri1.title": { id: "Konstruksi &amp; Infrastruktur", en: "Construction &amp; Infrastructure" },
-    "gallery.industri1.desc": { id: "Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.", en: "Additive material for cement, concrete, and aggregate in construction projects." },
-    "gallery.industri2.title": { id: "Baja &amp; Metalurgi", en: "Steel &amp; Metallurgy" },
-    "gallery.industri2.desc": { id: "Flux dalam proses peleburan dan pemurnian logam pada industri baja.", en: "Flux for metal smelting and refining in the steel industry." },
-    "gallery.industri3.title": { id: "Kaca &amp; Keramik", en: "Glass &amp; Ceramics" },
-    "gallery.industri3.desc": { id: "Komponen mineral pada manufaktur kaca, keramik, dan produk berbasis silika.", en: "Mineral component in glass, ceramics, and silica-based product manufacturing." },
-    "gallery.industri4.title": { id: "Pengolahan Air &amp; Lingkungan", en: "Water &amp; Environmental Treatment" },
-    "gallery.industri4.desc": { id: "Netralisasi dan pengolahan air limbah pada berbagai proses industri.", en: "Neutralization and wastewater treatment across various industrial processes." },
+    "gallery.stuffing1.title": { id: "Proses Stuffing", en: "Container Stuffing" },
+    "gallery.stuffing1.desc": { id: "Pemuatan karung dan jumbo bag ke dalam kontainer secara rapi dan aman untuk pengiriman domestik maupun ekspor.", en: "Bags and jumbo bags are carefully and securely loaded into containers for domestic delivery and export shipment." },
+
+    "gallery.pengiriman1.title": { id: "Pengiriman", en: "Shipping" },
+    "gallery.pengiriman1.desc": { id: "Pengiriman ke gudang, kebun, dan pelabuhan di seluruh Indonesia hingga ke pelabuhan tujuan ekspor.", en: "Delivered to warehouses, plantations, and ports across Indonesia, through to destination ports for export." },
 
     "gallery.cta.eyebrow": { id: "Tertarik dengan Produk Kami?", en: "Interested in Our Products?" }
   };
