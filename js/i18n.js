@@ -57,19 +57,19 @@
     "industri.eyebrow": { id: "Industri yang Kami Layani", en: "Industries We Serve" },
     "industri.h2": { id: "Satu Mineral, Beragam Manfaat Lintas Sektor", en: "One Mineral, Many Benefits Across Sectors" },
     "industri.p": {
-      id: "Dolomite, Fosfat Alam, Abu Tandan Sawit, dan Lempung kami digunakan jauh melampaui pertanian — dari konstruksi hingga pengolahan air, sesuai spesifikasi dan grade yang dibutuhkan.",
-      en: "Our Dolomite, Natural Rock Phosphate, Palm EFB Ash, and Clay serve far beyond agriculture — from construction to water treatment — matched to the specification and grade you need."
+      id: "Dolomite, Fosfat Alam, Abu Tandan Sawit, dan Lempung kami digunakan jauh melampaui pertanian — dari konstruksi hingga pertambangan, sesuai spesifikasi dan grade yang dibutuhkan.",
+      en: "Our Dolomite, Natural Rock Phosphate, Palm EFB Ash, and Clay serve far beyond agriculture — from construction to mining — matched to the specification and grade you need."
     },
     "industri.card1.title": { id: "Konstruksi &amp; Infrastruktur", en: "Construction &amp; Infrastructure" },
     "industri.card1.desc": { id: "Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.", en: "Additive material for cement, concrete, and aggregate in construction projects." },
     "industri.card2.title": { id: "Baja &amp; Metalurgi", en: "Steel &amp; Metallurgy" },
     "industri.card2.desc": { id: "Flux dalam proses peleburan dan pemurnian logam.", en: "Flux for metal smelting and refining processes." },
-    "industri.card3.title": { id: "Pengolahan Air", en: "Water Treatment" },
-    "industri.card3.desc": { id: "Netralisasi dan pengolahan air limbah industri.", en: "Neutralization and treatment of industrial wastewater." },
+    "industri.card3.title": { id: "Perikanan &amp; Tambak", en: "Fisheries &amp; Aquaculture" },
+    "industri.card3.desc": { id: "Menstabilkan pH air tambak dan mendukung pertumbuhan udang serta ikan budidaya.", en: "Stabilizes pond water pH and supports the growth of farmed shrimp and fish." },
     "industri.card4.title": { id: "Kaca &amp; Keramik", en: "Glass &amp; Ceramics" },
     "industri.card4.desc": { id: "Komponen mineral pada manufaktur kaca dan keramik.", en: "Mineral component in glass and ceramics manufacturing." },
-    "industri.card5.title": { id: "Kertas &amp; Pulp", en: "Pulp &amp; Paper" },
-    "industri.card5.desc": { id: "Bahan pengisi dan aditif dalam proses produksi kertas.", en: "Filler and additive in the paper production process." },
+    "industri.card5.title": { id: "Pertambangan &amp; Reklamasi", en: "Mining &amp; Reclamation" },
+    "industri.card5.desc": { id: "Menetralkan keasaman tanah bekas tambang untuk mendukung revegetasi dan reklamasi lahan.", en: "Neutralizes acidic soil from former mining land to support revegetation and land reclamation." },
     "industri.card6.title": { id: "Pakan Ternak &amp; Kimia", en: "Animal Feed &amp; Chemicals" },
     "industri.card6.desc": { id: "Suplemen mineral pakan ternak dan bahan baku industri kimia.", en: "Mineral supplement for animal feed and feedstock for the chemical industry." },
     "industri.card7.title": { id: "Cat, Plastik &amp; Karet", en: "Paint, Plastics &amp; Rubber" },
@@ -136,8 +136,8 @@
     },
     "faq.q5": { id: "Apakah produk Mahitala hanya untuk pertanian?", en: "Are Mahitala's products only for agriculture?" },
     "faq.a5": {
-      id: "Tidak. Dolomite, Fosfat Alam, Abu Tandan Sawit, dan Lempung kami juga digunakan industri konstruksi, baja, pengolahan air, kaca-keramik, pakan ternak, dan sektor lain sesuai spesifikasi dan grade yang dibutuhkan — bukan hanya pertanian.",
-      en: "No. Our Dolomite, Natural Rock Phosphate, Palm EFB Ash, and Clay are also used by the construction, steel, water treatment, glass-ceramics, animal feed, and other industries according to the specification and grade required — not agriculture alone."
+      id: "Tidak. Dolomite, Fosfat Alam, Abu Tandan Sawit, dan Lempung kami juga digunakan industri konstruksi, baja, perikanan, kaca-keramik, pakan ternak, dan sektor lain sesuai spesifikasi dan grade yang dibutuhkan — bukan hanya pertanian.",
+      en: "No. Our Dolomite, Natural Rock Phosphate, Palm EFB Ash, and Clay are also used by the construction, steel, fisheries, glass-ceramics, animal feed, and other industries according to the specification and grade required — not agriculture alone."
     },
     "faq.q6": { id: "Bisakah saya berkonsultasi kebutuhan spesifikasi atau dosis sebelum membeli?", en: "Can I consult on specification or dosage before purchasing?" },
     "faq.a6": {
