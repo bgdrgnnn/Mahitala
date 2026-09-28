@@ -108,6 +108,12 @@
     "tentang.misi.li3": { id: "Mendukung pelanggan industri maupun petani dengan dukungan teknis dan agronomis berkelanjutan.", en: "Support both industrial customers and farmers with ongoing technical and agronomic assistance." },
     "tentang.misi.li4": { id: "Mengembangkan produk ramah lingkungan dari daur ulang limbah sawit.", en: "Develop environmentally friendly products from recycled palm waste." },
 
+    "faq.title": { id: "Kenali produk, yakinkan pilihan Anda.", en: "Know the product. Choose with confidence." },
+    "faq.intro": { id: "Dari bentuk mineral hingga pengiriman. Informasi yang Anda perlukan sebelum memulai kerja sama.", en: "From mineral forms to delivery. The information you need before we start working together." },
+    "faq.guideLabel": { id: "Produk · Spesifikasi · Pengiriman", en: "Products · Specifications · Delivery" },
+    "faq.helpTitle": { id: "Kebutuhan Anda lebih spesifik?", en: "Have a more specific requirement?" },
+    "faq.helpText": { id: "Diskusikan aplikasi, spesifikasi, dan kebutuhan pasokan dengan tim kami.", en: "Talk to our team about your application, specifications, and supply needs." },
+    "faq.helpLink": { id: "Konsultasikan kebutuhan Anda", en: "Discuss your requirements" },
     "faq.eyebrow": { id: "FAQ", en: "FAQ" },
     "faq.q1": { id: "Apa perbedaan bentuk powder dan granule?", en: "What's the difference between powder and granule form?" },
     "faq.a1": {
