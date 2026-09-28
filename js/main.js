@@ -29,7 +29,9 @@
     el.classList.add("in-view");
   }
 
-  var TICK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+  /* Benefit copy + icons live in js/benefits-data.js (shared with products.html). */
+  var DATA = window.MAHITALA_DATA;
+  var MODAL_BENEFIT_COUNT = 4;
 
   var PRODUCTS = {
     dolomite: {
@@ -42,13 +44,7 @@
         powder: "Reaktivitas tinggi karena luas permukaan besar — ideal untuk campuran semen/beton, flux tanur baja, kaca, maupun pupuk dasar pertanian.",
         granule: "Butiran padat, minim debu, mudah ditebar atau dicampur dalam skala besar — cocok untuk aplikasi lahan luas maupun kebutuhan industri curah (bulk)."
       },
-      benefits: [
-        ["Multi-Industri: Konstruksi hingga Baja", "Bahan baku semen/beton serta flux pada peleburan baja dan metalurgi non-besi."],
-        ["Bahan Baku Kaca, Keramik &amp; Pengolahan Air", "Digunakan pada manufaktur kaca-keramik dan proses netralisasi pengolahan air."],
-        ["Menetralkan Keasaman Tanah", "Menaikkan pH tanah asam agar unsur hara lebih mudah diserap akar tanaman."],
-        ["Sumber Kalsium &amp; Magnesium", "Mendukung pertumbuhan tanaman sekaligus menjadi bahan baku berbagai proses industri."]
-      ],
-      tags: ["Konstruksi", "Baja &amp; Metalurgi", "Kaca &amp; Pengolahan Air", "Pertanian"],
+      tags: ["Pertanian", "Tambak", "Konstruksi", "Baja &amp; Kaca"],
       ctaLabel: "Tanya Harga Dolomite"
     },
     phosphate: {
@@ -61,12 +57,6 @@
         powder: "Luas permukaan besar sehingga fosfor lebih cepat tersedia — ideal untuk pupuk dasar, pembibitan, dan campuran pakan ternak.",
         granule: "Pelepasan fosfor bertahap (slow release), efisien untuk pemupukan tanaman tahunan maupun kebutuhan industri yang butuh pasokan stabil."
       },
-      benefits: [
-        ["Merangsang Pertumbuhan Akar &amp; Pembuahan", "Fosfor (P) mendukung perkembangan akar kuat serta pembentukan bunga dan buah pada tanaman."],
-        ["Bahan Baku Pakan Ternak", "Sumber fosfor dan kalsium untuk suplemen mineral pada industri pakan ternak (feed grade)."],
-        ["Bahan Baku Industri Kimia", "Diolah menjadi asam fosfat dan senyawa fosfat untuk kebutuhan industri kimia dan pengolahan air."],
-        ["Pelepasan Hara Bertahap", "Fosfat alam melepas unsur hara secara perlahan, cocok untuk tanah asam dan lahan gambut."]
-      ],
       tags: ["Pertanian", "Pakan Ternak", "Industri Kimia", "Pengolahan Air"],
       ctaLabel: "Tanya Harga Fosfat"
     },
@@ -80,12 +70,6 @@
         powder: "Kalium langsung larut dan tersedia cepat bagi tanaman; partikel halus juga cocok untuk riset campuran material bangunan ramah lingkungan.",
         granule: "Lebih tahan terhadap pencucian hujan (leaching), tidak beterbangan saat aplikasi, dan mudah disimpan dalam jumlah besar untuk kebutuhan skala industri."
       },
-      benefits: [
-        ["Sumber Kalium (K) Tinggi", "Alternatif alami pengganti KCl untuk meningkatkan bobot dan kualitas hasil panen."],
-        ["Produk Ramah Lingkungan", "Hasil daur ulang limbah tandan kosong sawit — mendukung ekonomi sirkular perkebunan dan industri."],
-        ["Potensi Bahan Campuran Material Bangunan", "Kandungan silika dan sifat pozzolanik abu sawit mulai diteliti dan digunakan sebagai campuran alternatif semen/beton ramah lingkungan."],
-        ["Menaikkan pH &amp; Menyuburkan Tanah", "Bersifat basa sehingga membantu menetralkan tanah asam sekaligus menambah unsur hara mikro."]
-      ],
       tags: ["Pertanian", "Ramah Lingkungan", "Konstruksi Hijau", "Ekonomi Sirkular"],
       ctaLabel: "Tanya Harga Abu Sawit"
     },
@@ -99,12 +83,6 @@
         powder: "Digiling halus untuk campuran badan keramik, bahan pengisi cat &amp; pelapis, serta aditif lumpur pemboran (drilling mud).",
         granule: "Bentuk butiran/pelet memudahkan penanganan dan dosis dalam proses pengecoran logam dan aplikasi industri skala besar."
       },
-      benefits: [
-        ["Bahan Baku Keramik, Bata &amp; Genteng", "Plastisitas alami lempung memudahkan pembentukan produk keramik, bata, dan genteng sebelum dibakar."],
-        ["Pengecoran Logam (Foundry)", "Digunakan sebagai bahan pengikat pasir cetak (bonding clay) pada industri pengecoran logam."],
-        ["Aditif Lumpur Pemboran", "Bentonit dan lempung sejenis berperan sebagai aditif lumpur pemboran pada industri migas dan geoteknik."],
-        ["Bahan Pengisi Cat &amp; Kertas", "Dimanfaatkan sebagai filler pada industri cat, pelapis, dan kertas untuk memperbaiki tekstur dan opasitas."]
-      ],
       tags: ["Keramik &amp; Bata", "Pengecoran Logam", "Lumpur Pemboran", "Cat &amp; Kertas"],
       ctaLabel: "Tanya Harga Lempung"
     }
@@ -121,13 +99,7 @@
         powder: "Highly reactive due to its large surface area — ideal for cement/concrete mixes, steel furnace flux, glass, and agricultural base fertilizer.",
         granule: "Dense, low-dust granules that spread or blend easily at scale — suited for large land areas as well as bulk industrial needs."
       },
-      benefits: [
-        ["Multi-Industry: Construction to Steel", "Raw material for cement/concrete and flux for steel smelting and non-ferrous metallurgy."],
-        ["Raw Material for Glass, Ceramics &amp; Water Treatment", "Used in glass-ceramics manufacturing and water treatment neutralization."],
-        ["Neutralizes Soil Acidity", "Raises the pH of acidic soil so nutrients are more easily absorbed by plant roots."],
-        ["Source of Calcium &amp; Magnesium", "Supports plant growth while also serving as feedstock for various industrial processes."]
-      ],
-      tags: ["Construction", "Steel &amp; Metallurgy", "Glass &amp; Water Treatment", "Agriculture"],
+      tags: ["Agriculture", "Aquaculture", "Construction", "Steel &amp; Glass"],
       ctaLabel: "Ask Dolomite Price"
     },
     phosphate: {
@@ -140,12 +112,6 @@
         powder: "Large surface area makes phosphorus available faster — ideal for base fertilizer, seedlings, and animal feed blends.",
         granule: "Slow-release phosphorus, efficient for perennial crop fertilization and for industrial needs requiring a stable supply."
       },
-      benefits: [
-        ["Stimulates Root Growth &amp; Fruiting", "Phosphorus (P) supports strong root development along with flower and fruit formation."],
-        ["Raw Material for Animal Feed", "A source of phosphorus and calcium for mineral supplements in the animal feed industry (feed grade)."],
-        ["Raw Material for the Chemical Industry", "Processed into phosphoric acid and phosphate compounds for the chemical industry and water treatment."],
-        ["Gradual Nutrient Release", "Rock phosphate releases nutrients slowly, suited for acidic soils and peatland."]
-      ],
       tags: ["Agriculture", "Animal Feed", "Chemical Industry", "Water Treatment"],
       ctaLabel: "Ask Rock Phosphate Price"
     },
@@ -159,12 +125,6 @@
         powder: "Potassium dissolves and becomes available to plants quickly; the fine particles are also suited for research into eco-friendly building material blends.",
         granule: "More resistant to rain leaching, doesn't blow away during application, and is easy to store in large quantities for industrial-scale needs."
       },
-      benefits: [
-        ["High Potassium (K) Source", "A natural alternative to KCl for improving the weight and quality of your harvest."],
-        ["Environmentally Friendly Product", "Made from recycled palm empty fruit bunch waste — supporting a circular economy for plantations and industry."],
-        ["Potential Construction Material Blend", "Palm ash's silica content and pozzolanic properties are being researched and used as an eco-friendly alternative cement/concrete blend."],
-        ["Raises pH &amp; Enriches Soil", "Alkaline in nature, helping neutralize acidic soil while adding micronutrients."]
-      ],
       tags: ["Agriculture", "Eco-Friendly", "Green Construction", "Circular Economy"],
       ctaLabel: "Ask Palm EFB Ash Price"
     },
@@ -178,12 +138,6 @@
         powder: "Finely milled for ceramic body blends, paint &amp; coating fillers, and drilling mud additives.",
         granule: "Granulated/pelletized form for easier handling and dosing in metal foundry and large-scale industrial processes."
       },
-      benefits: [
-        ["Raw Material for Ceramics, Bricks &amp; Roof Tiles", "Clay's natural plasticity makes it easy to shape into ceramic, brick, and roof tile products before firing."],
-        ["Metal Foundry (Bonding Clay)", "Used as a sand-mold binder (bonding clay) in the metal foundry industry."],
-        ["Drilling Mud Additive", "Bentonite and similar clays serve as drilling mud additives in the oil &amp; gas and geotechnical industries."],
-        ["Filler for Paint &amp; Paper", "Used as a filler in the paint, coatings, and paper industries to improve texture and opacity."]
-      ],
       tags: ["Ceramics &amp; Bricks", "Metal Foundry", "Drilling Mud", "Paint &amp; Paper"],
       ctaLabel: "Ask Clay Price"
     }
@@ -230,9 +184,11 @@
   }
 
   function renderBodyHTML(product, form, lang) {
-    var benefitsHTML = product.benefits.map(function (b) {
-      return '<li><span class="tick">' + TICK_SVG + "</span><div><strong>" + b[0] + "</strong><p>" + b[1] + "</p></div></li>";
+    var benefits = (DATA && DATA.benefits[product.visualClass]) || [];
+    var benefitsHTML = benefits.slice(0, MODAL_BENEFIT_COUNT).map(function (b) {
+      return '<li><span class="tick benefit-icon">' + DATA.icon(b.icon) + "</span><div><strong>" + b.title[lang] + "</strong><p>" + b.desc[lang] + "</p></div></li>";
     }).join("");
+    var moreLabel = lang === "en" ? "See all benefits, TDS &amp; sector solutions" : "Lihat semua keunggulan, TDS &amp; solusi sektor";
     var tagsHTML = product.tags.map(function (t) {
       return '<span class="spec-pill">' + t + "</span>";
     }).join("");
@@ -245,6 +201,7 @@
     return (
       '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form, lang) + "</div>" +
       '<ul class="benefit-list stagger-group">' + benefitsHTML + "</ul>" +
+      '<a href="products.html#' + product.visualClass + '" class="benefit-more">' + moreLabel + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>' +
       '<div class="product-foot">' +
         '<div class="spec-pills">' + tagsHTML + "</div>" +
         '<a href="' + waHref + '" class="btn btn-dark btn-sm" target="_blank" rel="noopener">' + product.ctaLabel + "</a>" +
@@ -415,31 +372,17 @@
     applyProductView(productsForLang(lang)[currentProductId], form, { lang: lang });
   });
 
-  /* ---------------- FAQ accordion ---------------- */
-  $$(".faq-item").forEach(function (item) {
-    var q = $(".faq-q", item);
-    var a = $(".faq-a", item);
-    q.addEventListener("click", function () {
-      var willOpen = !item.classList.contains("open");
-      $$(".faq-item").forEach(function (other) {
-        other.classList.remove("open");
-        $(".faq-a", other).style.maxHeight = null;
+  /* Native details keep FAQ answers keyboard-accessible and readable without
+     JavaScript. Enforce one open answer in browsers without details[name].
+     No measured heights: language and viewport changes reflow naturally. */
+  var faqItems = $$("details.faq-item");
+  faqItems.forEach(function (item) {
+    item.addEventListener("toggle", function () {
+      if (!item.open) return;
+      faqItems.forEach(function (other) {
+        if (other !== item) other.open = false;
       });
-      if (willOpen) {
-        item.classList.add("open");
-        a.style.maxHeight = a.scrollHeight + "px";
-      }
     });
-  });
-
-  /* An open FAQ answer's max-height is a snapshot in px; if the language
-     switch changes the text's rendered height, resync it so content isn't
-     clipped or left with a gap. */
-  document.addEventListener("languagechange", function () {
-    var openItem = $(".faq-item.open");
-    if (!openItem) return;
-    var a = $(".faq-a", openItem);
-    a.style.maxHeight = a.scrollHeight + "px";
   });
 
   /* ---------------- Scroll reveal ---------------- */
@@ -582,143 +525,83 @@
   }
 
   /* ---------------- Sector Solutions ---------------- */
-  var SECTORS = {
-    konstruksi: {
-      title: "Konstruksi &amp; Infrastruktur",
-      products: ["dolomite"],
-      how: "Dolomite menjadi bahan tambahan pada campuran semen, beton, dan agregat untuk memenuhi spesifikasi proyek pembangunan.",
-      result: "Campuran konstruksi yang lebih konsisten dan sesuai standar mutu proyek."
-    },
-    baja: {
-      title: "Baja &amp; Metalurgi",
-      products: ["dolomite"],
-      how: "Dolomite berfungsi sebagai flux dalam proses peleburan dan pemurnian logam pada industri baja.",
-      result: "Proses peleburan lebih efisien dengan pengotor (slag) yang lebih mudah dipisahkan."
-    },
-    perikanan: {
-      title: "Perikanan &amp; Tambak",
-      products: ["dolomite"],
-      how: "Dolomite menstabilkan pH air tambak dan menyediakan kalsium-magnesium yang dibutuhkan organisme budidaya.",
-      result: "Kualitas air tambak lebih stabil, mendukung pertumbuhan udang dan ikan budidaya."
-    },
-    kaca: {
-      title: "Kaca &amp; Keramik",
-      products: ["dolomite", "clay"],
-      how: "Dolomite menjadi komponen mineral pada campuran kaca, sementara Lempung menjadi bahan baku utama produk keramik.",
-      result: "Komposisi bahan baku yang konsisten untuk manufaktur kaca dan keramik."
-    },
-    tambang: {
-      title: "Pertambangan &amp; Reklamasi",
-      products: ["dolomite"],
-      how: "Dolomite menetralkan keasaman tanah bekas tambang untuk mendukung proses revegetasi.",
-      result: "Lahan bekas tambang lebih siap ditanami kembali, mendukung program reklamasi."
-    },
-    pakan: {
-      title: "Pakan Ternak &amp; Kimia",
-      products: ["phosphate"],
-      how: "Fosfat Alam menjadi sumber fosfor dan kalsium untuk suplemen pakan ternak serta bahan baku industri kimia.",
-      result: "Suplai fosfor yang konsisten untuk kebutuhan pakan maupun proses kimia."
-    },
-    cat: {
-      title: "Cat, Plastik &amp; Karet",
-      products: ["dolomite"],
-      how: "Dolomite digunakan sebagai filler mineral pada cat, pelapis, plastik, dan produk karet.",
-      result: "Produk dengan tekstur dan volume yang lebih konsisten."
-    },
-    pertanian: {
-      title: "Pertanian &amp; Perkebunan",
-      products: ["dolomite", "phosphate", "palmash"],
-      how: "Dolomite menetralkan keasaman tanah, Fosfat Alam merangsang pertumbuhan akar, dan Abu Tandan Sawit menyuplai kalium alami.",
-      result: "Tanah lebih subur dan seimbang, mendukung pertumbuhan tanaman yang lebih sehat."
-    }
+  var SECTOR_DATA = window.MAHITALA_DATA;
+
+  var ARROW_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+  var SECTOR_LABELS = {
+    id: { action: "Cara Kerja", result: "Hasil", products: "Produk yang digunakan" },
+    en: { action: "How It Works", result: "Outcome", products: "Products used" }
   };
 
-  var SECTORS_EN = {
-    konstruksi: {
-      title: "Construction &amp; Infrastructure",
-      products: ["dolomite"],
-      how: "Dolomite serves as an additive in cement, concrete, and aggregate mixes to meet construction project specifications.",
-      result: "More consistent construction mixes that meet project quality standards."
-    },
-    baja: {
-      title: "Steel &amp; Metallurgy",
-      products: ["dolomite"],
-      how: "Dolomite acts as a flux in the metal smelting and refining process for the steel industry.",
-      result: "More efficient smelting, with slag (impurities) that separates more easily."
-    },
-    perikanan: {
-      title: "Fisheries &amp; Aquaculture",
-      products: ["dolomite"],
-      how: "Dolomite stabilizes pond water pH and supplies the calcium-magnesium that farmed organisms need.",
-      result: "More stable pond water quality, supporting healthy shrimp and fish growth."
-    },
-    kaca: {
-      title: "Glass &amp; Ceramics",
-      products: ["dolomite", "clay"],
-      how: "Dolomite is a mineral component in glass mixes, while Clay is the main raw material for ceramic products.",
-      result: "Consistent raw material composition for glass and ceramics manufacturing."
-    },
-    tambang: {
-      title: "Mining &amp; Reclamation",
-      products: ["dolomite"],
-      how: "Dolomite neutralizes acidic soil from former mining land to support revegetation.",
-      result: "Former mining land becomes more ready for replanting, supporting reclamation programs."
-    },
-    pakan: {
-      title: "Animal Feed &amp; Chemicals",
-      products: ["phosphate"],
-      how: "Natural Rock Phosphate is a phosphorus and calcium source for animal feed supplements and chemical industry feedstock.",
-      result: "A consistent phosphorus supply for both feed and chemical process needs."
-    },
-    cat: {
-      title: "Paint, Plastics &amp; Rubber",
-      products: ["dolomite"],
-      how: "Dolomite is used as a mineral filler in paint, coatings, plastics, and rubber products.",
-      result: "Products with more consistent texture and volume."
-    },
-    pertanian: {
-      title: "Agriculture &amp; Plantations",
-      products: ["dolomite", "phosphate", "palmash"],
-      how: "Dolomite neutralizes soil acidity, Natural Rock Phosphate stimulates root growth, and Palm EFB Ash supplies natural potassium.",
-      result: "Richer, more balanced soil that supports healthier plant growth."
-    }
+  var PRODUCT_THUMBS = {
+    dolomite: "assets/products/dolomite-powder.jpg",
+    phosphate: "assets/products/phosphate-powder.jpg",
+    palmash: "assets/products/palmash-powder.jpg",
+    clay: "assets/products/clay-powder.jpg"
   };
-
-  function sectorsForLang(lang) {
-    return lang === "en" ? SECTORS_EN : SECTORS;
-  }
 
   var sectorCards = $$(".sector-card");
   var sectorResult = $("#sectorResult");
   var currentSectorId = null;
 
+  function sectorById(id) {
+    if (!SECTOR_DATA) return null;
+    for (var i = 0; i < SECTOR_DATA.sectors.length; i++) {
+      if (SECTOR_DATA.sectors[i].id === id) return SECTOR_DATA.sectors[i];
+    }
+    return null;
+  }
+
   function renderSectorResult(id, lang) {
-    var sector = sectorsForLang(lang)[id];
-    if (!sector || !sectorResult) return;
-    var products = productsForLang(lang);
-    var pillsHTML = sector.products.map(function (pid) {
-      return '<button class="sector-product-pill" data-tablink="' + pid + '">' + products[pid].title + "</button>";
+    var sector = sectorById(id);
+    if (!sector || !sectorResult || !SECTOR_DATA) return;
+    var L = SECTOR_LABELS[lang];
+    var icon = SECTOR_DATA.icon;
+
+    var usedProducts = [];
+    sector.chains.forEach(function (c) {
+      if (usedProducts.indexOf(c.product) === -1) usedProducts.push(c.product);
+    });
+
+    var chainsHTML = sector.chains.map(function (c) {
+      return (
+        '<li class="chain-row">' +
+          '<div class="chain-product ' + c.product + '">' +
+            '<img src="' + PRODUCT_THUMBS[c.product] + '" alt="" loading="lazy" width="900" height="601">' +
+            "<span>" + SECTOR_DATA.productNames[c.product][lang] + "</span>" +
+          "</div>" +
+          '<span class="chain-arrow">' + ARROW_SVG + "</span>" +
+          '<div class="chain-step">' +
+            '<span class="chain-icon">' + icon(c.action.icon) + "</span>" +
+            "<div><small>" + L.action + "</small><p>" + c.action[lang] + "</p></div>" +
+          "</div>" +
+          '<span class="chain-arrow">' + ARROW_SVG + "</span>" +
+          '<div class="chain-step result">' +
+            '<span class="chain-icon">' + icon(c.result.icon) + "</span>" +
+            "<div><small>" + L.result + "</small><p>" + c.result[lang] + "</p></div>" +
+          "</div>" +
+        "</li>"
+      );
     }).join("");
-    var productsLabel = lang === "en" ? "Products Used" : "Produk yang Digunakan";
-    var howLabel = lang === "en" ? "How It Works" : "Cara Kerja";
-    var resultLabel = lang === "en" ? "Expected Results" : "Hasil yang Diharapkan";
+
+    var pillsHTML = usedProducts.map(function (p) {
+      return '<button class="sector-product-pill ' + p + '" data-tablink="' + p + '">' + SECTOR_DATA.productNames[p][lang] + "</button>";
+    }).join("");
 
     sectorResult.innerHTML =
-      "<h3>" + sector.title + "</h3>" +
-      '<div class="sector-result-grid">' +
-        '<div class="sector-result-col">' +
-          "<h4>" + productsLabel + "</h4>" +
-          '<div class="sector-product-pills">' + pillsHTML + "</div>" +
-        "</div>" +
-        '<div class="sector-result-col">' +
-          "<h4>" + howLabel + "</h4>" +
-          "<p>" + sector.how + "</p>" +
-        "</div>" +
-        '<div class="sector-result-col">' +
-          "<h4>" + resultLabel + "</h4>" +
-          "<p>" + sector.result + "</p>" +
-        "</div>" +
-      "</div>";
+      '<div class="sector-intro">' +
+        "<h3>" + sector.title[lang] + "</h3>" +
+        "<p>" + sector.intro[lang] + "</p>" +
+        '<div class="sector-products"><small>' + L.products + "</small><div>" + pillsHTML + "</div></div>" +
+      "</div>" +
+      '<ol class="chain-list stagger-group">' + chainsHTML + "</ol>";
+
+    var list = $(".chain-list", sectorResult);
+    if (list) {
+      list.offsetWidth; /* force reflow so the stagger transition plays */
+      list.classList.add("in-view");
+    }
 
     $$(".sector-product-pill", sectorResult).forEach(function (pill) {
       pill.addEventListener("click", function () {
@@ -743,7 +626,7 @@
     });
   });
 
-  if (sectorCards.length) {
+  if (sectorCards.length && SECTOR_DATA) {
     setActiveSector(sectorCards[0].getAttribute("data-sector"));
   }
 

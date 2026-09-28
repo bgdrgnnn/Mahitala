@@ -61,21 +61,14 @@
       en: "Choose your sector to see which products are used, how they work, and the results you can expect."
     },
     "industri.card1.title": { id: "Konstruksi &amp; Infrastruktur", en: "Construction &amp; Infrastructure" },
-    "industri.card1.desc": { id: "Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.", en: "Additive material for cement, concrete, and aggregate in construction projects." },
     "industri.card2.title": { id: "Baja &amp; Metalurgi", en: "Steel &amp; Metallurgy" },
-    "industri.card2.desc": { id: "Flux dalam proses peleburan dan pemurnian logam.", en: "Flux for metal smelting and refining processes." },
     "industri.card3.title": { id: "Perikanan &amp; Tambak", en: "Fisheries &amp; Aquaculture" },
-    "industri.card3.desc": { id: "Menstabilkan pH air tambak dan mendukung pertumbuhan udang serta ikan budidaya.", en: "Stabilizes pond water pH and supports the growth of farmed shrimp and fish." },
     "industri.card4.title": { id: "Kaca &amp; Keramik", en: "Glass &amp; Ceramics" },
-    "industri.card4.desc": { id: "Komponen mineral pada manufaktur kaca dan keramik.", en: "Mineral component in glass and ceramics manufacturing." },
     "industri.card5.title": { id: "Pertambangan &amp; Reklamasi", en: "Mining &amp; Reclamation" },
-    "industri.card5.desc": { id: "Menetralkan keasaman tanah bekas tambang untuk mendukung revegetasi dan reklamasi lahan.", en: "Neutralizes acidic soil from former mining land to support revegetation and land reclamation." },
     "industri.card6.title": { id: "Pakan Ternak &amp; Kimia", en: "Animal Feed &amp; Chemicals" },
-    "industri.card6.desc": { id: "Suplemen mineral pakan ternak dan bahan baku industri kimia.", en: "Mineral supplement for animal feed and feedstock for the chemical industry." },
     "industri.card7.title": { id: "Cat, Plastik &amp; Karet", en: "Paint, Plastics &amp; Rubber" },
-    "industri.card7.desc": { id: "Filler mineral untuk cat, pelapis, plastik, dan produk karet.", en: "Mineral filler for paint, coatings, plastics, and rubber products." },
     "industri.card8.title": { id: "Pertanian &amp; Perkebunan", en: "Agriculture &amp; Plantations" },
-    "industri.card8.desc": { id: "Penetral pH tanah dan sumber hara makro bagi tanaman.", en: "Soil pH neutralizer and source of macronutrients for plants." },
+
 
     "galeri.eyebrow": { id: "Dokumentasi", en: "Documentation" },
     "galeri.h2": { id: "Lihat Dokumentasi Kami", en: "See Our Documentation" },
@@ -108,6 +101,12 @@
     "tentang.misi.li3": { id: "Mendukung pelanggan industri maupun petani dengan dukungan teknis dan agronomis berkelanjutan.", en: "Support both industrial customers and farmers with ongoing technical and agronomic assistance." },
     "tentang.misi.li4": { id: "Mengembangkan produk ramah lingkungan dari daur ulang limbah sawit.", en: "Develop environmentally friendly products from recycled palm waste." },
 
+    "faq.title": { id: "Kenali produk, yakinkan pilihan Anda.", en: "Know the product. Choose with confidence." },
+    "faq.intro": { id: "Dari bentuk mineral hingga pengiriman. Informasi yang Anda perlukan sebelum memulai kerja sama.", en: "From mineral forms to delivery. The information you need before we start working together." },
+    "faq.guideLabel": { id: "Produk · Spesifikasi · Pengiriman", en: "Products · Specifications · Delivery" },
+    "faq.helpTitle": { id: "Kebutuhan Anda lebih spesifik?", en: "Have a more specific requirement?" },
+    "faq.helpText": { id: "Diskusikan aplikasi, spesifikasi, dan kebutuhan pasokan dengan tim kami.", en: "Talk to our team about your application, specifications, and supply needs." },
+    "faq.helpLink": { id: "Konsultasikan kebutuhan Anda", en: "Discuss your requirements" },
     "faq.eyebrow": { id: "FAQ", en: "FAQ" },
     "faq.q1": { id: "Apa perbedaan bentuk powder dan granule?", en: "What's the difference between powder and granule form?" },
     "faq.a1": {
@@ -269,7 +268,8 @@
 
     "pdetail.hero.eyebrow": { id: "Detail Produk", en: "Product Details" },
     "pdetail.hero.h2": { id: "Technical Data Sheet, COA, dan Dokumentasi Produk", en: "Technical Data Sheet, COA, and Product Documentation" },
-    "pdetail.hero.p": { id: "Spesifikasi teknis, sertifikat analisis, dan foto produk untuk setiap lini mineral yang kami produksi.", en: "Technical specifications, certificates of analysis, and product photos for every mineral line we produce." },
+    "pdetail.hero.p": { id: "Manfaat utama, spesifikasi teknis, dan sertifikat analisis untuk setiap lini mineral yang kami produksi.", en: "Key benefits, technical specifications, and certificates of analysis for every mineral line we produce." },
+    "pdetail.benefits.title": { id: "Keunggulan Utama", en: "Key Benefits" },
 
     "pdetail.dolomite.intro": { id: "Tersedia dalam bentuk powder dan granule, untuk kebutuhan konstruksi, baja, kaca, pengolahan air, hingga pertanian.", en: "Available in powder and granule form, for construction, steel, glass, water treatment, and agriculture needs." },
     "pdetail.phosphate.intro": { id: "Bahan baku pupuk, pakan ternak, dan industri kimia — tersedia dalam bentuk powder dan granule.", en: "Raw material for fertilizer, animal feed, and chemical industries — available in powder and granule form." },
