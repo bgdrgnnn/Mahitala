@@ -29,7 +29,9 @@
     el.classList.add("in-view");
   }
 
-  var TICK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+  /* Benefit copy + icons live in js/benefits-data.js (shared with products.html). */
+  var DATA = window.MAHITALA_DATA;
+  var MODAL_BENEFIT_COUNT = 4;
 
   var PRODUCTS = {
     dolomite: {
@@ -42,13 +44,7 @@
         powder: "Reaktivitas tinggi karena luas permukaan besar — ideal untuk campuran semen/beton, flux tanur baja, kaca, maupun pupuk dasar pertanian.",
         granule: "Butiran padat, minim debu, mudah ditebar atau dicampur dalam skala besar — cocok untuk aplikasi lahan luas maupun kebutuhan industri curah (bulk)."
       },
-      benefits: [
-        ["Multi-Industri: Konstruksi hingga Baja", "Bahan baku semen/beton serta flux pada peleburan baja dan metalurgi non-besi."],
-        ["Bahan Baku Kaca, Keramik &amp; Pengolahan Air", "Digunakan pada manufaktur kaca-keramik dan proses netralisasi pengolahan air."],
-        ["Menetralkan Keasaman Tanah", "Menaikkan pH tanah asam agar unsur hara lebih mudah diserap akar tanaman."],
-        ["Sumber Kalsium &amp; Magnesium", "Mendukung pertumbuhan tanaman sekaligus menjadi bahan baku berbagai proses industri."]
-      ],
-      tags: ["Konstruksi", "Baja &amp; Metalurgi", "Kaca &amp; Pengolahan Air", "Pertanian"],
+      tags: ["Pertanian", "Tambak", "Konstruksi", "Baja &amp; Kaca"],
       ctaLabel: "Tanya Harga Dolomite"
     },
     phosphate: {
@@ -61,12 +57,6 @@
         powder: "Luas permukaan besar sehingga fosfor lebih cepat tersedia — ideal untuk pupuk dasar, pembibitan, dan campuran pakan ternak.",
         granule: "Pelepasan fosfor bertahap (slow release), efisien untuk pemupukan tanaman tahunan maupun kebutuhan industri yang butuh pasokan stabil."
       },
-      benefits: [
-        ["Merangsang Pertumbuhan Akar &amp; Pembuahan", "Fosfor (P) mendukung perkembangan akar kuat serta pembentukan bunga dan buah pada tanaman."],
-        ["Bahan Baku Pakan Ternak", "Sumber fosfor dan kalsium untuk suplemen mineral pada industri pakan ternak (feed grade)."],
-        ["Bahan Baku Industri Kimia", "Diolah menjadi asam fosfat dan senyawa fosfat untuk kebutuhan industri kimia dan pengolahan air."],
-        ["Pelepasan Hara Bertahap", "Fosfat alam melepas unsur hara secara perlahan, cocok untuk tanah asam dan lahan gambut."]
-      ],
       tags: ["Pertanian", "Pakan Ternak", "Industri Kimia", "Pengolahan Air"],
       ctaLabel: "Tanya Harga Fosfat"
     },
@@ -80,12 +70,6 @@
         powder: "Kalium langsung larut dan tersedia cepat bagi tanaman; partikel halus juga cocok untuk riset campuran material bangunan ramah lingkungan.",
         granule: "Lebih tahan terhadap pencucian hujan (leaching), tidak beterbangan saat aplikasi, dan mudah disimpan dalam jumlah besar untuk kebutuhan skala industri."
       },
-      benefits: [
-        ["Sumber Kalium (K) Tinggi", "Alternatif alami pengganti KCl untuk meningkatkan bobot dan kualitas hasil panen."],
-        ["Produk Ramah Lingkungan", "Hasil daur ulang limbah tandan kosong sawit — mendukung ekonomi sirkular perkebunan dan industri."],
-        ["Potensi Bahan Campuran Material Bangunan", "Kandungan silika dan sifat pozzolanik abu sawit mulai diteliti dan digunakan sebagai campuran alternatif semen/beton ramah lingkungan."],
-        ["Menaikkan pH &amp; Menyuburkan Tanah", "Bersifat basa sehingga membantu menetralkan tanah asam sekaligus menambah unsur hara mikro."]
-      ],
       tags: ["Pertanian", "Ramah Lingkungan", "Konstruksi Hijau", "Ekonomi Sirkular"],
       ctaLabel: "Tanya Harga Abu Sawit"
     },
@@ -99,12 +83,6 @@
         powder: "Digiling halus untuk campuran badan keramik, bahan pengisi cat &amp; pelapis, serta aditif lumpur pemboran (drilling mud).",
         granule: "Bentuk butiran/pelet memudahkan penanganan dan dosis dalam proses pengecoran logam dan aplikasi industri skala besar."
       },
-      benefits: [
-        ["Bahan Baku Keramik, Bata &amp; Genteng", "Plastisitas alami lempung memudahkan pembentukan produk keramik, bata, dan genteng sebelum dibakar."],
-        ["Pengecoran Logam (Foundry)", "Digunakan sebagai bahan pengikat pasir cetak (bonding clay) pada industri pengecoran logam."],
-        ["Aditif Lumpur Pemboran", "Bentonit dan lempung sejenis berperan sebagai aditif lumpur pemboran pada industri migas dan geoteknik."],
-        ["Bahan Pengisi Cat &amp; Kertas", "Dimanfaatkan sebagai filler pada industri cat, pelapis, dan kertas untuk memperbaiki tekstur dan opasitas."]
-      ],
       tags: ["Keramik &amp; Bata", "Pengecoran Logam", "Lumpur Pemboran", "Cat &amp; Kertas"],
       ctaLabel: "Tanya Harga Lempung"
     }
@@ -121,13 +99,7 @@
         powder: "Highly reactive due to its large surface area — ideal for cement/concrete mixes, steel furnace flux, glass, and agricultural base fertilizer.",
         granule: "Dense, low-dust granules that spread or blend easily at scale — suited for large land areas as well as bulk industrial needs."
       },
-      benefits: [
-        ["Multi-Industry: Construction to Steel", "Raw material for cement/concrete and flux for steel smelting and non-ferrous metallurgy."],
-        ["Raw Material for Glass, Ceramics &amp; Water Treatment", "Used in glass-ceramics manufacturing and water treatment neutralization."],
-        ["Neutralizes Soil Acidity", "Raises the pH of acidic soil so nutrients are more easily absorbed by plant roots."],
-        ["Source of Calcium &amp; Magnesium", "Supports plant growth while also serving as feedstock for various industrial processes."]
-      ],
-      tags: ["Construction", "Steel &amp; Metallurgy", "Glass &amp; Water Treatment", "Agriculture"],
+      tags: ["Agriculture", "Aquaculture", "Construction", "Steel &amp; Glass"],
       ctaLabel: "Ask Dolomite Price"
     },
     phosphate: {
@@ -140,12 +112,6 @@
         powder: "Large surface area makes phosphorus available faster — ideal for base fertilizer, seedlings, and animal feed blends.",
         granule: "Slow-release phosphorus, efficient for perennial crop fertilization and for industrial needs requiring a stable supply."
       },
-      benefits: [
-        ["Stimulates Root Growth &amp; Fruiting", "Phosphorus (P) supports strong root development along with flower and fruit formation."],
-        ["Raw Material for Animal Feed", "A source of phosphorus and calcium for mineral supplements in the animal feed industry (feed grade)."],
-        ["Raw Material for the Chemical Industry", "Processed into phosphoric acid and phosphate compounds for the chemical industry and water treatment."],
-        ["Gradual Nutrient Release", "Rock phosphate releases nutrients slowly, suited for acidic soils and peatland."]
-      ],
       tags: ["Agriculture", "Animal Feed", "Chemical Industry", "Water Treatment"],
       ctaLabel: "Ask Rock Phosphate Price"
     },
@@ -159,12 +125,6 @@
         powder: "Potassium dissolves and becomes available to plants quickly; the fine particles are also suited for research into eco-friendly building material blends.",
         granule: "More resistant to rain leaching, doesn't blow away during application, and is easy to store in large quantities for industrial-scale needs."
       },
-      benefits: [
-        ["High Potassium (K) Source", "A natural alternative to KCl for improving the weight and quality of your harvest."],
-        ["Environmentally Friendly Product", "Made from recycled palm empty fruit bunch waste — supporting a circular economy for plantations and industry."],
-        ["Potential Construction Material Blend", "Palm ash's silica content and pozzolanic properties are being researched and used as an eco-friendly alternative cement/concrete blend."],
-        ["Raises pH &amp; Enriches Soil", "Alkaline in nature, helping neutralize acidic soil while adding micronutrients."]
-      ],
       tags: ["Agriculture", "Eco-Friendly", "Green Construction", "Circular Economy"],
       ctaLabel: "Ask Palm EFB Ash Price"
     },
@@ -178,12 +138,6 @@
         powder: "Finely milled for ceramic body blends, paint &amp; coating fillers, and drilling mud additives.",
         granule: "Granulated/pelletized form for easier handling and dosing in metal foundry and large-scale industrial processes."
       },
-      benefits: [
-        ["Raw Material for Ceramics, Bricks &amp; Roof Tiles", "Clay's natural plasticity makes it easy to shape into ceramic, brick, and roof tile products before firing."],
-        ["Metal Foundry (Bonding Clay)", "Used as a sand-mold binder (bonding clay) in the metal foundry industry."],
-        ["Drilling Mud Additive", "Bentonite and similar clays serve as drilling mud additives in the oil &amp; gas and geotechnical industries."],
-        ["Filler for Paint &amp; Paper", "Used as a filler in the paint, coatings, and paper industries to improve texture and opacity."]
-      ],
       tags: ["Ceramics &amp; Bricks", "Metal Foundry", "Drilling Mud", "Paint &amp; Paper"],
       ctaLabel: "Ask Clay Price"
     }
@@ -230,9 +184,11 @@
   }
 
   function renderBodyHTML(product, form, lang) {
-    var benefitsHTML = product.benefits.map(function (b) {
-      return '<li><span class="tick">' + TICK_SVG + "</span><div><strong>" + b[0] + "</strong><p>" + b[1] + "</p></div></li>";
+    var benefits = (DATA && DATA.benefits[product.visualClass]) || [];
+    var benefitsHTML = benefits.slice(0, MODAL_BENEFIT_COUNT).map(function (b) {
+      return '<li><span class="tick benefit-icon">' + DATA.icon(b.icon) + "</span><div><strong>" + b.title[lang] + "</strong><p>" + b.desc[lang] + "</p></div></li>";
     }).join("");
+    var moreLabel = lang === "en" ? "See all benefits, TDS &amp; sector solutions" : "Lihat semua keunggulan, TDS &amp; solusi sektor";
     var tagsHTML = product.tags.map(function (t) {
       return '<span class="spec-pill">' + t + "</span>";
     }).join("");
@@ -245,6 +201,7 @@
     return (
       '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form, lang) + "</div>" +
       '<ul class="benefit-list stagger-group">' + benefitsHTML + "</ul>" +
+      '<a href="products.html#' + product.visualClass + '" class="benefit-more">' + moreLabel + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>' +
       '<div class="product-foot">' +
         '<div class="spec-pills">' + tagsHTML + "</div>" +
         '<a href="' + waHref + '" class="btn btn-dark btn-sm" target="_blank" rel="noopener">' + product.ctaLabel + "</a>" +
