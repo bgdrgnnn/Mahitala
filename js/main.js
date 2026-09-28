@@ -37,6 +37,7 @@
       formula: "CaMg(CO₃)₂",
       title: "Dolomite",
       tagline: "Mineral kapur alami untuk konstruksi, industri, hingga pertanian — sumber Kalsium &amp; Magnesium serba guna.",
+      photos: { powder: "assets/products/dolomite-powder.jpg", granule: "assets/products/dolomite-granule.jpg" },
       forms: {
         powder: "Reaktivitas tinggi karena luas permukaan besar — ideal untuk campuran semen/beton, flux tanur baja, kaca, maupun pupuk dasar pertanian.",
         granule: "Butiran padat, minim debu, mudah ditebar atau dicampur dalam skala besar — cocok untuk aplikasi lahan luas maupun kebutuhan industri curah (bulk)."
@@ -55,6 +56,7 @@
       formula: "Ca₃(PO₄)₂",
       title: "Fosfat Alam",
       tagline: "Sumber fosfor alami untuk pupuk, pakan ternak, hingga kebutuhan industri kimia.",
+      photos: { powder: "assets/products/phosphate-powder.jpg", granule: "assets/products/phosphate-granule.jpg" },
       forms: {
         powder: "Luas permukaan besar sehingga fosfor lebih cepat tersedia — ideal untuk pupuk dasar, pembibitan, dan campuran pakan ternak.",
         granule: "Pelepasan fosfor bertahap (slow release), efisien untuk pemupukan tanaman tahunan maupun kebutuhan industri yang butuh pasokan stabil."
@@ -73,6 +75,7 @@
       formula: "K₂O Tinggi",
       title: "Abu Tandan Kosong Sawit",
       tagline: "Kalium alami hasil olahan limbah sawit — untuk pertanian dan potensi material konstruksi ramah lingkungan.",
+      photos: { powder: "assets/products/palmash-powder.jpg", granule: "assets/products/palmash-granule.jpg" },
       forms: {
         powder: "Kalium langsung larut dan tersedia cepat bagi tanaman; partikel halus juga cocok untuk riset campuran material bangunan ramah lingkungan.",
         granule: "Lebih tahan terhadap pencucian hujan (leaching), tidak beterbangan saat aplikasi, dan mudah disimpan dalam jumlah besar untuk kebutuhan skala industri."
@@ -91,6 +94,7 @@
       formula: "Al₂Si₂O₅(OH)₄",
       title: "Lempung",
       tagline: "Mineral aluminosilikat alami serbaguna — untuk industri keramik, bata &amp; genteng, pengecoran logam, hingga lumpur pemboran.",
+      photos: { powder: "assets/products/clay-powder.jpg" },
       forms: {
         powder: "Digiling halus untuk campuran badan keramik, bahan pengisi cat &amp; pelapis, serta aditif lumpur pemboran (drilling mud).",
         granule: "Bentuk butiran/pelet memudahkan penanganan dan dosis dalam proses pengecoran logam dan aplikasi industri skala besar."
@@ -112,6 +116,7 @@
       formula: "CaMg(CO₃)₂",
       title: "Dolomite",
       tagline: "Natural lime mineral for construction, industry, and agriculture — a versatile source of Calcium &amp; Magnesium.",
+      photos: { powder: "assets/products/dolomite-powder.jpg", granule: "assets/products/dolomite-granule.jpg" },
       forms: {
         powder: "Highly reactive due to its large surface area — ideal for cement/concrete mixes, steel furnace flux, glass, and agricultural base fertilizer.",
         granule: "Dense, low-dust granules that spread or blend easily at scale — suited for large land areas as well as bulk industrial needs."
@@ -130,6 +135,7 @@
       formula: "Ca₃(PO₄)₂",
       title: "Natural Rock Phosphate",
       tagline: "A natural phosphorus source for fertilizer, animal feed, and the chemical industry.",
+      photos: { powder: "assets/products/phosphate-powder.jpg", granule: "assets/products/phosphate-granule.jpg" },
       forms: {
         powder: "Large surface area makes phosphorus available faster — ideal for base fertilizer, seedlings, and animal feed blends.",
         granule: "Slow-release phosphorus, efficient for perennial crop fertilization and for industrial needs requiring a stable supply."
@@ -148,6 +154,7 @@
       formula: "High K₂O",
       title: "Palm EFB Ash",
       tagline: "Natural potassium from processed palm waste — for agriculture, with potential as an eco-friendly construction material.",
+      photos: { powder: "assets/products/palmash-powder.jpg", granule: "assets/products/palmash-granule.jpg" },
       forms: {
         powder: "Potassium dissolves and becomes available to plants quickly; the fine particles are also suited for research into eco-friendly building material blends.",
         granule: "More resistant to rain leaching, doesn't blow away during application, and is easy to store in large quantities for industrial-scale needs."
@@ -166,6 +173,7 @@
       formula: "Al₂Si₂O₅(OH)₄",
       title: "Clay",
       tagline: "A versatile natural aluminosilicate mineral — for ceramics, bricks &amp; roof tiles, metal foundry, and drilling mud.",
+      photos: { powder: "assets/products/clay-powder.jpg" },
       forms: {
         powder: "Finely milled for ceramic body blends, paint &amp; coating fillers, and drilling mud additives.",
         granule: "Granulated/pelletized form for easier handling and dosing in metal foundry and large-scale industrial processes."
@@ -190,7 +198,10 @@
   }
 
   function renderVisualHTML(product, form) {
+    var photoSrc = product.photos[form] || product.photos.powder;
+    var formLabel = form === "granule" ? "Granule" : "Powder";
     return (
+      '<div class="visual-photo"><img src="' + photoSrc + '" alt="' + product.title + " " + formLabel + '"></div>' +
       '<div class="visual-glow" aria-hidden="true"></div>' +
       '<div class="texture"></div>' +
       '<span class="formula-badge">' + product.formula + "</span>" +
