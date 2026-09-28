@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Detail Produk — PT Mangghala Inatama Lentera</title>
-<meta name="description" content="Technical Data Sheet, Certificate of Analysis, dan foto produk Dolomite, Fosfat Alam, Abu Tandan Kosong Sawit, dan Lempung dari PT Mangghala Inatama Lentera.">
+<meta name="description" content="Manfaat, Technical Data Sheet, Certificate of Analysis, dan solusi per sektor untuk Dolomite, Fosfat Alam, Abu Tandan Kosong Sawit, dan Lempung dari PT Mangghala Inatama Lentera.">
 <link rel="icon" type="image/png" href="assets/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,8 +82,15 @@
       <div class="section-head center reveal">
         <span class="eyebrow" data-i18n="pdetail.hero.eyebrow">Detail Produk</span>
         <h2 data-i18n="pdetail.hero.h2">Technical Data Sheet, COA, dan Dokumentasi Produk</h2>
-        <p data-i18n="pdetail.hero.p">Spesifikasi teknis, sertifikat analisis, dan foto produk untuk setiap lini mineral yang kami produksi.</p>
+        <p data-i18n="pdetail.hero.p">Manfaat utama, spesifikasi teknis, sertifikat analisis, dan solusi per sektor untuk setiap lini mineral yang kami produksi.</p>
       </div>
+      <nav class="pdetail-jump reveal" aria-label="Lompat ke produk">
+        <a href="#dolomite" data-i18n="product.dolomite.name">Dolomite</a>
+        <a href="#phosphate" data-i18n="product.phosphate.name">Fosfat Alam</a>
+        <a href="#palmash" data-i18n="product.palmash.name">Abu Tandan Sawit</a>
+        <a href="#clay" data-i18n="product.clay.name">Lempung</a>
+        <a href="#sektor" class="is-accent" data-i18n="pdetail.jump.sektor">Solusi per Sektor</a>
+      </nav>
     </div>
   </section>
 
@@ -92,7 +99,7 @@
     <div class="container">
 
       <!-- Dolomite -->
-      <div class="product-detail reveal">
+      <div class="product-detail reveal" id="dolomite">
         <div class="pdetail-visual dolomite" data-photo-powder="assets/products/dolomite-powder.jpg" data-photo-granule="assets/products/dolomite-granule.jpg" data-photo-chip="assets/products/dolomite-chip.jpg">
           <img class="pdetail-visual-photo" src="assets/products/dolomite-powder.jpg" alt="Dolomite Powder" loading="lazy" width="900" height="601">
           <div class="form-toggle">
@@ -104,6 +111,10 @@
         <div class="pdetail-content">
           <h3 data-i18n="product.dolomite.name">Dolomite</h3>
           <p data-i18n="pdetail.dolomite.intro">Tersedia dalam bentuk powder dan granule, untuk kebutuhan konstruksi, baja, kaca, pengolahan air, hingga pertanian.</p>
+
+          <h4 class="benefit-grid-title" data-i18n="pdetail.benefits.title">Keunggulan Utama</h4>
+          <ul class="benefit-grid dolomite stagger-group" data-benefits="dolomite"></ul>
+
 
           <div class="tds-table-wrap">
             <table class="tds-table">
@@ -134,7 +145,7 @@
       </div>
 
       <!-- Fosfat Alam -->
-      <div class="product-detail reveal">
+      <div class="product-detail reveal" id="phosphate">
         <div class="pdetail-visual phosphate" data-photo-powder="assets/products/phosphate-powder.jpg" data-photo-granule="assets/products/phosphate-granule.jpg">
           <img class="pdetail-visual-photo" src="assets/products/phosphate-powder.jpg" alt="Fosfat Alam Powder" loading="lazy" width="900" height="601">
           <div class="form-toggle">
@@ -145,6 +156,10 @@
         <div class="pdetail-content">
           <h3 data-i18n="product.phosphate.name">Fosfat Alam</h3>
           <p data-i18n="pdetail.phosphate.intro">Bahan baku pupuk, pakan ternak, dan industri kimia — tersedia dalam bentuk powder dan granule.</p>
+
+          <h4 class="benefit-grid-title" data-i18n="pdetail.benefits.title">Keunggulan Utama</h4>
+          <ul class="benefit-grid phosphate stagger-group" data-benefits="phosphate"></ul>
+
 
           <div class="tds-table-wrap">
             <table class="tds-table">
@@ -175,7 +190,7 @@
       </div>
 
       <!-- Abu Tandan Sawit -->
-      <div class="product-detail reveal">
+      <div class="product-detail reveal" id="palmash">
         <div class="pdetail-visual palmash" data-photo-powder="assets/products/palmash-powder.jpg" data-photo-granule="assets/products/palmash-granule.jpg">
           <img class="pdetail-visual-photo" src="assets/products/palmash-powder.jpg" alt="Abu Tandan Sawit Powder" loading="lazy" width="900" height="600">
           <div class="form-toggle">
@@ -186,6 +201,10 @@
         <div class="pdetail-content">
           <h3 data-i18n="product.palmash.name">Abu Tandan Sawit</h3>
           <p data-i18n="pdetail.palmash.intro">Pupuk kalium ramah lingkungan hasil pengolahan tandan kosong kelapa sawit, dengan potensi material konstruksi.</p>
+
+          <h4 class="benefit-grid-title" data-i18n="pdetail.benefits.title">Keunggulan Utama</h4>
+          <ul class="benefit-grid palmash stagger-group" data-benefits="palmash"></ul>
+
 
           <div class="tds-table-wrap">
             <table class="tds-table">
@@ -216,13 +235,17 @@
       </div>
 
       <!-- Lempung (Clay) -->
-      <div class="product-detail reveal">
+      <div class="product-detail reveal" id="clay">
         <div class="pdetail-visual clay">
           <img class="pdetail-visual-photo" src="assets/products/clay-powder.jpg" alt="Lempung Powder" loading="lazy" width="900" height="601">
         </div>
         <div class="pdetail-content">
           <h3 data-i18n="product.clay.name">Lempung</h3>
           <p data-i18n="pdetail.clay.intro">Mineral aluminosilikat alami untuk keramik, bata &amp; genteng, pengecoran logam, hingga lumpur pemboran — tersedia dalam bentuk powder dan granule/pelet.</p>
+
+          <h4 class="benefit-grid-title" data-i18n="pdetail.benefits.title">Keunggulan Utama</h4>
+          <ul class="benefit-grid clay stagger-group" data-benefits="clay"></ul>
+
 
           <div class="tds-table-wrap">
             <table class="tds-table">
@@ -252,6 +275,19 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ============ SECTOR SOLUTIONS ============ -->
+  <section class="section sector-section" id="sektor">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" data-i18n="sektor.eyebrow">Solusi per Sektor</span>
+        <h2 data-i18n="sektor.h2">Produk yang Tepat, Hasil yang Terukur</h2>
+        <p data-i18n="sektor.p">Pilih sektor Anda untuk melihat produk yang digunakan, cara kerjanya, dan hasil yang bisa Anda harapkan.</p>
+      </div>
+      <div class="sector-tabs" id="sectorTabs" role="tablist" aria-label="Pilih sektor"></div>
+      <div class="sector-panel" id="sectorPanel" role="tabpanel"></div>
     </div>
   </section>
 
@@ -293,10 +329,10 @@
       <div class="footer-col">
         <h5 data-i18n="footer.col.produk">Produk</h5>
         <ul>
-          <li><a href="products.html" data-i18n="product.dolomite.name">Dolomite</a></li>
-          <li><a href="products.html" data-i18n="product.phosphate.name">Fosfat Alam</a></li>
-          <li><a href="products.html" data-i18n="product.palmash.name">Abu Tandan Sawit</a></li>
-          <li><a href="products.html" data-i18n="product.clay.name">Lempung</a></li>
+          <li><a href="#dolomite" data-i18n="product.dolomite.name">Dolomite</a></li>
+          <li><a href="#phosphate" data-i18n="product.phosphate.name">Fosfat Alam</a></li>
+          <li><a href="#palmash" data-i18n="product.palmash.name">Abu Tandan Sawit</a></li>
+          <li><a href="#clay" data-i18n="product.clay.name">Lempung</a></li>
         </ul>
       </div>
 
@@ -332,15 +368,17 @@
   window.PAGE_I18N = {
     id: {
       title: "Detail Produk — PT Mangghala Inatama Lentera",
-      description: "Technical Data Sheet, Certificate of Analysis, dan foto produk Dolomite, Fosfat Alam, Abu Tandan Kosong Sawit, dan Lempung dari PT Mangghala Inatama Lentera."
+      description: "Manfaat, Technical Data Sheet, Certificate of Analysis, dan solusi per sektor untuk Dolomite, Fosfat Alam, Abu Tandan Kosong Sawit, dan Lempung dari PT Mangghala Inatama Lentera."
     },
     en: {
       title: "Product Details — PT Mangghala Inatama Lentera",
-      description: "Technical Data Sheets, Certificates of Analysis, and product photos for Dolomite, Natural Rock Phosphate, Palm Empty Fruit Bunch Ash, and Clay from PT Mangghala Inatama Lentera."
+      description: "Benefits, Technical Data Sheets, Certificates of Analysis, and sector solutions for Dolomite, Natural Rock Phosphate, Palm Empty Fruit Bunch Ash, and Clay from PT Mangghala Inatama Lentera."
     }
   };
 </script>
 <script src="js/gallery.js"></script>
+<script src="js/benefits-data.js"></script>
+<script src="js/products.js"></script>
 <script src="js/i18n.js"></script>
 </body>
 </html>
