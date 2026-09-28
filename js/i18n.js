@@ -54,11 +54,11 @@
     "produk.clay.cat": { id: "Mineral Aluminosilikat Serbaguna", en: "Versatile Aluminosilicate Mineral" },
     "produk.clay.desc": { id: "Keramik, bata, pengecoran, hingga bahan pemboran.", en: "Ceramics, bricks, foundry, and drilling applications." },
 
-    "industri.eyebrow": { id: "Industri yang Kami Layani", en: "Industries We Serve" },
-    "industri.h2": { id: "Satu Mineral, Beragam Manfaat Lintas Sektor", en: "One Mineral, Many Benefits Across Sectors" },
+    "industri.eyebrow": { id: "Solusi Sektor", en: "Sector Solutions" },
+    "industri.h2": { id: "Produk yang Tepat, Hasil yang Terukur", en: "The Right Product, Measurable Results" },
     "industri.p": {
-      id: "Dolomite, Fosfat Alam, Abu Tandan Sawit, dan Lempung kami digunakan jauh melampaui pertanian — dari konstruksi hingga pertambangan, sesuai spesifikasi dan grade yang dibutuhkan.",
-      en: "Our Dolomite, Natural Rock Phosphate, Palm EFB Ash, and Clay serve far beyond agriculture — from construction to mining — matched to the specification and grade you need."
+      id: "Pilih sektor Anda untuk melihat produk yang digunakan, cara kerjanya, dan hasil yang bisa diharapkan.",
+      en: "Choose your sector to see which products are used, how they work, and the results you can expect."
     },
     "industri.card1.title": { id: "Konstruksi &amp; Infrastruktur", en: "Construction &amp; Infrastructure" },
     "industri.card1.desc": { id: "Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.", en: "Additive material for cement, concrete, and aggregate in construction projects." },

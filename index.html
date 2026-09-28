@@ -215,73 +215,51 @@
     </div>
   </section>
 
-  <!-- ============ INDUSTRIES SERVED ============ -->
+  <!-- ============ SECTOR SOLUTIONS ============ -->
   <section class="section" id="industri">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow" data-i18n="industri.eyebrow">Industri yang Kami Layani</span>
-        <h2 data-i18n="industri.h2">Satu Mineral, Beragam Manfaat Lintas Sektor</h2>
-        <p data-i18n="industri.p">Dolomite, Fosfat Alam, Abu Tandan Sawit, dan Lempung kami digunakan jauh melampaui pertanian — dari konstruksi hingga pertambangan, sesuai spesifikasi dan grade yang dibutuhkan.</p>
+        <span class="eyebrow" data-i18n="industri.eyebrow">Solusi Sektor</span>
+        <h2 data-i18n="industri.h2">Produk yang Tepat, Hasil yang Terukur</h2>
+        <p data-i18n="industri.p">Pilih sektor Anda untuk melihat produk yang digunakan, cara kerjanya, dan hasil yang bisa diharapkan.</p>
       </div>
 
-      <div class="industry-grid stagger-group">
-        <div class="industry-card">
-          <div class="industry-image"><img src="assets/industries/01-construction-infrastructure.png" alt="Konstruksi &amp; Infrastruktur" loading="lazy" width="900" height="501"></div>
-          <div class="industry-body">
-            <h3 data-i18n="industri.card1.title">Konstruksi &amp; Infrastruktur</h3>
-            <p data-i18n="industri.card1.desc">Bahan tambahan semen, beton, dan agregat untuk proyek pembangunan.</p>
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-image"><img src="assets/industries/02-steel-metallurgy.png" alt="Baja &amp; Metalurgi" loading="lazy" width="900" height="501"></div>
-          <div class="industry-body">
-            <h3 data-i18n="industri.card2.title">Baja &amp; Metalurgi</h3>
-            <p data-i18n="industri.card2.desc">Flux dalam proses peleburan dan pemurnian logam.</p>
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-image"><img src="assets/industries/03-fisheries-aquaculture.png" alt="Perikanan &amp; Tambak" loading="lazy" width="900" height="501"></div>
-          <div class="industry-body">
-            <h3 data-i18n="industri.card3.title">Perikanan &amp; Tambak</h3>
-            <p data-i18n="industri.card3.desc">Menstabilkan pH air tambak dan mendukung pertumbuhan udang serta ikan budidaya.</p>
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-image"><img src="assets/industries/04-glass-ceramics.png" alt="Kaca &amp; Keramik" loading="lazy" width="900" height="501"></div>
-          <div class="industry-body">
-            <h3 data-i18n="industri.card4.title">Kaca &amp; Keramik</h3>
-            <p data-i18n="industri.card4.desc">Komponen mineral pada manufaktur kaca dan keramik.</p>
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-image"><img src="assets/industries/05-mining-reclamation.png" alt="Pertambangan &amp; Reklamasi" loading="lazy" width="900" height="501"></div>
-          <div class="industry-body">
-            <h3 data-i18n="industri.card5.title">Pertambangan &amp; Reklamasi</h3>
-            <p data-i18n="industri.card5.desc">Menetralkan keasaman tanah bekas tambang untuk mendukung revegetasi dan reklamasi lahan.</p>
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-image"><img src="assets/industries/06-animal-feed-chemicals.png" alt="Pakan Ternak &amp; Kimia" loading="lazy" width="900" height="501"></div>
-          <div class="industry-body">
-            <h3 data-i18n="industri.card6.title">Pakan Ternak &amp; Kimia</h3>
-            <p data-i18n="industri.card6.desc">Suplemen mineral pakan ternak dan bahan baku industri kimia.</p>
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-image"><img src="assets/industries/07-paint-plastics-rubber.png" alt="Cat, Plastik &amp; Karet" loading="lazy" width="900" height="501"></div>
-          <div class="industry-body">
-            <h3 data-i18n="industri.card7.title">Cat, Plastik &amp; Karet</h3>
-            <p data-i18n="industri.card7.desc">Filler mineral untuk cat, pelapis, plastik, dan produk karet.</p>
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-image"><img src="assets/industries/08-agriculture-plantations.png" alt="Pertanian &amp; Perkebunan" loading="lazy" width="900" height="501"></div>
-          <div class="industry-body">
-            <h3 data-i18n="industri.card8.title">Pertanian &amp; Perkebunan</h3>
-            <p data-i18n="industri.card8.desc">Penetral pH tanah dan sumber hara makro bagi tanaman.</p>
-          </div>
-        </div>
+      <div class="sector-grid stagger-group" role="tablist" aria-label="Pilih sektor">
+        <button class="sector-card active" data-sector="konstruksi" role="tab" aria-selected="true">
+          <div class="sector-image"><img src="assets/industries/01-construction-infrastructure.png" alt="Konstruksi &amp; Infrastruktur" loading="lazy" width="900" height="501"></div>
+          <h3 data-i18n="industri.card1.title">Konstruksi &amp; Infrastruktur</h3>
+        </button>
+        <button class="sector-card" data-sector="baja" role="tab" aria-selected="false">
+          <div class="sector-image"><img src="assets/industries/02-steel-metallurgy.png" alt="Baja &amp; Metalurgi" loading="lazy" width="900" height="501"></div>
+          <h3 data-i18n="industri.card2.title">Baja &amp; Metalurgi</h3>
+        </button>
+        <button class="sector-card" data-sector="perikanan" role="tab" aria-selected="false">
+          <div class="sector-image"><img src="assets/industries/03-fisheries-aquaculture.png" alt="Perikanan &amp; Tambak" loading="lazy" width="900" height="501"></div>
+          <h3 data-i18n="industri.card3.title">Perikanan &amp; Tambak</h3>
+        </button>
+        <button class="sector-card" data-sector="kaca" role="tab" aria-selected="false">
+          <div class="sector-image"><img src="assets/industries/04-glass-ceramics.png" alt="Kaca &amp; Keramik" loading="lazy" width="900" height="501"></div>
+          <h3 data-i18n="industri.card4.title">Kaca &amp; Keramik</h3>
+        </button>
+        <button class="sector-card" data-sector="tambang" role="tab" aria-selected="false">
+          <div class="sector-image"><img src="assets/industries/05-mining-reclamation.png" alt="Pertambangan &amp; Reklamasi" loading="lazy" width="900" height="501"></div>
+          <h3 data-i18n="industri.card5.title">Pertambangan &amp; Reklamasi</h3>
+        </button>
+        <button class="sector-card" data-sector="pakan" role="tab" aria-selected="false">
+          <div class="sector-image"><img src="assets/industries/06-animal-feed-chemicals.png" alt="Pakan Ternak &amp; Kimia" loading="lazy" width="900" height="501"></div>
+          <h3 data-i18n="industri.card6.title">Pakan Ternak &amp; Kimia</h3>
+        </button>
+        <button class="sector-card" data-sector="cat" role="tab" aria-selected="false">
+          <div class="sector-image"><img src="assets/industries/07-paint-plastics-rubber.png" alt="Cat, Plastik &amp; Karet" loading="lazy" width="900" height="501"></div>
+          <h3 data-i18n="industri.card7.title">Cat, Plastik &amp; Karet</h3>
+        </button>
+        <button class="sector-card" data-sector="pertanian" role="tab" aria-selected="false">
+          <div class="sector-image"><img src="assets/industries/08-agriculture-plantations.png" alt="Pertanian &amp; Perkebunan" loading="lazy" width="900" height="501"></div>
+          <h3 data-i18n="industri.card8.title">Pertanian &amp; Perkebunan</h3>
+        </button>
       </div>
+
+      <div class="sector-result reveal" id="sectorResult"></div>
     </div>
   </section>
 

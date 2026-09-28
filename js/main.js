@@ -581,6 +581,177 @@
     }
   }
 
+  /* ---------------- Sector Solutions ---------------- */
+  var SECTORS = {
+    konstruksi: {
+      title: "Konstruksi &amp; Infrastruktur",
+      products: ["dolomite"],
+      how: "Dolomite menjadi bahan tambahan pada campuran semen, beton, dan agregat untuk memenuhi spesifikasi proyek pembangunan.",
+      result: "Campuran konstruksi yang lebih konsisten dan sesuai standar mutu proyek."
+    },
+    baja: {
+      title: "Baja &amp; Metalurgi",
+      products: ["dolomite"],
+      how: "Dolomite berfungsi sebagai flux dalam proses peleburan dan pemurnian logam pada industri baja.",
+      result: "Proses peleburan lebih efisien dengan pengotor (slag) yang lebih mudah dipisahkan."
+    },
+    perikanan: {
+      title: "Perikanan &amp; Tambak",
+      products: ["dolomite"],
+      how: "Dolomite menstabilkan pH air tambak dan menyediakan kalsium-magnesium yang dibutuhkan organisme budidaya.",
+      result: "Kualitas air tambak lebih stabil, mendukung pertumbuhan udang dan ikan budidaya."
+    },
+    kaca: {
+      title: "Kaca &amp; Keramik",
+      products: ["dolomite", "clay"],
+      how: "Dolomite menjadi komponen mineral pada campuran kaca, sementara Lempung menjadi bahan baku utama produk keramik.",
+      result: "Komposisi bahan baku yang konsisten untuk manufaktur kaca dan keramik."
+    },
+    tambang: {
+      title: "Pertambangan &amp; Reklamasi",
+      products: ["dolomite"],
+      how: "Dolomite menetralkan keasaman tanah bekas tambang untuk mendukung proses revegetasi.",
+      result: "Lahan bekas tambang lebih siap ditanami kembali, mendukung program reklamasi."
+    },
+    pakan: {
+      title: "Pakan Ternak &amp; Kimia",
+      products: ["phosphate"],
+      how: "Fosfat Alam menjadi sumber fosfor dan kalsium untuk suplemen pakan ternak serta bahan baku industri kimia.",
+      result: "Suplai fosfor yang konsisten untuk kebutuhan pakan maupun proses kimia."
+    },
+    cat: {
+      title: "Cat, Plastik &amp; Karet",
+      products: ["dolomite"],
+      how: "Dolomite digunakan sebagai filler mineral pada cat, pelapis, plastik, dan produk karet.",
+      result: "Produk dengan tekstur dan volume yang lebih konsisten."
+    },
+    pertanian: {
+      title: "Pertanian &amp; Perkebunan",
+      products: ["dolomite", "phosphate", "palmash"],
+      how: "Dolomite menetralkan keasaman tanah, Fosfat Alam merangsang pertumbuhan akar, dan Abu Tandan Sawit menyuplai kalium alami.",
+      result: "Tanah lebih subur dan seimbang, mendukung pertumbuhan tanaman yang lebih sehat."
+    }
+  };
+
+  var SECTORS_EN = {
+    konstruksi: {
+      title: "Construction &amp; Infrastructure",
+      products: ["dolomite"],
+      how: "Dolomite serves as an additive in cement, concrete, and aggregate mixes to meet construction project specifications.",
+      result: "More consistent construction mixes that meet project quality standards."
+    },
+    baja: {
+      title: "Steel &amp; Metallurgy",
+      products: ["dolomite"],
+      how: "Dolomite acts as a flux in the metal smelting and refining process for the steel industry.",
+      result: "More efficient smelting, with slag (impurities) that separates more easily."
+    },
+    perikanan: {
+      title: "Fisheries &amp; Aquaculture",
+      products: ["dolomite"],
+      how: "Dolomite stabilizes pond water pH and supplies the calcium-magnesium that farmed organisms need.",
+      result: "More stable pond water quality, supporting healthy shrimp and fish growth."
+    },
+    kaca: {
+      title: "Glass &amp; Ceramics",
+      products: ["dolomite", "clay"],
+      how: "Dolomite is a mineral component in glass mixes, while Clay is the main raw material for ceramic products.",
+      result: "Consistent raw material composition for glass and ceramics manufacturing."
+    },
+    tambang: {
+      title: "Mining &amp; Reclamation",
+      products: ["dolomite"],
+      how: "Dolomite neutralizes acidic soil from former mining land to support revegetation.",
+      result: "Former mining land becomes more ready for replanting, supporting reclamation programs."
+    },
+    pakan: {
+      title: "Animal Feed &amp; Chemicals",
+      products: ["phosphate"],
+      how: "Natural Rock Phosphate is a phosphorus and calcium source for animal feed supplements and chemical industry feedstock.",
+      result: "A consistent phosphorus supply for both feed and chemical process needs."
+    },
+    cat: {
+      title: "Paint, Plastics &amp; Rubber",
+      products: ["dolomite"],
+      how: "Dolomite is used as a mineral filler in paint, coatings, plastics, and rubber products.",
+      result: "Products with more consistent texture and volume."
+    },
+    pertanian: {
+      title: "Agriculture &amp; Plantations",
+      products: ["dolomite", "phosphate", "palmash"],
+      how: "Dolomite neutralizes soil acidity, Natural Rock Phosphate stimulates root growth, and Palm EFB Ash supplies natural potassium.",
+      result: "Richer, more balanced soil that supports healthier plant growth."
+    }
+  };
+
+  function sectorsForLang(lang) {
+    return lang === "en" ? SECTORS_EN : SECTORS;
+  }
+
+  var sectorCards = $$(".sector-card");
+  var sectorResult = $("#sectorResult");
+  var currentSectorId = null;
+
+  function renderSectorResult(id, lang) {
+    var sector = sectorsForLang(lang)[id];
+    if (!sector || !sectorResult) return;
+    var products = productsForLang(lang);
+    var pillsHTML = sector.products.map(function (pid) {
+      return '<button class="sector-product-pill" data-tablink="' + pid + '">' + products[pid].title + "</button>";
+    }).join("");
+    var productsLabel = lang === "en" ? "Products Used" : "Produk yang Digunakan";
+    var howLabel = lang === "en" ? "How It Works" : "Cara Kerja";
+    var resultLabel = lang === "en" ? "Expected Results" : "Hasil yang Diharapkan";
+
+    sectorResult.innerHTML =
+      "<h3>" + sector.title + "</h3>" +
+      '<div class="sector-result-grid">' +
+        '<div class="sector-result-col">' +
+          "<h4>" + productsLabel + "</h4>" +
+          '<div class="sector-product-pills">' + pillsHTML + "</div>" +
+        "</div>" +
+        '<div class="sector-result-col">' +
+          "<h4>" + howLabel + "</h4>" +
+          "<p>" + sector.how + "</p>" +
+        "</div>" +
+        '<div class="sector-result-col">' +
+          "<h4>" + resultLabel + "</h4>" +
+          "<p>" + sector.result + "</p>" +
+        "</div>" +
+      "</div>";
+
+    $$(".sector-product-pill", sectorResult).forEach(function (pill) {
+      pill.addEventListener("click", function () {
+        switchProduct(pill.getAttribute("data-tablink"));
+      });
+    });
+  }
+
+  function setActiveSector(id) {
+    currentSectorId = id;
+    sectorCards.forEach(function (card) {
+      var active = card.getAttribute("data-sector") === id;
+      card.classList.toggle("active", active);
+      card.setAttribute("aria-selected", String(active));
+    });
+    renderSectorResult(id, currentLang());
+  }
+
+  sectorCards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      setActiveSector(card.getAttribute("data-sector"));
+    });
+  });
+
+  if (sectorCards.length) {
+    setActiveSector(sectorCards[0].getAttribute("data-sector"));
+  }
+
+  document.addEventListener("languagechange", function (e) {
+    if (!currentSectorId) return;
+    renderSectorResult(currentSectorId, e.detail.lang);
+  });
+
   /* ---------------- Footer year ---------------- */
   var yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
