@@ -524,6 +524,117 @@
     }
   }
 
+  /* ---------------- Sector Solutions ---------------- */
+  var SECTOR_DATA = window.MAHITALA_DATA;
+
+  var ARROW_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+  var SECTOR_LABELS = {
+    id: { action: "Cara Kerja", result: "Hasil", products: "Produk yang digunakan" },
+    en: { action: "How It Works", result: "Outcome", products: "Products used" }
+  };
+
+  var PRODUCT_THUMBS = {
+    dolomite: "assets/products/dolomite-powder.jpg",
+    phosphate: "assets/products/phosphate-powder.jpg",
+    palmash: "assets/products/palmash-powder.jpg",
+    clay: "assets/products/clay-powder.jpg"
+  };
+
+  var sectorCards = $$(".sector-card");
+  var sectorResult = $("#sectorResult");
+  var currentSectorId = null;
+
+  function sectorById(id) {
+    if (!SECTOR_DATA) return null;
+    for (var i = 0; i < SECTOR_DATA.sectors.length; i++) {
+      if (SECTOR_DATA.sectors[i].id === id) return SECTOR_DATA.sectors[i];
+    }
+    return null;
+  }
+
+  function renderSectorResult(id, lang) {
+    var sector = sectorById(id);
+    if (!sector || !sectorResult || !SECTOR_DATA) return;
+    var L = SECTOR_LABELS[lang];
+    var icon = SECTOR_DATA.icon;
+
+    var usedProducts = [];
+    sector.chains.forEach(function (c) {
+      if (usedProducts.indexOf(c.product) === -1) usedProducts.push(c.product);
+    });
+
+    var chainsHTML = sector.chains.map(function (c) {
+      return (
+        '<li class="chain-row">' +
+          '<div class="chain-product ' + c.product + '">' +
+            '<img src="' + PRODUCT_THUMBS[c.product] + '" alt="" loading="lazy" width="900" height="601">' +
+            "<span>" + SECTOR_DATA.productNames[c.product][lang] + "</span>" +
+          "</div>" +
+          '<span class="chain-arrow">' + ARROW_SVG + "</span>" +
+          '<div class="chain-step">' +
+            '<span class="chain-icon">' + icon(c.action.icon) + "</span>" +
+            "<div><small>" + L.action + "</small><p>" + c.action[lang] + "</p></div>" +
+          "</div>" +
+          '<span class="chain-arrow">' + ARROW_SVG + "</span>" +
+          '<div class="chain-step result">' +
+            '<span class="chain-icon">' + icon(c.result.icon) + "</span>" +
+            "<div><small>" + L.result + "</small><p>" + c.result[lang] + "</p></div>" +
+          "</div>" +
+        "</li>"
+      );
+    }).join("");
+
+    var pillsHTML = usedProducts.map(function (p) {
+      return '<button class="sector-product-pill ' + p + '" data-tablink="' + p + '">' + SECTOR_DATA.productNames[p][lang] + "</button>";
+    }).join("");
+
+    sectorResult.innerHTML =
+      '<div class="sector-intro">' +
+        "<h3>" + sector.title[lang] + "</h3>" +
+        "<p>" + sector.intro[lang] + "</p>" +
+        '<div class="sector-products"><small>' + L.products + "</small><div>" + pillsHTML + "</div></div>" +
+      "</div>" +
+      '<ol class="chain-list stagger-group">' + chainsHTML + "</ol>";
+
+    var list = $(".chain-list", sectorResult);
+    if (list) {
+      list.offsetWidth; /* force reflow so the stagger transition plays */
+      list.classList.add("in-view");
+    }
+
+    $$(".sector-product-pill", sectorResult).forEach(function (pill) {
+      pill.addEventListener("click", function () {
+        switchProduct(pill.getAttribute("data-tablink"));
+      });
+    });
+  }
+
+  function setActiveSector(id) {
+    currentSectorId = id;
+    sectorCards.forEach(function (card) {
+      var active = card.getAttribute("data-sector") === id;
+      card.classList.toggle("active", active);
+      card.setAttribute("aria-selected", String(active));
+    });
+    renderSectorResult(id, currentLang());
+  }
+
+  sectorCards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      setActiveSector(card.getAttribute("data-sector"));
+    });
+  });
+
+  if (sectorCards.length && SECTOR_DATA) {
+    setActiveSector(sectorCards[0].getAttribute("data-sector"));
+  }
+
+  document.addEventListener("languagechange", function (e) {
+    if (!currentSectorId) return;
+    renderSectorResult(currentSectorId, e.detail.lang);
+  });
+
   /* ---------------- Footer year ---------------- */
   var yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
