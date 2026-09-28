@@ -70,4 +70,20 @@
   var yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------------- Product detail visual form toggle (products.html) ---------------- */
+  $$(".pdetail-visual").forEach(function (visual) {
+    var img = $(".pdetail-visual-photo", visual);
+    var buttons = $$(".form-toggle button", visual);
+    if (!img || !buttons.length) return;
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (btn.classList.contains("active")) return;
+        buttons.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        var src = visual.getAttribute("data-photo-" + btn.getAttribute("data-form"));
+        if (src) img.src = src;
+      });
+    });
+  });
+
 })();

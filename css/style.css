@@ -1643,14 +1643,11 @@ textarea:focus-visible,
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  min-height: 220px;
-  padding: var(--space-8);
+  min-height: 380px;
+  padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
+  justify-content: flex-end;
   box-shadow: var(--shadow-md);
 }
 .pdetail-visual.dolomite { background: linear-gradient(150deg, #57534E, #1C1917); }
@@ -1658,56 +1655,20 @@ textarea:focus-visible,
 .pdetail-visual.palmash { background: linear-gradient(150deg, #6B4F3B, #241A10); }
 .pdetail-visual.clay { background: linear-gradient(150deg, #C17A52, #4A2416); }
 
-.pdetail-visual-icon {
-  position: relative;
-  z-index: 1;
-  width: 76px;
-  height: 76px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-5);
-}
-.pdetail-visual-icon svg { width: 38px; height: 38px; }
-
-.pdetail-photo-grid {
-  display: flex;
-  gap: var(--space-3);
-  margin-top: var(--space-6);
-  width: 100%;
-}
-.pdetail-photo {
-  position: relative;
-  flex: 1 1 0;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: block;
-  box-shadow: var(--shadow-sm);
-}
-.pdetail-photo img {
+.pdetail-visual-photo {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: transform 300ms var(--ease-standard);
+  z-index: 0;
 }
-.pdetail-photo:hover img { transform: scale(1.05); }
-.pdetail-photo-label {
+.pdetail-visual::after {
+  content: "";
   position: absolute;
-  left: var(--space-2);
-  bottom: var(--space-2);
-  z-index: 1;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #fff;
-  background: rgba(0,0,0,0.55);
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.68) 100%);
 }
 
 .pdetail-content h3 { font-size: 24px; margin-bottom: var(--space-3); }
