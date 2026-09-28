@@ -70,6 +70,7 @@ html { scroll-behavior: smooth; }
   height: 100%;
   z-index: 0;
   pointer-events: none;
+  object-fit: cover;
 }
 
 .faq-deco {
