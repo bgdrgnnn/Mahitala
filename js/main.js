@@ -527,8 +527,6 @@
   /* ---------------- Sector Solutions ---------------- */
   var SECTOR_DATA = window.MAHITALA_DATA;
 
-  var ARROW_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
-
   var SECTOR_LABELS = {
     id: { action: "Cara Kerja", result: "Hasil", products: "Produk yang digunakan" },
     en: { action: "How It Works", result: "Outcome", products: "Products used" }
@@ -557,29 +555,30 @@
     var sector = sectorById(id);
     if (!sector || !sectorResult || !SECTOR_DATA) return;
     var L = SECTOR_LABELS[lang];
-    var icon = SECTOR_DATA.icon;
 
     var usedProducts = [];
     sector.chains.forEach(function (c) {
       if (usedProducts.indexOf(c.product) === -1) usedProducts.push(c.product);
     });
 
+    // Decorative artwork follows the active sector. Text and product thumbnails
+    // remain fully opaque; only the separate image layer receives the fade.
+    var backgroundImage = sector.backgroundImage || sector.image;
     var chainsHTML = sector.chains.map(function (c) {
       return (
         '<li class="chain-row">' +
+          '<img class="chain-art" src="' + backgroundImage + '" alt="" aria-hidden="true" loading="lazy" decoding="async">' +
           '<div class="chain-product ' + c.product + '">' +
             '<img src="' + PRODUCT_THUMBS[c.product] + '" alt="" loading="lazy" width="900" height="601">' +
             "<span>" + SECTOR_DATA.productNames[c.product][lang] + "</span>" +
           "</div>" +
-          '<span class="chain-arrow">' + ARROW_SVG + "</span>" +
-          '<div class="chain-step">' +
-            '<span class="chain-icon">' + icon(c.action.icon) + "</span>" +
-            "<div><small>" + L.action + "</small><p>" + c.action[lang] + "</p></div>" +
-          "</div>" +
-          '<span class="chain-arrow">' + ARROW_SVG + "</span>" +
-          '<div class="chain-step result">' +
-            '<span class="chain-icon">' + icon(c.result.icon) + "</span>" +
-            "<div><small>" + L.result + "</small><p>" + c.result[lang] + "</p></div>" +
+          '<div class="chain-copy">' +
+            '<div class="chain-step">' +
+              "<small>" + L.action + "</small><p>" + c.action[lang] + "</p>" +
+            "</div>" +
+            '<div class="chain-step result">' +
+              "<small>" + L.result + "</small><p>" + c.result[lang] + "</p>" +
+            "</div>" +
           "</div>" +
         "</li>"
       );

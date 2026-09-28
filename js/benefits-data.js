@@ -170,6 +170,7 @@
           result: { icon: "sprout", id: "Pupuk tidak mudah tercuci, tanaman tetap segar saat kemarau", en: "Fertilizer stays put and plants stay fresh in dry spells" } }
       ] },
     { id: "konstruksi", image: "assets/industries/01-construction-infrastructure.png",
+      backgroundImage: "assets/industries/construction-background.webp",
       title: { id: "Konstruksi & Infrastruktur", en: "Construction & Infrastructure" },
       intro: { id: "Dari semen hingga bata, mineral kami menjadi bahan baku dan aditif yang membuat material bangunan lebih kuat, efisien, dan ramah lingkungan.", en: "From cement to bricks, our minerals are raw materials and additives that make building materials stronger, more efficient, and greener." },
       chains: [
