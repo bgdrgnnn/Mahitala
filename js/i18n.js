@@ -270,7 +270,6 @@
     "pdetail.hero.eyebrow": { id: "Detail Produk", en: "Product Details" },
     "pdetail.hero.h2": { id: "Technical Data Sheet, COA, dan Dokumentasi Produk", en: "Technical Data Sheet, COA, and Product Documentation" },
     "pdetail.hero.p": { id: "Spesifikasi teknis, sertifikat analisis, dan foto produk untuk setiap lini mineral yang kami produksi.", en: "Technical specifications, certificates of analysis, and product photos for every mineral line we produce." },
-    "pdetail.photonote": { id: "Foto Produk Menyusul", en: "Product Photos Coming Soon" },
 
     "pdetail.dolomite.intro": { id: "Tersedia dalam bentuk powder dan granule, untuk kebutuhan konstruksi, baja, kaca, pengolahan air, hingga pertanian.", en: "Available in powder and granule form, for construction, steel, glass, water treatment, and agriculture needs." },
     "pdetail.phosphate.intro": { id: "Bahan baku pupuk, pakan ternak, dan industri kimia — tersedia dalam bentuk powder dan granule.", en: "Raw material for fertilizer, animal feed, and chemical industries — available in powder and granule form." },
