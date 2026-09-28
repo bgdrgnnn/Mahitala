@@ -415,31 +415,17 @@
     applyProductView(productsForLang(lang)[currentProductId], form, { lang: lang });
   });
 
-  /* ---------------- FAQ accordion ---------------- */
-  $$(".faq-item").forEach(function (item) {
-    var q = $(".faq-q", item);
-    var a = $(".faq-a", item);
-    q.addEventListener("click", function () {
-      var willOpen = !item.classList.contains("open");
-      $$(".faq-item").forEach(function (other) {
-        other.classList.remove("open");
-        $(".faq-a", other).style.maxHeight = null;
+  /* Native details keep FAQ answers keyboard-accessible and readable without
+     JavaScript. Enforce one open answer in browsers without details[name].
+     No measured heights: language and viewport changes reflow naturally. */
+  var faqItems = $$("details.faq-item");
+  faqItems.forEach(function (item) {
+    item.addEventListener("toggle", function () {
+      if (!item.open) return;
+      faqItems.forEach(function (other) {
+        if (other !== item) other.open = false;
       });
-      if (willOpen) {
-        item.classList.add("open");
-        a.style.maxHeight = a.scrollHeight + "px";
-      }
     });
-  });
-
-  /* An open FAQ answer's max-height is a snapshot in px; if the language
-     switch changes the text's rendered height, resync it so content isn't
-     clipped or left with a gap. */
-  document.addEventListener("languagechange", function () {
-    var openItem = $(".faq-item.open");
-    if (!openItem) return;
-    var a = $(".faq-a", openItem);
-    a.style.maxHeight = a.scrollHeight + "px";
   });
 
   /* ---------------- Scroll reveal ---------------- */
