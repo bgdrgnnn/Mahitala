@@ -233,7 +233,9 @@ textarea:focus-visible,
   font-size: 15px;
   min-height: 48px;
   transition: transform 200ms var(--ease-standard), box-shadow 200ms var(--ease-standard), background 200ms var(--ease-standard), color 200ms var(--ease-standard);
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 100%;
+  text-align: center;
 }
 
 .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
@@ -644,104 +646,113 @@ textarea:focus-visible,
     radial-gradient(600px 500px at 50% 45%, rgba(18, 162, 96, 0.08), transparent 70%);
 }
 
-/* Product picker — 3D tilt-on-hover cards (vanilla JS sets --tilt-x/--tilt-y/
-   --mx/--my via mousemove; CSS just consumes the custom properties). */
+/* Product collection — original mineral illustrations with room to breathe.
+   Brand colors are preserved; illustrations replace generic/cropped glyphs. */
 .product-picker {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-6);
   margin-bottom: var(--space-12);
 }
-
-@media (max-width: 1080px) {
-  .product-picker { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px) {
-  .product-picker { grid-template-columns: 1fr; }
-}
-
 .product-pick-card {
   position: relative;
   overflow: hidden;
-  min-height: 260px;
+  min-height: 410px;
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: left;
   color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  cursor: pointer;
-  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
-  transition: transform 300ms var(--ease-standard), box-shadow 300ms var(--ease-standard), outline-color 200ms;
-  outline: 2px solid transparent;
-  outline-offset: 3px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 240ms var(--ease-standard), box-shadow 240ms var(--ease-standard);
 }
-.product-pick-card:hover { box-shadow: var(--shadow-lg); }
-.product-pick-card.active { outline-color: var(--color-accent); }
-
+.product-pick-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.product-pick-card:focus-visible {
+  outline: 3px solid var(--color-primary-dark);
+  outline-offset: 4px;
+}
+.product-pick-card.active { box-shadow: 0 0 0 3px var(--color-accent); }
 .product-pick-card.dolomite { background: linear-gradient(150deg, #57534E, #1C1917); }
 .product-pick-card.phosphate { background: linear-gradient(150deg, #1B6B47, #062A19); }
 .product-pick-card.palmash { background: linear-gradient(150deg, #6B4F3B, #241A10); }
 .product-pick-card.clay { background: linear-gradient(150deg, #C17A52, #4A2416); }
 
+/* Subtle drafting grid remains available to the process gallery. */
 .ppc-texture {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
+    linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
   mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 60%, transparent 100%);
-}
-
-.ppc-glow {
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  opacity: 0;
-  background: radial-gradient(140px at var(--mx, 50%) var(--my, 50%), rgba(252, 192, 12, 0.35), transparent 60%);
-  transition: opacity 300ms var(--ease-standard);
   pointer-events: none;
 }
-.product-pick-card:hover .ppc-glow { opacity: 1; }
-
 .ppc-top {
-  position: relative;
-  z-index: 1;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 38px;
 }
-.ppc-icon {
-  width: 30px; height: 30px;
-  border-radius: 9px;
-  background: rgba(255,255,255,0.12);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+.ppc-index {
+  padding-top: 1px;
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.65);
 }
-.ppc-icon svg { width: 16px; height: 16px; }
-.ppc-category { font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em; color: rgba(255,255,255,0.8); }
-
-.ppc-body { position: relative; z-index: 1; }
-.ppc-body h3 { font-size: 25px; color: #fff; margin-bottom: 6px; }
-.ppc-body p { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.65); max-width: 78%; }
-
-.ppc-glyph {
-  position: absolute;
-  right: -16px;
-  bottom: -16px;
-  width: 120px;
-  height: 120px;
+.ppc-category {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   color: rgba(255,255,255,0.85);
-  transition: transform 350ms var(--ease-standard);
 }
-.product-pick-card:hover .ppc-glyph { transform: translate(-6px, -6px) scale(1.06); }
-
+.mineral-illustration {
+  display: grid;
+  place-items: center;
+  height: 170px;
+  margin: 8px -8px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  background: radial-gradient(ellipse at 50% 65%, rgba(255,255,255,0.06), transparent 70%);
+}
+.mineral-illustration img {
+  width: 220px;
+  height: 165px;
+  object-fit: contain;
+  transition: transform 300ms var(--ease-standard);
+}
+.product-pick-card:hover .mineral-illustration img { transform: translateY(-3px); }
+.ppc-body { flex: 1; }
+.ppc-body h3 { font-size: 23px; color: #fff; margin-bottom: 8px; }
+.ppc-body p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.8); }
+.ppc-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding-top: 22px;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+}
+.ppc-link svg { width: 20px; height: 20px; flex-shrink: 0; }
+@media (max-width: 1080px) {
+  .product-picker { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .product-picker { grid-template-columns: 1fr; gap: var(--space-4); }
+  .product-pick-card { min-height: 380px; }
+  .mineral-illustration { height: 160px; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .product-pick-card { transform: none !important; }
-  .product-pick-card:hover .ppc-glyph { transform: none; }
+  .product-pick-card:hover, .product-pick-card:hover .mineral-illustration img { transform: none; }
 }
 
 @keyframes fadeUp {
@@ -1596,6 +1607,7 @@ textarea:focus-visible,
   padding-block: var(--space-16);
   border-bottom: 1px solid var(--color-border);
 }
+.product-detail > * { min-width: 0; }
 .product-detail:last-child { border-bottom: none; }
 @media (max-width: 900px) {
   .product-detail { grid-template-columns: 1fr; gap: var(--space-8); }
@@ -1620,50 +1632,22 @@ textarea:focus-visible,
 .pdetail-visual.palmash { background: linear-gradient(150deg, #6B4F3B, #241A10); }
 .pdetail-visual.clay { background: linear-gradient(150deg, #C17A52, #4A2416); }
 
-.pdetail-visual-icon {
-  position: relative;
-  z-index: 1;
-  width: 76px;
-  height: 76px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-5);
+.pdetail-mineral {
+  width: min(100%, 340px);
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: 12px auto 20px;
 }
-.pdetail-visual-icon svg { width: 38px; height: 38px; }
-
 .pdetail-visual-note {
-  position: relative;
-  z-index: 1;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: rgba(255,255,255,0.14);
-  padding: 5px 14px;
-  border-radius: var(--radius-full);
-}
-
-.pdetail-photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-3);
-  margin-top: var(--space-6);
+  color: rgba(255,255,255,0.85);
+  padding: 8px 0;
+  border-top: 1px solid rgba(255,255,255,0.2);
   width: 100%;
 }
-.pdetail-photo-placeholder {
-  aspect-ratio: 1;
-  border-radius: var(--radius-md);
-  background: rgba(255,255,255,0.08);
-  border: 1px dashed rgba(255,255,255,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.5);
-}
-.pdetail-photo-placeholder svg { width: 22px; height: 22px; }
 
 .pdetail-content h3 { font-size: 24px; margin-bottom: var(--space-3); }
 .pdetail-content > p { color: var(--color-muted-foreground); margin-bottom: var(--space-6); line-height: 1.65; }
@@ -1734,3 +1718,42 @@ textarea:focus-visible,
   .team-card:hover, .legal-card:hover { transform: none; }
 }
 
+
+/* Original pictograms: consistent 48px canvas and two-tone construction. */
+.brand-icon { flex-shrink: 0; }
+.trust-strip .container { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.trust-item { gap: 14px; font-size: 13px; line-height: 1.5; }
+.trust-item .brand-icon { width: 38px; height: 38px; }
+.vm-icon, .legal-icon { width: 60px; height: 60px; border: 1px solid var(--color-border); }
+.vm-icon .brand-icon, .legal-icon .brand-icon { width: 38px; height: 38px; }
+.vm-card.accent .vm-icon { border-color: rgba(255,255,255,0.15); }
+.contact-row .icon .brand-icon { width: 28px; height: 28px; }
+.coa-icon .brand-icon { width: 30px; height: 30px; }
+.gallery-card { min-height: 320px; }
+.gallery-icon-wrap {
+  width: 104px;
+  height: 104px;
+  margin: 6px 0 2px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+}
+.gallery-icon-wrap .brand-icon { width: 64px; height: 64px; color: #f0e9d8; }
+.gallery-card-body p { color: rgba(255,255,255,0.8); }
+.modal-mineral {
+  position: relative;
+  width: min(100%, 290px);
+  height: auto;
+  aspect-ratio: 4 / 3;
+  align-self: center;
+  margin: 16px 0 0;
+}
+@media (max-width: 900px) {
+  .trust-strip .container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .trust-strip .container { gap: 20px 14px; }
+  .trust-item { flex-direction: column; align-items: flex-start; gap: 8px; font-size: 12px; }
+  .trust-item .brand-icon { width: 32px; height: 32px; }
+  .modal-mineral { width: 170px; }
+}

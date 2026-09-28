@@ -4,6 +4,8 @@
   var STORAGE_KEY = "mahitala_lang";
 
   var I18N = {
+    "visual.explore": { id: "Jelajahi mineral", en: "Explore mineral" },
+    "visual.illustration": { id: "Ilustrasi mineral", en: "Mineral illustration" },
     "nav.home": { id: "Home", en: "Home" },
     "nav.produk": { id: "Produk", en: "Products" },
     "nav.tentang": { id: "Tentang Kami", en: "About Us" },
