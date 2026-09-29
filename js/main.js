@@ -561,13 +561,12 @@
       if (usedProducts.indexOf(c.product) === -1) usedProducts.push(c.product);
     });
 
-    // Decorative artwork follows the active sector. Text and product thumbnails
+    // Each outcome has its own illustration. Text and product thumbnails
     // remain fully opaque; only the separate image layer receives the fade.
-    var backgroundImage = sector.backgroundImage || sector.image;
     var chainsHTML = sector.chains.map(function (c) {
       return (
         '<li class="chain-row">' +
-          '<img class="chain-art" src="' + backgroundImage + '" alt="" aria-hidden="true" loading="lazy" decoding="async">' +
+          '<img class="chain-art" src="' + c.outcomeImage + '" alt="" aria-hidden="true" loading="lazy" decoding="async">' +
           '<div class="chain-product ' + c.product + '">' +
             '<img src="' + PRODUCT_THUMBS[c.product] + '" alt="" loading="lazy" width="900" height="601">' +
             "<span>" + SECTOR_DATA.productNames[c.product][lang] + "</span>" +

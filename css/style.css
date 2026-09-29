@@ -1990,7 +1990,7 @@ textarea:focus-visible,
   bottom: 0;
   width: 55%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: right center;
   opacity: var(--chain-art-opacity);
   -webkit-mask-image: linear-gradient(to right, transparent 12%, rgba(0,0,0,0.18) 45%, #000 85%);
