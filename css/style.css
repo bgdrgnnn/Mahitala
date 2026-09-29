@@ -666,20 +666,15 @@ textarea:focus-visible,
 .product-pick-card.palmash { background: linear-gradient(150deg, #6B4F3B, #241A10); }
 .product-pick-card.clay { background: linear-gradient(150deg, #C17A52, #4A2416); }
 
-/* Flat-lay product photos: the material piles up toward the bottom of the
-   frame, so zoom in there and keep the middle of the card unshaded. */
 .ppc-photo { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .ppc-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 75%;
   display: block;
-  transform: scale(1.18);
-  transform-origin: 50% 75%;
   transition: transform 600ms var(--ease-standard);
 }
-.product-pick-card:hover .ppc-photo img { transform: scale(1.3); }
+.product-pick-card:hover .ppc-photo img { transform: scale(1.06); }
 .ppc-photo::after {
   content: "";
   position: absolute; inset: 0;
@@ -733,7 +728,7 @@ textarea:focus-visible,
 @media (prefers-reduced-motion: reduce) {
   .product-pick-card { transform: none !important; }
   .ppc-photo img { transition: none; }
-  .product-pick-card:hover .ppc-photo img { transform: scale(1.18); }
+  .product-pick-card:hover .ppc-photo img { transform: none; }
 }
 
 @keyframes fadeUp {
@@ -832,14 +827,7 @@ textarea:focus-visible,
 
 .product-visual .visual-photo { position: absolute; inset: 0; z-index: 0; }
 .product-visual .visual-photo { overflow: hidden; }
-.product-visual .visual-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: 50% 75%;
-  display: block;
-  transform: scale(1.12);
-  transform-origin: 50% 75%;
-}
+.product-visual .visual-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .product-visual .visual-photo::after {
   content: "";
   position: absolute; inset: 0;
@@ -1769,9 +1757,6 @@ textarea:focus-visible,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 75%;
-  transform: scale(1.12);
-  transform-origin: 50% 75%;
   z-index: 0;
 }
 .pdetail-visual::after {
@@ -2031,7 +2016,7 @@ textarea:focus-visible,
   z-index: -1;
 }
 /* Product photo fills the row's full height as a side panel so the
-   material texture is actually visible. */
+   product is actually visible. */
 .chain-product {
   position: relative;
   overflow: hidden;
@@ -2044,9 +2029,6 @@ textarea:focus-visible,
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: 50% 80%;
-  transform: scale(1.1);
-  transform-origin: 50% 80%;
 }
 .chain-copy { align-self: center; padding-block: 24px; }
 .chain-product::after {

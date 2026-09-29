@@ -568,7 +568,7 @@
         '<li class="chain-row">' +
           '<img class="chain-art" src="' + c.outcomeImage + '" alt="" aria-hidden="true" loading="lazy" decoding="async">' +
           '<div class="chain-product ' + c.product + '">' +
-            '<img src="' + PRODUCT_THUMBS[c.product] + '" alt="" loading="lazy" width="800" height="1200">' +
+            '<img src="' + PRODUCT_THUMBS[c.product] + '" alt="" loading="lazy" width="900" height="601">' +
             "<span>" + SECTOR_DATA.productNames[c.product][lang] + "</span>" +
           "</div>" +
           '<div class="chain-copy">' +
