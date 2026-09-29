@@ -339,7 +339,10 @@ textarea:focus-visible,
 .dock-nav {
   position: fixed;
   left: 50%;
-  bottom: var(--space-5);
+  /* Clear the iPhone home indicator by lifting the whole pill, not by
+     padding it: iOS Safari changes safe-area-inset-bottom as its toolbar
+     collapses on scroll, and padding would make the dock swell mid-scroll. */
+  bottom: calc(var(--space-5) + env(safe-area-inset-bottom, 0px));
   transform: translateX(-50%);
   z-index: 115;
   display: flex;
@@ -348,7 +351,6 @@ textarea:focus-visible,
   width: max-content;
   max-width: calc(100vw - 32px);
   padding: 10px;
-  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
   border-radius: var(--radius-full);
   background: rgba(8, 24, 16, 0.68);
   backdrop-filter: blur(16px) saturate(140%);
@@ -442,7 +444,6 @@ textarea:focus-visible,
   .dock-nav {
     gap: 4px;
     padding: 8px;
-    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
     /* Safety net if the icon set ever outgrows a narrow viewport: scroll
        instead of spilling icons outside the pill's rounded background.
        Scoped to narrow widths only -- overflow-x here also forces
