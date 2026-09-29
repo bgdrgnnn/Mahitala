@@ -2016,8 +2016,6 @@ textarea:focus-visible,
   object-fit: contain;
   object-position: right center;
   opacity: var(--chain-art-opacity);
-  -webkit-mask-image: linear-gradient(to right, transparent 12%, rgba(0,0,0,0.18) 45%, #000 85%);
-  mask-image: linear-gradient(to right, transparent 12%, rgba(0,0,0,0.18) 45%, #000 85%);
   pointer-events: none;
   z-index: -1;
 }
@@ -2084,8 +2082,6 @@ textarea:focus-visible,
     bottom: auto;
     width: 56%;
     height: 136px;
-    -webkit-mask-image: linear-gradient(to right, transparent 12%, rgba(0,0,0,0.18) 45%, #000 85%);
-    mask-image: linear-gradient(to right, transparent 12%, rgba(0,0,0,0.18) 45%, #000 85%);
   }
   .chain-copy { width: 100%; }
   .chain-step p { font-size: 14px; line-height: 1.6; }
