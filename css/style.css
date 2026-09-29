@@ -1737,7 +1737,6 @@ textarea:focus-visible,
 .product-detail > * { min-width: 0; }
 @media (max-width: 900px) {
   .product-detail { grid-template-columns: 1fr; gap: var(--space-8); }
-  .pdetail-visual { position: relative; top: auto; aspect-ratio: 1 / 1; }
 }
 
 .pdetail-visual {
@@ -1751,6 +1750,12 @@ textarea:focus-visible,
   flex-direction: column;
   justify-content: flex-end;
   box-shadow: var(--shadow-md);
+}
+/* Single-column (tablet/phone): the photo must scroll with the page —
+   sticky here lets the benefit tiles slide over it. Declared after the
+   base rule so it actually wins. */
+@media (max-width: 900px) {
+  .pdetail-visual { position: relative; top: auto; aspect-ratio: 1 / 1; }
 }
 .pdetail-visual.dolomite { background: linear-gradient(150deg, #57534E, #1C1917); }
 .pdetail-visual.phosphate { background: linear-gradient(150deg, #1B6B47, #062A19); }
