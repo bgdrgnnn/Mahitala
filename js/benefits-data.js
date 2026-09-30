@@ -181,11 +181,11 @@
       intro: { id: "Dari semen hingga bata, mineral kami menjadi bahan baku dan aditif yang membuat material bangunan lebih kuat, efisien, dan ramah lingkungan.", en: "From cement to bricks, our minerals are raw materials and additives that make building materials stronger, more efficient, and greener." },
       chains: [
         { product: "dolomite",
-          outcomeImage: "assets/industries/outcomes/konstruksi-1.webp",
+          outcomeImage: "assets/industries/outcomes/konstruksi-1-industrial.webp",
           action: { icon: "layers", id: "Menjadi filler dan agregat pada semen & beton", en: "Serves as filler and aggregate in cement & concrete" },
           result: { icon: "coins", id: "Beton lebih padat dengan biaya bahan lebih efisien", en: "Denser concrete at a more efficient material cost" } },
         { product: "palmash",
-          outcomeImage: "assets/industries/outcomes/konstruksi-2.webp",
+          outcomeImage: "assets/industries/outcomes/konstruksi-2-industrial.webp",
           action: { icon: "sparkles", id: "Silika reaktif bersifat pozzolanik menggantikan sebagian semen", en: "Reactive pozzolanic silica partially replaces cement" },
           result: { icon: "recycle", id: "Jejak karbon lebih rendah — beton hijau berbasis limbah sawit", en: "Lower carbon footprint — green concrete from palm waste" } },
         { product: "clay",
@@ -198,7 +198,7 @@
       intro: { id: "Di tanur dan cetakan, mineral kami membantu menghasilkan logam yang lebih murni dengan proses yang lebih andal.", en: "In furnaces and molds, our minerals help produce purer metal through a more reliable process." },
       chains: [
         { product: "dolomite",
-          outcomeImage: "assets/industries/outcomes/baja-1.webp",
+          outcomeImage: "assets/industries/outcomes/baja-1-industrial.webp",
           action: { icon: "flame", id: "Sebagai flux, mengikat pengotor (silika, sulfur, fosfor) menjadi slag", en: "As a flux, binds impurities (silica, sulfur, phosphorus) into slag" },
           result: { icon: "gem", id: "Baja lebih murni dengan kualitas konsisten", en: "Purer steel with consistent quality" } },
         { product: "dolomite",
@@ -215,11 +215,11 @@
       intro: { id: "Komposisi mineral yang tepat menentukan kekuatan, kejernihan, dan ketahanan produk kaca maupun keramik.", en: "The right mineral composition determines the strength, clarity, and durability of glass and ceramic products." },
       chains: [
         { product: "dolomite",
-          outcomeImage: "assets/industries/outcomes/kaca-1.webp",
+          outcomeImage: "assets/industries/outcomes/kaca-1-industrial.webp",
           action: { icon: "atom", id: "Menyumbang CaO & MgO dalam campuran bahan kaca", en: "Contributes CaO & MgO to the glass batch" },
           result: { icon: "gem", id: "Kaca lebih tahan kimia & cuaca serta tidak mudah buram", en: "Glass that resists chemicals & weathering and doesn't cloud easily" } },
         { product: "clay",
-          outcomeImage: "assets/industries/outcomes/kaca-2.webp",
+          outcomeImage: "assets/industries/outcomes/kaca-2-industrial.webp",
           action: { icon: "shapes", id: "Memberi plastisitas pada badan keramik", en: "Gives plasticity to the ceramic body" },
           result: { icon: "flame", id: "Mudah dibentuk dan kuat setelah dibakar", en: "Easy to shape and strong after firing" } }
       ] },
@@ -266,11 +266,11 @@
       intro: { id: "Filler mineral menekan biaya formula sekaligus memperbaiki sifat fisik produk akhir.", en: "Mineral fillers cut formulation costs while improving the physical properties of the end product." },
       chains: [
         { product: "dolomite",
-          outcomeImage: "assets/industries/outcomes/cat-1.webp",
+          outcomeImage: "assets/industries/outcomes/cat-1-industrial.webp",
           action: { icon: "layers", id: "Filler karbonat putih pada cat, plastik, dan karet", en: "White carbonate filler in paint, plastics, and rubber" },
           result: { icon: "coins", id: "Biaya resin/pigmen turun, produk lebih kaku dan tahan cuaca", en: "Lower resin/pigment cost, stiffer and more weather-resistant products" } },
         { product: "clay",
-          outcomeImage: "assets/industries/outcomes/cat-2.webp",
+          outcomeImage: "assets/industries/outcomes/cat-2-industrial.webp",
           action: { icon: "roller", id: "Extender pigmen pada cat, pelapis, dan kertas", en: "Pigment extender in paint, coatings, and paper" },
           result: { icon: "sparkles", id: "Opasitas & daya tutup lebih baik, permukaan lebih halus", en: "Better opacity & hiding power, smoother surfaces" } }
       ] }
