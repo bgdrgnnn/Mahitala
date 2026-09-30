@@ -206,7 +206,7 @@
           action: { icon: "shield", id: "MgO dalam slag melindungi lapisan refraktori tungku", en: "MgO in the slag protects the furnace refractory lining" },
           result: { icon: "clock", id: "Umur tungku lebih panjang, biaya perawatan turun", en: "Longer furnace life, lower maintenance costs" } },
         { product: "clay",
-          outcomeImage: "assets/industries/benefits/baja-3.webp",
+          outcomeImage: "assets/industries/benefits/baja-3-casting.webp",
           action: { icon: "link", id: "Bonding clay mengikat pasir cetak pengecoran", en: "Bonding clay binds foundry molding sand" },
           result: { icon: "target", id: "Cetakan presisi, permukaan coran halus, cacat berkurang", en: "Precise molds, smooth casting surfaces, fewer defects" } }
       ] },
@@ -245,7 +245,7 @@
       intro: { id: "Mineral berkualitas pakan (feed grade) dan bahan baku kimia untuk produktivitas ternak serta kebutuhan industri.", en: "Feed-grade minerals and chemical feedstock for livestock productivity and industrial needs." },
       chains: [
         { product: "phosphate",
-          outcomeImage: "assets/industries/benefits/pakan-1.webp",
+          outcomeImage: "assets/industries/benefits/pakan-1-hen.webp",
           action: { icon: "bone", id: "Sumber fosfor & kalsium dalam ransum pakan", en: "Phosphorus & calcium source in feed rations" },
           result: { icon: "heart", id: "Tulang kuat, pertumbuhan optimal, kerabang telur lebih tebal", en: "Strong bones, optimal growth, thicker eggshells" } },
         { product: "dolomite",
