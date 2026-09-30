@@ -420,38 +420,6 @@
     spySections.forEach(function (s) { spyIO.observe(s); });
   }
 
-  /* ---------------- Animated counters ---------------- */
-  var counters = $$("[data-counter]");
-  function animateCounter(el) {
-    var target = parseInt(el.getAttribute("data-target"), 10) || 0;
-    var valueEl = el.classList.contains("num") ? $(".value", el) : el;
-    if (!valueEl) valueEl = el;
-    var duration = 1400;
-    var start = null;
-
-    function step(ts) {
-      if (start === null) start = ts;
-      var progress = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      var current = Math.round(eased * target);
-      valueEl.textContent = current.toLocaleString("id-ID");
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  if ("IntersectionObserver" in window && counters.length) {
-    var counterIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterIO.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    counters.forEach(function (el) { counterIO.observe(el); });
-  }
-
   /* ---------------- Contact form validation ---------------- */
   var form = $("#contactForm");
   var successBox = $("#formSuccess");
