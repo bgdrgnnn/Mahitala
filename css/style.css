@@ -553,31 +553,6 @@ textarea:focus-visible,
 
 .hero-cta { display: flex; gap: var(--space-4); margin-top: var(--space-8); flex-wrap: wrap; }
 
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: var(--space-8);
-  margin-top: var(--space-16);
-  padding-top: var(--space-8);
-  border-top: 1px solid rgba(255,255,255,0.14);
-}
-
-@media (max-width: 560px) {
-  .hero-stats { grid-template-columns: repeat(2, auto); }
-}
-
-.hero-stat .num {
-  font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 700;
-  color: #fff;
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
-}
-.hero-stat .num span.suffix { color: var(--color-accent-light); font-size: 22px; }
-.hero-stat .label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
-
 /* ==========================================================================
    Trust strip
    ========================================================================== */

@@ -23,9 +23,6 @@
     },
     "hero.cta1": { id: "Lihat Produk Kami", en: "View Our Products" },
     "hero.cta2": { id: "Konsultasi Gratis", en: "Free Consultation" },
-    "hero.stat1": { id: "Tahun Pengalaman", en: "Years of Experience" },
-    "hero.stat2": { id: "Klien Industri &amp; Perkebunan", en: "Industrial &amp; Plantation Clients" },
-    "hero.stat3": { id: "Provinsi Terjangkau", en: "Provinces Covered" },
 
     "trust.1": { id: "Diuji Laboratorium", en: "Lab-Tested Quality" },
     "trust.2": { id: "Bahan Baku Alami 100%", en: "100% Natural Raw Material" },
