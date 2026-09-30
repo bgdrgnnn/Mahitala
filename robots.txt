@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bgdrgnnn.github.io/Mahitala/sitemap.xml
