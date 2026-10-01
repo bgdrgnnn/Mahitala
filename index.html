@@ -201,17 +201,25 @@
       </div>
 
       <div class="sector-grid stagger-group" role="tablist" aria-label="Choose a sector">
-        <button class="sector-card active" data-sector="konstruksi" role="tab" aria-selected="true">
+        <button class="sector-card active" data-sector="pertanian" role="tab" aria-selected="true">
+          <div class="sector-image"><img src="assets/industries/08-agriculture-plantations.png" alt="Agriculture &amp; Plantations" loading="lazy" width="900" height="501"></div>
+          <h3>Agriculture &amp; Plantations</h3>
+        </button>
+        <button class="sector-card" data-sector="tambak" role="tab" aria-selected="false">
+          <div class="sector-image"><img src="assets/industries/03-fisheries-aquaculture.png" alt="Fisheries &amp; Aquaculture" loading="lazy" width="900" height="501"></div>
+          <h3>Fisheries &amp; Aquaculture</h3>
+        </button>
+        <button class="sector-card" data-sector="pakan" role="tab" aria-selected="false">
+          <div class="sector-image"><img src="assets/industries/06-animal-feed-chemicals.png" alt="Animal Feed &amp; Chemicals" loading="lazy" width="900" height="501"></div>
+          <h3>Animal Feed &amp; Chemicals</h3>
+        </button>
+        <button class="sector-card" data-sector="konstruksi" role="tab" aria-selected="false">
           <div class="sector-image"><img src="assets/industries/01-construction-infrastructure.png" alt="Construction &amp; Infrastructure" loading="lazy" width="900" height="501"></div>
           <h3>Construction &amp; Infrastructure</h3>
         </button>
         <button class="sector-card" data-sector="baja" role="tab" aria-selected="false">
           <div class="sector-image"><img src="assets/industries/02-steel-metallurgy.png" alt="Steel &amp; Metallurgy" loading="lazy" width="900" height="501"></div>
           <h3>Steel &amp; Metallurgy</h3>
-        </button>
-        <button class="sector-card" data-sector="tambak" role="tab" aria-selected="false">
-          <div class="sector-image"><img src="assets/industries/03-fisheries-aquaculture.png" alt="Fisheries &amp; Aquaculture" loading="lazy" width="900" height="501"></div>
-          <h3>Fisheries &amp; Aquaculture</h3>
         </button>
         <button class="sector-card" data-sector="kaca" role="tab" aria-selected="false">
           <div class="sector-image"><img src="assets/industries/04-glass-ceramics.png" alt="Glass &amp; Ceramics" loading="lazy" width="900" height="501"></div>
@@ -221,22 +229,14 @@
           <div class="sector-image"><img src="assets/industries/05-mining-reclamation.png" alt="Mining &amp; Reclamation" loading="lazy" width="900" height="501"></div>
           <h3>Mining &amp; Reclamation</h3>
         </button>
-        <button class="sector-card" data-sector="pakan" role="tab" aria-selected="false">
-          <div class="sector-image"><img src="assets/industries/06-animal-feed-chemicals.png" alt="Animal Feed &amp; Chemicals" loading="lazy" width="900" height="501"></div>
-          <h3>Animal Feed &amp; Chemicals</h3>
-        </button>
         <button class="sector-card" data-sector="cat" role="tab" aria-selected="false">
           <div class="sector-image"><img src="assets/industries/07-paint-plastics-rubber.png" alt="Paint, Plastics &amp; Rubber" loading="lazy" width="900" height="501"></div>
           <h3>Paint, Plastics &amp; Rubber</h3>
         </button>
-        <button class="sector-card" data-sector="pertanian" role="tab" aria-selected="false">
-          <div class="sector-image"><img src="assets/industries/08-agriculture-plantations.png" alt="Agriculture &amp; Plantations" loading="lazy" width="900" height="501"></div>
-          <h3>Agriculture &amp; Plantations</h3>
-        </button>
       </div>
 
       <div class="sector-result reveal" id="sectorResult">
-          <div class="sector-result-panel" data-sector-panel="konstruksi">
+          <div class="sector-result-panel" data-sector-panel="konstruksi" hidden>
             <div class="sector-intro"><h3>Construction &amp; Infrastructure</h3><p>From cement to bricks, our minerals are raw materials and additives that make building materials stronger, more efficient, and greener.</p><div class="sector-products"><small>Products used</small><div><button class="sector-product-pill dolomite" data-tablink="dolomite">Dolomite</button><button class="sector-product-pill palmash" data-tablink="palmash">Palm EFB Ash</button><button class="sector-product-pill clay" data-tablink="clay">Clay</button></div></div></div><ol class="chain-list stagger-group"><li class="chain-row"><img class="chain-art" src="assets/industries/benefits/konstruksi-1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="chain-product dolomite"><img src="assets/products/dolomite-powder.jpg" alt="" loading="lazy" width="900" height="601"><span>Dolomite</span></div><div class="chain-copy"><div class="chain-step"><small>How It Works</small><p>Serves as filler and aggregate in cement &amp; concrete</p></div><div class="chain-step result"><small>Outcome</small><p>Denser concrete at a more efficient material cost</p></div></div></li><li class="chain-row"><img class="chain-art" src="assets/industries/benefits/konstruksi-2.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="chain-product palmash"><img src="assets/products/palmash-powder.jpg" alt="" loading="lazy" width="900" height="601"><span>Palm EFB Ash</span></div><div class="chain-copy"><div class="chain-step"><small>How It Works</small><p>Reactive pozzolanic silica partially replaces cement</p></div><div class="chain-step result"><small>Outcome</small><p>Lower carbon footprint — green concrete from palm waste</p></div></div></li><li class="chain-row"><img class="chain-art" src="assets/industries/benefits/konstruksi-3.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="chain-product clay"><img src="assets/products/clay-powder.jpg" alt="" loading="lazy" width="900" height="601"><span>Clay</span></div><div class="chain-copy"><div class="chain-step"><small>How It Works</small><p>Raw material for bricks, roof tiles, and Al₂O₃/SiO₂ for cement clinker</p></div><div class="chain-step result"><small>Outcome</small><p>Strong, weather-resistant building materials</p></div></div></li></ol>
           </div>
           <div class="sector-result-panel" data-sector-panel="baja" hidden>
@@ -257,7 +257,7 @@
           <div class="sector-result-panel" data-sector-panel="cat" hidden>
             <div class="sector-intro"><h3>Paint, Plastics &amp; Rubber</h3><p>Mineral fillers cut formulation costs while improving the physical properties of the end product.</p><div class="sector-products"><small>Products used</small><div><button class="sector-product-pill dolomite" data-tablink="dolomite">Dolomite</button><button class="sector-product-pill clay" data-tablink="clay">Clay</button></div></div></div><ol class="chain-list stagger-group"><li class="chain-row"><img class="chain-art" src="assets/industries/benefits/cat-1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="chain-product dolomite"><img src="assets/products/dolomite-powder.jpg" alt="" loading="lazy" width="900" height="601"><span>Dolomite</span></div><div class="chain-copy"><div class="chain-step"><small>How It Works</small><p>White carbonate filler in paint, plastics, and rubber</p></div><div class="chain-step result"><small>Outcome</small><p>Lower resin/pigment cost, stiffer and more weather-resistant products</p></div></div></li><li class="chain-row"><img class="chain-art" src="assets/industries/benefits/cat-2.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="chain-product clay"><img src="assets/products/clay-powder.jpg" alt="" loading="lazy" width="900" height="601"><span>Clay</span></div><div class="chain-copy"><div class="chain-step"><small>How It Works</small><p>Pigment extender in paint, coatings, and paper</p></div><div class="chain-step result"><small>Outcome</small><p>Better opacity &amp; hiding power, smoother surfaces</p></div></div></li></ol>
           </div>
-          <div class="sector-result-panel" data-sector-panel="pertanian" hidden>
+          <div class="sector-result-panel" data-sector-panel="pertanian">
             <div class="sector-intro"><h3>Agriculture &amp; Plantations</h3><p>Most Indonesian farmland is acidic. Our mineral combination repairs the soil while supplying key plant nutrients.</p><div class="sector-products"><small>Products used</small><div><button class="sector-product-pill dolomite" data-tablink="dolomite">Dolomite</button><button class="sector-product-pill phosphate" data-tablink="phosphate">Rock Phosphate</button><button class="sector-product-pill palmash" data-tablink="palmash">Palm EFB Ash</button><button class="sector-product-pill clay" data-tablink="clay">Clay</button></div></div></div><ol class="chain-list stagger-group"><li class="chain-row"><img class="chain-art" src="assets/industries/benefits/pertanian-1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="chain-product dolomite"><img src="assets/products/dolomite-powder.jpg" alt="" loading="lazy" width="900" height="601"><span>Dolomite</span></div><div class="chain-copy"><div class="chain-step"><small>How It Works</small><p>Neutralizes acidic soil pH and adds Ca &amp; Mg</p></div><div class="chain-step result"><small>Outcome</small><p>More available nutrients, greener leaves, more efficient NPK</p></div></div></li><li class="chain-row"><img class="chain-art" src="assets/industries/benefits/pertanian-2.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="chain-product phosphate"><img src="assets/products/phosphate-powder.jpg" alt="" loading="lazy" width="900" height="601"><span>Rock Phosphate</span></div><div class="chain-copy"><div class="chain-step"><small>How It Works</small><p>Supplies phosphorus gradually (slow release)</p></div><div class="chain-step result"><small>Outcome</small><p>Strong roots, uniform flowering &amp; fruiting, higher yields</p></div></div></li><li class="chain-row"><img class="chain-art" src="assets/industries/benefits/pertanian-3.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="chain-product palmash"><img src="assets/products/palmash-powder.jpg" alt="" loading="lazy" width="900" height="601"><span>Palm EFB Ash</span></div><div class="chain-copy"><div class="chain-step"><small>How It Works</small><p>Adds high potassium (K) from a natural source</p></div><div class="chain-step result"><small>Outcome</small><p>Heavier fruit, higher palm oil yield, drought-resilient plants</p></div></div></li><li class="chain-row"><img class="chain-art" src="assets/industries/benefits/pertanian-4.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="chain-product clay"><img src="assets/products/clay-powder.jpg" alt="" loading="lazy" width="900" height="601"><span>Clay</span></div><div class="chain-copy"><div class="chain-step"><small>How It Works</small><p>Improves water and nutrient retention in sandy soil</p></div><div class="chain-step result"><small>Outcome</small><p>Fertilizer stays put and plants stay fresh in dry spells</p></div></div></li></ol>
           </div>
 
