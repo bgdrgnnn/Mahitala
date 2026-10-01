@@ -1,18 +1,18 @@
 # Mangghala Inatama Lentera — Company Website
 
-Website interaktif untuk **PT Mangghala Inatama Lentera**, pemasok mineral pertanian:
-Dolomite, Fosfat Alam, dan Abu Tandan Kosong Sawit (powder & granule).
+Interactive website for **PT Mangghala Inatama Lentera**, an agricultural mineral supplier:
+Dolomite, Natural Rock Phosphate, and Palm Empty Fruit Bunch Ash (powder & granule).
 
-## Struktur
+## Structure
 
-- `index.html` — halaman utama (single page)
+- `index.html` — main page (single page)
 - `css/style.css` — design system & styling
-- `js/main.js` — interaksi (nav, tab produk, toggle powder/granule, FAQ, scroll reveal, counter, form)
+- `js/main.js` — interactions (nav, product tabs, powder/granule toggle, FAQ, scroll reveal, counter, form)
 
-## Menjalankan secara lokal
+## Running locally
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Lalu buka `http://localhost:8000`.
+Then open `http://localhost:8000`.

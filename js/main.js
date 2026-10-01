@@ -38,61 +38,6 @@
       visualClass: "dolomite",
       formula: "CaMg(CO₃)₂",
       title: "Dolomite",
-      tagline: "Mineral kapur alami untuk konstruksi, industri, hingga pertanian — sumber Kalsium &amp; Magnesium serba guna.",
-      photos: { powder: "assets/products/dolomite-powder.jpg", granule: "assets/products/dolomite-granule.jpg" },
-      forms: {
-        powder: "Reaktivitas tinggi karena luas permukaan besar — ideal untuk campuran semen/beton, flux tanur baja, kaca, maupun pupuk dasar pertanian.",
-        granule: "Butiran padat, minim debu, mudah ditebar atau dicampur dalam skala besar — cocok untuk aplikasi lahan luas maupun kebutuhan industri curah (bulk)."
-      },
-      tags: ["Pertanian", "Tambak", "Konstruksi", "Baja &amp; Kaca"],
-      ctaLabel: "Tanya Harga Dolomite"
-    },
-    phosphate: {
-      visualClass: "phosphate",
-      formula: "Ca₃(PO₄)₂",
-      title: "Fosfat Alam",
-      tagline: "Sumber fosfor alami untuk pupuk, pakan ternak, hingga kebutuhan industri kimia.",
-      photos: { powder: "assets/products/phosphate-powder.jpg", granule: "assets/products/phosphate-granule.jpg" },
-      forms: {
-        powder: "Luas permukaan besar sehingga fosfor lebih cepat tersedia — ideal untuk pupuk dasar, pembibitan, dan campuran pakan ternak.",
-        granule: "Pelepasan fosfor bertahap (slow release), efisien untuk pemupukan tanaman tahunan maupun kebutuhan industri yang butuh pasokan stabil."
-      },
-      tags: ["Pertanian", "Pakan Ternak", "Industri Kimia", "Pengolahan Air"],
-      ctaLabel: "Tanya Harga Fosfat"
-    },
-    palmash: {
-      visualClass: "palmash",
-      formula: "K₂O Tinggi",
-      title: "Abu Tandan Kosong Sawit",
-      tagline: "Kalium alami hasil olahan limbah sawit — untuk pertanian dan potensi material konstruksi ramah lingkungan.",
-      photos: { powder: "assets/products/palmash-powder.jpg", granule: "assets/products/palmash-granule.jpg" },
-      forms: {
-        powder: "Kalium langsung larut dan tersedia cepat bagi tanaman; partikel halus juga cocok untuk riset campuran material bangunan ramah lingkungan.",
-        granule: "Lebih tahan terhadap pencucian hujan (leaching), tidak beterbangan saat aplikasi, dan mudah disimpan dalam jumlah besar untuk kebutuhan skala industri."
-      },
-      tags: ["Pertanian", "Ramah Lingkungan", "Konstruksi Hijau", "Ekonomi Sirkular"],
-      ctaLabel: "Tanya Harga Abu Sawit"
-    },
-    clay: {
-      visualClass: "clay",
-      formula: "Al₂Si₂O₅(OH)₄",
-      title: "Lempung",
-      tagline: "Mineral aluminosilikat alami serbaguna — untuk industri keramik, bata &amp; genteng, pengecoran logam, hingga lumpur pemboran.",
-      photos: { powder: "assets/products/clay-powder.jpg" },
-      forms: {
-        powder: "Digiling halus untuk campuran badan keramik, bahan pengisi cat &amp; pelapis, serta aditif lumpur pemboran (drilling mud).",
-        granule: "Bentuk butiran/pelet memudahkan penanganan dan dosis dalam proses pengecoran logam dan aplikasi industri skala besar."
-      },
-      tags: ["Keramik &amp; Bata", "Pengecoran Logam", "Lumpur Pemboran", "Cat &amp; Kertas"],
-      ctaLabel: "Tanya Harga Lempung"
-    }
-  };
-
-  var PRODUCTS_EN = {
-    dolomite: {
-      visualClass: "dolomite",
-      formula: "CaMg(CO₃)₂",
-      title: "Dolomite",
       tagline: "Natural lime mineral for construction, industry, and agriculture — a versatile source of Calcium &amp; Magnesium.",
       photos: { powder: "assets/products/dolomite-powder.jpg", granule: "assets/products/dolomite-granule.jpg" },
       forms: {
@@ -143,14 +88,6 @@
     }
   };
 
-  function currentLang() {
-    return document.documentElement.getAttribute("lang") === "en" ? "en" : "id";
-  }
-
-  function productsForLang(lang) {
-    return lang === "en" ? PRODUCTS_EN : PRODUCTS;
-  }
-
   function renderVisualHTML(product, form) {
     var photoSrc = product.photos[form] || product.photos.powder;
     var formLabel = form === "granule" ? "Granule" : "Powder";
@@ -170,38 +107,33 @@
     );
   }
 
-  function renderFormNoteHTML(product, form, lang) {
-    var powderLabel = lang === "en" ? "Powder Form:" : "Bentuk Powder:";
-    var granuleLabel = lang === "en" ? "Granule Form:" : "Bentuk Granule:";
+  function renderFormNoteHTML(product, form) {
     return (
       '<div class="form-note' + (form === "powder" ? " active" : "") + '">' +
-        "<strong>" + powderLabel + "</strong> " + product.forms.powder +
+        "<strong>Powder Form:</strong> " + product.forms.powder +
       "</div>" +
       '<div class="form-note' + (form === "granule" ? " active" : "") + '">' +
-        "<strong>" + granuleLabel + "</strong> " + product.forms.granule +
+        "<strong>Granule Form:</strong> " + product.forms.granule +
       "</div>"
     );
   }
 
-  function renderBodyHTML(product, form, lang) {
+  function renderBodyHTML(product, form) {
     var benefits = (DATA && DATA.benefits[product.visualClass]) || [];
     var benefitsHTML = benefits.slice(0, MODAL_BENEFIT_COUNT).map(function (b) {
-      return '<li><span class="tick benefit-icon">' + DATA.icon(b.icon) + "</span><div><strong>" + b.title[lang] + "</strong><p>" + b.desc[lang] + "</p></div></li>";
+      return '<li><span class="tick benefit-icon">' + DATA.icon(b.icon) + "</span><div><strong>" + b.title + "</strong><p>" + b.desc + "</p></div></li>";
     }).join("");
-    var moreLabel = lang === "en" ? "See all benefits, TDS &amp; sector solutions" : "Lihat semua keunggulan, TDS &amp; solusi sektor";
     var tagsHTML = product.tags.map(function (t) {
       return '<span class="spec-pill">' + t + "</span>";
     }).join("");
     var formLabel = form === "granule" ? "Granule" : "Powder";
-    var waMessage = lang === "en"
-      ? "Hello, I'd like to ask about the price of " + product.title + " (" + formLabel + ")."
-      : "Halo, saya ingin bertanya harga " + product.title + " (" + formLabel + ").";
+    var waMessage = "Hello, I'd like to ask about the price of " + product.title + " (" + formLabel + ").";
     var waHref = "https://wa.me/6281234567890?text=" + encodeURIComponent(waMessage);
 
     return (
-      '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form, lang) + "</div>" +
+      '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form) + "</div>" +
       '<ul class="benefit-list stagger-group">' + benefitsHTML + "</ul>" +
-      '<a href="products.html#' + product.visualClass + '" class="benefit-more">' + moreLabel + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>' +
+      '<a href="products.html#' + product.visualClass + '" class="benefit-more">See all benefits, TDS &amp; sector solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>' +
       '<div class="product-foot">' +
         '<div class="spec-pills">' + tagsHTML + "</div>" +
         '<a href="' + waHref + '" class="btn btn-dark btn-sm" target="_blank" rel="noopener">' + product.ctaLabel + "</a>" +
@@ -280,7 +212,6 @@
      right — toggling Powder/Granule only swaps the content inside each,
      it never repositions the panels themselves. */
   function applyProductView(product, form, opts) {
-    var lang = (opts && opts.lang) || currentLang();
     var instant = opts && opts.instant;
     var visualDir = "left";
     var bodyDir = "right";
@@ -290,7 +221,7 @@
       visualSlot.innerHTML = renderVisualHTML(product, form);
     };
     var applyBody = function () {
-      bodySlot.innerHTML = renderBodyHTML(product, form, lang);
+      bodySlot.innerHTML = renderBodyHTML(product, form);
       replayStagger($(".stagger-group", bodySlot));
     };
 
@@ -309,8 +240,7 @@
     if (alreadyOpenOnThis) return;
 
     var wasOpen = productModal.classList.contains("is-open");
-    var lang = currentLang();
-    var product = productsForLang(lang)[id];
+    var product = PRODUCTS[id];
     currentProductId = id;
     currentForm = "powder";
 
@@ -321,17 +251,8 @@
     });
 
     if (!wasOpen) openProductModal();
-    applyProductView(product, currentForm, { lang: lang });
+    applyProductView(product, currentForm);
   }
-
-  /* Re-render the open product modal in the new language without replaying
-     the slide transition (the language toggle isn't a "swap sides" action). */
-  document.addEventListener("languagechange", function (e) {
-    if (!currentProductId || !productModal.classList.contains("is-open")) return;
-    var lang = e.detail.lang;
-    var product = productsForLang(lang)[currentProductId];
-    applyProductView(product, currentForm, { lang: lang, instant: true });
-  });
 
   tabs.forEach(function (t) {
     t.addEventListener("click", function () { switchProduct(t.getAttribute("data-tab")); });
@@ -368,8 +289,7 @@
     var form = btn.getAttribute("data-form");
     if (form === currentForm) return;
     currentForm = form;
-    var lang = currentLang();
-    applyProductView(productsForLang(lang)[currentProductId], form, { lang: lang });
+    applyProductView(PRODUCTS[currentProductId], form);
   });
 
   /* Native details keep FAQ answers keyboard-accessible and readable without
@@ -461,23 +381,19 @@
   /* ---------------- Contact headline word rotator ---------------- */
   var rotatorEl = $("#rotatorWord");
   if (rotatorEl) {
-    var ROTATOR_WORDS = { id: ["Industri", "Konstruksi", "Pertanian"], en: ["Industry", "Construction", "Agriculture"] };
+    var ROTATOR_WORDS = ["Industry", "Construction", "Agriculture"];
     var rotatorIndex = 0;
-    document.addEventListener("languagechange", function (e) {
-      rotatorEl.textContent = ROTATOR_WORDS[e.detail.lang][rotatorIndex];
-    });
     if (prefersReducedMotion) {
       /* leave the initial word as-is, no cycling */
     } else {
       setInterval(function () {
-        var lang = currentLang();
-        rotatorIndex = (rotatorIndex + 1) % ROTATOR_WORDS[lang].length;
+        rotatorIndex = (rotatorIndex + 1) % ROTATOR_WORDS.length;
         rotatorEl.style.transition = "transform 360ms cubic-bezier(0.16,1,0.3,1), opacity 300ms ease, filter 300ms ease";
         rotatorEl.style.transform = "translateY(-100%)";
         rotatorEl.style.opacity = "0";
         rotatorEl.style.filter = "blur(6px)";
         setTimeout(function () {
-          rotatorEl.textContent = ROTATOR_WORDS[currentLang()][rotatorIndex];
+          rotatorEl.textContent = ROTATOR_WORDS[rotatorIndex];
           rotatorEl.style.transition = "none";
           rotatorEl.style.transform = "translateY(100%)";
           rotatorEl.getBoundingClientRect(); /* force reflow */
@@ -495,10 +411,7 @@
   /* ---------------- Sector Solutions ---------------- */
   var SECTOR_DATA = window.MAHITALA_DATA;
 
-  var SECTOR_LABELS = {
-    id: { action: "Cara Kerja", result: "Hasil", products: "Produk yang digunakan" },
-    en: { action: "How It Works", result: "Outcome", products: "Products used" }
-  };
+  var SECTOR_LABELS = { action: "How It Works", result: "Outcome", products: "Products used" };
 
   var PRODUCT_THUMBS = {
     dolomite: "assets/products/dolomite-powder.jpg",
@@ -519,10 +432,10 @@
     return null;
   }
 
-  function renderSectorResult(id, lang) {
+  function renderSectorResult(id) {
     var sector = sectorById(id);
     if (!sector || !sectorResult || !SECTOR_DATA) return;
-    var L = SECTOR_LABELS[lang];
+    var L = SECTOR_LABELS;
 
     var usedProducts = [];
     sector.chains.forEach(function (c) {
@@ -537,14 +450,14 @@
           '<img class="chain-art" src="' + c.outcomeImage + '" alt="" aria-hidden="true" loading="lazy" decoding="async">' +
           '<div class="chain-product ' + c.product + '">' +
             '<img src="' + PRODUCT_THUMBS[c.product] + '" alt="" loading="lazy" width="900" height="601">' +
-            "<span>" + SECTOR_DATA.productNames[c.product][lang] + "</span>" +
+            "<span>" + SECTOR_DATA.productNames[c.product] + "</span>" +
           "</div>" +
           '<div class="chain-copy">' +
             '<div class="chain-step">' +
-              "<small>" + L.action + "</small><p>" + c.action[lang] + "</p>" +
+              "<small>" + L.action + "</small><p>" + c.action.text + "</p>" +
             "</div>" +
             '<div class="chain-step result">' +
-              "<small>" + L.result + "</small><p>" + c.result[lang] + "</p>" +
+              "<small>" + L.result + "</small><p>" + c.result.text + "</p>" +
             "</div>" +
           "</div>" +
         "</li>"
@@ -552,13 +465,13 @@
     }).join("");
 
     var pillsHTML = usedProducts.map(function (p) {
-      return '<button class="sector-product-pill ' + p + '" data-tablink="' + p + '">' + SECTOR_DATA.productNames[p][lang] + "</button>";
+      return '<button class="sector-product-pill ' + p + '" data-tablink="' + p + '">' + SECTOR_DATA.productNames[p] + "</button>";
     }).join("");
 
     sectorResult.innerHTML =
       '<div class="sector-intro">' +
-        "<h3>" + sector.title[lang] + "</h3>" +
-        "<p>" + sector.intro[lang] + "</p>" +
+        "<h3>" + sector.title + "</h3>" +
+        "<p>" + sector.intro + "</p>" +
         '<div class="sector-products"><small>' + L.products + "</small><div>" + pillsHTML + "</div></div>" +
       "</div>" +
       '<ol class="chain-list stagger-group">' + chainsHTML + "</ol>";
@@ -583,7 +496,7 @@
       card.classList.toggle("active", active);
       card.setAttribute("aria-selected", String(active));
     });
-    renderSectorResult(id, currentLang());
+    renderSectorResult(id);
   }
 
   sectorCards.forEach(function (card) {
@@ -595,11 +508,6 @@
   if (sectorCards.length && SECTOR_DATA) {
     setActiveSector(sectorCards[0].getAttribute("data-sector"));
   }
-
-  document.addEventListener("languagechange", function (e) {
-    if (!currentSectorId) return;
-    renderSectorResult(currentSectorId, e.detail.lang);
-  });
 
   /* ---------------- Footer year ---------------- */
   var yearEl = $("#year");
