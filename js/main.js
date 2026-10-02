@@ -348,7 +348,7 @@
   }
 
   /* ---------------- Scrollspy: highlight dock item for section in view ---------------- */
-  var navAnchors = $$('.dock-item[href^="#"]:not([target])');
+  var navAnchors = $$('.dock-item[href^="#"]:not([target]), .header-nav a[href^="#"]');
   var spySections = navAnchors
     .map(function (a) { return document.querySelector(a.getAttribute("href")); })
     .filter(Boolean);
