@@ -74,12 +74,32 @@
 
 <main>
   <!-- ============ GALLERY HERO ============ -->
-  <section class="gallery-hero">
-    <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Gallery</span>
-        <h2>Flow From Production to Shipping</h2>
-        <p>Visual illustrations of every stage: production, packaging, container stuffing, and delivery to domestic and export customers. Real documentation photos coming soon.</p>
+  <section class="page-hero">
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="page-hero-scrim" aria-hidden="true"></div>
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy reveal">
+        <span class="hero-eyebrow">Gallery</span>
+        <h1>From the Mine to <em>Your Port</em></h1>
+        <p class="hero-lede">Every stage of our supply flow — production, packaging, container stuffing, and delivery to domestic and export customers. Real documentation photos coming soon.</p>
+      </div>
+      <div class="page-hero-visual phv-flow reveal" aria-label="Supply flow stages">
+        <button type="button" class="phv-step" data-filter-link="produksi">
+          <span class="phv-step-img"><img src="assets/gallery/produksi1-penambangan.png" alt="" width="900" height="450"></span>
+          <span class="phv-step-label"><b>01</b>Production</span>
+        </button>
+        <button type="button" class="phv-step" data-filter-link="pengemasan">
+          <span class="phv-step-img"><img src="assets/gallery/pengemasan1-pengemasan.png" alt="" width="900" height="450"></span>
+          <span class="phv-step-label"><b>02</b>Packaging</span>
+        </button>
+        <button type="button" class="phv-step" data-filter-link="stuffing">
+          <span class="phv-step-img"><img src="assets/gallery/stuffing1-container-stuffing.png" alt="" width="900" height="450"></span>
+          <span class="phv-step-label"><b>03</b>Container Stuffing</span>
+        </button>
+        <button type="button" class="phv-step" data-filter-link="pengiriman">
+          <span class="phv-step-img"><img src="assets/gallery/pengiriman1-shipping.webp" alt="" width="1774" height="887"></span>
+          <span class="phv-step-label"><b>04</b>Shipping</span>
+        </button>
       </div>
     </div>
   </section>
@@ -242,6 +262,7 @@
   </div>
 </footer>
 
+<script src="js/hero-bg.js"></script>
 <script src="js/gallery.js"></script>
 </body>
 </html>

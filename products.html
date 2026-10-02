@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Product Details — PT Mangghala Inatama Lentera</title>
-<meta name="description" content="Benefits, Technical Data Sheets, and Certificates of Analysis for Dolomite, Natural Rock Phosphate, Palm Empty Fruit Bunch Ash, and Clay from PT Mangghala Inatama Lentera.">
+<meta name="description" content="Benefits, sector applications, and Certificates of Analysis for Dolomite, Natural Rock Phosphate, Palm Empty Fruit Bunch Ash, and Clay from PT Mangghala Inatama Lentera.">
 <link rel="canonical" href="https://bgdrgnnn.github.io/Mahitala/products.html">
 <link rel="icon" type="image/png" href="assets/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,19 +74,46 @@
 
 <main>
   <!-- ============ PRODUCTS HERO ============ -->
-  <section class="gallery-hero">
-    <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Product Details</span>
-        <h2>Technical Data Sheet, COA, and Product Documentation</h2>
-        <p>Key benefits, technical specifications, and certificates of analysis for every mineral line we produce.</p>
+  <section class="page-hero">
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="page-hero-scrim" aria-hidden="true"></div>
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy reveal">
+        <span class="hero-eyebrow">Product Details</span>
+        <h1>Four Natural Minerals, <em>Lab-Tested</em> &amp; Documented</h1>
+        <p class="hero-lede">Key benefits, sector applications, and certificates of analysis for every mineral line we produce — in powder and granule form.</p>
+        <nav class="pdetail-jump" aria-label="Jump to product">
+          <a href="#dolomite">Dolomite</a>
+          <a href="#phosphate">Natural Rock Phosphate</a>
+          <a href="#palmash">Palm EFB Ash</a>
+          <a href="#clay">Clay</a>
+        </nav>
+        <div class="page-hero-labs">
+          <small>Lab-tested by</small>
+          <span class="labs-pill">
+            <img src="assets/labs/idsurvey.png" alt="ID Survey" class="lab-idsurvey" width="479" height="96">
+            <img src="assets/labs/sucofindo.png" alt="Sucofindo" class="lab-sucofindo" width="174" height="120">
+          </span>
+        </div>
       </div>
-      <nav class="pdetail-jump reveal" aria-label="Jump to product">
-        <a href="#dolomite">Dolomite</a>
-        <a href="#phosphate">Natural Rock Phosphate</a>
-        <a href="#palmash">Palm EFB Ash</a>
-        <a href="#clay">Clay</a>
-      </nav>
+      <div class="page-hero-visual phv-products reveal" aria-label="Our products">
+        <a class="phv-tile dolomite" href="#dolomite">
+          <img src="assets/products/dolomite-powder.jpg" alt="Dolomite" width="900" height="601">
+          <span class="phv-label"><small>CaMg(CO₃)₂</small>Dolomite</span>
+        </a>
+        <a class="phv-tile phosphate" href="#phosphate">
+          <img src="assets/products/phosphate-powder.jpg" alt="Rock Phosphate" width="900" height="601">
+          <span class="phv-label"><small>Ca₃(PO₄)₂</small>Rock Phosphate</span>
+        </a>
+        <a class="phv-tile palmash" href="#palmash">
+          <img src="assets/products/palmash-powder.jpg" alt="Palm EFB Ash" width="900" height="601">
+          <span class="phv-label"><small>High K₂O</small>Palm EFB Ash</span>
+        </a>
+        <a class="phv-tile clay" href="#clay">
+          <img src="assets/products/clay-powder.jpg" alt="Clay" width="900" height="601">
+          <span class="phv-label"><small>Al₂Si₂O₅(OH)₄</small>Clay</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -112,24 +139,6 @@
           <ul class="benefit-grid dolomite stagger-group" data-benefits="dolomite"><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="900" fill="currentColor" stroke="none" font-family="Nunito, Segoe UI, Arial, sans-serif">pH</text><circle cx="12" cy="12" r="10"/></svg></span><div><strong>Raises Soil &amp; Water pH</strong><p>Gradually neutralizes acidic soil and pond water — gentler than quicklime.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span><div><strong>Stabilizes Water Alkalinity</strong><p>Keeps water buffered so daily pH doesn't swing sharply in ponds.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.52-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.52 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></svg></span><div><strong>Calcium &amp; Magnesium Source</strong><p>Ca strengthens plant tissue; Mg is the core of chlorophyll — greener leaves, better photosynthesis.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span><div><strong>Improves Soil Structure</strong><p>Looser soil, active microbes, and more efficient NPK uptake.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><div><strong>Steel Flux &amp; Construction Material</strong><p>Binds impurities into slag in furnaces and serves as cement filler and aggregate.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg></span><div><strong>Glass &amp; Ceramics Raw Material</strong><p>A CaO &amp; MgO source that makes glass more chemically durable and less prone to clouding.</p></div></li></ul>
 
 
-          <div class="tds-table-wrap">
-            <table class="tds-table">
-              <caption>Technical Data Sheet (Parameter Summary)</caption>
-              <thead>
-                <tr>
-                  <th>Parameter</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>CaO</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>MgO</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>Moisture Content</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>Mesh Size</td><td class="tds-placeholder">See official TDS</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="tds-note">Actual values vary by batch and are listed in full in the official TDS — contact our sales team for the complete document.</p>
 
           <div class="coa-card coa-verified">
             <div class="coa-head">
@@ -169,24 +178,6 @@
           <ul class="benefit-grid phosphate stagger-group" data-benefits="phosphate"><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v8"/><path d="M5 10h14"/><path d="M12 10v5l-3 3v4"/><path d="M12 15l3 3v4"/><path d="M12 13l-5 3v3"/><path d="M12 13l5 3v3"/></svg></span><div><strong>Strong, Wide Roots</strong><p>Phosphorus (P) drives root growth so plants stand firmer and take up more nutrients.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5"/><path d="M12 7.5V9"/><path d="M7.5 12H9"/><path d="M16.5 12H15"/><path d="M12 16.5V15"/></svg></span><div><strong>Uniform Flowering &amp; Fruiting</strong><p>Supports flower, fruit, and seed formation — for a bigger harvest.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><div><strong>Slow Release, Fewer Applications</strong><p>Nutrients release gradually with a residual effect lasting several seasons.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="900" fill="currentColor" stroke="none" font-family="Nunito, Segoe UI, Arial, sans-serif">pH</text><circle cx="12" cy="12" r="10"/></svg></span><div><strong>Effective on Acidic &amp; Peat Soils</strong><p>The more acidic the soil, the more readily rock phosphate dissolves for plants.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></span><div><strong>Animal Feed Mineral</strong><p>P &amp; Ca for strong bones, optimal growth, and thicker eggshells.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span><div><strong>Chemical Industry Feedstock</strong><p>Processed into phosphoric acid and phosphate compounds for many industries.</p></div></li></ul>
 
 
-          <div class="tds-table-wrap">
-            <table class="tds-table">
-              <caption>Technical Data Sheet (Parameter Summary)</caption>
-              <thead>
-                <tr>
-                  <th>Parameter</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>P₂O₅</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>CaO</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>Moisture Content</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>Mesh Size</td><td class="tds-placeholder">See official TDS</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="tds-note">Actual values vary by batch and are listed in full in the official TDS — contact our sales team for the complete document.</p>
 
         </div>
       </div>
@@ -208,24 +199,6 @@
           <ul class="benefit-grid palmash stagger-group" data-benefits="palmash"><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="3"/><path d="M6.5 8a2 2 0 0 0-1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z"/></svg></span><div><strong>High Potassium, Heavier Fruit</strong><p>Potassium (K) improves fruit filling, bunch weight, and oil yield.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span><div><strong>Drought &amp; Disease Resilience</strong><p>K regulates stomata and strengthens plant cell walls.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="900" fill="currentColor" stroke="none" font-family="Nunito, Segoe UI, Arial, sans-serif">pH</text><circle cx="12" cy="12" r="10"/></svg></span><div><strong>Alkaline, Raises pH</strong><p>Helps neutralize acidic soil while fertilizing at the same time.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></span><div><strong>Rich in Secondary &amp; Micronutrients</strong><p>Contains Ca, Mg, and silica that further enrich the soil.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span><div><strong>Eco-Friendly &amp; Circular</strong><p>Recycled from palm empty fruit bunches — a natural alternative to KCl.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></span><div><strong>Green Concrete Potential</strong><p>Reactive silica with pozzolanic properties for partial cement replacement.</p></div></li></ul>
 
 
-          <div class="tds-table-wrap">
-            <table class="tds-table">
-              <caption>Technical Data Sheet (Parameter Summary)</caption>
-              <thead>
-                <tr>
-                  <th>Parameter</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>K₂O</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>CaO</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>Moisture Content</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>Mesh Size</td><td class="tds-placeholder">See official TDS</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="tds-note">Actual values vary by batch and are listed in full in the official TDS — contact our sales team for the complete document.</p>
 
           <div class="coa-card coa-verified">
             <div class="coa-head">
@@ -262,24 +235,6 @@
           <ul class="benefit-grid clay stagger-group" data-benefits="clay"><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg></span><div><strong>High Plasticity</strong><p>Easily shaped into ceramics, bricks, and roof tiles before firing.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><div><strong>Strong &amp; Heat-Resistant When Fired</strong><p>Produces hard, dense, weather-resistant products.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><div><strong>Foundry Sand Binder</strong><p>Bonding clay keeps metal-casting molds precise and firm.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v5"/><path d="M7 7h10l-1.5 6h-7z"/><path d="M9.5 13 12 22l2.5-9"/></svg></span><div><strong>Drilling Mud Additive</strong><p>Controls mud viscosity and supports the borehole wall.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="6" x="2" y="2" rx="2"/><path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect width="4" height="6" x="8" y="16" rx="1"/></svg></span><div><strong>Filler for Paint, Paper &amp; Rubber</strong><p>Adds opacity and surface smoothness while lowering material cost.</p></div></li><li class="benefit-tile"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><div><strong>High Binding &amp; Water Retention</strong><p>Helps sandy soil hold water and nutrients longer.</p></div></li></ul>
 
 
-          <div class="tds-table-wrap">
-            <table class="tds-table">
-              <caption>Technical Data Sheet (Parameter Summary)</caption>
-              <thead>
-                <tr>
-                  <th>Parameter</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Al₂O₃</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>SiO₂</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>Moisture Content</td><td class="tds-placeholder">See official TDS</td></tr>
-                <tr><td>Mesh Size</td><td class="tds-placeholder">See official TDS</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="tds-note">Actual values vary by batch and are listed in full in the official TDS — contact our sales team for the complete document.</p>
 
           <div class="coa-card coa-verified">
             <div class="coa-head">
@@ -378,6 +333,7 @@
   </div>
 </footer>
 
+<script src="js/hero-bg.js"></script>
 <script src="js/gallery.js"></script>
 <script src="js/benefits-data.js"></script>
 <script src="js/products.js"></script>

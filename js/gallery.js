@@ -66,6 +66,17 @@
     });
   });
 
+  /* Hero flow steps (gallery.html): jump to the gallery filtered to that stage. */
+  $$("[data-filter-link]").forEach(function (step) {
+    step.addEventListener("click", function () {
+      var btn = $('.gallery-filter-btn[data-filter="' + step.getAttribute("data-filter-link") + '"]');
+      if (!btn) return;
+      btn.click();
+      var filters = $(".gallery-filters");
+      if (filters) filters.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
+    });
+  });
+
   /* ---------------- Footer year ---------------- */
   var yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();

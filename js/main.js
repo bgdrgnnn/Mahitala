@@ -121,7 +121,7 @@
   /* Products with a published third-party COA on products.html. */
   var COA_PRODUCTS = { dolomite: true, clay: true, palmash: true };
 
-  /* Points to this product's own block on products.html (full TDS, COA,
+  /* Points to this product's own block on products.html (COA, all
      benefits) and, where a COA exists, shows who tested it. */
   function specCtaHTML(product) {
     var id = product.visualClass;
@@ -132,8 +132,8 @@
         "</div>"
       : "";
     var copy = COA_PRODUCTS[id]
-      ? "Full TDS, Certificate of Analysis (lab results) and sector solutions for " + product.title + "."
-      : "Full TDS, all benefits and sector solutions for " + product.title + ".";
+      ? "Certificate of Analysis (lab results), all benefits and sector solutions for " + product.title + "."
+      : "All benefits, product forms and sector solutions for " + product.title + ".";
     return (
       '<div class="spec-cta">' +
         '<div class="spec-cta-copy">' + tested + "<p>" + copy + "</p></div>" +
