@@ -23,31 +23,6 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---------------- Header text nav: hamburger toggle (<=1024px) ---------------- */
-  var navToggle = $("#navToggle");
-  if (header && navToggle) {
-    var setNavOpen = function (open) {
-      header.classList.toggle("nav-open", open);
-      navToggle.setAttribute("aria-expanded", String(open));
-      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    };
-    navToggle.addEventListener("click", function () {
-      setNavOpen(!header.classList.contains("nav-open"));
-    });
-    $$("#headerNav a").forEach(function (link) {
-      link.addEventListener("click", function () { setNavOpen(false); });
-    });
-    document.addEventListener("click", function (e) {
-      if (header.classList.contains("nav-open") && !header.contains(e.target)) setNavOpen(false);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && header.classList.contains("nav-open")) { setNavOpen(false); navToggle.focus(); }
-    });
-    window.addEventListener("resize", function () {
-      if (window.innerWidth > 1024) setNavOpen(false);
-    });
-  }
-
   /* ---------------- Dock: blur on tap (mobile stuck-hover fix) ---------------- */
   var dockNav = $("#dockNav");
   if (dockNav) {
