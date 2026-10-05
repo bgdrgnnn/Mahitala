@@ -36,52 +36,53 @@
   var PRODUCTS = {
     dolomite: {
       visualClass: "dolomite",
-      formula: "CaMg(CO₃)₂",
+      formula: "MgCa(CO₃)₂",
       title: "Dolomite",
       tagline: "Natural lime mineral for construction, industry, and agriculture — a versatile source of Calcium &amp; Magnesium.",
       photos: { powder: "assets/products/dolomite-powder.jpg", granule: "assets/products/dolomite-granule.jpg" },
       forms: {
-        powder: "Highly reactive due to its large surface area — ideal for cement/concrete mixes, steel furnace flux, glass, and agricultural base fertilizer.",
-        granule: "Dense, low-dust granules that spread or blend easily at scale — suited for large land areas as well as bulk industrial needs."
+        powder: "60–325 mesh — highly reactive due to its large surface area, ideal for cement/concrete mixes, steel furnace flux, glass, and agricultural base fertilizer.",
+        granule: "2–5 mm — dense, low-dust granules that spread or blend easily at scale, suited for large land areas as well as bulk industrial needs."
       },
       tags: ["Agriculture", "Aquaculture", "Construction", "Steel &amp; Glass"],
       ctaLabel: "Ask Dolomite Price"
     },
     phosphate: {
       visualClass: "phosphate",
-      formula: "Ca₃(PO₄)₂",
-      title: "Natural Rock Phosphate",
-      tagline: "A natural phosphorus source for fertilizer, animal feed, and the chemical industry.",
+      formula: "P₂O₅",
+      title: "Natural Phosphate (Guano Phosphate)",
+      tagline: "A natural phosphorus source from Indonesian guano deposits, for fertilizer, animal feed, and the chemical industry.",
       photos: { powder: "assets/products/phosphate-powder.jpg", granule: "assets/products/phosphate-granule.jpg" },
       forms: {
-        powder: "Large surface area makes phosphorus available faster — ideal for base fertilizer, seedlings, and animal feed blends.",
-        granule: "Slow-release phosphorus, efficient for perennial crop fertilization and for industrial needs requiring a stable supply."
+        powder: "60–325 mesh — large surface area makes phosphorus available faster, ideal for base fertilizer, seedlings, and animal feed blends.",
+        granule: "2–5 mm — slow-release phosphorus, efficient for perennial crop fertilization and for industrial needs requiring a stable supply."
       },
       tags: ["Agriculture", "Animal Feed", "Chemical Industry", "Water Treatment"],
-      ctaLabel: "Ask Rock Phosphate Price"
+      ctaLabel: "Ask Natural Phosphate Price"
     },
     palmash: {
       visualClass: "palmash",
-      formula: "High K₂O",
-      title: "Palm EFB Ash",
-      tagline: "Natural potassium from processed palm waste — for agriculture, with potential as an eco-friendly construction material.",
+      formula: "K₂O",
+      title: "Natural Potassium (Palm Bunch Ash)",
+      tagline: "A natural potassium source made from empty oil palm fruit bunch ash — for agriculture, with potential as an eco-friendly construction material.",
       photos: { powder: "assets/products/palmash-powder.jpg", granule: "assets/products/palmash-granule.jpg" },
       forms: {
-        powder: "Potassium dissolves and becomes available to plants quickly; the fine particles are also suited for research into eco-friendly building material blends.",
-        granule: "More resistant to rain leaching, doesn't blow away during application, and is easy to store in large quantities for industrial-scale needs."
+        powder: "60–325 mesh — potassium dissolves and becomes available to plants quickly; the fine particles are also suited for research into eco-friendly building material blends.",
+        granule: "2–5 mm — more resistant to rain leaching, doesn't blow away during application, and is easy to store in large quantities for industrial-scale needs."
       },
       tags: ["Agriculture", "Eco-Friendly", "Green Construction", "Circular Economy"],
-      ctaLabel: "Ask Palm EFB Ash Price"
+      ctaLabel: "Ask Natural Potassium Price"
     },
     clay: {
       visualClass: "clay",
-      formula: "Al₂Si₂O₅(OH)₄",
+      formula: "Al₂Si₄O₁₀(OH)₂·nH₂O",
       title: "Clay",
-      tagline: "A versatile natural aluminosilicate mineral — for ceramics, bricks &amp; roof tiles, metal foundry, and drilling mud.",
+      variants: ["White Clay", "Red Clay", "Brown Clay"],
+      tagline: "A versatile natural aluminosilicate mineral with high binding strength — for ceramics, bricks &amp; roof tiles, metal foundry, and drilling mud.",
       photos: { powder: "assets/products/clay-powder.jpg" },
       forms: {
-        powder: "Finely milled for ceramic body blends, paint &amp; coating fillers, and drilling mud additives.",
-        granule: "Granulated/pelletized form for easier handling and dosing in metal foundry and large-scale industrial processes."
+        powder: "60–325 mesh — finely milled for ceramic body blends, paint &amp; coating fillers, and drilling mud additives.",
+        granule: "2–5 mm — granulated/pelletized form for easier handling and dosing in metal foundry and large-scale industrial processes."
       },
       tags: ["Ceramics &amp; Bricks", "Metal Foundry", "Drilling Mud", "Paint &amp; Paper"],
       ctaLabel: "Ask Clay Price"
@@ -91,6 +92,9 @@
   function renderVisualHTML(product, form) {
     var photoSrc = product.photos[form] || product.photos.powder;
     var formLabel = form === "granule" ? "Granule" : "Powder";
+    var variantsHTML = product.variants
+      ? '<div class="variant-pills">' + product.variants.map(function (v) { return '<span class="variant-pill">' + v + "</span>"; }).join("") + "</div>"
+      : "";
     return (
       '<div class="visual-photo"><img src="' + photoSrc + '" alt="' + product.title + " " + formLabel + '"></div>' +
       '<div class="visual-glow" aria-hidden="true"></div>' +
@@ -98,6 +102,7 @@
       '<span class="formula-badge">' + product.formula + "</span>" +
       '<div class="pv-title">' +
         "<h3>" + product.title + "</h3>" +
+        variantsHTML +
         "<p>" + product.tagline + "</p>" +
         '<div class="form-toggle">' +
           '<button class="' + (form === "powder" ? "active" : "") + '" data-form="powder">Powder</button>' +
@@ -154,7 +159,7 @@
     }).join("");
     var formLabel = form === "granule" ? "Granule" : "Powder";
     var waMessage = "Hello, I'd like to ask about the price of " + product.title + " (" + formLabel + ").";
-    var waHref = "https://wa.me/6281234567890?text=" + encodeURIComponent(waMessage);
+    var waHref = "https://wa.me/6281290718284?text=" + encodeURIComponent(waMessage);
 
     return (
       '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form) + "</div>" +

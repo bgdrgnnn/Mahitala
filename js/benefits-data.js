@@ -46,8 +46,8 @@
 
   var PRODUCT_NAMES = {
     dolomite: "Dolomite",
-    phosphate: "Rock Phosphate",
-    palmash: "Palm EFB Ash",
+    phosphate: "Natural Phosphate (Guano Phosphate)",
+    palmash: "Natural Potassium (Palm Bunch Ash)",
     clay: "Clay"
   };
 
