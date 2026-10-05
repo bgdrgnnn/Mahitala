@@ -256,10 +256,8 @@
           outcomeImage: "assets/industries/benefits/pakan-3.webp",
           action: { icon: "link", text: "Feed pellet binder" },
           result: { icon: "shield", text: "Pellets hold together, less feed waste" } },
-        { product: "phosphate",
-          outcomeImage: "assets/industries/benefits/pakan-4.webp",
-          action: { icon: "flask", text: "Processed into phosphoric acid & phosphate compounds" },
-          result: { icon: "factory", text: "Feedstock for fertilizer, detergent, and water treatment industries" } }
+        {"product":"dolomite","outcomeImage":"assets/industries/benefits/pakan-4-dry-bedding.png","action":{"icon":"droplet","text":"Applied to coop bedding to help absorb moisture"},"result":{"icon":"sparkles","text":"Drier bedding, reduced coop odors"}},
+        {"product":"dolomite","outcomeImage":"assets/industries/benefits/pakan-5-coop-hygiene.png","action":{"icon":"shield","text":"Helps keep coop bedding dry and clean"},"result":{"icon":"shield","text":"Helps reduce flies and limit bacterial growth"}}
       ] },
     { id: "cat", image: "assets/industries/07-paint-plastics-rubber.png",
       title: "Paint, Plastics & Rubber",
