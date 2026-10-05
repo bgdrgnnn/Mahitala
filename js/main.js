@@ -520,7 +520,8 @@
     });
   }
 
-  function setActiveSector(id) {
+  function setActiveSector(id, opts) {
+    if (!sectorById(id)) return;
     currentSectorId = id;
     sectorCards.forEach(function (card) {
       var active = card.getAttribute("data-sector") === id;
@@ -528,6 +529,11 @@
       card.setAttribute("aria-selected", String(active));
     });
     renderSectorResult(id);
+    if (history.replaceState) history.replaceState(null, "", "#sector-" + id);
+    if (opts && opts.scroll) {
+      var section = $("#industri");
+      if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }
 
   sectorCards.forEach(function (card) {
@@ -536,8 +542,27 @@
     });
   });
 
+  /* Deep link from other pages, e.g. products.html's Key Applications
+     pills: index.html#sector-<id> opens straight to that sector. */
+  function sectorIdFromHash() {
+    var m = /^#sector-([a-z]+)$/.exec(window.location.hash);
+    return m && sectorById(m[1]) ? m[1] : null;
+  }
+
+  window.addEventListener("hashchange", function () {
+    var id = sectorIdFromHash();
+    if (id) setActiveSector(id, { scroll: true });
+  });
+
   if (sectorCards.length && SECTOR_DATA) {
-    setActiveSector(sectorCards[0].getAttribute("data-sector"));
+    var initialSector = sectorIdFromHash();
+    setActiveSector(initialSector || sectorCards[0].getAttribute("data-sector"));
+    if (initialSector) {
+      requestAnimationFrame(function () {
+        var section = $("#industri");
+        if (section) section.scrollIntoView({ block: "start" });
+      });
+    }
   }
 
   /* ---------------- Footer year ---------------- */
