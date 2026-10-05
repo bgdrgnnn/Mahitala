@@ -123,6 +123,32 @@
     );
   }
 
+  /* Products with a published third-party COA on products.html. */
+  var COA_PRODUCTS = { dolomite: true, clay: true, palmash: true };
+
+  /* Points to this product's own block on products.html (COA, all
+     benefits) and, where a COA exists, shows who tested it. */
+  function specCtaHTML(product) {
+    var id = product.visualClass;
+    var tested = COA_PRODUCTS[id]
+      ? '<div class="spec-cta-labs"><small>Lab-tested by</small>' +
+          '<img src="assets/labs/idsurvey.png" alt="ID Survey" class="lab-idsurvey" width="479" height="96">' +
+          '<img src="assets/labs/sucofindo.png" alt="Sucofindo" class="lab-sucofindo" width="174" height="120">' +
+        "</div>"
+      : "";
+    var copy = COA_PRODUCTS[id]
+      ? "Certificate of Analysis (lab results), all benefits and sector solutions for " + product.title + "."
+      : "All benefits, product forms and sector solutions for " + product.title + ".";
+    return (
+      '<div class="spec-cta">' +
+        '<div class="spec-cta-copy">' + tested + "<p>" + copy + "</p></div>" +
+        '<a href="products.html#' + id + '" class="btn btn-outline-dark btn-sm">View full specs ' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
+        "</a>" +
+      "</div>"
+    );
+  }
+
   function renderBodyHTML(product, form) {
     var benefits = (DATA && DATA.benefits[product.visualClass]) || [];
     var benefitsHTML = benefits.slice(0, MODAL_BENEFIT_COUNT).map(function (b) {
@@ -138,7 +164,7 @@
     return (
       '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form) + "</div>" +
       '<ul class="benefit-list stagger-group">' + benefitsHTML + "</ul>" +
-      '<a href="products.html#' + product.visualClass + '" class="benefit-more">See all benefits, TDS &amp; sector solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>' +
+      specCtaHTML(product) +
       '<div class="product-foot">' +
         '<div class="spec-pills">' + tagsHTML + "</div>" +
         '<a href="' + waHref + '" class="btn btn-dark btn-sm" target="_blank" rel="noopener">' + product.ctaLabel + "</a>" +
