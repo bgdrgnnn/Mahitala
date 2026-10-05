@@ -1003,6 +1003,13 @@ textarea:focus-visible,
   background: var(--color-surface-alt);
   color: var(--color-muted-foreground);
 }
+a.spec-pill {
+  transition: background 200ms var(--ease-standard), color 200ms var(--ease-standard);
+}
+a.spec-pill:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
 
 /* ==========================================================================
    Tentang Kami (About + Vision/Mission)
