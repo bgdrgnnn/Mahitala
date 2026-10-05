@@ -823,6 +823,17 @@ textarea:focus-visible,
 .product-visual .pv-title h3 { color: #fff; font-size: 26px; margin-top: var(--space-6); }
 .product-visual .pv-title p { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: var(--space-2); }
 
+.variant-pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: var(--space-2); }
+.variant-pill {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.16);
+  color: #fff;
+}
+
 .form-toggle {
   position: relative;
   z-index: 1;
@@ -1766,6 +1777,7 @@ textarea:focus-visible,
   color: var(--color-muted-foreground);
 }
 .tds-table td.tds-placeholder { color: var(--color-muted-foreground); font-style: italic; }
+.tds-table td.tds-na { color: var(--color-muted-foreground); text-align: center; }
 
 .tds-note {
   font-size: 13px;
@@ -1824,6 +1836,17 @@ textarea:focus-visible,
   color: var(--color-primary-dark);
   margin-bottom: var(--space-3);
 }
+
+.pdetail-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin: var(--space-6) 0;
+}
+@media (max-width: 560px) {
+  .pdetail-meta { grid-template-columns: 1fr; }
+}
+.pdetail-meta .benefit-grid-title { margin-bottom: var(--space-2); }
 
 .benefit-grid {
   list-style: none;
