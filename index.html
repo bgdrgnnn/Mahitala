@@ -210,7 +210,15 @@
         <p>Choose your sector to see which products are used, how they work, and the results you can expect.</p>
       </div>
 
-      <div class="sector-grid stagger-group" role="tablist" aria-label="Choose a sector">
+      <div class="sector-picker-controls" hidden>
+        <span class="sector-picker-hint">Choose your sector</span>
+        <div class="sector-picker-navigation">
+          <button type="button" class="sector-arrow" data-sector-step="-1" aria-label="Previous sector">&#8592;</button>
+          <span class="sector-position" aria-live="polite" aria-atomic="true">01 / 08</span>
+          <button type="button" class="sector-arrow" data-sector-step="1" aria-label="Next sector">&#8594;</button>
+        </div>
+      </div>
+      <div class="sector-grid" role="tablist" aria-label="Choose a sector">
         <button class="sector-card active" data-sector="pertanian" role="tab" aria-selected="true">
           <div class="sector-image"><img src="assets/industries/08-agriculture-plantations.png" alt="Agriculture &amp; Plantations" loading="lazy" width="900" height="501"></div>
           <h3>Agriculture &amp; Plantations</h3>

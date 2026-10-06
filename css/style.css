@@ -1086,49 +1086,42 @@ a.spec-pill:hover {
    INDUSTRIES SERVED
    ========================================================================== */
 
-.sector-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-5);
-  margin-bottom: var(--space-8);
-}
-@media (max-width: 900px) { .sector-grid { grid-template-columns: repeat(2, 1fr); } }
-
-
+/* Keep the complete roster visible; navigation changes only the selection. */
+.sector-picker-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.sector-picker-controls[hidden] { display: none; }
+.sector-picker-hint { font-size: 13px; font-weight: 600; color: var(--color-muted-foreground); }
+.sector-picker-navigation { display: flex; align-items: center; gap: 14px; }
+.sector-position { font-size: 12px; font-variant-numeric: tabular-nums; color: var(--color-foreground); }
+.sector-arrow { width: 40px; height: 40px; border: 1px solid var(--color-border); border-radius: 50%; background: #fff; color: var(--color-foreground); cursor: pointer; font-size: 20px; }
+.sector-arrow:hover { border-color: var(--color-primary); }
+.sector-arrow:focus-visible, .sector-card:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 4px; }
+.sector-grid { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 10px; margin-bottom: var(--space-8); padding-top: 8px; }
 .sector-card {
-  background: #fff;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  text-align: left;
-  cursor: pointer;
+  position: relative; min-width: 0; background: #fff;
+  border: 2px solid var(--color-border); border-radius: var(--radius-lg);
+  overflow: hidden; text-align: center; cursor: pointer;
   transition: transform 240ms var(--ease-standard), box-shadow 240ms var(--ease-standard), border-color 200ms var(--ease-standard);
 }
-.sector-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.sector-card.active { border-color: var(--color-primary); box-shadow: var(--shadow-md); }
-
-.sector-image {
-  aspect-ratio: 4 / 3;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-3);
+.sector-card:hover { border-color: var(--color-primary); }
+.sector-card.active { transform: translateY(-6px); border-color: var(--color-primary); box-shadow: 0 8px 24px rgba(41, 91, 57, .16); }
+.sector-card.active::after { content: ""; position: absolute; bottom: 0; left: 25%; right: 25%; height: 4px; border-radius: 4px 4px 0 0; background: var(--color-primary); }
+.sector-image { aspect-ratio: 4 / 3; background: #fff; display: flex; align-items: center; justify-content: center; padding: 5px; }
+.sector-image img { width: 100%; height: 100%; object-fit: contain; filter: grayscale(.85); opacity: .55; transition: filter 240ms ease, opacity 240ms ease, transform 240ms ease; }
+.sector-card.active .sector-image img { filter: none; opacity: 1; transform: scale(1.05); }
+.sector-card h3 { font-size: 12px; line-height: 1.4; margin: 0; padding: 8px 6px 16px; }
+@media (max-width: 1000px) {
+  .sector-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .sector-image { aspect-ratio: 16 / 9; }
 }
-.sector-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 400ms var(--ease-standard);
-}
-.sector-card:hover .sector-image img { transform: scale(1.04); }
-
-.sector-card h3 { font-size: 15px; margin: 0; padding: var(--space-4) var(--space-4) var(--space-5); }
-
 @media (max-width: 560px) {
-  .sector-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .sector-card h3 { font-size: 13px; line-height: 1.4; padding: 10px 12px 14px; }
-  .sector-image { padding: 6px; }
+  .sector-grid { gap: 8px; }
+  .sector-card { border-radius: 12px; }
+  .sector-card h3 { font-size: 10px; padding: 4px 3px 12px; }
+  .sector-image { aspect-ratio: 1; padding: 2px; }
+  .sector-picker-hint { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sector-card.active, .sector-card.active .sector-image img { transform: none; }
 }
 
 .sector-result {

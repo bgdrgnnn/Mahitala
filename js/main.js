@@ -527,7 +527,12 @@
       var active = card.getAttribute("data-sector") === id;
       card.classList.toggle("active", active);
       card.setAttribute("aria-selected", String(active));
+      card.tabIndex = active ? 0 : -1;
     });
+    var activeIndex = sectorCards.findIndex(function (card) { return card.getAttribute("data-sector") === id; });
+    var position = $(".sector-position");
+    if (position) position.textContent = String(activeIndex + 1).padStart(2, "0") + " / " + String(sectorCards.length).padStart(2, "0");
+    if (sectorResult) sectorResult.setAttribute("aria-labelledby", "sector-tab-" + id);
     renderSectorResult(id);
     if (history.replaceState) history.replaceState(null, "", "#sector-" + id);
     if (opts && opts.scroll) {
@@ -536,7 +541,24 @@
     }
   }
 
-  sectorCards.forEach(function (card) {
+  function stepSector(step, focus) {
+    var index = sectorCards.findIndex(function (card) { return card.getAttribute("data-sector") === currentSectorId; });
+    var next = sectorCards[(index + step + sectorCards.length) % sectorCards.length];
+    if (!next) return;
+    setActiveSector(next.getAttribute("data-sector"));
+    if (focus) next.focus({ preventScroll: true });
+  }
+
+  sectorCards.forEach(function (card, index) {
+    card.id = "sector-tab-" + card.getAttribute("data-sector");
+    card.setAttribute("aria-controls", "sectorResult");
+    card.addEventListener("keydown", function (event) {
+      var columns = getComputedStyle(card.parentElement).gridTemplateColumns.split(" ").length;
+      var steps = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: columns, ArrowUp: -columns, Home: -index, End: sectorCards.length - 1 - index };
+      if (!(event.key in steps)) return;
+      event.preventDefault();
+      stepSector(steps[event.key], true);
+    });
     card.addEventListener("click", function () {
       setActiveSector(card.getAttribute("data-sector"));
     });
@@ -555,6 +577,13 @@
   });
 
   if (sectorCards.length && SECTOR_DATA) {
+    var controls = $(".sector-picker-controls");
+    if (controls) controls.hidden = false;
+    sectorResult.setAttribute("role", "tabpanel");
+    sectorResult.tabIndex = 0;
+    $$("[data-sector-step]").forEach(function (button) {
+      button.addEventListener("click", function () { stepSector(Number(button.getAttribute("data-sector-step")), false); });
+    });
     var initialSector = sectorIdFromHash();
     setActiveSector(initialSector || sectorCards[0].getAttribute("data-sector"));
     if (initialSector) {
