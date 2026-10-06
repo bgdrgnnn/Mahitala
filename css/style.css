@@ -1086,6 +1086,39 @@ a.spec-pill:hover {
    INDUSTRIES SERVED
    ========================================================================== */
 
+/* Decorative landscapes frame the heading without competing with the roster. */
+#industri { position: relative; isolation: isolate; overflow: clip; }
+#industri::before, #industri::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 38px;
+  width: min(43vw, 660px);
+  height: 340px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  mix-blend-mode: multiply;
+  opacity: .26;
+  filter: saturate(.55);
+}
+#industri::before {
+  left: -60px;
+  background-image: url("../assets/industries/08-agriculture-plantations.png");
+  mask-image: linear-gradient(to right, #000 25%, transparent 100%);
+}
+#industri::after {
+  right: -60px;
+  background-image: url("../assets/industries/01-construction-infrastructure.png");
+  mask-image: linear-gradient(to left, #000 25%, transparent 100%);
+}
+@media (max-width: 768px) {
+  #industri::before, #industri::after { top: 30px; width: 58vw; height: 280px; opacity: .16; }
+  #industri::before { left: -50px; }
+  #industri::after { right: -50px; }
+}
+
 /* Keep the complete roster visible; navigation changes only the selection. */
 .sector-picker-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
 .sector-picker-controls[hidden] { display: none; }
