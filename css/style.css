@@ -1600,7 +1600,7 @@ a.spec-pill:hover {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
-.gallery-hero .section-head h2 { color: #fff; }
+.gallery-hero .section-head h1 { color: #fff; }
 .gallery-hero .section-head p { color: rgba(255, 255, 255, 0.78); }
 
 /* ---------- Page hero (products.html, gallery.html) ----------
