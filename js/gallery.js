@@ -77,6 +77,31 @@
     });
   });
 
+  /* ---------------- Copy buttons (About: NIB) ---------------- */
+  $$("[data-copy]").forEach(function (btn) {
+    var label = $("span", btn);
+    btn.addEventListener("click", function () {
+      var text = btn.getAttribute("data-copy");
+      var done = function () {
+        btn.classList.add("copied");
+        if (label) label.textContent = "Copied";
+        setTimeout(function () {
+          btn.classList.remove("copied");
+          if (label) label.textContent = "Copy";
+        }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {});
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "absolute"; ta.style.left = "-9999px";
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); done(); } catch (e) { /* ignore */ }
+        document.body.removeChild(ta);
+      }
+    });
+  });
+
   /* ---------------- Footer year ---------------- */
   var yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
