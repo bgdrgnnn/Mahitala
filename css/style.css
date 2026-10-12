@@ -2499,8 +2499,8 @@ a.spec-pill:hover {
   color: var(--color-muted-foreground);
 }
 .coa-labs img { display: block; width: auto; }
-.coa-labs .lab-idsurvey { height: 22px; }
-.coa-labs .lab-sucofindo { height: 30px; }
+.coa-labs .lab-idsurvey { height: 26px; }
+.coa-labs .lab-sucofindo { height: 36px; }
 .coa-download svg { width: 16px; height: 16px; }
 .coa-card .coa-note { margin-top: var(--space-3); font-size: 12px; font-style: italic; }
 
@@ -2988,7 +2988,32 @@ a.spec-pill:hover {
 .pp-spec-head small { text-transform: none; letter-spacing: 0; font-weight: 600; }
 .pp-spec-note { margin-top: var(--space-4); font-size: 12px; font-style: italic; color: var(--color-muted-foreground); }
 
-.pp-coa { max-width: 960px; margin: 0 auto; }
+/* COA sits in the overview column, under the copy, next to the tall
+   spec card. */
+.pp-copy .pp-coa { margin-top: var(--space-8); padding: var(--space-6); box-shadow: var(--shadow-md); }
+.pp-copy .coa-card p { margin-top: 0; font-size: 13.5px; line-height: 1.5; color: var(--color-muted-foreground); }
+.pp-copy .coa-card .coa-note { margin-top: var(--space-3); font-size: 12px; }
+.pp-copy .coa-results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pp-coa .coa-foot { flex-direction: column; align-items: stretch; border-top: 0; padding-top: 0; }
+.pp-coa .coa-labs {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3) var(--space-8);
+  padding: var(--space-5) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+}
+.pp-coa .coa-labs small { flex-basis: 100%; text-align: center; }
+.pp-coa .coa-labs .lab-idsurvey { height: 38px; }
+.pp-coa .coa-labs .lab-sucofindo { height: 56px; }
+.pp-coa .coa-download { align-self: flex-start; }
+@media (max-width: 480px) {
+  .pp-copy .pp-coa { padding: var(--space-5) var(--space-4); }
+  .pp-coa .coa-labs { gap: var(--space-3) var(--space-5); }
+  .pp-coa .coa-labs .lab-idsurvey { height: 30px; }
+  .pp-coa .coa-labs .lab-sucofindo { height: 44px; }
+}
 
 .pp-benefits { background: var(--color-surface-alt); }
 .pp-benefit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 0; }
@@ -3069,8 +3094,23 @@ a.spec-pill:hover {
 .pp-other-go svg { width: 18px; height: 18px; color: var(--color-primary); }
 
 /* products.html: link from each product block to its own page */
-.pdetail-more { display: inline-flex; align-items: center; gap: 6px; margin-top: var(--space-5); }
-.pdetail-more svg { width: 16px; height: 16px; }
+/* "Full specs" link to the product's landing page: gradient CTA with
+   breathing room before the Key Benefits grid. */
+.pdetail-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 var(--space-8);
+  padding: 12px 22px;
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  box-shadow: 0 10px 24px -10px rgba(8, 73, 44, 0.65);
+}
+.pdetail-more:hover {
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  box-shadow: 0 14px 28px -10px rgba(8, 73, 44, 0.75);
+}
+.pdetail-more svg { width: 16px; height: 16px; transition: transform 0.25s var(--ease-standard); }
+.pdetail-more:hover svg { transform: translateX(4px); }
 
 @media (prefers-reduced-motion: reduce) {
   .pp-thumb, .pp-other { transition: none; }
