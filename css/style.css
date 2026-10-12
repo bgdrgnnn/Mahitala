@@ -2459,3 +2459,95 @@ a.spec-pill:hover {
   .benefit-tile, .btn-outline-dark svg { transition: none; }
   .benefit-tile:hover { transform: none; }
 }
+
+/* About: understated paper textures distinguish the story, strengths and process. */
+.about-page main > .section:not(.cta-section) {
+  position: relative;
+  isolation: isolate;
+  background-color: #f8faf6;
+}
+.about-page main > .section:not(.cta-section)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse at 3% 12%, #a3b79626, transparent 50%),
+    radial-gradient(ellipse at 98% 85%, #cdb58b22, transparent 48%),
+    radial-gradient(#536d5317 .65px, transparent .85px);
+  background-size: auto, auto, 9px 9px;
+  mask-image: linear-gradient(transparent, #000 8%, #000 92%, transparent);
+}
+.about-page main > .section.history-section { background-color: #f4f3eb; }
+.about-page main > .section.history-section::before {
+  background-image: radial-gradient(ellipse at 5% 10%, #cdb58b33, transparent 60%), repeating-linear-gradient(90deg, transparent 0 95px, #81957612 95px 96px);
+  background-size: auto;
+}
+.about-page main > .section.strengths-section { background-color: #eef4ec; }
+.about-page main > .section.production-section::before {
+  background-image: radial-gradient(ellipse at 90% 50%, #a3b7962e, transparent 60%), linear-gradient(#8b9e7914 1px, transparent 1px), linear-gradient(90deg, #8b9e7914 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+}
+.about-page :is(.legal-icon, .team-avatar, .contact-row .icon, .process-step-num) {
+  background: linear-gradient(145deg, #f8fbf5, #e6efe5);
+  border: 1px solid #d9e6d8;
+  color: #287249;
+  box-shadow: inset 0 1px 0 #fff, 0 3px 8px #2349300c;
+}
+.about-page :is(.legal-icon, .team-avatar, .contact-row .icon) svg { stroke-width: 1.7; }
+#history, #why-choose, #production-process { scroll-margin-top: 80px; }
+.strengths-section .mengapa-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.strengths-section .advantage-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 240px;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 3px 12px #25452a06;
+}
+.advantage-content { position: relative; width: 64%; z-index: 1; }
+.advantage-content .legal-icon { width: 40px; height: 40px; border-radius: 12px; margin-bottom: 14px; }
+.advantage-content .legal-icon svg { width: 22px; height: 22px; }
+.advantage-content h3 { font-size: 19px; margin: 0 0 9px; }
+.advantage-content p { font-size: 14px; line-height: 1.65; }
+.advantage-art {
+  position: absolute;
+  width: 36%;
+  aspect-ratio: 3 / 4;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url('../assets/advantages/advantages-simple.png') no-repeat;
+  background-size: 400% 200%;
+  pointer-events: none;
+  opacity: .88;
+}
+.advantage-art-1 { background-position: 0% 0%; }
+.advantage-art-2 { background-position: 33.333333% 0%; }
+.advantage-art-3 { background-position: 66.666667% 0%; }
+.advantage-art-4 { background-position: 100% 0%; }
+.advantage-art-5 { background-position: 0% 100%; }
+.advantage-art-6 { background-position: 33.333333% 100%; }
+.advantage-art-7 { background-position: 66.666667% 100%; }
+.advantage-art-8 { background-position: 100% 100%; }
+@media (max-width: 760px) {
+  .strengths-section .mengapa-grid { grid-template-columns: 1fr; gap: 14px; }
+  .strengths-section .advantage-card { min-height: 218px; padding: 22px; }
+  .advantage-content h3 { font-size: 18px; }
+  .advantage-content { width: 65%; }
+  .advantage-art { width: 33%; right: 4px; }
+}
+@media (prefers-contrast: more) {
+  .strengths-section .advantage-card { border-color: #607865; }
+  .about-page main > .section:not(.cta-section)::before { opacity: .3; }
+}
+/* Keep tall illustrations inside the card and soften sprite boundaries. */
+.advantage-art {
+  width: min(36%, 180px);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 96%, transparent);
+}
+@media (max-width: 760px) {
+  .advantage-art { width: 33%; }
+}
