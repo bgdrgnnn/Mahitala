@@ -1737,6 +1737,46 @@ a.spec-pill:hover {
   color: var(--color-primary-dark);
 }
 
+/* About: four company-at-a-glance fact cards */
+.phv-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  color: var(--color-muted-foreground);
+  transition: transform 260ms var(--ease-standard), box-shadow 260ms var(--ease-standard);
+}
+.phv-fact:nth-child(even) { transform: translateY(24px); }
+.phv-fact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+}
+.phv-fact-icon svg { width: 20px; height: 20px; }
+.phv-fact strong {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: clamp(26px, 2.6vw, 34px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-primary-dark);
+}
+.phv-fact > span:last-child { font-size: 13.5px; line-height: 1.45; }
+.phv-fact-labs { gap: 12px; }
+.phv-fact-labs img { display: block; width: auto; }
+.phv-fact-labs .lab-idsurvey { height: 24px; }
+.phv-fact-labs .lab-sucofindo { height: 32px; }
+
 /* Lift-on-hover only for real pointers, and only in the two-column layout
    where the even tiles are offset. */
 @media (hover: hover) and (pointer: fine) and (min-width: 901px) {
@@ -1747,21 +1787,30 @@ a.spec-pill:hover {
   .phv-step:hover { box-shadow: 0 20px 44px rgba(0, 0, 0, 0.32); }
   .phv-step:nth-child(odd):hover { transform: translateY(-4px); }
   .phv-step:nth-child(even):hover { transform: translateY(20px); }
+  .phv-fact:hover { box-shadow: 0 20px 44px rgba(0, 0, 0, 0.32); }
+  .phv-fact:nth-child(odd):hover { transform: translateY(-4px); }
+  .phv-fact:nth-child(even):hover { transform: translateY(20px); }
 }
 @media (max-width: 900px) {
   .page-hero { padding-top: 112px; padding-bottom: var(--space-12); }
   .page-hero-grid { grid-template-columns: 1fr; gap: var(--space-8); }
   .page-hero-visual { gap: var(--space-3); }
-  .phv-tile:nth-child(even), .phv-step:nth-child(even) { transform: none; }
+  .phv-tile:nth-child(even), .phv-step:nth-child(even), .phv-fact:nth-child(even) { transform: none; }
 }
 @media (max-width: 560px) {
   .page-hero-labs { flex-wrap: wrap; }
   .phv-label { font-size: 14px; left: 10px; right: 10px; bottom: 8px; }
   .phv-step-label { padding: 8px 10px; font-size: 12.5px; gap: 8px; }
   .phv-step-label b { width: 24px; height: 24px; font-size: 11px; }
+  .phv-fact { padding: var(--space-4); }
+  .phv-fact strong { font-size: 24px; min-height: 34px; }
+  .phv-fact > span:last-child { font-size: 12.5px; }
+  .phv-fact-labs { gap: 8px; }
+  .phv-fact-labs .lab-idsurvey { height: 17px; }
+  .phv-fact-labs .lab-sucofindo { height: 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .phv-tile, .phv-tile img, .phv-step { transition: none; }
+  .phv-tile, .phv-tile img, .phv-step, .phv-fact { transition: none; }
   .phv-tile:hover img { transform: none; }
 }
 
@@ -2496,7 +2545,7 @@ a.spec-pill:hover {
   box-shadow: inset 0 1px 0 #fff, 0 3px 8px #2349300c;
 }
 .about-page :is(.legal-icon, .team-avatar, .contact-row .icon) svg { stroke-width: 1.7; }
-#history, #why-choose, #production-process { scroll-margin-top: 80px; }
+#history, #team, #why-choose, #production-process, #legal { scroll-margin-top: 80px; }
 .strengths-section .mengapa-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .strengths-section .advantage-card {
   position: relative;
