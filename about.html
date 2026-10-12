@@ -128,12 +128,43 @@
 
 <main>
   <!-- ============ ABOUT HERO ============ -->
-  <section class="gallery-hero">
-    <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow">About Us</span>
-        <h1>Get to Know PT Mangghala Inatama Lentera</h1>
-        <p>The team behind our production, and our company's legal documentation.</p>
+  <section class="page-hero">
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="page-hero-scrim" aria-hidden="true"></div>
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy reveal">
+        <span class="hero-eyebrow">About Us</span>
+        <h1>Get to Know <em>PT Mangghala Inatama Lentera</em></h1>
+        <p class="hero-lede">Since 2016 we have produced and supplied natural minerals for agriculture and industry. Meet the team, see how we work, and review our company's legal documentation.</p>
+        <nav class="pdetail-jump" aria-label="Jump to section">
+          <a href="#history">Our Story</a>
+          <a href="#team">Team</a>
+          <a href="#why-choose">Why Mahitala</a>
+          <a href="#production-process">Process</a>
+          <a href="#legal">Legal</a>
+        </nav>
+      </div>
+      <div class="page-hero-visual phv-facts reveal" aria-label="Company at a glance">
+        <a class="phv-fact" href="#history">
+          <span class="phv-fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+          <strong>2016</strong>
+          <span>Founded in Surabaya, East Java</span>
+        </a>
+        <a class="phv-fact" href="products.html">
+          <span class="phv-fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
+          <strong>4</strong>
+          <span>Natural mineral lines, in powder &amp; granule form</span>
+        </a>
+        <a class="phv-fact" href="products.html">
+          <span class="phv-fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <strong class="phv-fact-labs"><img src="assets/labs/idsurvey.png" alt="ID Survey" class="lab-idsurvey" width="479" height="96"><img src="assets/labs/sucofindo.png" alt="Sucofindo" class="lab-sucofindo" width="174" height="120"></strong>
+          <span>Lab-tested, with third-party certificates of analysis</span>
+        </a>
+        <a class="phv-fact" href="#production-process">
+          <span class="phv-fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
+          <strong>Mine → Port</strong>
+          <span>End-to-end, from sourcing to delivery</span>
+        </a>
       </div>
     </div>
   </section>
@@ -177,7 +208,7 @@
   </section>
 
   <!-- ============ OUR TEAM ============ -->
-  <section class="section">
+  <section class="section" id="team">
     <div class="container">
       <div class="section-head center reveal">
         <span class="eyebrow">Our Team</span>
@@ -484,6 +515,7 @@
   </div>
 </footer>
 
+<script src="js/hero-bg.js"></script>
 <script src="js/gallery.js"></script>
 <script src="js/nav.js"></script>
 </body>
