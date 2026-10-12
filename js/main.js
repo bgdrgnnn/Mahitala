@@ -123,6 +123,14 @@
     );
   }
 
+  /* Keyword-targeted landing page for each product. */
+  var PRODUCT_PAGES = {
+    dolomite: "dolomite-powder-supplier-indonesia.html",
+    phosphate: "guano-phosphate-indonesia.html",
+    palmash: "palm-bunch-ash-potassium-fertilizer.html",
+    clay: "clay-supplier-indonesia.html"
+  };
+
   /* Products with a published third-party COA on products.html. */
   var COA_PRODUCTS = { dolomite: true, clay: true, palmash: true };
 
@@ -142,7 +150,7 @@
     return (
       '<div class="spec-cta">' +
         '<div class="spec-cta-copy">' + tested + "<p>" + copy + "</p></div>" +
-        '<a href="products.html#' + id + '" class="btn btn-outline-dark btn-sm">View full specs ' +
+        '<a href="' + (PRODUCT_PAGES[id] || "products.html#" + id) + '" class="btn btn-outline-dark btn-sm">View full specs ' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
         "</a>" +
       "</div>"
@@ -402,11 +410,55 @@
         if (firstInvalid) firstInvalid.focus();
         return;
       }
+      /* No backend: hand the enquiry to WhatsApp (pre-filled), with an
+         email fallback carrying the same text. */
+      var val = function (name) {
+        var el = form.elements[name];
+        return el ? String(el.value || "").trim() : "";
+      };
+      var productInput = form.querySelector('input[name="product"]:checked');
+      var productLabel = productInput ? productInput.nextElementSibling.textContent : "";
+      var company = val("company");
+      var lines = [
+        "Hello Mahitala, I'd like to make an enquiry.",
+        "",
+        "Name: " + val("name") + (company ? " (" + company + ")" : ""),
+        "Product: " + productLabel,
+        "Phone: " + val("phone"),
+        "Email: " + val("email"),
+        "",
+        val("message")
+      ];
+      var text = lines.join("\n");
+      window.open("https://wa.me/6281290718284?text=" + encodeURIComponent(text), "_blank", "noopener");
+      var mailto = $("#formMailto");
+      if (mailto) {
+        mailto.href = "mailto:marketing@mahitala.co.id?subject=" +
+          encodeURIComponent("Product enquiry: " + productLabel) + "&body=" + encodeURIComponent(text);
+      }
       successBox.classList.add("show");
-      form.reset();
       $$(".field", form).forEach(function (f) { f.classList.remove("invalid"); });
       successBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
+  }
+
+  /* ---------------- Contact: open-now badge (Mon–Sat 08:00–17:00 WIB) ---------------- */
+  var openBadge = $("#openBadge");
+  if (openBadge && window.Intl && Intl.DateTimeFormat) {
+    try {
+      var parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Jakarta", weekday: "short", hour: "numeric", minute: "numeric", hour12: false
+      }).formatToParts(new Date());
+      var get = function (type) {
+        for (var i = 0; i < parts.length; i++) if (parts[i].type === type) return parts[i].value;
+        return "";
+      };
+      var minutes = (parseInt(get("hour"), 10) % 24) * 60 + parseInt(get("minute"), 10);
+      var isOpen = get("weekday") !== "Sun" && minutes >= 8 * 60 && minutes < 17 * 60;
+      openBadge.textContent = isOpen ? "Open now" : "Closed now";
+      openBadge.classList.toggle("is-open", isOpen);
+      openBadge.hidden = false;
+    } catch (e) { /* timezone unsupported: leave the badge hidden */ }
   }
 
   /* ---------------- Contact headline word rotator ---------------- */
