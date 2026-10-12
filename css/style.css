@@ -1110,7 +1110,7 @@ a.spec-pill:hover {
 }
 #industri::after {
   right: -60px;
-  background-image: url("../assets/industries/01-construction-infrastructure.png");
+  background-image: url("../assets/industries/06-animal-feed-chemicals.png");
   mask-image: linear-gradient(to left, #000 25%, transparent 100%);
 }
 @media (max-width: 768px) {
