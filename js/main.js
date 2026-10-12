@@ -123,6 +123,14 @@
     );
   }
 
+  /* Keyword-targeted landing page for each product. */
+  var PRODUCT_PAGES = {
+    dolomite: "dolomite-powder-supplier-indonesia.html",
+    phosphate: "guano-phosphate-indonesia.html",
+    palmash: "palm-bunch-ash-potassium-fertilizer.html",
+    clay: "clay-supplier-indonesia.html"
+  };
+
   /* Products with a published third-party COA on products.html. */
   var COA_PRODUCTS = { dolomite: true, clay: true, palmash: true };
 
@@ -142,7 +150,7 @@
     return (
       '<div class="spec-cta">' +
         '<div class="spec-cta-copy">' + tested + "<p>" + copy + "</p></div>" +
-        '<a href="products.html#' + id + '" class="btn btn-outline-dark btn-sm">View full specs ' +
+        '<a href="' + (PRODUCT_PAGES[id] || "products.html#" + id) + '" class="btn btn-outline-dark btn-sm">View full specs ' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
         "</a>" +
       "</div>"
