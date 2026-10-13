@@ -51,23 +51,8 @@
     revealEls.forEach(function (el) { el.classList.add("in-view"); });
   }
 
-  /* ---------------- Gallery story chapter nav ---------------- */
-  var storyNavLinks = $$(".story-nav a");
-  var storyChapters = $$(".story-chapter");
-  if (storyNavLinks.length && storyChapters.length && "IntersectionObserver" in window) {
-    var chapterIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var id = "#" + entry.target.id;
-        storyNavLinks.forEach(function (link) {
-          link.classList.toggle("active", link.getAttribute("href") === id);
-        });
-      });
-    }, { rootMargin: "-45% 0px -50% 0px" });
-    storyChapters.forEach(function (ch) { chapterIO.observe(ch); });
-  }
-
   /* ---------------- Gallery story carousels ---------------- */
+  var storyCarouselResets = [];
   $$(".story-carousel[data-carousel]").forEach(function (carousel) {
     var track = $(".story-carousel-track", carousel);
     var slides = $$(".story-slide", track);
@@ -79,9 +64,9 @@
     function currentIndex() {
       return Math.round(track.scrollLeft / track.clientWidth);
     }
-    function goTo(index) {
+    function goTo(index, instant) {
       index = Math.max(0, Math.min(slides.length - 1, index));
-      track.scrollTo({ left: index * track.clientWidth, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      track.scrollTo({ left: index * track.clientWidth, behavior: instant || prefersReducedMotion ? "auto" : "smooth" });
     }
     function updateUI() {
       var idx = currentIndex();
@@ -104,7 +89,26 @@
       scrollTimer = setTimeout(updateUI, 80);
     });
     updateUI();
+    storyCarouselResets.push(function () { goTo(0, true); updateUI(); });
   });
+
+  /* ---------------- Gallery story step index (left nav swaps the right carousel) ---------------- */
+  var storySteps = $$(".story-step");
+  var storyPanels = $$(".story-carousel-group[data-chapter-panel]");
+  if (storySteps.length && storyPanels.length) {
+    storySteps.forEach(function (step) {
+      step.addEventListener("click", function () {
+        if (step.classList.contains("active")) return;
+        var target = step.getAttribute("data-chapter");
+        storySteps.forEach(function (s) { s.classList.toggle("active", s === step); });
+        storyPanels.forEach(function (panel) {
+          var isTarget = panel.getAttribute("data-chapter-panel") === target;
+          panel.hidden = !isTarget;
+        });
+        storyCarouselResets.forEach(function (reset) { reset(); });
+      });
+    });
+  }
 
   /* ---------------- Copy buttons (About: NIB) ---------------- */
   $$("[data-copy]").forEach(function (btn) {
