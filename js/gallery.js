@@ -51,31 +51,21 @@
     revealEls.forEach(function (el) { el.classList.add("in-view"); });
   }
 
-  /* ---------------- Gallery filters ---------------- */
-  var filterBtns = $$(".gallery-filter-btn");
-  var galleryCards = $$(".gallery-card", $("#galleryGrid"));
-
-  filterBtns.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var filter = btn.getAttribute("data-filter");
-      filterBtns.forEach(function (b) { b.classList.toggle("active", b === btn); });
-      galleryCards.forEach(function (card) {
-        var show = filter === "all" || card.getAttribute("data-category") === filter;
-        card.classList.toggle("is-hidden", !show);
+  /* ---------------- Gallery story chapter nav ---------------- */
+  var storyNavLinks = $$(".story-nav a");
+  var storyChapters = $$(".story-chapter");
+  if (storyNavLinks.length && storyChapters.length && "IntersectionObserver" in window) {
+    var chapterIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = "#" + entry.target.id;
+        storyNavLinks.forEach(function (link) {
+          link.classList.toggle("active", link.getAttribute("href") === id);
+        });
       });
-    });
-  });
-
-  /* Hero flow steps (gallery.html): jump to the gallery filtered to that stage. */
-  $$("[data-filter-link]").forEach(function (step) {
-    step.addEventListener("click", function () {
-      var btn = $('.gallery-filter-btn[data-filter="' + step.getAttribute("data-filter-link") + '"]');
-      if (!btn) return;
-      btn.click();
-      var filters = $(".gallery-filters");
-      if (filters) filters.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
-    });
-  });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    storyChapters.forEach(function (ch) { chapterIO.observe(ch); });
+  }
 
   /* ---------------- Copy buttons (About: NIB) ---------------- */
   $$("[data-copy]").forEach(function (btn) {

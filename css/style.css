@@ -59,6 +59,7 @@ html { scroll-behavior: smooth; }
    the header's height itself changes mid-scroll (tall -> compact) and a
    height read at click time would go stale before the scroll settles. */
 #home, #produk, #industri, #tentang, #faq, #kontak { scroll-margin-top: 58px; }
+#chapter-produksi, #chapter-pengemasan, #chapter-stuffing, #chapter-pengiriman { scroll-margin-top: 80px; }
 
 #tentang, #faq { position: relative; overflow: hidden; }
 #tentang .container, #faq .container { position: relative; z-index: 1; }
@@ -1933,120 +1934,137 @@ a.spec-pill:hover {
   .phv-tile:hover img { transform: none; }
 }
 
-.gallery-filters {
+/* ---------- Gallery story: cinematic full-bleed chapters ----------
+   Replaces the old filter-grid of uniform cards with a continuous
+   scroll narrative — chapter dividers followed by full-width photo
+   panels, so the page reads as one journey rather than a tag-sorted
+   catalog. */
+
+.story-nav {
   display: flex;
   gap: var(--space-2);
   justify-content: center;
   flex-wrap: wrap;
   margin-top: var(--space-8);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
 }
-.gallery-filter-btn {
+.story-nav a {
   padding: 10px 20px;
   border-radius: var(--radius-full);
   background: var(--color-surface-alt);
   color: var(--color-muted-foreground);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13.5px;
   transition: background 200ms var(--ease-standard), color 200ms var(--ease-standard);
 }
-.gallery-filter-btn:hover { background: var(--color-border); }
-.gallery-filter-btn.active { background: var(--color-primary); color: #fff; }
+.story-nav a:hover { background: var(--color-border); }
+.story-nav a.active { background: var(--color-primary); color: #fff; }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.story-chapter { margin-bottom: var(--space-10); }
+.story-chapter:last-child { margin-bottom: 0; }
+
+.story-chapter-head {
+  display: flex;
+  align-items: flex-start;
   gap: var(--space-6);
+  max-width: 760px;
+  margin-bottom: var(--space-8);
 }
-@media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .gallery-grid { grid-template-columns: 1fr; } }
+.story-chapter-num {
+  flex: none;
+  font-size: clamp(48px, 7vw, 76px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-border);
+}
+.story-chapter-head h2 { font-size: clamp(26px, 3.4vw, 36px); margin-top: var(--space-2); }
+.story-chapter-head p { margin-top: var(--space-3); color: var(--color-muted-foreground); font-size: 16px; }
 
-.gallery-card {
+.story-panel {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-lg);
-  min-height: 240px;
-  padding: var(--space-6);
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  box-shadow: var(--shadow-md);
-  transition: transform 300ms var(--ease-standard), box-shadow 300ms var(--ease-standard), opacity 300ms var(--ease-standard), filter 300ms var(--ease-standard);
+  height: min(78vh, 680px);
+  margin-bottom: var(--space-3);
+  background: #111;
 }
-.gallery-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-.gallery-card.dolomite { background: linear-gradient(150deg, #57534E, #1C1917); }
-.gallery-card.phosphate { background: linear-gradient(150deg, #1B6B47, #062A19); }
-.gallery-card.palmash { background: linear-gradient(150deg, #6B4F3B, #241A10); }
-.gallery-card.is-hidden { display: none; }
+.story-chapter .story-panel:last-child { margin-bottom: 0; }
+.story-panel-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease-standard); }
+.story-panel:hover .story-panel-img { transform: scale(1.04); }
+.story-panel-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(5, 23, 14, 0.88) 0%, rgba(5, 23, 14, 0.35) 42%, transparent 68%);
+}
+.story-panel.align-right .story-panel-scrim {
+  background: linear-gradient(0deg, rgba(5, 23, 14, 0.88) 0%, rgba(5, 23, 14, 0.35) 42%, transparent 68%);
+}
 
-.gallery-card-tag {
-  position: relative;
+.story-panel-index {
+  position: absolute;
+  top: var(--space-6);
+  left: var(--space-6);
   z-index: 1;
-  align-self: flex-start;
+  font-size: clamp(60px, 9vw, 120px);
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+}
+.story-panel.align-right .story-panel-index { left: auto; right: var(--space-6); }
+
+.story-panel-content {
+  position: absolute;
+  left: var(--space-8);
+  bottom: 0;
+  z-index: 1;
+  /* Clears the fixed bottom dock nav (~86px tall incl. its offset), which
+     would otherwise sit right over caption text at a panel's resting
+     scroll position. */
+  padding-bottom: 104px;
+  padding-right: var(--space-6);
+  max-width: 560px;
+  color: #fff;
+}
+/* Anchor from a single edge (left OR right) rather than both + margin:auto
+   — avoids the browser's over-constrained auto-margin centering, which
+   would otherwise fight the intended left/right alternation. */
+.story-panel.align-right .story-panel-content {
+  left: auto;
+  right: var(--space-8);
+  padding-right: 0;
+  padding-left: var(--space-6);
+  text-align: right;
+}
+
+.story-panel-tag {
+  display: inline-block;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: rgba(255,255,255,0.14);
+  color: var(--color-accent-light);
+  background: rgba(255, 255, 255, 0.12);
   padding: 5px 12px;
   border-radius: var(--radius-full);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
 }
+.story-panel-content h3 { color: #fff; font-size: clamp(22px, 2.6vw, 30px); margin-bottom: var(--space-2); }
+.story-panel-content p { color: rgba(255, 255, 255, 0.78); font-size: 15.5px; line-height: 1.55; }
 
-.gallery-icon-wrap {
-  position: relative;
-  z-index: 1;
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: auto;
+@media (max-width: 900px) {
+  .story-panel { height: min(60vh, 520px); }
+  .story-chapter-head { gap: var(--space-4); }
 }
-.gallery-icon-wrap svg { width: 30px; height: 30px; }
-
-.gallery-card-body { position: relative; z-index: 1; margin-top: var(--space-5); }
-.gallery-card-body h3 { color: #fff; font-size: 19px; margin-bottom: 6px; }
-.gallery-card-body p { color: rgba(255,255,255,0.68); font-size: 13.5px; line-height: 1.5; }
-
-/* Photo variant — real illustration/photo at top instead of a dark
-   gradient + small icon, used for the Gallery's process cards. */
-.gallery-card.photo {
-  padding: 0;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
+@media (max-width: 560px) {
+  .story-panel { height: min(52vh, 440px); }
+  .story-panel-content { left: var(--space-5); right: var(--space-5); max-width: none; padding-right: 0; padding-bottom: 88px; }
+  .story-panel.align-right .story-panel-content { left: var(--space-5); right: var(--space-5); padding-left: 0; text-align: left; }
+  .story-panel.align-right .story-panel-index { left: var(--space-6); right: auto; }
+  .story-chapter-head { flex-direction: column; gap: var(--space-2); }
 }
-.gallery-card.photo:hover { box-shadow: var(--shadow-md); }
-
-.gallery-photo-wrap {
-  position: relative;
-  aspect-ratio: 2 / 1;
-  overflow: hidden;
-  background: var(--color-surface-alt);
-}
-.gallery-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gallery-photo-wrap.icon-only { display: flex; align-items: center; justify-content: center; color: var(--color-primary); }
-.gallery-photo-wrap.icon-only svg { width: 64px; height: 64px; }
-
-.gallery-card.photo .gallery-card-tag {
-  position: absolute;
-  top: var(--space-4);
-  left: var(--space-4);
-  z-index: 1;
-  margin-bottom: 0;
-  background: var(--color-primary-dark);
-  color: #fff;
-}
-.gallery-card.photo .gallery-card-body { margin-top: 0; padding: var(--space-5) var(--space-6) var(--space-6); }
-.gallery-card.photo .gallery-card-body h3 { color: var(--color-foreground); }
-.gallery-card.photo .gallery-card-body p { color: var(--color-muted-foreground); }
-
 @media (prefers-reduced-motion: reduce) {
-  .gallery-card { transition: none; }
-  .gallery-card:hover { transform: none; }
+  .story-panel-img { transition: none; }
+  .story-panel:hover .story-panel-img { transform: none; }
 }
 
 /* ==========================================================================
