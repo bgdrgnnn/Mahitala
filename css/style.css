@@ -1934,11 +1934,13 @@ a.spec-pill:hover {
   .phv-tile:hover img { transform: none; }
 }
 
-/* ---------- Gallery story: cinematic full-bleed chapters ----------
-   Replaces the old filter-grid of uniform cards with a continuous
-   scroll narrative — chapter dividers followed by full-width photo
-   panels, so the page reads as one journey rather than a tag-sorted
-   catalog. */
+/* ---------- Gallery story: chapters with a photo carousel ----------
+   Replaces the old filter-grid of uniform cards with chapters (each a
+   short intro) followed by a contained, swipeable carousel of photos —
+   a considered, curated feel instead of a tag-sorted catalog, and a
+   carousel's modest display size keeps photos close to their native
+   resolution instead of the blur a full-bleed, near-viewport-height
+   panel caused when it stretched a photo far past its source size. */
 
 .story-nav {
   display: flex;
@@ -1960,7 +1962,7 @@ a.spec-pill:hover {
 .story-nav a:hover { background: var(--color-border); }
 .story-nav a.active { background: var(--color-primary); color: #fff; }
 
-.story-chapter { margin-bottom: var(--space-10); }
+.story-chapter { margin-bottom: var(--space-16); }
 .story-chapter:last-child { margin-bottom: 0; }
 
 .story-chapter-head {
@@ -1968,7 +1970,7 @@ a.spec-pill:hover {
   align-items: flex-start;
   gap: var(--space-6);
   max-width: 760px;
-  margin-bottom: var(--space-8);
+  margin: 0 auto var(--space-8);
 }
 .story-chapter-num {
   flex: none;
@@ -1980,91 +1982,96 @@ a.spec-pill:hover {
 .story-chapter-head h2 { font-size: clamp(26px, 3.4vw, 36px); margin-top: var(--space-2); }
 .story-chapter-head p { margin-top: var(--space-3); color: var(--color-muted-foreground); font-size: 16px; }
 
-.story-panel {
-  position: relative;
-  overflow: hidden;
-  height: min(78vh, 680px);
-  margin-bottom: var(--space-3);
-  background: #111;
+.story-carousel { position: relative; max-width: 860px; margin: 0 auto; }
+
+.story-carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  scrollbar-width: none;
 }
-.story-chapter .story-panel:last-child { margin-bottom: 0; }
-.story-panel-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease-standard); }
-.story-panel:hover .story-panel-img { transform: scale(1.04); }
-.story-panel-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(5, 23, 14, 0.88) 0%, rgba(5, 23, 14, 0.35) 42%, transparent 68%);
-}
-.story-panel.align-right .story-panel-scrim {
-  background: linear-gradient(0deg, rgba(5, 23, 14, 0.88) 0%, rgba(5, 23, 14, 0.35) 42%, transparent 68%);
+.story-carousel-track::-webkit-scrollbar { display: none; }
+
+.story-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
 }
 
-.story-panel-index {
+.story-slide-media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--color-surface-alt); }
+.story-slide-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.story-slide-index {
   position: absolute;
-  top: var(--space-6);
-  left: var(--space-6);
-  z-index: 1;
-  font-size: clamp(60px, 9vw, 120px);
-  font-weight: 900;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.14);
-  pointer-events: none;
-}
-.story-panel.align-right .story-panel-index { left: auto; right: var(--space-6); }
-
-.story-panel-content {
-  position: absolute;
-  left: var(--space-8);
-  bottom: 0;
-  z-index: 1;
-  /* Clears the fixed bottom dock nav (~86px tall incl. its offset), which
-     would otherwise sit right over caption text at a panel's resting
-     scroll position. */
-  padding-bottom: 104px;
-  padding-right: var(--space-6);
-  max-width: 560px;
+  top: var(--space-4);
+  left: var(--space-4);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: rgba(5, 23, 14, 0.6);
   color: #fff;
-}
-/* Anchor from a single edge (left OR right) rather than both + margin:auto
-   — avoids the browser's over-constrained auto-margin centering, which
-   would otherwise fight the intended left/right alternation. */
-.story-panel.align-right .story-panel-content {
-  left: auto;
-  right: var(--space-8);
-  padding-right: 0;
-  padding-left: var(--space-6);
-  text-align: right;
+  padding: 4px 11px;
+  border-radius: var(--radius-full);
 }
 
-.story-panel-tag {
+.story-slide-body { padding: var(--space-6); }
+.story-slide-tag {
   display: inline-block;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-accent-light);
-  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-primary-dark);
+  background: rgba(18, 162, 96, 0.1);
   padding: 5px 12px;
   border-radius: var(--radius-full);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
-.story-panel-content h3 { color: #fff; font-size: clamp(22px, 2.6vw, 30px); margin-bottom: var(--space-2); }
-.story-panel-content p { color: rgba(255, 255, 255, 0.78); font-size: 15.5px; line-height: 1.55; }
+.story-slide-body h3 { font-size: 20px; margin-bottom: var(--space-2); }
+.story-slide-body p { color: var(--color-muted-foreground); font-size: 14.5px; line-height: 1.55; }
 
-@media (max-width: 900px) {
-  .story-panel { height: min(60vh, 520px); }
-  .story-chapter-head { gap: var(--space-4); }
+/* Positioned via an aria-hidden zone matching the media's aspect ratio,
+   so the buttons sit centered on the photo regardless of how tall the
+   caption below it grows. */
+.story-carousel-nav-zone {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  aspect-ratio: 3 / 2;
+  pointer-events: none;
 }
-@media (max-width: 560px) {
-  .story-panel { height: min(52vh, 440px); }
-  .story-panel-content { left: var(--space-5); right: var(--space-5); max-width: none; padding-right: 0; padding-bottom: 88px; }
-  .story-panel.align-right .story-panel-content { left: var(--space-5); right: var(--space-5); padding-left: 0; text-align: left; }
-  .story-panel.align-right .story-panel-index { left: var(--space-6); right: auto; }
+.story-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  transition: transform 200ms var(--ease-standard), background 200ms var(--ease-standard);
+}
+.story-carousel-nav:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
+.story-carousel-nav:disabled { opacity: 0.35; pointer-events: none; }
+.story-carousel-nav.prev { left: var(--space-3); }
+.story-carousel-nav.next { right: var(--space-3); }
+.story-carousel-nav svg { width: 18px; height: 18px; }
+
+.story-carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: var(--space-5); }
+.story-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-border); transition: background 200ms var(--ease-standard), width 200ms var(--ease-standard); }
+.story-dot.active { background: var(--color-primary); width: 22px; border-radius: 4px; }
+
+/* Single-photo chapters (Shipping) skip the nav/dots entirely in markup. */
+
+@media (max-width: 680px) {
+  .story-carousel-nav { display: none; }
   .story-chapter-head { flex-direction: column; gap: var(--space-2); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .story-panel-img { transition: none; }
-  .story-panel:hover .story-panel-img { transform: none; }
 }
 
 /* ==========================================================================

@@ -67,6 +67,45 @@
     storyChapters.forEach(function (ch) { chapterIO.observe(ch); });
   }
 
+  /* ---------------- Gallery story carousels ---------------- */
+  $$(".story-carousel[data-carousel]").forEach(function (carousel) {
+    var track = $(".story-carousel-track", carousel);
+    var slides = $$(".story-slide", track);
+    var prevBtn = $(".story-carousel-nav.prev", carousel);
+    var nextBtn = $(".story-carousel-nav.next", carousel);
+    var dots = $$(".story-dot", carousel);
+    if (!track || slides.length < 2) return;
+
+    function currentIndex() {
+      return Math.round(track.scrollLeft / track.clientWidth);
+    }
+    function goTo(index) {
+      index = Math.max(0, Math.min(slides.length - 1, index));
+      track.scrollTo({ left: index * track.clientWidth, behavior: prefersReducedMotion ? "auto" : "smooth" });
+    }
+    function updateUI() {
+      var idx = currentIndex();
+      dots.forEach(function (d, i) { d.classList.toggle("active", i === idx); });
+      if (prevBtn) prevBtn.disabled = idx === 0;
+      if (nextBtn) nextBtn.disabled = idx === slides.length - 1;
+    }
+    if (prevBtn) prevBtn.addEventListener("click", function () { goTo(currentIndex() - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { goTo(currentIndex() + 1); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () { goTo(i); });
+    });
+    var scrollTimer;
+    track.addEventListener("scroll", function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(updateUI, 80);
+    }, { passive: true });
+    window.addEventListener("resize", function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(updateUI, 80);
+    });
+    updateUI();
+  });
+
   /* ---------------- Copy buttons (About: NIB) ---------------- */
   $$("[data-copy]").forEach(function (btn) {
     var label = $("span", btn);
