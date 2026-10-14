@@ -167,7 +167,7 @@
     }).join("");
     var formLabel = form === "granule" ? "Granule" : "Powder";
     var waMessage = "Hello, I'd like to ask about the price of " + product.title + " (" + formLabel + ").";
-    var waHref = "https://wa.me/6281290718284?text=" + encodeURIComponent(waMessage);
+    var waHref = "https://wa.me/6285117541008?text=" + encodeURIComponent(waMessage);
 
     return (
       '<div class="form-note-wrap" id="formNoteWrap">' + renderFormNoteHTML(product, form) + "</div>" +
@@ -430,7 +430,7 @@
         val("message")
       ];
       var text = lines.join("\n");
-      window.open("https://wa.me/6281290718284?text=" + encodeURIComponent(text), "_blank", "noopener");
+      window.open("https://wa.me/6285117541008?text=" + encodeURIComponent(text), "_blank", "noopener");
       var mailto = $("#formMailto");
       if (mailto) {
         mailto.href = "mailto:marketing@mahitala.co.id?subject=" +
