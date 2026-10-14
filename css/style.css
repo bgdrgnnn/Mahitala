@@ -1994,7 +1994,7 @@ a.spec-pill:hover {
 .story-explorer-stage { min-width: 0; }
 .story-carousel-group[hidden] { display: none; }
 
-.story-carousel { position: relative; }
+.story-carousel { position: relative; max-width: 780px; }
 
 .story-carousel-track {
   display: flex;
