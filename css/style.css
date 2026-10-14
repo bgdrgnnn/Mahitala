@@ -3183,6 +3183,26 @@ a.spec-pill:hover {
 .pp-app-icon.is-result { color: var(--color-primary-dark); background: var(--color-accent); }
 .pp-app-icon svg { width: 16px; height: 16px; }
 
+/* Phones: a full-width illustration per card made the Dolomite page's 12
+   sector cards ~4 screens tall — switch to a compact row (thumbnail left,
+   text right). */
+@media (max-width: 600px) {
+  .pp-app-grid { gap: var(--space-3); }
+  .pp-app {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    column-gap: var(--space-4);
+    row-gap: 8px;
+    align-items: start;
+    padding: var(--space-4);
+  }
+  .pp-app-art { grid-row: 1 / span 3; aspect-ratio: 1 / 1; }
+  .pp-app-sector { justify-self: start; }
+  .pp-app p { font-size: 13px; gap: 8px; }
+  .pp-app-icon { width: 24px; height: 24px; }
+  .pp-app-icon svg { width: 14px; height: 14px; }
+}
+
 .pp-faq { background: var(--color-surface-alt); }
 .pp-faq-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: var(--space-12); align-items: start; }
 .pp-faq-grid .section-head { text-align: left; margin: 0; }
