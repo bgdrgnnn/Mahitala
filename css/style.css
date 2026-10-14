@@ -59,7 +59,6 @@ html { scroll-behavior: smooth; }
    the header's height itself changes mid-scroll (tall -> compact) and a
    height read at click time would go stale before the scroll settles. */
 #home, #produk, #industri, #tentang, #faq, #kontak { scroll-margin-top: 58px; }
-#chapter-produksi, #chapter-pengemasan, #chapter-stuffing, #chapter-pengiriman { scroll-margin-top: 80px; }
 
 #tentang, #faq { position: relative; overflow: hidden; }
 #tentang .container, #faq .container { position: relative; z-index: 1; }
@@ -1934,55 +1933,68 @@ a.spec-pill:hover {
   .phv-tile:hover img { transform: none; }
 }
 
-/* ---------- Gallery story: chapters with a photo carousel ----------
-   Replaces the old filter-grid of uniform cards with chapters (each a
-   short intro) followed by a contained, swipeable carousel of photos —
-   a considered, curated feel instead of a tag-sorted catalog, and a
-   carousel's modest display size keeps photos close to their native
-   resolution instead of the blur a full-bleed, near-viewport-height
-   panel caused when it stretched a photo far past its source size. */
+/* ---------- Gallery story: a step index driving one photo carousel ----------
+   A left-hand list of stages (01-04) swaps which carousel shows on the
+   right, so the carousel can use the page's full width instead of
+   sitting centered in a narrow column, and a carousel's modest display
+   size keeps photos close to their native resolution instead of the
+   blur a full-bleed, near-viewport-height panel caused when it
+   stretched a photo far past its source size. */
 
-.story-nav {
+.story-explorer {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.story-explorer-nav {
   display: flex;
-  gap: var(--space-2);
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: var(--space-8);
-  margin-bottom: var(--space-16);
+  flex-direction: column;
+  gap: var(--space-1);
+  position: sticky;
+  top: 96px;
 }
-.story-nav a {
-  padding: 10px 20px;
-  border-radius: var(--radius-full);
-  background: var(--color-surface-alt);
-  color: var(--color-muted-foreground);
-  font-weight: 700;
-  font-size: 13.5px;
-  transition: background 200ms var(--ease-standard), color 200ms var(--ease-standard);
-}
-.story-nav a:hover { background: var(--color-border); }
-.story-nav a.active { background: var(--color-primary); color: #fff; }
-
-.story-chapter { margin-bottom: var(--space-16); }
-.story-chapter:last-child { margin-bottom: 0; }
-
-.story-chapter-head {
+.story-step {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-6);
-  max-width: 760px;
-  margin: 0 auto var(--space-8);
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background 200ms var(--ease-standard), border-color 200ms var(--ease-standard);
 }
-.story-chapter-num {
+.story-step:hover { background: var(--color-surface-alt); }
+.story-step.active { background: var(--color-surface-alt); border-color: var(--color-border); }
+.story-step-num {
   flex: none;
-  font-size: clamp(48px, 7vw, 76px);
+  font-size: 22px;
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.3;
   color: var(--color-border);
+  transition: color 200ms var(--ease-standard);
 }
-.story-chapter-head h2 { font-size: clamp(26px, 3.4vw, 36px); margin-top: var(--space-2); }
-.story-chapter-head p { margin-top: var(--space-3); color: var(--color-muted-foreground); font-size: 16px; }
+.story-step.active .story-step-num { color: var(--color-primary); }
+.story-step-body { display: flex; flex-direction: column; min-width: 0; }
+.story-step-body strong { font-size: 16px; }
+.story-step-intro {
+  display: block;
+  font-size: 13.5px;
+  color: var(--color-muted-foreground);
+  line-height: 1.5;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 300ms var(--ease-standard), opacity 300ms var(--ease-standard), margin-top 300ms var(--ease-standard);
+}
+.story-step.active .story-step-intro { max-height: 140px; opacity: 1; margin-top: var(--space-2); }
 
-.story-carousel { position: relative; max-width: 860px; margin: 0 auto; }
+.story-explorer-stage { min-width: 0; }
+.story-carousel-group[hidden] { display: none; }
+
+.story-carousel { position: relative; }
 
 .story-carousel-track {
   display: flex;
@@ -2069,9 +2081,26 @@ a.spec-pill:hover {
 
 /* Single-photo chapters (Shipping) skip the nav/dots entirely in markup. */
 
+@media (max-width: 860px) {
+  .story-explorer { grid-template-columns: 1fr; gap: var(--space-6); }
+  .story-explorer-nav {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .story-step {
+    flex: 1 1 auto;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: var(--radius-full);
+  }
+  .story-step-num { font-size: 14px; }
+  .story-step-body strong { font-size: 13.5px; }
+  .story-step-intro { display: none; }
+}
 @media (max-width: 680px) {
   .story-carousel-nav { display: none; }
-  .story-chapter-head { flex-direction: column; gap: var(--space-2); }
 }
 
 /* ---------- Facilities gallery: a bento grid recap of the whole story ----------

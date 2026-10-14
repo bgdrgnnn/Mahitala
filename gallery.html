@@ -143,249 +143,233 @@
   <!-- ============ GALLERY STORY ============ -->
   <section class="section story-section" style="padding-top:0">
     <div class="container">
-      <nav class="story-nav reveal" aria-label="Jump to chapter">
-        <a href="#chapter-produksi">01 · Production</a>
-        <a href="#chapter-pengemasan">02 · Packaging</a>
-        <a href="#chapter-stuffing">03 · Container Stuffing</a>
-        <a href="#chapter-pengiriman">04 · Shipping</a>
-      </nav>
-    </div>
+      <div class="story-explorer">
+        <nav class="story-explorer-nav reveal" aria-label="Browse by stage">
+          <button type="button" class="story-step active" data-chapter="produksi">
+            <span class="story-step-num">01</span>
+            <span class="story-step-body">
+              <strong>Production</strong>
+              <span class="story-step-intro">Every shipment starts at the source — mined, milled, and shaped into powder or granule under our own roof.</span>
+            </span>
+          </button>
+          <button type="button" class="story-step" data-chapter="pengemasan">
+            <span class="story-step-num">02</span>
+            <span class="story-step-body">
+              <strong>Packaging</strong>
+              <span class="story-step-intro">Approved product moves straight into bags and jumbo bags, staged and stacked for what's next.</span>
+            </span>
+          </button>
+          <button type="button" class="story-step" data-chapter="stuffing">
+            <span class="story-step-num">03</span>
+            <span class="story-step-body">
+              <strong>Stuffing</strong>
+              <span class="story-step-intro">Every bag is loaded by hand, packed tight so nothing shifts between our warehouse and the port.</span>
+            </span>
+          </button>
+          <button type="button" class="story-step" data-chapter="pengiriman">
+            <span class="story-step-num">04</span>
+            <span class="story-step-body">
+              <strong>Shipping</strong>
+              <span class="story-step-intro">From our yard to warehouses, plantations, and ports across Indonesia — and on to destination ports for export.</span>
+            </span>
+          </button>
+        </nav>
 
-    <!-- Chapter 01 — Production -->
-    <div class="story-chapter" id="chapter-produksi">
-      <div class="container">
-        <div class="story-chapter-head reveal">
-          <span class="story-chapter-num">01</span>
-          <div>
-            <h2>Production</h2>
-            <p>Every shipment starts at the source — mined, milled, and shaped into powder or granule under our own roof.</p>
+        <div class="story-explorer-stage reveal">
+          <div class="story-carousel-group" data-chapter-panel="produksi">
+            <div class="story-carousel" data-carousel>
+              <div class="story-carousel-track">
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/produksi1-penambangan.jpg" alt="Aerial view of an excavator mining dolomite at the quarry" loading="lazy" width="1200" height="800">
+                    <span class="story-slide-index" aria-hidden="true">01 / 04</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Production · 01</span>
+                    <h3>Mining &amp; Collection</h3>
+                    <p>Dolomite and phosphate raw material from partner mines, plus empty fruit bunches from palm oil mills.</p>
+                  </div>
+                </div>
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/produksi2-pengolahan.jpg" alt="Raymond mill grinding dolomite into powder" loading="lazy" width="1600" height="800">
+                    <span class="story-slide-index" aria-hidden="true">02 / 04</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Production · 02</span>
+                    <h3>Processing</h3>
+                    <p>Calcination, grinding, and sieving process to produce powder or granule form.</p>
+                  </div>
+                </div>
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/produksi4-granulasi.jpg" alt="Workers operating the pan granulator" loading="lazy" width="1600" height="800">
+                    <span class="story-slide-index" aria-hidden="true">03 / 04</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Production · 03</span>
+                    <h3>Granulation</h3>
+                    <p>Powder is formed into dense, low-dust granules in the pan granulator before drying.</p>
+                  </div>
+                </div>
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/produksi6-sampling.jpg" alt="QC staff drawing a sample from a jumbo bag" loading="lazy" width="1500" height="1000">
+                    <span class="story-slide-index" aria-hidden="true">04 / 04</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Production · 04</span>
+                    <h3>Quality Testing</h3>
+                    <p>A representative sample is drawn from every lot and sent for lab analysis of CaO, MgO, P₂O₅, and K₂O content before release.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="story-carousel-nav-zone" aria-hidden="true">
+                <button type="button" class="story-carousel-nav prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button type="button" class="story-carousel-nav next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+              </div>
+              <div class="story-carousel-dots">
+                <button type="button" class="story-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button type="button" class="story-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                <button type="button" class="story-dot" data-slide="2" aria-label="Go to slide 3"></button>
+                <button type="button" class="story-dot" data-slide="3" aria-label="Go to slide 4"></button>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="story-carousel reveal" data-carousel>
-          <div class="story-carousel-track">
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/produksi1-penambangan.jpg" alt="Aerial view of an excavator mining dolomite at the quarry" loading="lazy" width="1200" height="800">
-                <span class="story-slide-index" aria-hidden="true">01 / 04</span>
+          <div class="story-carousel-group" data-chapter-panel="pengemasan" hidden>
+            <div class="story-carousel" data-carousel>
+              <div class="story-carousel-track">
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/pengemasan1-pengemasan.jpg" alt="Granules packed inside a jumbo bag" loading="lazy" width="1600" height="800">
+                    <span class="story-slide-index" aria-hidden="true">01 / 04</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Packaging · 01</span>
+                    <h3>Packaging</h3>
+                    <p>Packed in 25kg / 50kg bags or jumbo bags according to customer needs.</p>
+                  </div>
+                </div>
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/pengemasan2-forklift.jpg" alt="Forklift lifting a jumbo bag in the warehouse" loading="lazy" width="1600" height="800">
+                    <span class="story-slide-index" aria-hidden="true">02 / 04</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Packaging · 02</span>
+                    <h3>Warehouse Handling</h3>
+                    <p>Forklifts move jumbo bags safely around the warehouse for storage and loading.</p>
+                  </div>
+                </div>
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/pengemasan3-stockpile.jpg" alt="Packed bags and jumbo bags stored in the warehouse" loading="lazy" width="1600" height="800">
+                    <span class="story-slide-index" aria-hidden="true">03 / 04</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Packaging · 03</span>
+                    <h3>Product Stockpile</h3>
+                    <p>Packed bags and jumbo bags held in our warehouse, ready for dispatch.</p>
+                  </div>
+                </div>
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/pengemasan4-siap-kirim.jpg" alt="Rows of sealed jumbo bags ready for shipment" loading="lazy" width="1600" height="800">
+                    <span class="story-slide-index" aria-hidden="true">04 / 04</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Packaging · 04</span>
+                    <h3>Ready-to-Ship Stock</h3>
+                    <p>Sealed jumbo bags staged and ready for container loading.</p>
+                  </div>
+                </div>
               </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Production · 01</span>
-                <h3>Mining &amp; Collection</h3>
-                <p>Dolomite and phosphate raw material from partner mines, plus empty fruit bunches from palm oil mills.</p>
+              <div class="story-carousel-nav-zone" aria-hidden="true">
+                <button type="button" class="story-carousel-nav prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button type="button" class="story-carousel-nav next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
               </div>
-            </div>
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/produksi2-pengolahan.jpg" alt="Raymond mill grinding dolomite into powder" loading="lazy" width="1600" height="800">
-                <span class="story-slide-index" aria-hidden="true">02 / 04</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Production · 02</span>
-                <h3>Processing</h3>
-                <p>Calcination, grinding, and sieving process to produce powder or granule form.</p>
-              </div>
-            </div>
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/produksi4-granulasi.jpg" alt="Workers operating the pan granulator" loading="lazy" width="1600" height="800">
-                <span class="story-slide-index" aria-hidden="true">03 / 04</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Production · 03</span>
-                <h3>Granulation</h3>
-                <p>Powder is formed into dense, low-dust granules in the pan granulator before drying.</p>
-              </div>
-            </div>
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/produksi6-sampling.jpg" alt="QC staff drawing a sample from a jumbo bag" loading="lazy" width="1500" height="1000">
-                <span class="story-slide-index" aria-hidden="true">04 / 04</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Production · 04</span>
-                <h3>Quality Testing</h3>
-                <p>A representative sample is drawn from every lot and sent for lab analysis of CaO, MgO, P₂O₅, and K₂O content before release.</p>
+              <div class="story-carousel-dots">
+                <button type="button" class="story-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button type="button" class="story-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                <button type="button" class="story-dot" data-slide="2" aria-label="Go to slide 3"></button>
+                <button type="button" class="story-dot" data-slide="3" aria-label="Go to slide 4"></button>
               </div>
             </div>
           </div>
-          <div class="story-carousel-nav-zone" aria-hidden="true">
-            <button type="button" class="story-carousel-nav prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button type="button" class="story-carousel-nav next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-          </div>
-          <div class="story-carousel-dots">
-            <button type="button" class="story-dot active" data-slide="0" aria-label="Go to slide 1"></button>
-            <button type="button" class="story-dot" data-slide="1" aria-label="Go to slide 2"></button>
-            <button type="button" class="story-dot" data-slide="2" aria-label="Go to slide 3"></button>
-            <button type="button" class="story-dot" data-slide="3" aria-label="Go to slide 4"></button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Chapter 02 — Packaging -->
-    <div class="story-chapter" id="chapter-pengemasan">
-      <div class="container">
-        <div class="story-chapter-head reveal">
-          <span class="story-chapter-num">02</span>
-          <div>
-            <h2>Packaging</h2>
-            <p>Approved product moves straight into bags and jumbo bags, staged and stacked for what's next.</p>
+          <div class="story-carousel-group" data-chapter-panel="stuffing" hidden>
+            <div class="story-carousel" data-carousel>
+              <div class="story-carousel-track">
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/stuffing1-container-stuffing.jpg" alt="Forklift loading jumbo bags into a container" loading="lazy" width="1600" height="800">
+                    <span class="story-slide-index" aria-hidden="true">01 / 02</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Container Stuffing · 01</span>
+                    <h3>Container Stuffing</h3>
+                    <p>Bags and jumbo bags are carefully and securely loaded into containers for domestic delivery and export shipment.</p>
+                  </div>
+                </div>
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/stuffing3-staging.jpg" alt="Jumbo bags staged next to an open container" loading="lazy" width="1600" height="800">
+                    <span class="story-slide-index" aria-hidden="true">02 / 02</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Container Stuffing · 02</span>
+                    <h3>Staged for Stuffing</h3>
+                    <p>Jumbo bags staged next to the open container, ready to be loaded in sequence.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="story-carousel-nav-zone" aria-hidden="true">
+                <button type="button" class="story-carousel-nav prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button type="button" class="story-carousel-nav next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+              </div>
+              <div class="story-carousel-dots">
+                <button type="button" class="story-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button type="button" class="story-dot" data-slide="1" aria-label="Go to slide 2"></button>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="story-carousel reveal" data-carousel>
-          <div class="story-carousel-track">
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/pengemasan1-pengemasan.jpg" alt="Granules packed inside a jumbo bag" loading="lazy" width="1600" height="800">
-                <span class="story-slide-index" aria-hidden="true">01 / 04</span>
+          <div class="story-carousel-group" data-chapter-panel="pengiriman" hidden>
+            <div class="story-carousel" data-carousel>
+              <div class="story-carousel-track">
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/pengiriman1-container-loaded.jpg" alt="Jumbo bags loaded inside an export container" loading="lazy" width="1086" height="724">
+                    <span class="story-slide-index" aria-hidden="true">01 / 02</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Shipping · 01</span>
+                    <h3>Loaded &amp; Ready</h3>
+                    <p>Jumbo bags loaded and secured inside the container, with weight and cube details logged against the container's own data plate.</p>
+                  </div>
+                </div>
+                <div class="story-slide">
+                  <div class="story-slide-media">
+                    <img src="assets/gallery/pengiriman2-container-ready.jpg" alt="Closed export container ready for the port" loading="lazy" width="941" height="627">
+                    <span class="story-slide-index" aria-hidden="true">02 / 02</span>
+                  </div>
+                  <div class="story-slide-body">
+                    <span class="story-slide-tag">Shipping · 02</span>
+                    <h3>Container Ready for Dispatch</h3>
+                    <p>Sealed and ready to move — delivered to warehouses, plantations, and ports across Indonesia, through to destination ports for export.</p>
+                  </div>
+                </div>
               </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Packaging · 01</span>
-                <h3>Packaging</h3>
-                <p>Packed in 25kg / 50kg bags or jumbo bags according to customer needs.</p>
+              <div class="story-carousel-nav-zone" aria-hidden="true">
+                <button type="button" class="story-carousel-nav prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button type="button" class="story-carousel-nav next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
               </div>
-            </div>
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/pengemasan2-forklift.jpg" alt="Forklift lifting a jumbo bag in the warehouse" loading="lazy" width="1600" height="800">
-                <span class="story-slide-index" aria-hidden="true">02 / 04</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Packaging · 02</span>
-                <h3>Warehouse Handling</h3>
-                <p>Forklifts move jumbo bags safely around the warehouse for storage and loading.</p>
-              </div>
-            </div>
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/pengemasan3-stockpile.jpg" alt="Packed bags and jumbo bags stored in the warehouse" loading="lazy" width="1600" height="800">
-                <span class="story-slide-index" aria-hidden="true">03 / 04</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Packaging · 03</span>
-                <h3>Product Stockpile</h3>
-                <p>Packed bags and jumbo bags held in our warehouse, ready for dispatch.</p>
-              </div>
-            </div>
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/pengemasan4-siap-kirim.jpg" alt="Rows of sealed jumbo bags ready for shipment" loading="lazy" width="1600" height="800">
-                <span class="story-slide-index" aria-hidden="true">04 / 04</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Packaging · 04</span>
-                <h3>Ready-to-Ship Stock</h3>
-                <p>Sealed jumbo bags staged and ready for container loading.</p>
+              <div class="story-carousel-dots">
+                <button type="button" class="story-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button type="button" class="story-dot" data-slide="1" aria-label="Go to slide 2"></button>
               </div>
             </div>
-          </div>
-          <div class="story-carousel-nav-zone" aria-hidden="true">
-            <button type="button" class="story-carousel-nav prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button type="button" class="story-carousel-nav next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-          </div>
-          <div class="story-carousel-dots">
-            <button type="button" class="story-dot active" data-slide="0" aria-label="Go to slide 1"></button>
-            <button type="button" class="story-dot" data-slide="1" aria-label="Go to slide 2"></button>
-            <button type="button" class="story-dot" data-slide="2" aria-label="Go to slide 3"></button>
-            <button type="button" class="story-dot" data-slide="3" aria-label="Go to slide 4"></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapter 03 — Container Stuffing -->
-    <div class="story-chapter" id="chapter-stuffing">
-      <div class="container">
-        <div class="story-chapter-head reveal">
-          <span class="story-chapter-num">03</span>
-          <div>
-            <h2>Container Stuffing</h2>
-            <p>Every bag is loaded by hand, packed tight so nothing shifts between our warehouse and the port.</p>
-          </div>
-        </div>
-
-        <div class="story-carousel reveal" data-carousel>
-          <div class="story-carousel-track">
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/stuffing1-container-stuffing.jpg" alt="Forklift loading jumbo bags into a container" loading="lazy" width="1600" height="800">
-                <span class="story-slide-index" aria-hidden="true">01 / 02</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Container Stuffing · 01</span>
-                <h3>Container Stuffing</h3>
-                <p>Bags and jumbo bags are carefully and securely loaded into containers for domestic delivery and export shipment.</p>
-              </div>
-            </div>
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/stuffing3-staging.jpg" alt="Jumbo bags staged next to an open container" loading="lazy" width="1600" height="800">
-                <span class="story-slide-index" aria-hidden="true">02 / 02</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Container Stuffing · 02</span>
-                <h3>Staged for Stuffing</h3>
-                <p>Jumbo bags staged next to the open container, ready to be loaded in sequence.</p>
-              </div>
-            </div>
-          </div>
-          <div class="story-carousel-nav-zone" aria-hidden="true">
-            <button type="button" class="story-carousel-nav prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button type="button" class="story-carousel-nav next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-          </div>
-          <div class="story-carousel-dots">
-            <button type="button" class="story-dot active" data-slide="0" aria-label="Go to slide 1"></button>
-            <button type="button" class="story-dot" data-slide="1" aria-label="Go to slide 2"></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapter 04 — Shipping -->
-    <div class="story-chapter" id="chapter-pengiriman">
-      <div class="container">
-        <div class="story-chapter-head reveal">
-          <span class="story-chapter-num">04</span>
-          <div>
-            <h2>Shipping</h2>
-            <p>From our yard to warehouses, plantations, and ports across Indonesia — and on to destination ports for export.</p>
-          </div>
-        </div>
-
-        <div class="story-carousel reveal" data-carousel>
-          <div class="story-carousel-track">
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/pengiriman1-container-loaded.jpg" alt="Jumbo bags loaded inside an export container" loading="lazy" width="1086" height="724">
-                <span class="story-slide-index" aria-hidden="true">01 / 02</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Shipping · 01</span>
-                <h3>Loaded &amp; Ready</h3>
-                <p>Jumbo bags loaded and secured inside the container, with weight and cube details logged against the container's own data plate.</p>
-              </div>
-            </div>
-            <div class="story-slide">
-              <div class="story-slide-media">
-                <img src="assets/gallery/pengiriman2-container-ready.jpg" alt="Closed export container ready for the port" loading="lazy" width="941" height="627">
-                <span class="story-slide-index" aria-hidden="true">02 / 02</span>
-              </div>
-              <div class="story-slide-body">
-                <span class="story-slide-tag">Shipping · 02</span>
-                <h3>Container Ready for Dispatch</h3>
-                <p>Sealed and ready to move — delivered to warehouses, plantations, and ports across Indonesia, through to destination ports for export.</p>
-              </div>
-            </div>
-          </div>
-          <div class="story-carousel-nav-zone" aria-hidden="true">
-            <button type="button" class="story-carousel-nav prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button type="button" class="story-carousel-nav next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-          </div>
-          <div class="story-carousel-dots">
-            <button type="button" class="story-dot active" data-slide="0" aria-label="Go to slide 1"></button>
-            <button type="button" class="story-dot" data-slide="1" aria-label="Go to slide 2"></button>
           </div>
         </div>
       </div>
