@@ -2777,6 +2777,116 @@ a.spec-pill:hover {
 
 .product-detail { scroll-margin-top: 72px; }
 
+/* Powder vs granule guide (products.html) */
+.pvg { background: var(--color-surface-alt); scroll-margin-top: 72px; }
+.pvg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); margin-top: var(--space-12); }
+.pvg-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.pvg-photo { position: relative; aspect-ratio: 16 / 7; overflow: hidden; }
+.pvg-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 70%; display: block; }
+.pvg-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(8, 73, 44, 0.55)); }
+.pvg-size {
+  position: absolute;
+  left: var(--space-5);
+  bottom: var(--space-4);
+  z-index: 1;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  background: var(--color-accent);
+}
+.pvg-body { display: flex; flex-direction: column; flex: 1; padding: var(--space-6); }
+.pvg-body h3 { font-size: 26px; color: var(--color-primary-dark); }
+.pvg-lede { margin-top: var(--space-2); font-size: 15px; line-height: 1.6; color: var(--color-muted-foreground); }
+.pvg-benefits { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-3); }
+.pvg-benefits li { position: relative; padding-left: 32px; font-size: 14px; line-height: 1.55; color: var(--color-muted-foreground); }
+.pvg-benefits li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(18, 162, 96, 0.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2312A260' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+.pvg-benefits strong { display: block; color: var(--color-foreground); font-size: 15px; }
+.pvg-when {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+.pvg-when h4 { font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent); }
+.pvg-when ul { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; gap: var(--space-2); }
+.pvg-when li { position: relative; padding-left: 22px; font-size: 14px; line-height: 1.5; }
+.pvg-when li::before { content: "→"; position: absolute; left: 0; font-weight: 800; color: var(--color-accent); }
+.pvg-avail { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: auto; padding-top: var(--space-5); }
+.pvg-avail span { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted-foreground); margin-right: var(--space-1); }
+.pvg-avail a {
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+}
+.pvg-avail a:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+.pvg-compare {
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.pvg-compare h3 { font-size: 20px; color: var(--color-primary-dark); }
+.pvg-table-wrap { margin-top: var(--space-4); overflow-x: auto; }
+.pvg-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.pvg-table th, .pvg-table td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-border); }
+.pvg-table thead th { font-size: 13px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-primary); border-bottom: 2px solid var(--color-primary); }
+.pvg-table tbody th { width: 24%; font-weight: 700; color: var(--color-foreground); }
+.pvg-table td { width: 38%; color: var(--color-muted-foreground); }
+.pvg-table tbody tr:last-child > * { border-bottom: 0; }
+.pvg-note { margin-top: var(--space-4); font-size: 13px; font-style: italic; color: var(--color-muted-foreground); }
+
+.pvg-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+  margin-top: var(--space-6);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px dashed color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+  background: var(--color-surface);
+}
+.pvg-help strong { font-size: 17px; color: var(--color-primary-dark); }
+.pvg-help p { margin-top: 4px; font-size: 14px; color: var(--color-muted-foreground); }
+.pvg-help .btn { flex-shrink: 0; }
+
+@media (max-width: 860px) {
+  .pvg-grid { grid-template-columns: 1fr; margin-top: var(--space-8); }
+  .pvg-help { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .pvg-body, .pvg-compare { padding: var(--space-5) var(--space-4); }
+  .pvg-table { font-size: 13px; }
+  .pvg-table th, .pvg-table td { padding: 10px 8px; }
+  .pvg-avail span { flex-basis: 100%; }
+}
+
 /* ==========================================================================
    Sector solutions results (homepage)
    ========================================================================== */
