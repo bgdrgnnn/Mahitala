@@ -497,91 +497,119 @@
       <div class="section-head center reveal">
         <span class="eyebrow">Choosing a Form</span>
         <h2>Powder vs Granule: Which One Fits Your Use?</h2>
-        <p>Same natural mineral, different particle size. The form you choose changes how fast it works, how it is handled and how it is applied.</p>
+        <p>Same natural mineral, different particle size. Switch between the two forms below, compare them head to head, or let the Form Finder recommend one for you.</p>
       </div>
 
-      <div class="pvg-grid">
-        <article class="pvg-card reveal">
-          <div class="pvg-photo">
-            <img src="assets/products/dolomite-powder.jpg" alt="Dolomite powder" loading="lazy" width="900" height="601">
-            <span class="pvg-size">60–325 mesh</span>
+      <div class="pvg-explorer reveal" data-pvg-explorer data-form="powder">
+        <div class="pvg-controls">
+          <div class="pvg-prods" role="group" aria-label="Choose a mineral"><button type="button" class="pvg-prod" data-product="dolomite" aria-pressed="true">Dolomite</button><button type="button" class="pvg-prod" data-product="phosphate" aria-pressed="false">Natural Phosphate</button><button type="button" class="pvg-prod" data-product="palmash" aria-pressed="false">Palm Bunch Ash</button><button type="button" class="pvg-prod" data-product="clay" aria-pressed="false">Clay</button></div>
+          <div class="pvg-switch" role="group" aria-label="Choose a form">
+            <span class="pvg-switch-thumb" aria-hidden="true"></span>
+            <button type="button" data-form="powder" aria-pressed="true" aria-controls="pvg-panel-powder"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="7" r="1.3"/><circle cx="10" cy="5" r="1.1"/><circle cx="15" cy="8" r="1.3"/><circle cx="19" cy="5" r="1"/><circle cx="7" cy="12" r="1.1"/><circle cx="12" cy="11" r="1.3"/><circle cx="18" cy="12" r="1.1"/><circle cx="4" cy="17" r="1.2"/><circle cx="9" cy="17" r="1.3"/><circle cx="14" cy="16" r="1"/><circle cx="19" cy="18" r="1.3"/></svg>Powder</button>
+            <button type="button" data-form="granule" aria-pressed="false" aria-controls="pvg-panel-granule"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="7" cy="7" r="3.4"/><circle cx="16.5" cy="8" r="3"/><circle cx="9" cy="16.5" r="3.2"/><circle cx="17.5" cy="17" r="3.4"/></svg>Granule</button>
           </div>
-          <div class="pvg-body">
+        </div>
+        <div class="pvg-stage">
+          <figure class="pvg-media">
+            <img class="pvg-img" src="assets/products/dolomite-powder.jpg" alt="Dolomite powder" loading="lazy" width="900" height="601">
+            <span class="pvg-size">60–325 mesh</span>
+            <figcaption class="pvg-tip"><strong>Dolomite powder</strong><span>Popular for land preparation, shrimp-pond liming and as a raw material for fertilizer and glass.</span></figcaption>
+          </figure>
+          <div class="pvg-panels" aria-live="polite">
+          <div class="pvg-panel" id="pvg-panel-powder" data-panel="powder">
             <h3>Powder</h3>
             <p class="pvg-lede">Fine particles with a large surface area: reacts quickly and mixes easily.</p>
-            <ul class="pvg-benefits">
-              <li><strong>Fast-acting</strong><span>Reacts quickly with soil and water, so pH correction and nutrient release start sooner.</span></li>
-              <li><strong>Mixes evenly into soil</strong><span>Spreads through the topsoil when incorporated during land preparation.</span></li>
-              <li><strong>Ready for processing</strong><span>The right feedstock for granulation, NPK/SP-36 production, feed binders and industrial fillers.</span></li>
-              <li><strong>Disperses in water</strong><span>Buffers pond pH and alkalinity quickly during preparation and between cycles.</span></li>
-              <li><strong>Economical</strong><span>No granulation step, so it is usually the lower cost per ton.</span></li>
-            </ul>
+            <ul class="pvg-benefits"><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><div><strong>Fast-acting</strong><p>Reacts quickly with soil and water, so pH correction and nutrient release start sooner.</p></div></li><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><div><strong>Mixes evenly into soil</strong><p>Spreads through the topsoil when incorporated during land preparation.</p></div></li><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg></span><div><strong>Ready for processing</strong><p>The right feedstock for granulation, NPK/SP-36 production, feed binders and fillers.</p></div></li><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg></span><div><strong>Disperses in water</strong><p>Buffers pond pH and alkalinity quickly during preparation and between cycles.</p></div></li><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1"/></svg></span><div><strong>Economical</strong><p>No granulation step, so it is usually the lower cost per ton.</p></div></li></ul>
             <div class="pvg-when">
               <h4>Choose powder when</h4>
-              <ul>
-                <li>You process it further: fertilizer plant, feed mill, glass, ceramics or paint.</li>
-                <li>You need a fast pH correction before planting or stocking a pond.</li>
-                <li>The product is tilled or mixed into the soil.</li>
-                <li>Cost per ton is the deciding factor.</li>
-              </ul>
+              <ul><li>You process it further: fertilizer plant, feed mill, glass, ceramics or paint.</li><li>You need a fast pH correction before planting or stocking a pond.</li><li>The product is tilled or mixed into the soil.</li><li>Cost per ton is the deciding factor.</li></ul>
             </div>
-            <p class="pvg-avail"><span>Available for</span><a href="#dolomite">Dolomite</a><a href="#phosphate">Natural Phosphate</a><a href="#palmash">Palm Bunch Ash</a><a href="#clay">Clay</a></p>
           </div>
-        </article>
-
-        <article class="pvg-card pvg-granule reveal">
-          <div class="pvg-photo">
-            <img src="assets/products/dolomite-granule.jpg" alt="Dolomite granule" loading="lazy" width="900" height="601">
-            <span class="pvg-size">2–5 mm</span>
-          </div>
-          <div class="pvg-body">
+          <div class="pvg-panel" id="pvg-panel-granule" data-panel="granule" hidden>
             <h3>Granule</h3>
             <p class="pvg-lede">Round, firm particles: low dust, easy to spread and longer-lasting in the field.</p>
-            <ul class="pvg-benefits">
-              <li><strong>Low dust</strong><span>Cleaner, safer handling for workers and less product lost to wind.</span></li>
-              <li><strong>Even spreading</strong><span>Flows freely by hand or through mechanical spreaders and lands where it is needed.</span></li>
-              <li><strong>Steady, longer release</strong><span>Breaks down gradually, so the effect lasts longer and less is washed away by heavy rain.</span></li>
-              <li><strong>Bulk-blend ready</strong><span>Similar in size to common granular fertilizers, so physical blends stay mixed.</span></li>
-              <li><strong>Easy to store and dose</strong><span>Flows well from bags and hoppers and is less prone to caking in humid storage.</span></li>
-            </ul>
+            <ul class="pvg-benefits"><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span><div><strong>Low dust</strong><p>Cleaner, safer handling for workers and less product lost to wind.</p></div></li><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><div><strong>Even spreading</strong><p>Flows freely by hand or through mechanical spreaders and lands where it is needed.</p></div></li><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg></span><div><strong>Steady, longer release</strong><p>Breaks down gradually, so the effect lasts longer and less is washed away by rain.</p></div></li><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg></span><div><strong>Bulk-blend ready</strong><p>Similar in size to common granular fertilizers, so physical blends stay mixed.</p></div></li><li><span class="pvg-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span><div><strong>Easy to store and dose</strong><p>Flows well from bags and hoppers and is less prone to caking in humid storage.</p></div></li></ul>
             <div class="pvg-when">
               <h4>Choose granule when</h4>
-              <ul>
-                <li>You top-dress established plantations such as oil palm, rubber or cocoa.</li>
-                <li>You use mechanical spreaders or apply in windy or rainy conditions.</li>
-                <li>You bulk-blend it with other granular fertilizers.</li>
-                <li>You repack for distributors or farmers who want clean, easy handling.</li>
-              </ul>
+              <ul><li>You top-dress established plantations such as oil palm, rubber or cocoa.</li><li>You use mechanical spreaders or apply in windy or rainy conditions.</li><li>You bulk-blend it with other granular fertilizers.</li><li>You repack for distributors or farmers who want clean, easy handling.</li></ul>
             </div>
-            <p class="pvg-avail"><span>Available for</span><a href="#dolomite">Dolomite</a><a href="#phosphate">Natural Phosphate</a><a href="#palmash">Palm Bunch Ash</a></p>
           </div>
-        </article>
+          </div>
+        </div>
       </div>
 
-      <div class="pvg-compare reveal">
-        <h3>At a glance</h3>
-        <div class="pvg-table-wrap">
-          <table class="pvg-table">
-            <thead><tr><td></td><th scope="col">Powder</th><th scope="col">Granule</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Particle size</th><td>60–325 mesh (other sizes on request)</td><td>2–5 mm</td></tr>
-              <tr><th scope="row">How fast it works</th><td>Fast</td><td>Gradual, longer-lasting</td></tr>
-              <tr><th scope="row">Dust</th><td>Some; best incorporated or applied in calm weather</td><td>Low</td></tr>
-              <tr><th scope="row">Typical application</th><td>Tillage, ponds, processing</td><td>Broadcasting, top-dressing, spreaders</td></tr>
-              <tr><th scope="row">Blending</th><td>Granulation and wet mixing</td><td>Physical bulk blending</td></tr>
-              <tr><th scope="row">Best for</th><td>Manufacturers, land preparation, aquaculture</td><td>Plantations, distributors, retail packs</td></tr>
-            </tbody>
-          </table>
+      <div class="pvg-lower">
+        <div class="pvg-meters reveal">
+          <h3>Head to head</h3>
+          <p class="pvg-sub">Relative comparison, 1–5. Hover or tap a row to compare.</p>
+          <div class="pvg-legend" aria-hidden="true"><span class="is-powder">Powder</span><span class="is-granule">Granule</span></div>
+          <ul class="pvg-meter-list">
+            <li class="pvg-meter" tabindex="0" style="--p:5;--g:3">
+              <span class="pvg-bar is-powder" aria-label="Powder 5 of 5"><i></i></span>
+              <span class="pvg-meter-label">Reaction speed</span>
+              <span class="pvg-bar is-granule" aria-label="Granule 3 of 5"><i></i></span>
+            </li>
+            <li class="pvg-meter" tabindex="0" style="--p:5;--g:2">
+              <span class="pvg-bar is-powder" aria-label="Powder 5 of 5"><i></i></span>
+              <span class="pvg-meter-label">Mixing &amp; processing</span>
+              <span class="pvg-bar is-granule" aria-label="Granule 2 of 5"><i></i></span>
+            </li>
+            <li class="pvg-meter" tabindex="0" style="--p:2;--g:5">
+              <span class="pvg-bar is-powder" aria-label="Powder 2 of 5"><i></i></span>
+              <span class="pvg-meter-label">Dust control</span>
+              <span class="pvg-bar is-granule" aria-label="Granule 5 of 5"><i></i></span>
+            </li>
+            <li class="pvg-meter" tabindex="0" style="--p:3;--g:5">
+              <span class="pvg-bar is-powder" aria-label="Powder 3 of 5"><i></i></span>
+              <span class="pvg-meter-label">Ease of spreading</span>
+              <span class="pvg-bar is-granule" aria-label="Granule 5 of 5"><i></i></span>
+            </li>
+            <li class="pvg-meter" tabindex="0" style="--p:3;--g:5">
+              <span class="pvg-bar is-powder" aria-label="Powder 3 of 5"><i></i></span>
+              <span class="pvg-meter-label">Lasting effect in the field</span>
+              <span class="pvg-bar is-granule" aria-label="Granule 5 of 5"><i></i></span>
+            </li>
+          </ul>
+          <div class="pvg-facts">
+            <h4>Size &amp; availability</h4>
+            <dl>
+              <div><dt>Particle size</dt><dd><span class="is-powder">60–325 mesh</span><span class="is-granule">2–5 mm</span></dd></div>
+              <div><dt>Packaging</dt><dd><span class="is-powder">25/50 kg · Jumbo</span><span class="is-granule">25/50 kg · Jumbo</span></dd></div>
+              <div><dt>Minerals</dt><dd><span class="is-powder">All four</span><span class="is-granule">Dolomite, Phosphate, Palm Ash</span></dd></div>
+              <div><dt>Custom sizes</dt><dd><span class="is-powder">On request</span><span class="is-granule">On request</span></dd></div>
+            </dl>
+          </div>
+          <p class="pvg-note">Dolomite is also available as 3–10 mm chip for steel, construction and water filtration.</p>
         </div>
-        <p class="pvg-note">Dolomite is also available as 3–10 mm chip for steel, construction and water-filtration use.</p>
-      </div>
 
-      <div class="pvg-help reveal">
-        <div>
-          <strong>Not sure which form to order?</strong>
-          <p>Tell us your crop, soil or process and we will recommend the form, size and dosage.</p>
-        </div>
-        <a href="https://wa.me/6285117541008?text=Hello%20Mahitala%2C%20I%27d%20like%20advice%20on%20powder%20vs%20granule." class="btn btn-dark" target="_blank" rel="noopener">Ask via WhatsApp</a>
+        <form class="pvg-finder reveal" data-pvg-finder onsubmit="return false">
+          <span class="pvg-finder-badge">Form Finder</span>
+          <h3>Not sure? Answer 3 quick questions.</h3>
+          <fieldset class="chip-field">
+            <legend><b>1</b> Which mineral?</legend>
+            <div class="chip-group"><label class="chip-opt"><input type="radio" name="pf-product" value="dolomite"><span>Dolomite</span></label><label class="chip-opt"><input type="radio" name="pf-product" value="phosphate"><span>Natural Phosphate</span></label><label class="chip-opt"><input type="radio" name="pf-product" value="palmash"><span>Palm Bunch Ash</span></label><label class="chip-opt"><input type="radio" name="pf-product" value="clay"><span>Clay</span></label></div>
+          </fieldset>
+          <fieldset class="chip-field">
+            <legend><b>2</b> What will you use it for?</legend>
+            <div class="chip-group"><label class="chip-opt"><input type="radio" name="pf-use" value="manufacturing"><span>Manufacturing (fertilizer, feed, industry)</span></label><label class="chip-opt"><input type="radio" name="pf-use" value="landprep"><span>Land preparation before planting</span></label><label class="chip-opt"><input type="radio" name="pf-use" value="pond"><span>Shrimp or fish ponds</span></label><label class="chip-opt"><input type="radio" name="pf-use" value="plantation"><span>Top-dressing plantations</span></label><label class="chip-opt"><input type="radio" name="pf-use" value="blending"><span>Bulk blending with granular fertilizer</span></label><label class="chip-opt"><input type="radio" name="pf-use" value="retail"><span>Retail / distribution to farmers</span></label></div>
+          </fieldset>
+          <fieldset class="chip-field">
+            <legend><b>3</b> How will it be applied?</legend>
+            <div class="chip-group"><label class="chip-opt"><input type="radio" name="pf-app" value="mixed"><span>Mixed into soil or processed</span></label><label class="chip-opt"><input type="radio" name="pf-app" value="hand"><span>Broadcast by hand</span></label><label class="chip-opt"><input type="radio" name="pf-app" value="spreader"><span>Mechanical spreader</span></label><label class="chip-opt"><input type="radio" name="pf-app" value="water"><span>Spread over water</span></label></div>
+          </fieldset>
+          <div class="pvg-result" data-state="empty" aria-live="polite">
+            <div class="pvg-result-icon" aria-hidden="true"></div>
+            <div class="pvg-result-copy">
+              <small>Our recommendation</small>
+              <strong class="pvg-result-title">Pick your answers above</strong>
+              <p class="pvg-result-why">We will suggest the form that fits your use. You can change answers anytime.</p>
+            </div>
+            <div class="pvg-result-actions">
+              <button type="button" class="btn btn-outline btn-sm pvg-result-view" hidden>View details</button>
+            <a class="btn btn-dark btn-sm pvg-result-cta" href="https://wa.me/6285117541008?text=Hello%20Mahitala%2C%20I%27d%20like%20advice%20on%20powder%20vs%20granule." target="_blank" rel="noopener">Discuss on WhatsApp</a>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -664,5 +692,6 @@
 <script src="js/nav.js"></script>
 <script src="js/benefits-data.js"></script>
 <script src="js/products.js"></script>
+<script src="js/pvg.js"></script>
 </body>
 </html>
